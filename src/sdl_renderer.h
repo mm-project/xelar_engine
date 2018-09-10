@@ -29,7 +29,8 @@ class LeSdlWrapper : public LeRenderBase , public LeEventControllerBase
 public:
 	//TODO fixme game name in the title
 	LeSdlWrapper(){ //const char* title) {
-		init("Game demo");
+		m_renderer_controller = 0;
+		//init("Game demo");
 		SDL_RenderSetScale(m_render,1,1);
 	}
 
@@ -64,7 +65,8 @@ virtual void enter_event_loop() {
 			}
 
 			//get_active_rnderer(
-			draw();
+			if(m_renderer_controller)
+				m_renderer_controller->draw();
 			
 			
 			lastTime = currentTime;  
@@ -107,16 +109,20 @@ void set_drawing_color(SDL_Color c) {
 
 SDL_Window* m_window;
 SDL_Renderer* m_render;
+LeSdlWrapper* m_renderer_controller;
 
 #ifdef TEXT_RENDER
 	TTF_Font* m_ttf_font;
 #endif	
 
+void set_rendering_controller(LeSdlWrapper* controller){
+	m_renderer_controller = controller;
+}
 
 //TODO seperate each init to different inits. 
 bool init(const char* title)
 {
-	LOG("init start");
+	LOG("init start\n");
 	
 	bool success = true;
 

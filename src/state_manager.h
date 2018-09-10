@@ -18,15 +18,23 @@ class LeStateManager
 		LeStateManager() {
 		}
 
-		void reg_state( LeState st ,LeInterLayer* i ) {
+		void reg_state( LeState st, LeInterLayer* i ) {
 			m_statename2state[st] = i;
 
 		}
 
 		void set_state( LeState st ) {
 			m_current_state = m_statename2state[st];
+			m_current_state->set_rendering_controller(m_current_state);
+		}
+	
+		void set_start_state( LeState st ) {
+			m_current_state = m_statename2state[st];
+			m_current_state->init("GAME");
+			m_current_state->set_rendering_controller(m_current_state);
 			m_current_state->enter_event_loop();
 		}
+	
 	
 	static LeStateManager* m_instance;
 	

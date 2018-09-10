@@ -6,7 +6,7 @@
 #include "game_state.h"
 #include "pause_state.h"
 
-
+#include <iostream>
 
 class LeGame
 {
@@ -20,7 +20,7 @@ class LeGame
 		}
 
 		void start() {
-			m_state_mgr->set_state(LeState::ST_GAME);
+			m_state_mgr->set_start_state(LeState::ST_GAME);
 			
 			//enter_event_loop();
 			//while ( m_state_mgr.isRunning() ) {
