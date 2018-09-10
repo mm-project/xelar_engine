@@ -29,9 +29,9 @@ class LeSdlWrapper : public LeRenderBase , public LeEventControllerBase
 public:
 	//TODO fixme game name in the title
 	LeSdlWrapper(){ //const char* title) {
-		m_renderer_controller = 0;
+		//m_renderer_controller = 0;
 		//init("Game demo");
-		SDL_RenderSetScale(m_render,1,1);
+		
 	}
 
 
@@ -56,18 +56,20 @@ virtual void enter_event_loop() {
 
 			while( SDL_PollEvent( &e ) != 0 ) {
 				if ( e.type == SDL_QUIT ) quit = true;
-				else if ( e.type == SDL_MOUSEBUTTONDOWN && e.button.button == SDL_BUTTON_LEFT ) notify_mouse_pressed(1);
-				else if ( e.type == SDL_MOUSEBUTTONDOWN && e.button.button == SDL_BUTTON_RIGHT ) notify_mouse_pressed(0);
-				else if ( e.type == SDL_MOUSEMOTION  ) 	notify_mouse_move(0,0);
+				else if ( e.type == SDL_MOUSEBUTTONDOWN && e.button.button == SDL_BUTTON_LEFT ) m_renderer_controller->notify_mouse_pressed(1);
+				else if ( e.type == SDL_MOUSEBUTTONDOWN && e.button.button == SDL_BUTTON_RIGHT ) m_renderer_controller->notify_mouse_pressed(0);
+				else if ( e.type == SDL_MOUSEMOTION  ) 	m_renderer_controller->notify_mouse_move(0,0);
 				//if ( e.type == SDL_MOUSEWHEEL)
 				//if ( e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_ESCAPE) 
 				//if ( e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_x) 
 			}
 
 			//get_active_rnderer(
+			//LOG("this %p m_renderer_controller %p \n",(void*)this,(void*)m_renderer_controller);
 			if(m_renderer_controller)
+                                //m_renderer_controller->scene_clear();
 				m_renderer_controller->draw();
-			
+                                //m_renderer_controller->scene_draw();
 			
 			lastTime = currentTime;  
 		}
@@ -77,15 +79,17 @@ virtual void enter_event_loop() {
 
 //TODO redudant set render color?
 void scene_clear() {
-	SDL_SetRenderDrawColor(m_render,0,0,0,255);
+	//LOG("SDL render: clear \n");
+        SDL_SetRenderDrawColor(m_render,0,0,0,255);
 	SDL_RenderClear( m_render );
 	SDL_SetRenderDrawColor(m_render,0,0,0,255);
 }
 
 //TODO redudant set render color?
 void scene_draw() {
-	SDL_SetRenderDrawColor( m_render, 0xFF, 0xFF, 0xFF, 0xFF );
-    SDL_RenderPresent( m_render );
+        //LOG("SDL render: draw exact \n");
+        SDL_SetRenderDrawColor( m_render, 0xFF, 0xFF, 0xFF, 0xFF );
+        SDL_RenderPresent( m_render );
     
 }
 			
@@ -109,14 +113,16 @@ void set_drawing_color(SDL_Color c) {
 
 SDL_Window* m_window;
 SDL_Renderer* m_render;
-LeSdlWrapper* m_renderer_controller;
+static LeSdlWrapper* m_renderer_controller;
 
 #ifdef TEXT_RENDER
 	TTF_Font* m_ttf_font;
 #endif	
 
-void set_rendering_controller(LeSdlWrapper* controller){
-	m_renderer_controller = controller;
+static void set_rendering_controller(LeSdlWrapper* controller){
+	//LOG("set_rendering_controller %p --> %p\n",(void*)this, (void*)controller);
+	LOG("set_rendering_controller %p \n",(void*)controller);       
+        m_renderer_controller = controller;
 }
 
 //TODO seperate each init to different inits. 
@@ -180,6 +186,7 @@ bool init(const char* title)
 		}
 	}
 
+SDL_RenderSetScale(m_render,1,1);
 return success;
 }
 

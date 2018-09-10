@@ -5,7 +5,9 @@
 
 #include <map>
 
-enum LeState {ST_MENU, ST_PAUSE, ST_GAME};
+#include <iostream>
+
+enum LeState {ST_MENU = 1 , ST_PAUSE, ST_GAME ,  ST_COUNT };
 
 class LeStateManager
 {
@@ -19,19 +21,23 @@ class LeStateManager
 		}
 
 		void reg_state( LeState st, LeInterLayer* i ) {
-			m_statename2state[st] = i;
+			std::cout << "Regstate -> " << st << " " << i << std::endl;
+                        m_statename2state[st] = i;
 
 		}
 
 		void set_state( LeState st ) {
-			m_current_state = m_statename2state[st];
-			m_current_state->set_rendering_controller(m_current_state);
+			LOG("STATEMANAGER: set_state %i\n",(int)st);
+                        m_current_state = m_statename2state[st];
+                        
+                        LOG("STATEMANAGER: m_current_state %p\n",(void*)m_current_state );
+			LeInterLayer::set_rendering_controller(m_current_state);
 		}
 	
 		void set_start_state( LeState st ) {
-			m_current_state = m_statename2state[st];
+			m_current_state = m_statename2state[ST_GAME];
 			m_current_state->init("GAME");
-			m_current_state->set_rendering_controller(m_current_state);
+			LeInterLayer::set_rendering_controller(m_current_state);
 			m_current_state->enter_event_loop();
 		}
 	

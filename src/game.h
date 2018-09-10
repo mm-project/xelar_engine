@@ -14,27 +14,26 @@ class LeGame
 		LeGame() {
 			m_state_mgr = LeStateManager::get();
 
-			m_state_mgr->reg_state(LeState::ST_MENU,new LeMenuState);
-			m_state_mgr->reg_state(LeState::ST_PAUSE,new LePauseState);
-			m_state_mgr->reg_state(LeState::ST_GAME,new LeGameState);
+			m_state_mgr->reg_state(ST_MENU,new LeMenuState);
+			m_state_mgr->reg_state(ST_PAUSE,new LePauseState);
+			m_state_mgr->reg_state(ST_GAME,new LeGameState);
 		}
 
 		void start() {
-			m_state_mgr->set_start_state(LeState::ST_GAME);
-			
-			//enter_event_loop();
-			//while ( m_state_mgr.isRunning() ) {
-			//	
-			//}
+			m_state_mgr->set_start_state(ST_GAME);
 			
 		}
 
 		void stop() {
-			//LeStateManager.set
+			//save as 
+                        //m_state_mgr-
+                        //LeStateManager.set
 		}
 
 	private:
-			LeStateManager* m_state_mgr;
+            LeStateManager* m_state_mgr;
+            //rendering manager
+            //sound manager
 			
 	
 };

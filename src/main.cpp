@@ -1,6 +1,7 @@
 #include "game.h"
 
 LeStateManager* LeStateManager::m_instance = 0;
+LeSdlWrapper* LeSdlWrapper::m_renderer_controller = 0;
 
 int main( int argc, char* args[] )
 {
