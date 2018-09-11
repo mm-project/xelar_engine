@@ -20,6 +20,8 @@ class LeGame
 		}
 
 		void start() {
+			//todo check for some conditions
+			//maybe load something
 			m_state_mgr->set_start_state(ST_GAME);
 			
 		}

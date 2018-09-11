@@ -5,9 +5,19 @@
 
 class LePauseState : public LeInterLayer
 {
+	
+	virtual void init() {
+			SDL_Log("LePauseState: init");
+	}
+	
 	virtual void draw() {
 			set_drawing_color(0,0,255);
 			draw_rect(0,0,100,100);
+	}
+
+	virtual void update(unsigned int currentTime) {
+			
+	
 	}
 
 	virtual void notify_mouse_pressed(unsigned int) {

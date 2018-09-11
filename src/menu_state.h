@@ -5,10 +5,19 @@
 
 class LeMenuState : public LeInterLayer
 {
+	virtual void init() {
+			SDL_Log("LeMenuState: init");
+	}
+	
 	virtual void draw() {
 			set_drawing_color(255,0,0);
 			draw_rect(0,0,100,100);
 			LOG("LeMenuState: draw\n");
+	}
+
+	virtual void update(unsigned int currentTime) {
+			
+	
 	}
 
 	virtual void notify_mouse_pressed(unsigned int) {

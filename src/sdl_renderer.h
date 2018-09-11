@@ -35,6 +35,7 @@ class LeSdlRendererManager
 	
 	LeSdlRendererManager(){ //const char* title) {
 		init("Game demo");
+		change_background_image();
 	}
 
 
@@ -46,14 +47,15 @@ class LeSdlRendererManager
 	
 	//private:
 
+#ifdef TEXT_RENDER
+	TTF_Font* m_ttf_font;
+#endif	
+	SDL_Texture* m_bg_texture;
 	SDL_Window* m_window;
 	SDL_Renderer* m_render;
 	static LeSdlRendererManager* m_instance;
 
-	#ifdef TEXT_RENDER
-		TTF_Font* m_ttf_font;
-	#endif	
-
+	
 
 	//TODO seperate each init to different inits. 
 	bool init(const char* title)
@@ -120,7 +122,48 @@ class LeSdlRendererManager
 	return success;
 	}
 
+	/*
+	SDL_Texture* loadTexture( std::string path )
+	{
+		    SDL_Surface *background = SDL_LoadBMP("hockeyrink.bmp");
+	if(background == NULL)
+    {
+        SDL_ShowSimpleMessageBox(0, "Background init error",         SDL_GetError(), window);
+    }
 
+    if(renderer == NULL)
+    {
+        SDL_ShowSimpleMessageBox(0, "Renderer init error", SDL_GetError(), window);
+    }
+    SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer,background);
+	
+		//The final texture
+		SDL_Texture* newTexture = NULL;
+
+		//Load image at specified path
+		SDL_Surface* loadedSurface = IMG_Load( path.c_str() );
+		if( loadedSurface == NULL )
+		{
+			printf( "Unable to load image %s! SDL_image Error: %s\n", path.c_str(), IMG_GetError() );
+		}
+		else
+		{
+			//Create texture from surface pixels
+			newTexture = SDL_CreateTextureFromSurface( gRenderer, loadedSurface );
+			if( newTexture == NULL )
+			{
+				printf( "Unable to create texture from %s! SDL Error: %s\n", path.c_str(), SDL_GetError() );
+			}
+
+			//Get rid of old loaded surface
+			SDL_FreeSurface( loadedSurface );
+		}
+
+		    SDL_RenderCopy(renderer, texture, NULL, NULL);
+
+		return newTexture;
+	}
+*/
 
 	void close()
 	{
@@ -150,6 +193,35 @@ class LeSdlRendererManager
 		SDL_RenderPresent( m_render );
 	}
 
+
+	void change_background_image() {
+		SDL_Surface *background = SDL_LoadBMP("./bin/sky_bg.bmp");
+		if(background == NULL)
+		{
+			SDL_ShowSimpleMessageBox(0, "Background init error",         SDL_GetError(), m_window);
+		}
+
+		if(m_render == NULL)
+		{
+			SDL_ShowSimpleMessageBox(0, "Renderer init error", SDL_GetError(), m_window);
+		}
+
+		m_bg_texture = SDL_CreateTextureFromSurface(m_render,background);
+		if(m_bg_texture  == NULL)
+		{
+			SDL_ShowSimpleMessageBox(0, "Texture init error", SDL_GetError(), m_window);
+		}
+		
+		SDL_RenderCopy(m_render, m_bg_texture, NULL, NULL);
+
+	}
+	
+	void render_background_image() {
+			SDL_RenderCopy(m_render, m_bg_texture, NULL, NULL);
+	
+	}
+	
+
 };
 
 
@@ -171,6 +243,13 @@ virtual void draw() {
 	scene_draw();
 }
 */	
+
+/*
+virtual void update() {
+
+}
+*/
+
 	
 virtual void enter_event_loop() {
 	//SDL_Log("hav");
@@ -189,11 +268,16 @@ virtual void enter_event_loop() {
 					if ( e.type == SDL_QUIT ) quit = true;
 					else if ( e.type == SDL_MOUSEBUTTONDOWN && e.button.button == SDL_BUTTON_LEFT ) m_renderer_controller->notify_mouse_pressed(1);
 					else if ( e.type == SDL_MOUSEBUTTONDOWN && e.button.button == SDL_BUTTON_RIGHT )m_renderer_controller->notify_mouse_pressed(0);
-					else if ( e.type == SDL_MOUSEMOTION  ) 	m_renderer_controller->notify_mouse_move(0,0);
+					else if ( e.type == SDL_MOUSEMOTION  ) {
+						//check_select_active_object(e.motion.x, e.motion.y);
+						last_x = e.motion.x;
+						last_y = e.motion.y;
+						m_renderer_controller->notify_mouse_move(last_x,last_y);
+					}
 					//if ( e.type == SDL_MOUSEWHEEL)
 					//if ( e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_ESCAPE) 
 					//if ( e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_x) 
-					}
+				}
 			}
 
 			//SDL_Log("hatuk");
@@ -202,6 +286,8 @@ virtual void enter_event_loop() {
 			if(m_renderer_controller) {
 				//SDL_Log("?????\n");
 				m_render_manager->scene_clear();
+				m_render_manager->render_background_image();
+				m_renderer_controller->update(currentTime);
 				m_renderer_controller->draw();
 				m_render_manager->scene_draw();
 			}

@@ -15,6 +15,11 @@ class LeInterLayer : public LeSdlWrapper
 		virtual void notify_mouse_move(unsigned int x, unsigned int y) = 0;
 		
 		virtual void draw() = 0;
+		virtual void init() = 0;
+		
+		
+		
+		
 		
 		
 
