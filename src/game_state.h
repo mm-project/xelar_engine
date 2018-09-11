@@ -6,10 +6,8 @@
 class LeGameState : public LeInterLayer
 {
 	virtual void draw() {
-			//scene_clear();
-			//set_drawing_color(0,255,0);
-			//draw_rect(0,0,100,100);
-			//scene_draw();
+			set_drawing_color(0,255,0);
+			draw_rect(0,0,100,100);
 			SDL_Log("LeGameState: draw");
 	}
 

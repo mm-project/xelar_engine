@@ -38,38 +38,12 @@ class LeSdlRendererManager
 	}
 
 
-
 	//TODO redudant set render color?
-	void scene_clear() {
-		//LOG("SDL render: clear \n");
-		SDL_SetRenderDrawColor(m_render,0,0,0,255);
-		SDL_RenderClear( m_render );
-		SDL_SetRenderDrawColor(m_render,0,0,0,255);
-	}
 
-	//TODO redudant set render color?
-	void scene_draw() {
-		//LOG("SDL render: draw exact \n");
-		SDL_SetRenderDrawColor( m_render, 0xFF, 0xFF, 0xFF, 0xFF );
-		SDL_RenderPresent( m_render );
+	SDL_Renderer* get_renderer() {
+		return m_render;
 	}
-				
-	void draw_point(unsigned int y, unsigned int x, unsigned int radius) { 
-		SDL_Point center;
-		center.x = x;
-		center.y = y;
-		draw_circle(center,radius);
-	}
-
-	void set_drawing_color(int r, int g, int b) {
-		SDL_SetRenderDrawColor(m_render,r,g,b,255);
-	}
-
-	void set_drawing_color(SDL_Color c) {
-		SDL_SetRenderDrawColor(m_render,c.r,c.g,c.b,255);
-	}
-
-
+	
 	//private:
 
 	SDL_Window* m_window;
@@ -162,6 +136,116 @@ class LeSdlRendererManager
 	}
 
 
+	void scene_clear() {
+		//LOG("SDL render: clear \n");
+		SDL_SetRenderDrawColor(m_render,0,0,0,255);
+		SDL_RenderClear( m_render );
+		SDL_SetRenderDrawColor(m_render,0,0,0,255);
+	}
+
+	//TODO redudant set render color?
+	void scene_draw() {
+		//LOG("SDL render: draw exact \n");
+		SDL_SetRenderDrawColor( m_render, 0xFF, 0xFF, 0xFF, 0xFF );
+		SDL_RenderPresent( m_render );
+	}
+
+};
+
+
+
+class LeSdlWrapper : public LeRenderBase , public LeEventControllerBase
+{
+
+public:
+	//TODO fixme game name in the title
+	LeSdlWrapper(){ //const char* title) {
+		m_render_manager = LeSdlRendererManager::get();
+		m_render = m_render_manager->get_renderer();
+	}
+
+/*	
+virtual void draw() {
+	scene_clear();
+	scene_prepare();
+	scene_draw();
+}
+*/	
+	
+virtual void enter_event_loop() {
+	//SDL_Log("hav");
+	unsigned int lastTime = 0, currentTime;
+	unsigned int last_x = 0;
+	unsigned int last_y = 0 ;
+
+	SDL_Event e;
+	bool quit = false;
+	while( !quit ) {
+		currentTime = SDL_GetTicks();
+		if (currentTime > lastTime + 10) {
+
+			while( SDL_PollEvent( &e ) != 0 ) {
+				if ( m_renderer_controller ) {
+					if ( e.type == SDL_QUIT ) quit = true;
+					else if ( e.type == SDL_MOUSEBUTTONDOWN && e.button.button == SDL_BUTTON_LEFT ) m_renderer_controller->notify_mouse_pressed(1);
+					else if ( e.type == SDL_MOUSEBUTTONDOWN && e.button.button == SDL_BUTTON_RIGHT )m_renderer_controller->notify_mouse_pressed(0);
+					else if ( e.type == SDL_MOUSEMOTION  ) 	m_renderer_controller->notify_mouse_move(0,0);
+					//if ( e.type == SDL_MOUSEWHEEL)
+					//if ( e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_ESCAPE) 
+					//if ( e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_x) 
+					}
+			}
+
+			//SDL_Log("hatuk");
+			//get_active_rnderer(
+			//LOG("this %p m_renderer_controller %p \n",(void*)this,(void*)m_renderer_controller);
+			if(m_renderer_controller) {
+				//SDL_Log("?????\n");
+				m_render_manager->scene_clear();
+				m_renderer_controller->draw();
+				m_render_manager->scene_draw();
+			}
+						
+			lastTime = currentTime;  
+		}
+	}
+}
+
+
+
+static void set_rendering_controller(LeSdlWrapper* controller){
+	//LOG("set_rendering_controller %p --> %p\n",(void*)this, (void*)controller);
+	LOG("set_rendering_controller %p \n",(void*)controller);       
+	m_renderer_controller = controller;
+}
+
+private:
+	LeSdlRendererManager* m_render_manager;
+	
+	
+
+private:
+	static LeSdlWrapper* m_renderer_controller;
+	SDL_Renderer* m_render;
+	
+
+public:
+			
+	void draw_point(unsigned int y, unsigned int x, unsigned int radius) { 
+		SDL_Point center;
+		center.x = x;
+		center.y = y;
+		draw_circle(center,radius);
+	}
+
+	void set_drawing_color(int r, int g, int b) {
+		SDL_SetRenderDrawColor(m_render,r,g,b,255);
+	}
+
+	void set_drawing_color(SDL_Color c) {
+		SDL_SetRenderDrawColor(m_render,c.r,c.g,c.b,255);
+	}
+
 
 	void draw_text(const char* s, unsigned int y, unsigned int x)
 	{
@@ -210,87 +294,6 @@ class LeSdlRendererManager
 			}
 		}
 	}
-
-	void refresh() {
-		SDL_SetRenderDrawColor( m_render, 0xFF, 0xFF, 0xFF, 0xFF );
-		SDL_RenderPresent( m_render );
-	}
-
-
-	
-};
-
-
-
-class LeSdlWrapper : public LeRenderBase , public LeEventControllerBase
-{
-
-public:
-	//TODO fixme game name in the title
-	LeSdlWrapper(){ //const char* title) {
-		m_render_manager = LeSdlRendererManager::get();
-	}
-
-/*	
-virtual void draw() {
-	scene_clear();
-	scene_prepare();
-	scene_draw();
-}
-*/	
-	
-virtual void enter_event_loop() {
-	SDL_Log("hav");
-	unsigned int lastTime = 0, currentTime;
-	unsigned int last_x = 0;
-	unsigned int last_y = 0 ;
-
-	SDL_Event e;
-	bool quit = false;
-	while( !quit ) {
-		currentTime = SDL_GetTicks();
-		if (currentTime > lastTime + 10) {
-
-			while( SDL_PollEvent( &e ) != 0 ) {
-				if ( e.type == SDL_QUIT ) quit = true;
-				else if ( e.type == SDL_MOUSEBUTTONDOWN && e.button.button == SDL_BUTTON_LEFT ) notify_mouse_pressed(1);
-				else if ( e.type == SDL_MOUSEBUTTONDOWN && e.button.button == SDL_BUTTON_RIGHT )notify_mouse_pressed(0);
-				else if ( e.type == SDL_MOUSEMOTION  ) 	notify_mouse_move(0,0);
-				//if ( e.type == SDL_MOUSEWHEEL)
-				//if ( e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_ESCAPE) 
-				//if ( e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_x) 
-			}
-
-			SDL_Log("hatuk");
-			//get_active_rnderer(
-			//LOG("this %p m_renderer_controller %p \n",(void*)this,(void*)m_renderer_controller);
-			if(m_renderer_controller) {
-				SDL_Log("?????\n");
-				m_render_manager->scene_clear();
-				m_renderer_controller->draw();
-				m_render_manager->scene_draw();
-			}
-						
-			lastTime = currentTime;  
-		}
-	}
-}
-
-
-
-static void set_rendering_controller(LeSdlWrapper* controller){
-	//LOG("set_rendering_controller %p --> %p\n",(void*)this, (void*)controller);
-	LOG("set_rendering_controller %p \n",(void*)controller);       
-	m_renderer_controller = controller;
-}
-
-private:
-	LeSdlRendererManager* m_render_manager;
-	
-
-private:
-	static LeSdlWrapper* m_renderer_controller;
-	
 
 };
 
