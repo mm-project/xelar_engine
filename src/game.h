@@ -26,8 +26,8 @@ class LeGame
 
 		void stop() {
 			//save as 
-                        //m_state_mgr-
-                        //LeStateManager.set
+            //m_state_mgr-
+            //LeStateManager.set
 		}
 
 	private:

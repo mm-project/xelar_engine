@@ -14,7 +14,7 @@ endif
 
 ifeq ($(OS),Windows_NT)
 	OUT=ChannelRouter.exe
-	FLAGS=-static-libstdc++ -DOS_WINDOWS -lmingw32
+	FLAGS=-static-libstdc++ -DOS_WINDOWS -lmingw32 
 	LIBS=-L ./deps/win/SDL2/lib/win32 -lSDL2 ./deps/win/SDL2/lib/win32/SDL2.lib ./deps/win/SDL2/lib/win32/SDL2main.lib ./deps/win/SDL2/lib/win32/SDL2test.lib
 	#LIBS=./deps/win/SDL2/lib/win32/SDL2.lib 
 	INCLS=-I ./deps/win/SDL2/include
@@ -27,4 +27,5 @@ default:
 	#cd ./src
 	clear
 	rm -f ./bin/$(OUT) 
-	g++ -Wfatal-errors -g $(SRCS) $(FLAGS) $(INCLS) $(LIBS) -o ./bin/$(OUT)
+	g++  -DOS_WINDOWS $(SRCS) -o ./bin/$(OUT) -I ./deps/win/SDL2/include -L ./deps/win/SDL2/lib/win32  -lmingw32 -lSDl2 -static-libgcc -static-libstdc++
+	#g++ -Wfatal-errors -g $(SRCS) $(FLAGS) $(INCLS) $(LIBS) -o ./bin/$(OUT)

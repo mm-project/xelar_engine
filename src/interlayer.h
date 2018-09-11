@@ -7,7 +7,7 @@ class LeInterLayer : public LeSdlWrapper
 {
 	public:
 		///rendering interlayer
-		virtual void scene_prepare() { draw(); } ;
+		//virtual void scene_prepare() { draw(); } ;
 		
 		//controlls interlayer
 		virtual void notify_mouse_pressed(unsigned int) = 0;
@@ -16,6 +16,8 @@ class LeInterLayer : public LeSdlWrapper
 		
 		virtual void draw() = 0;
 		
+		
+
 };
 
 

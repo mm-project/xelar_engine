@@ -6,16 +6,16 @@
 class LeMenuState : public LeInterLayer
 {
 	virtual void draw() {
-			scene_clear();
-                        set_drawing_color(255,0,0);
-			draw_rect(0,0,100,100);
-                        scene_draw();
-                        LOG("LeMenuState: draw\n");
+			//scene_clear();
+			//set_drawing_color(255,0,0);
+			//draw_rect(0,0,100,100);
+			//scene_draw();
+			LOG("LeMenuState: draw\n");
 	}
 
 	virtual void notify_mouse_pressed(unsigned int) {
 			SDL_Log("===LeMenuState: notify_mouse_pressed\n");
-                        LeStateManager::get()->set_state(ST_GAME);
+			LeStateManager::get()->set_state(ST_GAME);
 	}
 	
 	virtual void notify_key_pressed(unsigned int) {

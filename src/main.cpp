@@ -2,10 +2,12 @@
 
 LeStateManager* LeStateManager::m_instance = 0;
 LeSdlWrapper* LeSdlWrapper::m_renderer_controller = 0;
+LeSdlRendererManager* LeSdlRendererManager::m_instance = 0;
 
 int main( int argc, char* args[] )
 {
 LeGame game;
+	//game.parse_options(argc,argv);
 	game.start();    
 	//game.stop();
 	
