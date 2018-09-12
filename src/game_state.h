@@ -15,6 +15,7 @@ class LeGameState : public LeInterLayer
 	
 	virtual void init() {
 			register_image("./bin/debilik.png");
+                        register_image("./bin/fool_fish.png");
 
 			SDL_Log("LeGameState: init");
 			m_clicked = true;
@@ -43,6 +44,7 @@ class LeGameState : public LeInterLayer
 			SDL_Log("LeGameState: draw");
 
 			draw_image("./bin/debilik.png",old_rect_x,old_rect_y,5,5);
+			draw_image("./bin/fool_fish.png",m_y, m_x,5,5);
 		}
 	
 	
