@@ -2,12 +2,24 @@
 #define game_state_h
 
 #include "state_manager.h"
+#include <cassert>
 
 class LeGameState : public LeInterLayer
 {
+	/*public:
+
+	LeGameState() {
+			register_image("./bin/debilik.png");
+	}
+	*/
+	
 	virtual void init() {
+			register_image("./bin/debilik.png");
+
 			SDL_Log("LeGameState: init");
 			m_clicked = true;
+			
+			m_update_time = 0;
 			
 			m_x = 0;
 			m_y = 0;
@@ -17,45 +29,38 @@ class LeGameState : public LeInterLayer
 			rect_x = 0;
 			rect_y = 0;
 			
-			m_refresh_time = 300;
+			
+			old_rect_x = 0;
+			old_rect_y = 0;
+			
+			m_refresh_enemy_time = 10;
+			
+			rand_position();
 	}
 	
 	
 	virtual void draw() {
 			SDL_Log("LeGameState: draw");
-			set_drawing_color(255,255,0);
-			draw_point(m_y,m_x,m_size);
 
-			set_drawing_color(0,0,255);
-			if (m_clicked) {			
-				set_drawing_color(255,0,0);
-			}
-			draw_image("./bin/debilik.png",rect_x,rect_y,5,5);
-			draw_image("./bin/debilik2.png",m_x,m_y,3,3);
-			
-			
-			//set_drawing_color(255,255,0);
-			//draw_line(rect_x, rect_y, m_y, m_x);
-			//draw_line(rect_x, rect_y, m_y, m_x);
-			//draw_line(0, rect_y, 0, m_x);
-			//draw_line(rect_x, 0, m_y, 0);
-			render_hud();
+			draw_image("./bin/debilik.png",old_rect_x,old_rect_y,5,5);
 		}
 	
 	
 	virtual void update(unsigned int t) {
-			update_hud();
-			if ( t > m_update_time + m_refresh_time ) {
-				rect_x = rand()%400;
-				rect_y = rand()%400;
+			//assert(0);
+			if ( t > m_update_time + m_refresh_enemy_time ) {
+				//assert(0);
+				update_debilik_position();
+				if ( old_rect_x == rect_x && old_rect_y == rect_y ) {
+					//assert(0);
+					rand_position();
+				}
+			
 				m_update_time = t;
 			}
 			
-			m_clicked = false;
-			if ( check_intersection() )
-					m_clicked = true;
-					//m_refresh_time = 100000;
-					//m_clicked = !m_clicked;
+			
+		//m_clicked = !m_clicked;
 	}
 
 	virtual void notify_mouse_pressed(unsigned int) {
@@ -76,6 +81,19 @@ class LeGameState : public LeInterLayer
 	}
 	
 	private:
+		void update_debilik_position() {
+			if ( rect_x < old_rect_x  ) old_rect_x--;
+			if ( rect_x > old_rect_x  ) old_rect_x++;
+			if ( rect_y < old_rect_y  ) old_rect_y--;
+			if ( rect_y > old_rect_y  ) old_rect_y++;
+				
+		}
+		
+		void rand_position() {
+				rect_x = rand()%200;
+				rect_y = rand()%200;
+		}
+		
 		bool check_intersection() {
 				return ( ( rect_x-rect_size < m_y-m_size ) && ( rect_x+rect_size > m_y+m_size ) 
 					&&  ( rect_y-rect_size < m_x-m_size ) && ( rect_y+rect_size > m_x+m_size ) 
@@ -104,7 +122,10 @@ class LeGameState : public LeInterLayer
 		unsigned int rect_y;
 		unsigned int rect_size; 
 		
-		unsigned int m_refresh_time;
+		unsigned int old_rect_x; 
+		unsigned int old_rect_y;
+		
+		unsigned int m_refresh_enemy_time;
 		
 		unsigned int m_update_time;
 

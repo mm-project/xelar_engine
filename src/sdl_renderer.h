@@ -22,6 +22,9 @@
 #endif
 
 
+#include <string>
+#include <map>
+#include <utility>
 
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
@@ -320,6 +323,7 @@ private:
 private:
 	static LeSdlWrapper* m_renderer_controller;
 	SDL_Renderer* m_render;
+	std::map<std::string,std::pair<SDL_Texture*,SDL_Rect> > name2texture;
 	
 
 public:
@@ -362,19 +366,33 @@ public:
 
 
 	//todo more clever way?
-	void draw_image(const char* ipath, unsigned int y, unsigned int x, unsigned int cropw, unsigned int croph) {
-		SDL_Rect irect;
+	void register_image(const char* ipath) {
 		SDL_Surface* sf  = IMG_Load(ipath);
 		SDL_Texture* itexture = SDL_CreateTextureFromSurface(m_render,sf);
-		
-		int w, h;
+		delete sf;
+
+		auto w = 0;
+		auto h = 0;
 		SDL_QueryTexture(itexture, NULL, NULL, &w, &h);
+		SDL_Rect irect;
+		irect.w = w;
+		irect.h = h;
+		
+		name2texture[ipath] = std::make_pair(itexture,irect);
+	}
+	
+	void draw_image(const char* ipath, unsigned int y, unsigned int x, unsigned int cropw, unsigned int croph) {
+
+
+		std::pair<SDL_Texture*,SDL_Rect> info = name2texture[ipath];
+		
+		SDL_Rect irect;
 		irect.x = x;
 		irect.y = y;
-		irect.w = w/cropw;
-		irect.h = h/croph;
+		irect.w = info.second.w/cropw;
+		irect.h = info.second.h/croph;
 	
-		SDL_RenderCopy(m_render, itexture, NULL, &irect);
+		SDL_RenderCopy(m_render, info.first, NULL, &irect);
 	}
 	
 	void draw_square(unsigned int y, unsigned int x, unsigned int delta) {
