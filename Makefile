@@ -1,4 +1,4 @@
-OUT=ChannelRouter.bin
+PROGNAME=SimpleGame
 #FLAGS=-DTEXT_RENDER
 SRCS=src/main.cpp 
 
@@ -12,13 +12,13 @@ else
 	INCLS=-I ./deps/linux/SDL2/include 
 endif
 
+OUT=$(PROGNAME).bin
 ifeq ($(OS),Windows_NT)
-	OUT=ChannelRouter.exe
-	FLAGS=-static-libstdc++ -DOS_WINDOWS -lmingw32 
-	LIBS=-L ./deps/win/SDL2/lib/win32 -lSDL2 ./deps/win/SDL2/lib/win32/SDL2.lib ./deps/win/SDL2/lib/win32/SDL2main.lib ./deps/win/SDL2/lib/win32/SDL2test.lib
-	#LIBS=./deps/win/SDL2/lib/win32/SDL2.lib 
-	INCLS=-I ./deps/win/SDL2/include
-	#cp ./deps/win/SDL2/lib/win32/SDL2.dll ./bin
+	OUT=$(PROGNAME).exe
+	FLAGS=-DIMAGE_RENDER -DOS_WINDOWS -static-libgcc -static-libstdc++ 
+	#LIBS=-L ./deps/win/SDL2/lib/win32 -lSDL2 -L ./deps/win/SDL2_image-2.0.3/x86/lib -lSDL2_image 
+	LIBS=./deps/win/SDL2-2.0.8/lib/x86/SDL2.lib  ./deps/win/SDL2_image-2.0.3/lib/x86/SDL2_image.lib
+	INCLS=-I ./deps/win/SDL2-2.0.8/include -I ./deps/win/SDL2_image-2.0.3/include
 endif
 
 
@@ -27,5 +27,6 @@ default:
 	#cd ./src
 	clear
 	rm -f ./bin/$(OUT) 
-	g++  -DOS_WINDOWS $(SRCS) -o ./bin/$(OUT) -I ./deps/win/SDL2/include -L ./deps/win/SDL2/lib/win32  -lmingw32 -lSDl2 -static-libgcc -static-libstdc++
-	#g++ -Wfatal-errors -g $(SRCS) $(FLAGS) $(INCLS) $(LIBS) -o ./bin/$(OUT)
+	g++ -Wfatal-errors -g $(SRCS) $(FLAGS) $(INCLS) $(LIBS) -o ./bin/$(OUT)
+	cp ./deps/win/SDL2-2.0.8/lib/x86/SDL2.dll ./bin
+	cp ./deps/win/SDL2_image-2.0.3/lib/x86/* ./bin

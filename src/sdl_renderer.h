@@ -10,6 +10,10 @@
 	#include <SDL_ttf.h>
 #endif
 
+#ifdef IMAGE_RENDER
+	#include <SDL_image.h>
+#endif
+
 
 #ifdef DOS_ANDROID
 	#define LOG SDL_Log
@@ -99,14 +103,15 @@ class LeSdlRendererManager
 					LOG( "Renderer could not be created! SDL Error: %s\n", SDL_GetError() );
 					success = false;
 				}
-				/*
+				///*
 				else
 				{
 				//Initialize renderer color
 				//SDL_SetRenderDrawColor( m_render, 0xFF, 0xFF, 0xFF, 0xFF );
 
 				//Initialize PNG loading
-				/*int imgFlags = IMG_INIT_PNG;
+				//*
+				int imgFlags = IMG_INIT_PNG;
 					if( !( IMG_Init( imgFlags ) & imgFlags ) )
 					{
 					LOG( "SDL_image could not initialize! SDL_image Error: %s\n", IMG_GetError() );
@@ -114,7 +119,7 @@ class LeSdlRendererManager
 					}
 				
 				}
-				*/
+				/**/
 			}
 		}
 
@@ -195,7 +200,8 @@ class LeSdlRendererManager
 
 
 	void change_background_image() {
-		SDL_Surface *background = SDL_LoadBMP("./bin/sky_bg.bmp");
+		//SDL_Surface* background = SDL_LoadBMP("./bin/sky_bg.png");
+		SDL_Surface* background = IMG_Load("./bin/sky_bg.jpg");
 		if(background == NULL)
 		{
 			SDL_ShowSimpleMessageBox(0, "Background init error",         SDL_GetError(), m_window);
@@ -213,11 +219,12 @@ class LeSdlRendererManager
 		}
 		
 		SDL_RenderCopy(m_render, m_bg_texture, NULL, NULL);
+		delete background;
 
 	}
 	
 	void render_background_image() {
-			SDL_RenderCopy(m_render, m_bg_texture, NULL, NULL);
+		SDL_RenderCopy(m_render, m_bg_texture, NULL, NULL);
 	
 	}
 	
@@ -354,6 +361,22 @@ public:
 	}
 
 
+	//todo more clever way?
+	void draw_image(const char* ipath, unsigned int y, unsigned int x, unsigned int cropw, unsigned int croph) {
+		SDL_Rect irect;
+		SDL_Surface* sf  = IMG_Load(ipath);
+		SDL_Texture* itexture = SDL_CreateTextureFromSurface(m_render,sf);
+		
+		int w, h;
+		SDL_QueryTexture(itexture, NULL, NULL, &w, &h);
+		irect.x = x;
+		irect.y = y;
+		irect.w = w/cropw;
+		irect.h = h/croph;
+	
+		SDL_RenderCopy(m_render, itexture, NULL, &irect);
+	}
+	
 	void draw_square(unsigned int y, unsigned int x, unsigned int delta) {
 		draw_rect(y-delta,x-delta,2*delta,2*delta);
 	}  

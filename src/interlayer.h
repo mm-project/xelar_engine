@@ -16,13 +16,7 @@ class LeInterLayer : public LeSdlWrapper
 		
 		virtual void draw() = 0;
 		virtual void init() = 0;
-		
-		
-		
-		
-		
-		
-
+		virtual void update(unsigned int) = 0;	
 };
 
 

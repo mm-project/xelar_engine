@@ -17,38 +17,44 @@ class LeGameState : public LeInterLayer
 			rect_x = 0;
 			rect_y = 0;
 			
-			m_refresh_time = 3000;
+			m_refresh_time = 300;
 	}
 	
 	
 	virtual void draw() {
 			SDL_Log("LeGameState: draw");
-			set_drawing_color(0,255,0);
-			draw_square(rect_x,rect_y,rect_size);
-						
+			set_drawing_color(255,255,0);
+			draw_point(m_y,m_x,m_size);
+
+			set_drawing_color(0,0,255);
 			if (m_clicked) {			
 				set_drawing_color(255,0,0);
-				draw_point(m_y,m_x,m_size);
 			}
+			draw_image("./bin/debilik.png",rect_x,rect_y,5,5);
+			draw_image("./bin/debilik2.png",m_x,m_y,3,3);
 			
-			set_drawing_color(255,255,0);
+			
+			//set_drawing_color(255,255,0);
 			//draw_line(rect_x, rect_y, m_y, m_x);
 			//draw_line(rect_x, rect_y, m_y, m_x);
 			//draw_line(0, rect_y, 0, m_x);
 			//draw_line(rect_x, 0, m_y, 0);
-			
+			render_hud();
 		}
 	
 	
 	virtual void update(unsigned int t) {
+			update_hud();
 			if ( t > m_update_time + m_refresh_time ) {
 				rect_x = rand()%400;
 				rect_y = rand()%400;
 				m_update_time = t;
 			}
 			
+			m_clicked = false;
 			if ( check_intersection() )
-					m_refresh_time = 100000;
+					m_clicked = true;
+					//m_refresh_time = 100000;
 					//m_clicked = !m_clicked;
 	}
 
@@ -76,6 +82,18 @@ class LeGameState : public LeInterLayer
 				);
 		}
 				
+	
+		void render_hud() {
+			set_drawing_color(255,255,255);
+			draw_rect(400,0,100,800);
+			
+		}
+		
+		
+		void update_hud() {
+		
+		}
+		
 	private:
 		bool m_clicked;
 		unsigned int m_x; 
