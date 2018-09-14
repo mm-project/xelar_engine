@@ -12,7 +12,7 @@ class LeMenuState : public LeInterLayer
 	virtual void draw() {
 			set_drawing_color(255,0,0);
 			draw_rect(0,0,100,100);
-			LOG("LeMenuState: draw\n");
+			//LOG("LeMenuState: draw\n");
 	}
 
 	virtual void update(unsigned int currentTime) {
@@ -21,8 +21,8 @@ class LeMenuState : public LeInterLayer
 	}
 
 	virtual void notify_mouse_pressed(unsigned int) {
-			SDL_Log("===LeMenuState: notify_mouse_pressed\n");
-			LeStateManager::get()->set_state(ST_PAUSE);
+			//SDL_Log("===LeMenuState: notify_mouse_pressed\n");
+			LeStateManager::get()->set_state(ST_GAME);
 	}
 	
 	virtual void notify_key_pressed(unsigned int) {

@@ -34,7 +34,7 @@ class LeStateManager
 		}
 	
 		void set_start_state( LeState st ) {
-			set_state(ST_GAME);
+			set_state(ST_MENU);
 			m_current_state->enter_event_loop();
 		}
 	

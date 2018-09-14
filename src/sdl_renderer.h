@@ -374,6 +374,7 @@ public:
 		auto w = 0;
 		auto h = 0;
 		SDL_QueryTexture(itexture, NULL, NULL, &w, &h);
+	
 		SDL_Rect irect;
 		irect.w = w;
 		irect.h = h;
@@ -382,8 +383,6 @@ public:
 	}
 	
 	void draw_image(const char* ipath, unsigned int y, unsigned int x, unsigned int cropw, unsigned int croph) {
-
-
 		std::pair<SDL_Texture*,SDL_Rect> info = name2texture[ipath];
 		
 		SDL_Rect irect;

@@ -7,7 +7,7 @@ class LePauseState : public LeInterLayer
 {
 	
 	virtual void init() {
-			SDL_Log("LePauseState: init");
+			//SDL_Log("LePauseState: init");
 	}
 	
 	virtual void draw() {
@@ -21,17 +21,17 @@ class LePauseState : public LeInterLayer
 	}
 
 	virtual void notify_mouse_pressed(unsigned int) {
-			SDL_Log("LePauseState: notify_mouse_pressed");
+			//SDL_Log("LePauseState: notify_mouse_pressed");
 			LeStateManager::get()->set_state(ST_GAME);
 	}
 	
 	virtual void notify_key_pressed(unsigned int) {
-			SDL_Log("LePauseState: notify_key_pressed");
+			//SDL_Log("LePauseState: notify_key_pressed");
 			
 	}
 	
 	virtual void notify_mouse_move(unsigned int x, unsigned int y) {
-			SDL_Log("LePauseState: notify_mouse_moved");
+			//SDL_Log("LePauseState: notify_mouse_moved");
 	}
 	
 
