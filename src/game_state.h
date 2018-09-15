@@ -71,25 +71,25 @@ class LeGameState : public LeInterLayer
 		draw_image(obj.m_img_path.c_str(),obj.m_x,obj.m_y,obj.m_c_x,obj.m_c_y);
 	}
 	
-	void draw_obj1(LeObj& obj) {
+	void draw_obj_in_movement(LeObj& obj) {
 		draw_image(obj.m_img_path.c_str(),obj.m_old_x,obj.m_old_y,obj.m_c_x,obj.m_c_y);
 	}
 	
 	
 	void draw_player() {
 		//draw_image("./bin/player.png",m_y,m_x,15,15);
-		draw_obj1(m_player);
+		draw_obj_in_movement(m_player);
 		
 	}
 	
 	void draw_enemies() {
-		//std::for_each(m_enemies.begin(),m_enemies.end(), std::bind1st(std::mem_fun(&LeGameState::draw_obj1), this));
-		for(int i=0;i<m_enemies.size();i++) draw_obj1(m_enemies[i]);
+		//std::for_each(m_enemies.begin(),m_enemies.end(), std::bind1st(std::mem_fun(&LeGameState::draw_obj_in_movement), this));
+		for(int i=0;i<m_enemies.size();i++) draw_obj_in_movement(m_enemies[i]);
 	}
 	
 
 	void draw_bonuses() {
-		//std::for_each(m_enemies.begin(),m_enemies.end(),draw_obj1);
+		//std::for_each(m_enemies.begin(),m_enemies.end(),draw_obj_in_movement);
 		for(int i=0;i<m_coins.size();i++) draw_obj(m_coins[i]);
 	}
 	
@@ -129,12 +129,17 @@ class LeGameState : public LeInterLayer
 	private:
 		
 		void update_enemies() {
-			//update_automove_object(m_enemies[0],true);
+			update_automove_object(m_enemies[0],true);
 			update_automove_object(m_player,false);
+			update_automove_object(m_enemies[0],true);
+			update_automove_object2(m_enemies[1]);
+			update_automove_object2(m_enemies[2]);
+			//update_automove_object2(m_enemies[1]);
 			
-			for(int i=0;i<m_enemies.size();i++) update_automove_object(m_enemies[i],true);
+			
+			//update_automove_object(m))
+			//for(int i=0;i<m_enemies.size();i++) update_automove_object(m_enemies[i],true);
 			//std::for_each(m_enemies.begin(),m_enemies.end(),update_debilik_position);
-
 		}
 		
 		void  update_automove_object(LeObj& obj, bool rand) {
@@ -142,6 +147,15 @@ class LeGameState : public LeInterLayer
 			if ( obj.m_old_x ==obj.m_x && obj.m_old_y ==obj.m_y ) {
 				//assert(0);
 				if(rand) rand_position(obj);
+			}		
+		}
+		
+		void  update_automove_object2(LeObj& obj) {
+			update_object_position(obj);
+			if ( 0 == obj.m_old_y ) obj.m_old_x = rand()%400;
+		 	if ( obj.m_old_y ==obj.m_y  ) {
+				//assert(0);
+				rand_line(obj);
 			}		
 		}
 		
@@ -157,6 +171,12 @@ class LeGameState : public LeInterLayer
 		void rand_position(LeObj& o) {
 				o.m_x = rand()%500;
 				o.m_y = rand()%600;
+		}
+		
+		void rand_line(LeObj& o) {
+				o.m_old_y = 900;
+				o.m_y = 0;
+				o.m_x = o.m_old_x;
 		}
 		
 	
