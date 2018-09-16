@@ -19,7 +19,10 @@ public:
 		m_old_x = 0;
 		m_old_y = 0;
 	}
-
+	
+	bool is_intersecting() {
+	
+	}
 	
 std::string m_img_path;
 unsigned int m_old_x;
