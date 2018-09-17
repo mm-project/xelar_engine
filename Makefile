@@ -1,6 +1,6 @@
 PROGNAME=SimpleGame
 #FLAGS=-DTEXT_RENDER
-SRCS=src/main.cpp 
+SRCS=src/main.cpp src/menu.cpp
 
 ifeq ($(USER),levons)
 	LIBS=-L ~/levi/downloads/SDL2-2.0.5/build/.libs -lSDL2 -lfreetype -ldl -lrt

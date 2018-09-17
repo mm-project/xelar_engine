@@ -2,41 +2,21 @@
 #define menu_h
 
 #include <vector>
-#include <string>
 
-class LeMenu;
-
-class LeMenuItem 
-{
-	public:	
-		LeMenu* get() {
-			//m_children = new LeMenu;
-			return m_children;
-		}
-		
-		//LeMenuItem* add_item(const std::string& name) {
-			//m_children->add_item(name);
-		//}
-		
-	private:
-		LeMenu* m_children;
-};
+#include "object.h"
+#include "menuitem.h"
 
 
 class LeMenu {
 
 	public: 
 		
-		LeMenuItem* add_item(const std::string& name) {
-				LeMenuItem* item = new LeMenuItem;
-				m_items.push_back(item);
-				return item;
-		}
+		LeMenuItem* add_item(const LeObj& o);
 		
-		std::vector<LeMenuItem*> get_items() {
-			return m_items;
-		}
+		std::vector<LeMenuItem*> get_items();
 			
+		LeMenuItem* get_item_by_pos(unsigned int x, unsigned int y);
+		
 	private:
 		std::vector<LeMenuItem*> m_items;
 };	

@@ -3,6 +3,7 @@
 
 #include "state_manager.h"
 #include "object.h"
+#include "image.h"
 
 #include <cassert>
 #include <vector>
@@ -15,14 +16,15 @@ class LeGameState : public LeInterLayer
 	//class LeObj;
 	
 	LeGameState() {
-			register_image("./bin/debilik.png");
-			register_image("./bin/debilik2.png");
-			register_image("./bin/debilik3.png");
-			register_image("./bin/debilik4.png");
+			m_imgs.push_back(register_image("./bin/debilik.png")); //0
+			m_imgs.push_back(register_image("./bin/debilik2.png")); //1
+			m_imgs.push_back(register_image("./bin/debilik3.png")); //2
+			m_imgs.push_back(register_image("./bin/debilik4.png")); //3
 			
-			register_image("./bin/coin.png");
-			register_image("./bin/player.png");
+			m_imgs.push_back(register_image("./bin/coin.png")); //4
+			m_imgs.push_back(register_image("./bin/player.png")); //5
 	}
+	
 	
 	
 	virtual void init() {
@@ -33,20 +35,20 @@ class LeGameState : public LeInterLayer
 			
 			m_x = 0;
 			m_y = 0;
-			m_player = LeObj("./bin/player.png",0,0,15,15);
+			m_player = LeObj(m_imgs[5],0,0,15,15);
 			
 			m_refresh_enemy_time = 10;
 			
 			
 			for(int i=0; i<20; i++ ) {
-				m_coins.push_back(LeObj("./bin/coin.png",rand()%600,rand()%700,20,20));
+				m_coins.push_back(LeObj(m_imgs[4],rand()%600,rand()%700,20,20));
 			}
 			
 
-			m_enemies.push_back(LeObj("./bin/debilik.png",rand()%600,rand()%700,6,6));
+			m_enemies.push_back(LeObj(m_imgs[0],rand()%600,rand()%700,6,6));
 			//m_enemies.push_back(LeObj("./bin/debilik2.png",rand()%600,rand()%700,5,5));
-			m_enemies.push_back(LeObj("./bin/debilik3.png",rand()%600,rand()%700,6,6));
-			m_enemies.push_back(LeObj("./bin/debilik4.png",rand()%600,rand()%700,4,4));
+			m_enemies.push_back(LeObj(m_imgs[2],rand()%600,rand()%700,6,6));
+			m_enemies.push_back(LeObj(m_imgs[3],rand()%600,rand()%700,4,4));
 			
 			rand_position(m_player);
 			rand_position(m_enemies[0]);
@@ -220,6 +222,7 @@ class LeGameState : public LeInterLayer
 		LeObj m_player;
 		std::vector<LeObj> m_coins;
 		std::vector<LeObj> m_enemies;
+		std::vector<LeImg> m_imgs;
 		
 	
 };

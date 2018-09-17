@@ -366,7 +366,7 @@ public:
 
 
 	//todo more clever way?
-	void register_image(const char* ipath) {
+	std::pair<std::string, std::pair<unsigned int,unsigned int> > register_image(const char* ipath) {
 		SDL_Surface* sf  = IMG_Load(ipath);
 		SDL_Texture* itexture = SDL_CreateTextureFromSurface(m_render,sf);
 		delete sf;
@@ -380,6 +380,7 @@ public:
 		irect.h = h;
 		
 		name2texture[ipath] = std::make_pair(itexture,irect);
+		return std::make_pair(ipath,std::make_pair(w,h));
 	}
 	
 	void draw_image(const char* ipath, unsigned int y, unsigned int x, unsigned int cropw, unsigned int croph) {
