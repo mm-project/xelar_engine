@@ -16,8 +16,8 @@ public:
 	LeObj(const  LeImg& img, unsigned int x, unsigned int y, unsigned int crop_factor_x, unsigned int crop_factor_y )
 	{
 		m_img_path = img.get_path();
-		m_width = img.get_width();
-		m_height = img.get_height();
+		m_width = img.get_width()/crop_factor_y;
+		m_height = img.get_height()/crop_factor_x;
 		m_x = x;
 		m_y = y;
 		m_c_x = crop_factor_x;
@@ -26,6 +26,9 @@ public:
 		m_old_y = y;	
 	}
 	
+	void change_img(const  LeImg& img) {
+		
+	}
 	/*
 	LeObj(const char* imgnmae, unsigned int x,	unsigned int y, unsigned int c_x, unsigned int c_y, 
 		unsigned width = 0, unsigned height = 0) 

@@ -10,7 +10,7 @@ LeMenuItem* LeMenu::add_item(const LeObj& o) {
 		return item;
 }
 
-std::vector<LeMenuItem*>  LeMenu::get_items() {
+std::vector<LeMenuItem*>  LeMenu::get_items() const {
 	return m_items;
 }
 	
