@@ -2,6 +2,7 @@
 #define object_h
 
 #include "image.h"
+#include "common.h"
 
 #include <string>
 #include <iostream>

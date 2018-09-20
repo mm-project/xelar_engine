@@ -121,9 +121,9 @@ class LeGameState : public LeInterLayer
 	
 	void set_timer_checkpoints() {
 		m_timer.add_continuous_checkpoint(std::bind(&LeGameState::update_player,this),10);
-		m_timer.add_continuous_checkpoint(std::bind(&LeGameState::update_fast_enemies,this),100);
-		m_timer.add_continuous_checkpoint(std::bind(&LeGameState::update_slow_enemies,this),50);
-		m_timer.add_continuous_checkpoint(std::bind(&LeGameState::check_intersection,this),12);		
+		m_timer.add_continuous_checkpoint(std::bind(&LeGameState::update_fast_enemies,this),10);
+		m_timer.add_continuous_checkpoint(std::bind(&LeGameState::update_slow_enemies,this),10);
+		m_timer.add_continuous_checkpoint(std::bind(&LeGameState::check_intersection,this),10);		
 	}
 	
 	virtual void notify_mouse_pressed(unsigned int) {
@@ -208,7 +208,7 @@ class LeGameState : public LeInterLayer
 				assert(0);	
 				//SDL_Log("11111\n");
 			else
-				SDL_Log("22222\n");
+				LOG("22222\n");
 			}
 	
 		/*
