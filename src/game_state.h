@@ -121,8 +121,8 @@ class LeGameState : public LeInterLayer
 	
 	void set_timer_checkpoints() {
 		m_timer.add_continuous_checkpoint(std::bind(&LeGameState::update_player,this),10);
-		m_timer.add_continuous_checkpoint(std::bind(&LeGameState::update_fast_enemies,this),10);
-		m_timer.add_continuous_checkpoint(std::bind(&LeGameState::update_slow_enemies,this),10);
+		m_timer.add_continuous_checkpoint(std::bind(&LeGameState::update_fast_enemies,this),30);
+		m_timer.add_continuous_checkpoint(std::bind(&LeGameState::update_slow_enemies,this),100);
 		m_timer.add_continuous_checkpoint(std::bind(&LeGameState::check_intersection,this),10);		
 	}
 	
