@@ -105,7 +105,11 @@ class LeGameState : public LeInterLayer
 	
 	
 	virtual void update(unsigned int t) {
-		m_timer.step(t);
+		//m_timer.step(t);
+		if ( t > m_update_time + 50 ) {
+			update_fast_enemies();
+		}
+		m_update_time = t;
 	}
 
 	void update_fast_enemies() {
@@ -120,10 +124,10 @@ class LeGameState : public LeInterLayer
 	
 	
 	void set_timer_checkpoints() {
-		m_timer.add_continuous_checkpoint(std::bind(&LeGameState::update_player,this),10);
-		m_timer.add_continuous_checkpoint(std::bind(&LeGameState::update_fast_enemies,this),30);
-		m_timer.add_continuous_checkpoint(std::bind(&LeGameState::update_slow_enemies,this),100);
-		m_timer.add_continuous_checkpoint(std::bind(&LeGameState::check_intersection,this),10);		
+		m_timer.add_continuous_checkpoint(std::bind(&LeGameState::update_player,this),3);
+		m_timer.add_continuous_checkpoint(std::bind(&LeGameState::update_fast_enemies,this),3);
+		m_timer.add_continuous_checkpoint(std::bind(&LeGameState::update_slow_enemies,this),3);
+		m_timer.add_continuous_checkpoint(std::bind(&LeGameState::check_intersection,this),3);		
 	}
 	
 	virtual void notify_mouse_pressed(unsigned int) {
