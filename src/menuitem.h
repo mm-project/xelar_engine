@@ -4,15 +4,23 @@
 
 #include "object.h"
 #include "menu.h"
+#include "common.h"
+
+#include <functional>
 
 class LeMenu;
+
+
 
 class LeMenuItem 
 {
 	public:	
-		LeMenuItem(const LeObj& o) {
+		LeMenuItem(const LeObj& o, const actionFun& f = nullptr ) {
 			m_object = o;
 			m_having_submenu = false;
+			m_has_action = false;
+			m_action_function = f;
+			if ( m_action_function != nullptr ) m_has_action = true;
 		}
 		
 		LeObj get_object() const {
@@ -24,7 +32,6 @@ class LeMenuItem
 				m_submenu = m; //new LeMenu;
 				m_having_submenu = true;
 			}
-
 			return m_submenu;
 		}
 		
@@ -37,7 +44,8 @@ class LeMenuItem
 		}
 		
 		void execute_action() {
-			//m_function();
+			if (!m_has_action) return;
+			m_action_function();
 		}
 		//LeMenuItem* add_item(const std::string& name) {
 			//m_children->add_item(name);
@@ -49,8 +57,14 @@ class LeMenuItem
 		LeObj m_object;
 		bool m_having_submenu;
 		bool m_has_action;
-		//std::function m_function;
+		actionFun m_action_function;
 };
+
+//class LeMenuItemWithAction
+//{
+//	
+//};
+
 
 
 #endif

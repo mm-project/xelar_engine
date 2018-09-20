@@ -1,0 +1,745 @@
+init start
+Regstate -> 1 0x351ed0
+Regstate -> 2 0x24b0e40
+Regstate -> 3 0x24b0e90
+STATEMANAGER: set_state 3
+STATEMANAGER: m_current_state 024b0e90
+set_rendering_controller 024b0e90 
+current: 422 , last: 0 
+ --> current: 422 , last: 0 , sum: 10 , funct 0028fbf0 
+   ----> current: 422 , last: 0 , sum: 10 , funct 0028fbf0 
+ --> current: 422 , last: 0 , sum: 100 , funct 0028fc18 
+   ----> current: 422 , last: 0 , sum: 100 , funct 0028fc18 
+ --> current: 422 , last: 0 , sum: 50 , funct 0028fc40 
+   ----> current: 422 , last: 0 , sum: 50 , funct 0028fc40 
+ --> current: 422 , last: 0 , sum: 12 , funct 0028fc68 
+   ----> current: 422 , last: 0 , sum: 12 , funct 0028fc68 
+current: 556 , last: 422 
+ --> current: 556 , last: 422 , sum: 432 , funct 0028fbf0 
+   ----> current: 556 , last: 422 , sum: 432 , funct 0028fbf0 
+ --> current: 556 , last: 422 , sum: 522 , funct 0028fc18 
+   ----> current: 556 , last: 422 , sum: 522 , funct 0028fc18 
+ --> current: 556 , last: 422 , sum: 472 , funct 0028fc40 
+   ----> current: 556 , last: 422 , sum: 472 , funct 0028fc40 
+ --> current: 556 , last: 422 , sum: 434 , funct 0028fc68 
+   ----> current: 556 , last: 422 , sum: 434 , funct 0028fc68 
+current: 567 , last: 556 
+ --> current: 567 , last: 556 , sum: 988 , funct 0028fbf0 
+   ----> current: 567 , last: 556 , sum: 988 , funct 0028fbf0 
+ --> current: 567 , last: 556 , sum: 1078 , funct 0028fc18 
+   ----> current: 567 , last: 556 , sum: 1078 , funct 0028fc18 
+ --> current: 567 , last: 556 , sum: 1028 , funct 0028fc40 
+   ----> current: 567 , last: 556 , sum: 1028 , funct 0028fc40 
+ --> current: 567 , last: 556 , sum: 990 , funct 0028fc68 
+   ----> current: 567 , last: 556 , sum: 990 , funct 0028fc68 
+current: 578 , last: 567 
+ --> current: 578 , last: 567 , sum: 1555 , funct 0028fbf0 
+   ----> current: 578 , last: 567 , sum: 1555 , funct 0028fbf0 
+ --> current: 578 , last: 567 , sum: 1645 , funct 0028fc18 
+   ----> current: 578 , last: 567 , sum: 1645 , funct 0028fc18 
+ --> current: 578 , last: 567 , sum: 1595 , funct 0028fc40 
+   ----> current: 578 , last: 567 , sum: 1595 , funct 0028fc40 
+ --> current: 578 , last: 567 , sum: 1557 , funct 0028fc68 
+   ----> current: 578 , last: 567 , sum: 1557 , funct 0028fc68 
+current: 589 , last: 578 
+ --> current: 589 , last: 578 , sum: 2133 , funct 0028fbf0 
+   ----> current: 589 , last: 578 , sum: 2133 , funct 0028fbf0 
+ --> current: 589 , last: 578 , sum: 2223 , funct 0028fc18 
+   ----> current: 589 , last: 578 , sum: 2223 , funct 0028fc18 
+ --> current: 589 , last: 578 , sum: 2173 , funct 0028fc40 
+   ----> current: 589 , last: 578 , sum: 2173 , funct 0028fc40 
+ --> current: 589 , last: 578 , sum: 2135 , funct 0028fc68 
+   ----> current: 589 , last: 578 , sum: 2135 , funct 0028fc68 
+current: 600 , last: 589 
+ --> current: 600 , last: 589 , sum: 2722 , funct 0028fbf0 
+   ----> current: 600 , last: 589 , sum: 2722 , funct 0028fbf0 
+ --> current: 600 , last: 589 , sum: 2812 , funct 0028fc18 
+   ----> current: 600 , last: 589 , sum: 2812 , funct 0028fc18 
+ --> current: 600 , last: 589 , sum: 2762 , funct 0028fc40 
+   ----> current: 600 , last: 589 , sum: 2762 , funct 0028fc40 
+ --> current: 600 , last: 589 , sum: 2724 , funct 0028fc68 
+   ----> current: 600 , last: 589 , sum: 2724 , funct 0028fc68 
+current: 611 , last: 600 
+ --> current: 611 , last: 600 , sum: 3322 , funct 0028fbf0 
+   ----> current: 611 , last: 600 , sum: 3322 , funct 0028fbf0 
+ --> current: 611 , last: 600 , sum: 3412 , funct 0028fc18 
+   ----> current: 611 , last: 600 , sum: 3412 , funct 0028fc18 
+ --> current: 611 , last: 600 , sum: 3362 , funct 0028fc40 
+   ----> current: 611 , last: 600 , sum: 3362 , funct 0028fc40 
+ --> current: 611 , last: 600 , sum: 3324 , funct 0028fc68 
+   ----> current: 611 , last: 600 , sum: 3324 , funct 0028fc68 
+current: 622 , last: 611 
+ --> current: 622 , last: 611 , sum: 3933 , funct 0028fbf0 
+   ----> current: 622 , last: 611 , sum: 3933 , funct 0028fbf0 
+ --> current: 622 , last: 611 , sum: 4023 , funct 0028fc18 
+   ----> current: 622 , last: 611 , sum: 4023 , funct 0028fc18 
+ --> current: 622 , last: 611 , sum: 3973 , funct 0028fc40 
+   ----> current: 622 , last: 611 , sum: 3973 , funct 0028fc40 
+ --> current: 622 , last: 611 , sum: 3935 , funct 0028fc68 
+   ----> current: 622 , last: 611 , sum: 3935 , funct 0028fc68 
+current: 633 , last: 622 
+ --> current: 633 , last: 622 , sum: 4555 , funct 0028fbf0 
+   ----> current: 633 , last: 622 , sum: 4555 , funct 0028fbf0 
+ --> current: 633 , last: 622 , sum: 4645 , funct 0028fc18 
+   ----> current: 633 , last: 622 , sum: 4645 , funct 0028fc18 
+ --> current: 633 , last: 622 , sum: 4595 , funct 0028fc40 
+   ----> current: 633 , last: 622 , sum: 4595 , funct 0028fc40 
+ --> current: 633 , last: 622 , sum: 4557 , funct 0028fc68 
+   ----> current: 633 , last: 622 , sum: 4557 , funct 0028fc68 
+current: 644 , last: 633 
+ --> current: 644 , last: 633 , sum: 5188 , funct 0028fbf0 
+   ----> current: 644 , last: 633 , sum: 5188 , funct 0028fbf0 
+ --> current: 644 , last: 633 , sum: 5278 , funct 0028fc18 
+   ----> current: 644 , last: 633 , sum: 5278 , funct 0028fc18 
+ --> current: 644 , last: 633 , sum: 5228 , funct 0028fc40 
+   ----> current: 644 , last: 633 , sum: 5228 , funct 0028fc40 
+ --> current: 644 , last: 633 , sum: 5190 , funct 0028fc68 
+   ----> current: 644 , last: 633 , sum: 5190 , funct 0028fc68 
+current: 655 , last: 644 
+ --> current: 655 , last: 644 , sum: 5832 , funct 0028fbf0 
+   ----> current: 655 , last: 644 , sum: 5832 , funct 0028fbf0 
+ --> current: 655 , last: 644 , sum: 5922 , funct 0028fc18 
+   ----> current: 655 , last: 644 , sum: 5922 , funct 0028fc18 
+ --> current: 655 , last: 644 , sum: 5872 , funct 0028fc40 
+   ----> current: 655 , last: 644 , sum: 5872 , funct 0028fc40 
+ --> current: 655 , last: 644 , sum: 5834 , funct 0028fc68 
+   ----> current: 655 , last: 644 , sum: 5834 , funct 0028fc68 
+current: 666 , last: 655 
+ --> current: 666 , last: 655 , sum: 6487 , funct 0028fbf0 
+   ----> current: 666 , last: 655 , sum: 6487 , funct 0028fbf0 
+ --> current: 666 , last: 655 , sum: 6577 , funct 0028fc18 
+   ----> current: 666 , last: 655 , sum: 6577 , funct 0028fc18 
+ --> current: 666 , last: 655 , sum: 6527 , funct 0028fc40 
+   ----> current: 666 , last: 655 , sum: 6527 , funct 0028fc40 
+ --> current: 666 , last: 655 , sum: 6489 , funct 0028fc68 
+   ----> current: 666 , last: 655 , sum: 6489 , funct 0028fc68 
+current: 677 , last: 666 
+ --> current: 677 , last: 666 , sum: 7153 , funct 0028fbf0 
+   ----> current: 677 , last: 666 , sum: 7153 , funct 0028fbf0 
+ --> current: 677 , last: 666 , sum: 7243 , funct 0028fc18 
+   ----> current: 677 , last: 666 , sum: 7243 , funct 0028fc18 
+ --> current: 677 , last: 666 , sum: 7193 , funct 0028fc40 
+   ----> current: 677 , last: 666 , sum: 7193 , funct 0028fc40 
+ --> current: 677 , last: 666 , sum: 7155 , funct 0028fc68 
+   ----> current: 677 , last: 666 , sum: 7155 , funct 0028fc68 
+current: 688 , last: 677 
+ --> current: 688 , last: 677 , sum: 7830 , funct 0028fbf0 
+   ----> current: 688 , last: 677 , sum: 7830 , funct 0028fbf0 
+ --> current: 688 , last: 677 , sum: 7920 , funct 0028fc18 
+   ----> current: 688 , last: 677 , sum: 7920 , funct 0028fc18 
+ --> current: 688 , last: 677 , sum: 7870 , funct 0028fc40 
+   ----> current: 688 , last: 677 , sum: 7870 , funct 0028fc40 
+ --> current: 688 , last: 677 , sum: 7832 , funct 0028fc68 
+   ----> current: 688 , last: 677 , sum: 7832 , funct 0028fc68 
+current: 699 , last: 688 
+ --> current: 699 , last: 688 , sum: 8518 , funct 0028fbf0 
+   ----> current: 699 , last: 688 , sum: 8518 , funct 0028fbf0 
+ --> current: 699 , last: 688 , sum: 8608 , funct 0028fc18 
+   ----> current: 699 , last: 688 , sum: 8608 , funct 0028fc18 
+ --> current: 699 , last: 688 , sum: 8558 , funct 0028fc40 
+   ----> current: 699 , last: 688 , sum: 8558 , funct 0028fc40 
+ --> current: 699 , last: 688 , sum: 8520 , funct 0028fc68 
+   ----> current: 699 , last: 688 , sum: 8520 , funct 0028fc68 
+current: 710 , last: 699 
+ --> current: 710 , last: 699 , sum: 9217 , funct 0028fbf0 
+   ----> current: 710 , last: 699 , sum: 9217 , funct 0028fbf0 
+ --> current: 710 , last: 699 , sum: 9307 , funct 0028fc18 
+   ----> current: 710 , last: 699 , sum: 9307 , funct 0028fc18 
+ --> current: 710 , last: 699 , sum: 9257 , funct 0028fc40 
+   ----> current: 710 , last: 699 , sum: 9257 , funct 0028fc40 
+ --> current: 710 , last: 699 , sum: 9219 , funct 0028fc68 
+   ----> current: 710 , last: 699 , sum: 9219 , funct 0028fc68 
+current: 721 , last: 710 
+ --> current: 721 , last: 710 , sum: 9927 , funct 0028fbf0 
+   ----> current: 721 , last: 710 , sum: 9927 , funct 0028fbf0 
+ --> current: 721 , last: 710 , sum: 10017 , funct 0028fc18 
+   ----> current: 721 , last: 710 , sum: 10017 , funct 0028fc18 
+ --> current: 721 , last: 710 , sum: 9967 , funct 0028fc40 
+   ----> current: 721 , last: 710 , sum: 9967 , funct 0028fc40 
+ --> current: 721 , last: 710 , sum: 9929 , funct 0028fc68 
+   ----> current: 721 , last: 710 , sum: 9929 , funct 0028fc68 
+current: 732 , last: 721 
+ --> current: 732 , last: 721 , sum: 10648 , funct 0028fbf0 
+   ----> current: 732 , last: 721 , sum: 10648 , funct 0028fbf0 
+ --> current: 732 , last: 721 , sum: 10738 , funct 0028fc18 
+   ----> current: 732 , last: 721 , sum: 10738 , funct 0028fc18 
+ --> current: 732 , last: 721 , sum: 10688 , funct 0028fc40 
+   ----> current: 732 , last: 721 , sum: 10688 , funct 0028fc40 
+ --> current: 732 , last: 721 , sum: 10650 , funct 0028fc68 
+   ----> current: 732 , last: 721 , sum: 10650 , funct 0028fc68 
+current: 743 , last: 732 
+ --> current: 743 , last: 732 , sum: 11380 , funct 0028fbf0 
+   ----> current: 743 , last: 732 , sum: 11380 , funct 0028fbf0 
+ --> current: 743 , last: 732 , sum: 11470 , funct 0028fc18 
+   ----> current: 743 , last: 732 , sum: 11470 , funct 0028fc18 
+ --> current: 743 , last: 732 , sum: 11420 , funct 0028fc40 
+   ----> current: 743 , last: 732 , sum: 11420 , funct 0028fc40 
+ --> current: 743 , last: 732 , sum: 11382 , funct 0028fc68 
+   ----> current: 743 , last: 732 , sum: 11382 , funct 0028fc68 
+current: 754 , last: 743 
+ --> current: 754 , last: 743 , sum: 12123 , funct 0028fbf0 
+   ----> current: 754 , last: 743 , sum: 12123 , funct 0028fbf0 
+ --> current: 754 , last: 743 , sum: 12213 , funct 0028fc18 
+   ----> current: 754 , last: 743 , sum: 12213 , funct 0028fc18 
+ --> current: 754 , last: 743 , sum: 12163 , funct 0028fc40 
+   ----> current: 754 , last: 743 , sum: 12163 , funct 0028fc40 
+ --> current: 754 , last: 743 , sum: 12125 , funct 0028fc68 
+   ----> current: 754 , last: 743 , sum: 12125 , funct 0028fc68 
+current: 765 , last: 754 
+ --> current: 765 , last: 754 , sum: 12877 , funct 0028fbf0 
+   ----> current: 765 , last: 754 , sum: 12877 , funct 0028fbf0 
+ --> current: 765 , last: 754 , sum: 12967 , funct 0028fc18 
+   ----> current: 765 , last: 754 , sum: 12967 , funct 0028fc18 
+ --> current: 765 , last: 754 , sum: 12917 , funct 0028fc40 
+   ----> current: 765 , last: 754 , sum: 12917 , funct 0028fc40 
+ --> current: 765 , last: 754 , sum: 12879 , funct 0028fc68 
+   ----> current: 765 , last: 754 , sum: 12879 , funct 0028fc68 
+current: 776 , last: 765 
+ --> current: 776 , last: 765 , sum: 13642 , funct 0028fbf0 
+   ----> current: 776 , last: 765 , sum: 13642 , funct 0028fbf0 
+ --> current: 776 , last: 765 , sum: 13732 , funct 0028fc18 
+   ----> current: 776 , last: 765 , sum: 13732 , funct 0028fc18 
+ --> current: 776 , last: 765 , sum: 13682 , funct 0028fc40 
+   ----> current: 776 , last: 765 , sum: 13682 , funct 0028fc40 
+ --> current: 776 , last: 765 , sum: 13644 , funct 0028fc68 
+   ----> current: 776 , last: 765 , sum: 13644 , funct 0028fc68 
+current: 787 , last: 776 
+ --> current: 787 , last: 776 , sum: 14418 , funct 0028fbf0 
+   ----> current: 787 , last: 776 , sum: 14418 , funct 0028fbf0 
+ --> current: 787 , last: 776 , sum: 14508 , funct 0028fc18 
+   ----> current: 787 , last: 776 , sum: 14508 , funct 0028fc18 
+ --> current: 787 , last: 776 , sum: 14458 , funct 0028fc40 
+   ----> current: 787 , last: 776 , sum: 14458 , funct 0028fc40 
+ --> current: 787 , last: 776 , sum: 14420 , funct 0028fc68 
+   ----> current: 787 , last: 776 , sum: 14420 , funct 0028fc68 
+current: 798 , last: 787 
+ --> current: 798 , last: 787 , sum: 15205 , funct 0028fbf0 
+   ----> current: 798 , last: 787 , sum: 15205 , funct 0028fbf0 
+ --> current: 798 , last: 787 , sum: 15295 , funct 0028fc18 
+   ----> current: 798 , last: 787 , sum: 15295 , funct 0028fc18 
+ --> current: 798 , last: 787 , sum: 15245 , funct 0028fc40 
+   ----> current: 798 , last: 787 , sum: 15245 , funct 0028fc40 
+ --> current: 798 , last: 787 , sum: 15207 , funct 0028fc68 
+   ----> current: 798 , last: 787 , sum: 15207 , funct 0028fc68 
+current: 809 , last: 798 
+ --> current: 809 , last: 798 , sum: 16003 , funct 0028fbf0 
+   ----> current: 809 , last: 798 , sum: 16003 , funct 0028fbf0 
+ --> current: 809 , last: 798 , sum: 16093 , funct 0028fc18 
+   ----> current: 809 , last: 798 , sum: 16093 , funct 0028fc18 
+ --> current: 809 , last: 798 , sum: 16043 , funct 0028fc40 
+   ----> current: 809 , last: 798 , sum: 16043 , funct 0028fc40 
+ --> current: 809 , last: 798 , sum: 16005 , funct 0028fc68 
+   ----> current: 809 , last: 798 , sum: 16005 , funct 0028fc68 
+current: 820 , last: 809 
+ --> current: 820 , last: 809 , sum: 16812 , funct 0028fbf0 
+   ----> current: 820 , last: 809 , sum: 16812 , funct 0028fbf0 
+ --> current: 820 , last: 809 , sum: 16902 , funct 0028fc18 
+   ----> current: 820 , last: 809 , sum: 16902 , funct 0028fc18 
+ --> current: 820 , last: 809 , sum: 16852 , funct 0028fc40 
+   ----> current: 820 , last: 809 , sum: 16852 , funct 0028fc40 
+ --> current: 820 , last: 809 , sum: 16814 , funct 0028fc68 
+   ----> current: 820 , last: 809 , sum: 16814 , funct 0028fc68 
+current: 831 , last: 820 
+ --> current: 831 , last: 820 , sum: 17632 , funct 0028fbf0 
+   ----> current: 831 , last: 820 , sum: 17632 , funct 0028fbf0 
+ --> current: 831 , last: 820 , sum: 17722 , funct 0028fc18 
+   ----> current: 831 , last: 820 , sum: 17722 , funct 0028fc18 
+ --> current: 831 , last: 820 , sum: 17672 , funct 0028fc40 
+   ----> current: 831 , last: 820 , sum: 17672 , funct 0028fc40 
+ --> current: 831 , last: 820 , sum: 17634 , funct 0028fc68 
+   ----> current: 831 , last: 820 , sum: 17634 , funct 0028fc68 
+current: 842 , last: 831 
+ --> current: 842 , last: 831 , sum: 18463 , funct 0028fbf0 
+   ----> current: 842 , last: 831 , sum: 18463 , funct 0028fbf0 
+ --> current: 842 , last: 831 , sum: 18553 , funct 0028fc18 
+   ----> current: 842 , last: 831 , sum: 18553 , funct 0028fc18 
+ --> current: 842 , last: 831 , sum: 18503 , funct 0028fc40 
+   ----> current: 842 , last: 831 , sum: 18503 , funct 0028fc40 
+ --> current: 842 , last: 831 , sum: 18465 , funct 0028fc68 
+   ----> current: 842 , last: 831 , sum: 18465 , funct 0028fc68 
+current: 853 , last: 842 
+ --> current: 853 , last: 842 , sum: 19305 , funct 0028fbf0 
+   ----> current: 853 , last: 842 , sum: 19305 , funct 0028fbf0 
+ --> current: 853 , last: 842 , sum: 19395 , funct 0028fc18 
+   ----> current: 853 , last: 842 , sum: 19395 , funct 0028fc18 
+ --> current: 853 , last: 842 , sum: 19345 , funct 0028fc40 
+   ----> current: 853 , last: 842 , sum: 19345 , funct 0028fc40 
+ --> current: 853 , last: 842 , sum: 19307 , funct 0028fc68 
+   ----> current: 853 , last: 842 , sum: 19307 , funct 0028fc68 
+current: 864 , last: 853 
+ --> current: 864 , last: 853 , sum: 20158 , funct 0028fbf0 
+   ----> current: 864 , last: 853 , sum: 20158 , funct 0028fbf0 
+ --> current: 864 , last: 853 , sum: 20248 , funct 0028fc18 
+   ----> current: 864 , last: 853 , sum: 20248 , funct 0028fc18 
+ --> current: 864 , last: 853 , sum: 20198 , funct 0028fc40 
+   ----> current: 864 , last: 853 , sum: 20198 , funct 0028fc40 
+ --> current: 864 , last: 853 , sum: 20160 , funct 0028fc68 
+   ----> current: 864 , last: 853 , sum: 20160 , funct 0028fc68 
+current: 875 , last: 864 
+ --> current: 875 , last: 864 , sum: 21022 , funct 0028fbf0 
+   ----> current: 875 , last: 864 , sum: 21022 , funct 0028fbf0 
+ --> current: 875 , last: 864 , sum: 21112 , funct 0028fc18 
+   ----> current: 875 , last: 864 , sum: 21112 , funct 0028fc18 
+ --> current: 875 , last: 864 , sum: 21062 , funct 0028fc40 
+   ----> current: 875 , last: 864 , sum: 21062 , funct 0028fc40 
+ --> current: 875 , last: 864 , sum: 21024 , funct 0028fc68 
+   ----> current: 875 , last: 864 , sum: 21024 , funct 0028fc68 
+current: 886 , last: 875 
+ --> current: 886 , last: 875 , sum: 21897 , funct 0028fbf0 
+   ----> current: 886 , last: 875 , sum: 21897 , funct 0028fbf0 
+ --> current: 886 , last: 875 , sum: 21987 , funct 0028fc18 
+   ----> current: 886 , last: 875 , sum: 21987 , funct 0028fc18 
+ --> current: 886 , last: 875 , sum: 21937 , funct 0028fc40 
+   ----> current: 886 , last: 875 , sum: 21937 , funct 0028fc40 
+ --> current: 886 , last: 875 , sum: 21899 , funct 0028fc68 
+   ----> current: 886 , last: 875 , sum: 21899 , funct 0028fc68 
+current: 897 , last: 886 
+ --> current: 897 , last: 886 , sum: 22783 , funct 0028fbf0 
+   ----> current: 897 , last: 886 , sum: 22783 , funct 0028fbf0 
+ --> current: 897 , last: 886 , sum: 22873 , funct 0028fc18 
+   ----> current: 897 , last: 886 , sum: 22873 , funct 0028fc18 
+ --> current: 897 , last: 886 , sum: 22823 , funct 0028fc40 
+   ----> current: 897 , last: 886 , sum: 22823 , funct 0028fc40 
+ --> current: 897 , last: 886 , sum: 22785 , funct 0028fc68 
+   ----> current: 897 , last: 886 , sum: 22785 , funct 0028fc68 
+current: 908 , last: 897 
+ --> current: 908 , last: 897 , sum: 23680 , funct 0028fbf0 
+   ----> current: 908 , last: 897 , sum: 23680 , funct 0028fbf0 
+ --> current: 908 , last: 897 , sum: 23770 , funct 0028fc18 
+   ----> current: 908 , last: 897 , sum: 23770 , funct 0028fc18 
+ --> current: 908 , last: 897 , sum: 23720 , funct 0028fc40 
+   ----> current: 908 , last: 897 , sum: 23720 , funct 0028fc40 
+ --> current: 908 , last: 897 , sum: 23682 , funct 0028fc68 
+   ----> current: 908 , last: 897 , sum: 23682 , funct 0028fc68 
+current: 919 , last: 908 
+ --> current: 919 , last: 908 , sum: 24588 , funct 0028fbf0 
+   ----> current: 919 , last: 908 , sum: 24588 , funct 0028fbf0 
+ --> current: 919 , last: 908 , sum: 24678 , funct 0028fc18 
+   ----> current: 919 , last: 908 , sum: 24678 , funct 0028fc18 
+ --> current: 919 , last: 908 , sum: 24628 , funct 0028fc40 
+   ----> current: 919 , last: 908 , sum: 24628 , funct 0028fc40 
+ --> current: 919 , last: 908 , sum: 24590 , funct 0028fc68 
+   ----> current: 919 , last: 908 , sum: 24590 , funct 0028fc68 
+current: 930 , last: 919 
+ --> current: 930 , last: 919 , sum: 25507 , funct 0028fbf0 
+   ----> current: 930 , last: 919 , sum: 25507 , funct 0028fbf0 
+ --> current: 930 , last: 919 , sum: 25597 , funct 0028fc18 
+   ----> current: 930 , last: 919 , sum: 25597 , funct 0028fc18 
+ --> current: 930 , last: 919 , sum: 25547 , funct 0028fc40 
+   ----> current: 930 , last: 919 , sum: 25547 , funct 0028fc40 
+ --> current: 930 , last: 919 , sum: 25509 , funct 0028fc68 
+   ----> current: 930 , last: 919 , sum: 25509 , funct 0028fc68 
+current: 941 , last: 930 
+ --> current: 941 , last: 930 , sum: 26437 , funct 0028fbf0 
+   ----> current: 941 , last: 930 , sum: 26437 , funct 0028fbf0 
+ --> current: 941 , last: 930 , sum: 26527 , funct 0028fc18 
+   ----> current: 941 , last: 930 , sum: 26527 , funct 0028fc18 
+ --> current: 941 , last: 930 , sum: 26477 , funct 0028fc40 
+   ----> current: 941 , last: 930 , sum: 26477 , funct 0028fc40 
+ --> current: 941 , last: 930 , sum: 26439 , funct 0028fc68 
+   ----> current: 941 , last: 930 , sum: 26439 , funct 0028fc68 
+current: 952 , last: 941 
+ --> current: 952 , last: 941 , sum: 27378 , funct 0028fbf0 
+   ----> current: 952 , last: 941 , sum: 27378 , funct 0028fbf0 
+ --> current: 952 , last: 941 , sum: 27468 , funct 0028fc18 
+   ----> current: 952 , last: 941 , sum: 27468 , funct 0028fc18 
+ --> current: 952 , last: 941 , sum: 27418 , funct 0028fc40 
+   ----> current: 952 , last: 941 , sum: 27418 , funct 0028fc40 
+ --> current: 952 , last: 941 , sum: 27380 , funct 0028fc68 
+   ----> current: 952 , last: 941 , sum: 27380 , funct 0028fc68 
+current: 963 , last: 952 
+ --> current: 963 , last: 952 , sum: 28330 , funct 0028fbf0 
+   ----> current: 963 , last: 952 , sum: 28330 , funct 0028fbf0 
+ --> current: 963 , last: 952 , sum: 28420 , funct 0028fc18 
+   ----> current: 963 , last: 952 , sum: 28420 , funct 0028fc18 
+ --> current: 963 , last: 952 , sum: 28370 , funct 0028fc40 
+   ----> current: 963 , last: 952 , sum: 28370 , funct 0028fc40 
+ --> current: 963 , last: 952 , sum: 28332 , funct 0028fc68 
+   ----> current: 963 , last: 952 , sum: 28332 , funct 0028fc68 
+current: 974 , last: 963 
+ --> current: 974 , last: 963 , sum: 29293 , funct 0028fbf0 
+   ----> current: 974 , last: 963 , sum: 29293 , funct 0028fbf0 
+ --> current: 974 , last: 963 , sum: 29383 , funct 0028fc18 
+   ----> current: 974 , last: 963 , sum: 29383 , funct 0028fc18 
+ --> current: 974 , last: 963 , sum: 29333 , funct 0028fc40 
+   ----> current: 974 , last: 963 , sum: 29333 , funct 0028fc40 
+ --> current: 974 , last: 963 , sum: 29295 , funct 0028fc68 
+   ----> current: 974 , last: 963 , sum: 29295 , funct 0028fc68 
+current: 985 , last: 974 
+ --> current: 985 , last: 974 , sum: 30267 , funct 0028fbf0 
+   ----> current: 985 , last: 974 , sum: 30267 , funct 0028fbf0 
+ --> current: 985 , last: 974 , sum: 30357 , funct 0028fc18 
+   ----> current: 985 , last: 974 , sum: 30357 , funct 0028fc18 
+ --> current: 985 , last: 974 , sum: 30307 , funct 0028fc40 
+   ----> current: 985 , last: 974 , sum: 30307 , funct 0028fc40 
+ --> current: 985 , last: 974 , sum: 30269 , funct 0028fc68 
+   ----> current: 985 , last: 974 , sum: 30269 , funct 0028fc68 
+current: 996 , last: 985 
+ --> current: 996 , last: 985 , sum: 31252 , funct 0028fbf0 
+   ----> current: 996 , last: 985 , sum: 31252 , funct 0028fbf0 
+ --> current: 996 , last: 985 , sum: 31342 , funct 0028fc18 
+   ----> current: 996 , last: 985 , sum: 31342 , funct 0028fc18 
+ --> current: 996 , last: 985 , sum: 31292 , funct 0028fc40 
+   ----> current: 996 , last: 985 , sum: 31292 , funct 0028fc40 
+ --> current: 996 , last: 985 , sum: 31254 , funct 0028fc68 
+   ----> current: 996 , last: 985 , sum: 31254 , funct 0028fc68 
+current: 1007 , last: 996 
+ --> current: 1007 , last: 996 , sum: 32248 , funct 0028fbf0 
+   ----> current: 1007 , last: 996 , sum: 32248 , funct 0028fbf0 
+ --> current: 1007 , last: 996 , sum: 32338 , funct 0028fc18 
+   ----> current: 1007 , last: 996 , sum: 32338 , funct 0028fc18 
+ --> current: 1007 , last: 996 , sum: 32288 , funct 0028fc40 
+   ----> current: 1007 , last: 996 , sum: 32288 , funct 0028fc40 
+ --> current: 1007 , last: 996 , sum: 32250 , funct 0028fc68 
+   ----> current: 1007 , last: 996 , sum: 32250 , funct 0028fc68 
+current: 1018 , last: 1007 
+ --> current: 1018 , last: 1007 , sum: 33255 , funct 0028fbf0 
+   ----> current: 1018 , last: 1007 , sum: 33255 , funct 0028fbf0 
+ --> current: 1018 , last: 1007 , sum: 33345 , funct 0028fc18 
+   ----> current: 1018 , last: 1007 , sum: 33345 , funct 0028fc18 
+ --> current: 1018 , last: 1007 , sum: 33295 , funct 0028fc40 
+   ----> current: 1018 , last: 1007 , sum: 33295 , funct 0028fc40 
+ --> current: 1018 , last: 1007 , sum: 33257 , funct 0028fc68 
+   ----> current: 1018 , last: 1007 , sum: 33257 , funct 0028fc68 
+current: 1029 , last: 1018 
+ --> current: 1029 , last: 1018 , sum: 34273 , funct 0028fbf0 
+   ----> current: 1029 , last: 1018 , sum: 34273 , funct 0028fbf0 
+ --> current: 1029 , last: 1018 , sum: 34363 , funct 0028fc18 
+   ----> current: 1029 , last: 1018 , sum: 34363 , funct 0028fc18 
+ --> current: 1029 , last: 1018 , sum: 34313 , funct 0028fc40 
+   ----> current: 1029 , last: 1018 , sum: 34313 , funct 0028fc40 
+ --> current: 1029 , last: 1018 , sum: 34275 , funct 0028fc68 
+   ----> current: 1029 , last: 1018 , sum: 34275 , funct 0028fc68 
+current: 1040 , last: 1029 
+ --> current: 1040 , last: 1029 , sum: 35302 , funct 0028fbf0 
+   ----> current: 1040 , last: 1029 , sum: 35302 , funct 0028fbf0 
+ --> current: 1040 , last: 1029 , sum: 35392 , funct 0028fc18 
+   ----> current: 1040 , last: 1029 , sum: 35392 , funct 0028fc18 
+ --> current: 1040 , last: 1029 , sum: 35342 , funct 0028fc40 
+   ----> current: 1040 , last: 1029 , sum: 35342 , funct 0028fc40 
+ --> current: 1040 , last: 1029 , sum: 35304 , funct 0028fc68 
+   ----> current: 1040 , last: 1029 , sum: 35304 , funct 0028fc68 
+current: 1051 , last: 1040 
+ --> current: 1051 , last: 1040 , sum: 36342 , funct 0028fbf0 
+   ----> current: 1051 , last: 1040 , sum: 36342 , funct 0028fbf0 
+ --> current: 1051 , last: 1040 , sum: 36432 , funct 0028fc18 
+   ----> current: 1051 , last: 1040 , sum: 36432 , funct 0028fc18 
+ --> current: 1051 , last: 1040 , sum: 36382 , funct 0028fc40 
+   ----> current: 1051 , last: 1040 , sum: 36382 , funct 0028fc40 
+ --> current: 1051 , last: 1040 , sum: 36344 , funct 0028fc68 
+   ----> current: 1051 , last: 1040 , sum: 36344 , funct 0028fc68 
+current: 1062 , last: 1051 
+ --> current: 1062 , last: 1051 , sum: 37393 , funct 0028fbf0 
+   ----> current: 1062 , last: 1051 , sum: 37393 , funct 0028fbf0 
+ --> current: 1062 , last: 1051 , sum: 37483 , funct 0028fc18 
+   ----> current: 1062 , last: 1051 , sum: 37483 , funct 0028fc18 
+ --> current: 1062 , last: 1051 , sum: 37433 , funct 0028fc40 
+   ----> current: 1062 , last: 1051 , sum: 37433 , funct 0028fc40 
+ --> current: 1062 , last: 1051 , sum: 37395 , funct 0028fc68 
+   ----> current: 1062 , last: 1051 , sum: 37395 , funct 0028fc68 
+current: 1073 , last: 1062 
+ --> current: 1073 , last: 1062 , sum: 38455 , funct 0028fbf0 
+   ----> current: 1073 , last: 1062 , sum: 38455 , funct 0028fbf0 
+ --> current: 1073 , last: 1062 , sum: 38545 , funct 0028fc18 
+   ----> current: 1073 , last: 1062 , sum: 38545 , funct 0028fc18 
+ --> current: 1073 , last: 1062 , sum: 38495 , funct 0028fc40 
+   ----> current: 1073 , last: 1062 , sum: 38495 , funct 0028fc40 
+ --> current: 1073 , last: 1062 , sum: 38457 , funct 0028fc68 
+   ----> current: 1073 , last: 1062 , sum: 38457 , funct 0028fc68 
+current: 1084 , last: 1073 
+ --> current: 1084 , last: 1073 , sum: 39528 , funct 0028fbf0 
+   ----> current: 1084 , last: 1073 , sum: 39528 , funct 0028fbf0 
+ --> current: 1084 , last: 1073 , sum: 39618 , funct 0028fc18 
+   ----> current: 1084 , last: 1073 , sum: 39618 , funct 0028fc18 
+ --> current: 1084 , last: 1073 , sum: 39568 , funct 0028fc40 
+   ----> current: 1084 , last: 1073 , sum: 39568 , funct 0028fc40 
+ --> current: 1084 , last: 1073 , sum: 39530 , funct 0028fc68 
+   ----> current: 1084 , last: 1073 , sum: 39530 , funct 0028fc68 
+current: 1095 , last: 1084 
+ --> current: 1095 , last: 1084 , sum: 40612 , funct 0028fbf0 
+   ----> current: 1095 , last: 1084 , sum: 40612 , funct 0028fbf0 
+ --> current: 1095 , last: 1084 , sum: 40702 , funct 0028fc18 
+   ----> current: 1095 , last: 1084 , sum: 40702 , funct 0028fc18 
+ --> current: 1095 , last: 1084 , sum: 40652 , funct 0028fc40 
+   ----> current: 1095 , last: 1084 , sum: 40652 , funct 0028fc40 
+ --> current: 1095 , last: 1084 , sum: 40614 , funct 0028fc68 
+   ----> current: 1095 , last: 1084 , sum: 40614 , funct 0028fc68 
+current: 1106 , last: 1095 
+ --> current: 1106 , last: 1095 , sum: 41707 , funct 0028fbf0 
+   ----> current: 1106 , last: 1095 , sum: 41707 , funct 0028fbf0 
+ --> current: 1106 , last: 1095 , sum: 41797 , funct 0028fc18 
+   ----> current: 1106 , last: 1095 , sum: 41797 , funct 0028fc18 
+ --> current: 1106 , last: 1095 , sum: 41747 , funct 0028fc40 
+   ----> current: 1106 , last: 1095 , sum: 41747 , funct 0028fc40 
+ --> current: 1106 , last: 1095 , sum: 41709 , funct 0028fc68 
+   ----> current: 1106 , last: 1095 , sum: 41709 , funct 0028fc68 
+current: 1117 , last: 1106 
+ --> current: 1117 , last: 1106 , sum: 42813 , funct 0028fbf0 
+   ----> current: 1117 , last: 1106 , sum: 42813 , funct 0028fbf0 
+ --> current: 1117 , last: 1106 , sum: 42903 , funct 0028fc18 
+   ----> current: 1117 , last: 1106 , sum: 42903 , funct 0028fc18 
+ --> current: 1117 , last: 1106 , sum: 42853 , funct 0028fc40 
+   ----> current: 1117 , last: 1106 , sum: 42853 , funct 0028fc40 
+ --> current: 1117 , last: 1106 , sum: 42815 , funct 0028fc68 
+   ----> current: 1117 , last: 1106 , sum: 42815 , funct 0028fc68 
+current: 1128 , last: 1117 
+ --> current: 1128 , last: 1117 , sum: 43930 , funct 0028fbf0 
+   ----> current: 1128 , last: 1117 , sum: 43930 , funct 0028fbf0 
+ --> current: 1128 , last: 1117 , sum: 44020 , funct 0028fc18 
+   ----> current: 1128 , last: 1117 , sum: 44020 , funct 0028fc18 
+ --> current: 1128 , last: 1117 , sum: 43970 , funct 0028fc40 
+   ----> current: 1128 , last: 1117 , sum: 43970 , funct 0028fc40 
+ --> current: 1128 , last: 1117 , sum: 43932 , funct 0028fc68 
+   ----> current: 1128 , last: 1117 , sum: 43932 , funct 0028fc68 
+current: 1139 , last: 1128 
+ --> current: 1139 , last: 1128 , sum: 45058 , funct 0028fbf0 
+   ----> current: 1139 , last: 1128 , sum: 45058 , funct 0028fbf0 
+ --> current: 1139 , last: 1128 , sum: 45148 , funct 0028fc18 
+   ----> current: 1139 , last: 1128 , sum: 45148 , funct 0028fc18 
+ --> current: 1139 , last: 1128 , sum: 45098 , funct 0028fc40 
+   ----> current: 1139 , last: 1128 , sum: 45098 , funct 0028fc40 
+ --> current: 1139 , last: 1128 , sum: 45060 , funct 0028fc68 
+   ----> current: 1139 , last: 1128 , sum: 45060 , funct 0028fc68 
+current: 1150 , last: 1139 
+ --> current: 1150 , last: 1139 , sum: 46197 , funct 0028fbf0 
+   ----> current: 1150 , last: 1139 , sum: 46197 , funct 0028fbf0 
+ --> current: 1150 , last: 1139 , sum: 46287 , funct 0028fc18 
+   ----> current: 1150 , last: 1139 , sum: 46287 , funct 0028fc18 
+ --> current: 1150 , last: 1139 , sum: 46237 , funct 0028fc40 
+   ----> current: 1150 , last: 1139 , sum: 46237 , funct 0028fc40 
+ --> current: 1150 , last: 1139 , sum: 46199 , funct 0028fc68 
+   ----> current: 1150 , last: 1139 , sum: 46199 , funct 0028fc68 
+current: 1161 , last: 1150 
+ --> current: 1161 , last: 1150 , sum: 47347 , funct 0028fbf0 
+   ----> current: 1161 , last: 1150 , sum: 47347 , funct 0028fbf0 
+ --> current: 1161 , last: 1150 , sum: 47437 , funct 0028fc18 
+   ----> current: 1161 , last: 1150 , sum: 47437 , funct 0028fc18 
+ --> current: 1161 , last: 1150 , sum: 47387 , funct 0028fc40 
+   ----> current: 1161 , last: 1150 , sum: 47387 , funct 0028fc40 
+ --> current: 1161 , last: 1150 , sum: 47349 , funct 0028fc68 
+   ----> current: 1161 , last: 1150 , sum: 47349 , funct 0028fc68 
+current: 1172 , last: 1161 
+ --> current: 1172 , last: 1161 , sum: 48508 , funct 0028fbf0 
+   ----> current: 1172 , last: 1161 , sum: 48508 , funct 0028fbf0 
+ --> current: 1172 , last: 1161 , sum: 48598 , funct 0028fc18 
+   ----> current: 1172 , last: 1161 , sum: 48598 , funct 0028fc18 
+ --> current: 1172 , last: 1161 , sum: 48548 , funct 0028fc40 
+   ----> current: 1172 , last: 1161 , sum: 48548 , funct 0028fc40 
+ --> current: 1172 , last: 1161 , sum: 48510 , funct 0028fc68 
+   ----> current: 1172 , last: 1161 , sum: 48510 , funct 0028fc68 
+current: 1183 , last: 1172 
+ --> current: 1183 , last: 1172 , sum: 49680 , funct 0028fbf0 
+   ----> current: 1183 , last: 1172 , sum: 49680 , funct 0028fbf0 
+ --> current: 1183 , last: 1172 , sum: 49770 , funct 0028fc18 
+   ----> current: 1183 , last: 1172 , sum: 49770 , funct 0028fc18 
+ --> current: 1183 , last: 1172 , sum: 49720 , funct 0028fc40 
+   ----> current: 1183 , last: 1172 , sum: 49720 , funct 0028fc40 
+ --> current: 1183 , last: 1172 , sum: 49682 , funct 0028fc68 
+   ----> current: 1183 , last: 1172 , sum: 49682 , funct 0028fc68 
+current: 1194 , last: 1183 
+ --> current: 1194 , last: 1183 , sum: 50863 , funct 0028fbf0 
+   ----> current: 1194 , last: 1183 , sum: 50863 , funct 0028fbf0 
+ --> current: 1194 , last: 1183 , sum: 50953 , funct 0028fc18 
+   ----> current: 1194 , last: 1183 , sum: 50953 , funct 0028fc18 
+ --> current: 1194 , last: 1183 , sum: 50903 , funct 0028fc40 
+   ----> current: 1194 , last: 1183 , sum: 50903 , funct 0028fc40 
+ --> current: 1194 , last: 1183 , sum: 50865 , funct 0028fc68 
+   ----> current: 1194 , last: 1183 , sum: 50865 , funct 0028fc68 
+current: 1205 , last: 1194 
+ --> current: 1205 , last: 1194 , sum: 52057 , funct 0028fbf0 
+   ----> current: 1205 , last: 1194 , sum: 52057 , funct 0028fbf0 
+ --> current: 1205 , last: 1194 , sum: 52147 , funct 0028fc18 
+   ----> current: 1205 , last: 1194 , sum: 52147 , funct 0028fc18 
+ --> current: 1205 , last: 1194 , sum: 52097 , funct 0028fc40 
+   ----> current: 1205 , last: 1194 , sum: 52097 , funct 0028fc40 
+ --> current: 1205 , last: 1194 , sum: 52059 , funct 0028fc68 
+   ----> current: 1205 , last: 1194 , sum: 52059 , funct 0028fc68 
+current: 1216 , last: 1205 
+ --> current: 1216 , last: 1205 , sum: 53262 , funct 0028fbf0 
+   ----> current: 1216 , last: 1205 , sum: 53262 , funct 0028fbf0 
+ --> current: 1216 , last: 1205 , sum: 53352 , funct 0028fc18 
+   ----> current: 1216 , last: 1205 , sum: 53352 , funct 0028fc18 
+ --> current: 1216 , last: 1205 , sum: 53302 , funct 0028fc40 
+   ----> current: 1216 , last: 1205 , sum: 53302 , funct 0028fc40 
+ --> current: 1216 , last: 1205 , sum: 53264 , funct 0028fc68 
+   ----> current: 1216 , last: 1205 , sum: 53264 , funct 0028fc68 
+current: 1227 , last: 1216 
+ --> current: 1227 , last: 1216 , sum: 54478 , funct 0028fbf0 
+   ----> current: 1227 , last: 1216 , sum: 54478 , funct 0028fbf0 
+ --> current: 1227 , last: 1216 , sum: 54568 , funct 0028fc18 
+   ----> current: 1227 , last: 1216 , sum: 54568 , funct 0028fc18 
+ --> current: 1227 , last: 1216 , sum: 54518 , funct 0028fc40 
+   ----> current: 1227 , last: 1216 , sum: 54518 , funct 0028fc40 
+ --> current: 1227 , last: 1216 , sum: 54480 , funct 0028fc68 
+   ----> current: 1227 , last: 1216 , sum: 54480 , funct 0028fc68 
+current: 1238 , last: 1227 
+ --> current: 1238 , last: 1227 , sum: 55705 , funct 0028fbf0 
+   ----> current: 1238 , last: 1227 , sum: 55705 , funct 0028fbf0 
+ --> current: 1238 , last: 1227 , sum: 55795 , funct 0028fc18 
+   ----> current: 1238 , last: 1227 , sum: 55795 , funct 0028fc18 
+ --> current: 1238 , last: 1227 , sum: 55745 , funct 0028fc40 
+   ----> current: 1238 , last: 1227 , sum: 55745 , funct 0028fc40 
+ --> current: 1238 , last: 1227 , sum: 55707 , funct 0028fc68 
+   ----> current: 1238 , last: 1227 , sum: 55707 , funct 0028fc68 
+current: 1249 , last: 1238 
+ --> current: 1249 , last: 1238 , sum: 56943 , funct 0028fbf0 
+   ----> current: 1249 , last: 1238 , sum: 56943 , funct 0028fbf0 
+ --> current: 1249 , last: 1238 , sum: 57033 , funct 0028fc18 
+   ----> current: 1249 , last: 1238 , sum: 57033 , funct 0028fc18 
+ --> current: 1249 , last: 1238 , sum: 56983 , funct 0028fc40 
+   ----> current: 1249 , last: 1238 , sum: 56983 , funct 0028fc40 
+ --> current: 1249 , last: 1238 , sum: 56945 , funct 0028fc68 
+   ----> current: 1249 , last: 1238 , sum: 56945 , funct 0028fc68 
+current: 1260 , last: 1249 
+ --> current: 1260 , last: 1249 , sum: 58192 , funct 0028fbf0 
+   ----> current: 1260 , last: 1249 , sum: 58192 , funct 0028fbf0 
+ --> current: 1260 , last: 1249 , sum: 58282 , funct 0028fc18 
+   ----> current: 1260 , last: 1249 , sum: 58282 , funct 0028fc18 
+ --> current: 1260 , last: 1249 , sum: 58232 , funct 0028fc40 
+   ----> current: 1260 , last: 1249 , sum: 58232 , funct 0028fc40 
+ --> current: 1260 , last: 1249 , sum: 58194 , funct 0028fc68 
+   ----> current: 1260 , last: 1249 , sum: 58194 , funct 0028fc68 
+current: 1271 , last: 1260 
+ --> current: 1271 , last: 1260 , sum: 59452 , funct 0028fbf0 
+   ----> current: 1271 , last: 1260 , sum: 59452 , funct 0028fbf0 
+ --> current: 1271 , last: 1260 , sum: 59542 , funct 0028fc18 
+   ----> current: 1271 , last: 1260 , sum: 59542 , funct 0028fc18 
+ --> current: 1271 , last: 1260 , sum: 59492 , funct 0028fc40 
+   ----> current: 1271 , last: 1260 , sum: 59492 , funct 0028fc40 
+ --> current: 1271 , last: 1260 , sum: 59454 , funct 0028fc68 
+   ----> current: 1271 , last: 1260 , sum: 59454 , funct 0028fc68 
+current: 1282 , last: 1271 
+ --> current: 1282 , last: 1271 , sum: 60723 , funct 0028fbf0 
+   ----> current: 1282 , last: 1271 , sum: 60723 , funct 0028fbf0 
+ --> current: 1282 , last: 1271 , sum: 60813 , funct 0028fc18 
+   ----> current: 1282 , last: 1271 , sum: 60813 , funct 0028fc18 
+ --> current: 1282 , last: 1271 , sum: 60763 , funct 0028fc40 
+   ----> current: 1282 , last: 1271 , sum: 60763 , funct 0028fc40 
+ --> current: 1282 , last: 1271 , sum: 60725 , funct 0028fc68 
+   ----> current: 1282 , last: 1271 , sum: 60725 , funct 0028fc68 
+current: 1293 , last: 1282 
+ --> current: 1293 , last: 1282 , sum: 62005 , funct 0028fbf0 
+   ----> current: 1293 , last: 1282 , sum: 62005 , funct 0028fbf0 
+ --> current: 1293 , last: 1282 , sum: 62095 , funct 0028fc18 
+   ----> current: 1293 , last: 1282 , sum: 62095 , funct 0028fc18 
+ --> current: 1293 , last: 1282 , sum: 62045 , funct 0028fc40 
+   ----> current: 1293 , last: 1282 , sum: 62045 , funct 0028fc40 
+ --> current: 1293 , last: 1282 , sum: 62007 , funct 0028fc68 
+   ----> current: 1293 , last: 1282 , sum: 62007 , funct 0028fc68 
+current: 1304 , last: 1293 
+ --> current: 1304 , last: 1293 , sum: 63298 , funct 0028fbf0 
+   ----> current: 1304 , last: 1293 , sum: 63298 , funct 0028fbf0 
+ --> current: 1304 , last: 1293 , sum: 63388 , funct 0028fc18 
+   ----> current: 1304 , last: 1293 , sum: 63388 , funct 0028fc18 
+ --> current: 1304 , last: 1293 , sum: 63338 , funct 0028fc40 
+   ----> current: 1304 , last: 1293 , sum: 63338 , funct 0028fc40 
+ --> current: 1304 , last: 1293 , sum: 63300 , funct 0028fc68 
+   ----> current: 1304 , last: 1293 , sum: 63300 , funct 0028fc68 
+current: 1315 , last: 1304 
+ --> current: 1315 , last: 1304 , sum: 64602 , funct 0028fbf0 
+   ----> current: 1315 , last: 1304 , sum: 64602 , funct 0028fbf0 
+ --> current: 1315 , last: 1304 , sum: 64692 , funct 0028fc18 
+   ----> current: 1315 , last: 1304 , sum: 64692 , funct 0028fc18 
+ --> current: 1315 , last: 1304 , sum: 64642 , funct 0028fc40 
+   ----> current: 1315 , last: 1304 , sum: 64642 , funct 0028fc40 
+ --> current: 1315 , last: 1304 , sum: 64604 , funct 0028fc68 
+   ----> current: 1315 , last: 1304 , sum: 64604 , funct 0028fc68 
+current: 1326 , last: 1315 
+ --> current: 1326 , last: 1315 , sum: 65917 , funct 0028fbf0 
+   ----> current: 1326 , last: 1315 , sum: 65917 , funct 0028fbf0 
+ --> current: 1326 , last: 1315 , sum: 66007 , funct 0028fc18 
+   ----> current: 1326 , last: 1315 , sum: 66007 , funct 0028fc18 
+ --> current: 1326 , last: 1315 , sum: 65957 , funct 0028fc40 
+   ----> current: 1326 , last: 1315 , sum: 65957 , funct 0028fc40 
+ --> current: 1326 , last: 1315 , sum: 65919 , funct 0028fc68 
+   ----> current: 1326 , last: 1315 , sum: 65919 , funct 0028fc68 
+current: 1337 , last: 1326 
+ --> current: 1337 , last: 1326 , sum: 67243 , funct 0028fbf0 
+   ----> current: 1337 , last: 1326 , sum: 67243 , funct 0028fbf0 
+ --> current: 1337 , last: 1326 , sum: 67333 , funct 0028fc18 
+   ----> current: 1337 , last: 1326 , sum: 67333 , funct 0028fc18 
+ --> current: 1337 , last: 1326 , sum: 67283 , funct 0028fc40 
+   ----> current: 1337 , last: 1326 , sum: 67283 , funct 0028fc40 
+ --> current: 1337 , last: 1326 , sum: 67245 , funct 0028fc68 
+   ----> current: 1337 , last: 1326 , sum: 67245 , funct 0028fc68 
+current: 1348 , last: 1337 
+ --> current: 1348 , last: 1337 , sum: 68580 , funct 0028fbf0 
+   ----> current: 1348 , last: 1337 , sum: 68580 , funct 0028fbf0 
+ --> current: 1348 , last: 1337 , sum: 68670 , funct 0028fc18 
+   ----> current: 1348 , last: 1337 , sum: 68670 , funct 0028fc18 
+ --> current: 1348 , last: 1337 , sum: 68620 , funct 0028fc40 
+   ----> current: 1348 , last: 1337 , sum: 68620 , funct 0028fc40 
+ --> current: 1348 , last: 1337 , sum: 68582 , funct 0028fc68 
+   ----> current: 1348 , last: 1337 , sum: 68582 , funct 0028fc68 
+current: 1359 , last: 1348 
+ --> current: 1359 , last: 1348 , sum: 69928 , funct 0028fbf0 
+   ----> current: 1359 , last: 1348 , sum: 69928 , funct 0028fbf0 
+ --> current: 1359 , last: 1348 , sum: 70018 , funct 0028fc18 
+   ----> current: 1359 , last: 1348 , sum: 70018 , funct 0028fc18 
+ --> current: 1359 , last: 1348 , sum: 69968 , funct 0028fc40 
+   ----> current: 1359 , last: 1348 , sum: 69968 , funct 0028fc40 
+ --> current: 1359 , last: 1348 , sum: 69930 , funct 0028fc68 
+   ----> current: 1359 , last: 1348 , sum: 69930 , funct 0028fc68 
+current: 1370 , last: 1359 
+ --> current: 1370 , last: 1359 , sum: 71287 , funct 0028fbf0 
+   ----> current: 1370 , last: 1359 , sum: 71287 , funct 0028fbf0 
+ --> current: 1370 , last: 1359 , sum: 71377 , funct 0028fc18 
+   ----> current: 1370 , last: 1359 , sum: 71377 , funct 0028fc18 
+ --> current: 1370 , last: 1359 , sum: 71327 , funct 0028fc40 
+   ----> current: 1370 , last: 1359 , sum: 71327 , funct 0028fc40 
+ --> current: 1370 , last: 1359 , sum: 71289 , funct 0028fc68 
+   ----> current: 1370 , last: 1359 , sum: 71289 , funct 0028fc68 
+current: 1381 , last: 1370 
+ --> current: 1381 , last: 1370 , sum: 72657 , funct 0028fbf0 
+   ----> current: 1381 , last: 1370 , sum: 72657 , funct 0028fbf0 
+ --> current: 1381 , last: 1370 , sum: 72747 , funct 0028fc18 
+   ----> current: 1381 , last: 1370 , sum: 72747 , funct 0028fc18 
+ --> current: 1381 , last: 1370 , sum: 72697 , funct 0028fc40 
+   ----> current: 1381 , last: 1370 , sum: 72697 , funct 0028fc40 
+ --> current: 1381 , last: 1370 , sum: 72659 , funct 0028fc68 
+   ----> current: 1381 , last: 1370 , sum: 72659 , funct 0028fc68 
+current: 1392 , last: 1381 
+ --> current: 1392 , last: 1381 , sum: 74038 , funct 0028fbf0 
+   ----> current: 1392 , last: 1381 , sum: 74038 , funct 0028fbf0 
+ --> current: 1392 , last: 1381 , sum: 74128 , funct 0028fc18 
+   ----> current: 1392 , last: 1381 , sum: 74128 , funct 0028fc18 
+ --> current: 1392 , last: 1381 , sum: 74078 , funct 0028fc40 
+   ----> current: 1392 , last: 1381 , sum: 74078 , funct 0028fc40 
+ --> current: 1392 , last: 1381 , sum: 74040 , funct 0028fc68 
+   ----> current: 1392 , last: 1381 , sum: 74040 , funct 0028fc68 
+current: 1403 , last: 1392 
+ --> current: 1403 , last: 1392 , sum: 75430 , funct 0028fbf0 
+   ----> current: 1403 , last: 1392 , sum: 75430 , funct 0028fbf0 
+ --> current: 1403 , last: 1392 , sum: 75520 , funct 0028fc18 
+   ----> current: 1403 , last: 1392 , sum: 75520 , funct 0028fc18 
+ --> current: 1403 , last: 1392 , sum: 75470 , funct 0028fc40 
+   ----> current: 1403 , last: 1392 , sum: 75470 , funct 0028fc40 
+ --> current: 1403 , last: 1392 , sum: 75432 , funct 0028fc68 
+   ----> current: 1403 , last: 1392 , sum: 75432 , funct 0028fc68 
+current: 1414 , last: 1403 
+ --> current: 1414 , last: 1403 , sum: 76833 , funct 0028fbf0 
+   ----> current: 1414 , last: 1403 , sum: 76833 , funct 0028fbf0 
+ --> current: 1414 , last: 1403 , sum: 76923 , funct 0028fc18 
+   ----> current: 1414 , last: 1403 , sum: 76923 , funct 0028fc18 
+ --> current: 1414 , last: 1403 , sum: 76873 , funct 0028fc40 
+   ----> current: 1414 , last: 1403 , sum: 76873 , funct 0028fc40 
+ --> current: 1414 , last: 1403 , sum: 76835 , funct 0028fc68 
+   ----> current: 1414 , last: 1403 , sum: 76835 , funct 0028fc68 
+current: 1425 , last: 1414 
+ --> current: 1425 , last: 1414 , sum: 78247 , funct 0028fbf0 
+   ----> current: 1425 , last: 1414 , sum: 78247 , funct 0028fbf0 
+ --> current: 1425 , last: 1414 , sum: 78337 , funct 0028fc18 
+   ----> current: 1425 , last: 1414 , sum: 78337 , funct 0028fc18 
+ --> current: 1425 , last: 1414 , sum: 78287 , funct 0028fc40 
+   ----> current: 1425 , last: 1414 , sum: 78287 , funct 0028fc40 
+ --> current: 1425 , last: 1414 , sum: 78249 , funct 0028fc68 
+   ----> current: 1425 , last: 1414 , sum: 78249 , funct 0028fc68 
+current: 1436 , last: 1425 
+ --> current: 1436 , last: 1425 , sum: 79672 , funct 0028fbf0 
+   ----> current: 1436 , last: 1425 , sum: 79672 , funct 0028fbf0 
+ --> current: 1436 , last: 1425 , sum: 79762 , funct 0028fc18 
+   ----> current: 1436 , last: 1425 , sum: 79762 , funct 0028fc18 
+ --> current: 1436 , last: 1425 , sum: 79712 , funct 0028fc40 
+   ----> current: 1436 , last: 1425 , sum: 79712 , funct 0028fc40 
+ --> current: 1436 , last: 1425 , sum: 79674 , funct 0028fc68 
+   ----> current: 1436 , last: 1425 , sum: 79674 , funct 0028fc68 

@@ -53,6 +53,44 @@ public:
 			
 	}
 	
+	bool is_intersecting(const LeObj& o) {
+		
+		//return (m_x < o.m_x && m_x + m_height > o.m_x + o.m_height &&
+		//	m_y > o.m_y && m_y + m_width < o.m_y + o.m_width);
+	
+		Point l1,r1,l2,r2;
+		l1.x = m_x;
+		l1.y = m_y;
+		r1.x = m_x + m_width;
+		r1.y = m_y + m_height;
+		
+		l2.x = o.m_x;
+		l2.y = o.m_y;
+		r2.x = o.m_x + o.m_width;
+		r2.y = o.m_y + o.m_height;
+		
+		return doOverlap(l1,r1,l2,r2);
+	}
+	
+	struct Point 
+	{ 
+		int x, y; 
+	}; 
+  
+	bool doOverlap(Point l1, Point r1, Point l2, Point r2) 
+	{ 
+		// If one rectangle is on left side of other 
+		if (l1.x > r2.x || l2.x > r1.x) 
+			return false; 
+	  
+		// If one rectangle is above other 
+		if (l1.y < r2.y || l2.y < r1.y) 
+			return false; 
+		
+		return true;
+	}
+   
+	
 std::string m_img_path;
 unsigned int m_old_x;
 unsigned int m_old_y;

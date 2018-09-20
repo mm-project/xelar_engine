@@ -15,7 +15,7 @@
 #endif
 
 
-#ifdef DOS_ANDROID
+#ifdef OS_ANDROID
 	#define LOG SDL_Log
 #else
 	#define LOG printf
@@ -42,7 +42,7 @@ class LeSdlRendererManager
 	
 	LeSdlRendererManager(){ //const char* title) {
 		init("Game demo");
-		change_background_image();
+		
 	}
 
 
@@ -202,9 +202,9 @@ class LeSdlRendererManager
 	}
 
 
-	void change_background_image() {
+	void set_background_image(const char* path) {
 		//SDL_Surface* background = SDL_LoadBMP("./bin/sky_bg.png");
-		SDL_Surface* background = IMG_Load("./bin/sky_bg.jpg");
+		SDL_Surface* background = IMG_Load(path);
 		if(background == NULL)
 		{
 			SDL_ShowSimpleMessageBox(0, "Background init error",         SDL_GetError(), m_window);
@@ -221,7 +221,7 @@ class LeSdlRendererManager
 			SDL_ShowSimpleMessageBox(0, "Texture init error", SDL_GetError(), m_window);
 		}
 		
-		SDL_RenderCopy(m_render, m_bg_texture, NULL, NULL);
+		//SDL_RenderCopy(m_render, m_bg_texture, NULL, NULL);
 		delete background;
 
 	}
@@ -344,6 +344,10 @@ public:
 	}
 
 
+	void set_background_image(const char* path) {
+		m_render_manager->set_background_image(path);
+	}
+	
 	void draw_text(const char* s, unsigned int y, unsigned int x)
 	{
 	#ifdef TEXT_RENDER

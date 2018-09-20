@@ -6,8 +6,16 @@
 #include "state_manager.h"
 #include "menu.h"
 #include "object.h"
+#include "game_settings.h"
 
-
+/*
+	m_req = new Request(Requester::Type::GET,m_req_str,
+								 std::bind(&SimpleGetHandler::on_error, this, std::placeholders::_1),
+								 std::bind(&SimpleGetHandler::on_pass, this, std::placeholders::_1)
+								 );
+   std::bind(&LeMenuState::on_error, this, std::placeholders::_1)								 
+*/
+								 
 class LeMenuState : public LeInterLayer
 {
 	virtual void init() {
@@ -22,12 +30,14 @@ class LeMenuState : public LeInterLayer
 			
 			
 			
-			m_settings_menu.add_item(LeObj(register_image("./bin/play.png"),100,200,3,3))->add_submenu(&m_top_menu);
+			//m_settings_menu.add_item(LeObj(register_image("./bin/play.png"),100,210,3,3),std::bind(&LeGameSettings::turnoff_sound, this, std::placeholders::_1));
+			m_settings_menu.add_item(LeObj(register_image("./bin/play.png"),190,210,3,3))->add_submenu(&m_top_menu);
 					
 			
 		m_current_menu = m_top_menu;	
 			/**/
 	}
+	
 	
 	virtual void draw() {
 		//set_drawing_color(255,0,0);
