@@ -12,10 +12,13 @@ class LeObj {
 public: 
 	LeObj() {
 	//fixme 
+		m_uninitialized = false;
+		
 	}
 	
 	LeObj(const  LeImg& img, unsigned int x, unsigned int y, unsigned int crop_factor_x, unsigned int crop_factor_y )
 	{
+		m_uninitialized = true;
 		m_img_path = img.get_path();
 		m_width = img.get_width()/crop_factor_y;
 		m_height = img.get_height()/crop_factor_x;
@@ -24,7 +27,12 @@ public:
 		m_c_x = crop_factor_x;
 		m_c_y = crop_factor_y;
 		m_old_x = x;
-		m_old_y = y;	
+		m_old_y = y;
+		m_angle = 0;
+		m_flip = true;
+		m_visible = true;
+		m_movable = true;;
+
 	}
 	
 	void change_img(const  LeImg& img) {
@@ -55,10 +63,19 @@ public:
 	}
 	
 	bool is_intersecting(const LeObj& o) {
+		//std::cout << " M rect: (" << m_x << " " << m_y << ") (" << m_x + m_height << " " <<  m_y + m_width << ")" << std::endl;
+		//std::cout << " X rect: (" << o.m_x << " " << o.m_y << ") (" << o.m_x + o.m_height << " " <<  o.m_y + o.m_width << ")" << std::endl;
+		//std::cout << std::endl;	
+
+		return is_cord_in_my_bbox(o.m_old_x,o.m_old_y) || is_cord_in_my_bbox(o.m_old_x+o.m_height,o.m_old_y+o.m_width);
 		
-		//return (m_x < o.m_x && m_x + m_height > o.m_x + o.m_height &&
-		//	m_y > o.m_y && m_y + m_width < o.m_y + o.m_width);
-	
+		/*
+		return (m_x < o.m_x && 
+				m_x + m_height > o.m_x + o.m_height &&
+		  	    m_y > o.m_y && 
+				m_y + m_width < o.m_y + o.m_width );
+
+		/*
 		Point l1,r1,l2,r2;
 		l1.x = m_x;
 		l1.y = m_y;
@@ -71,6 +88,8 @@ public:
 		r2.y = o.m_y + o.m_height;
 		
 		return doOverlap(l1,r1,l2,r2);
+		*/
+
 	}
 	
 	struct Point 
@@ -99,8 +118,15 @@ unsigned int m_x;
 unsigned int m_y;
 unsigned int m_c_x;
 unsigned int m_c_y;
+unsigned int m_angle;
+bool m_flip; 
 unsigned m_width;
 unsigned m_height;
+bool m_uninitialized;
+
+bool m_visible;
+bool m_movable;
+
 };	
 
 

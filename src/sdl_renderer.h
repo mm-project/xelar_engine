@@ -4,7 +4,6 @@
 #include "renderer_base.h"
 
 #include <SDL.h>
-#include <stdio.h>
 
 #ifdef TEXT_RENDER
 	#include <SDL_ttf.h>
@@ -25,6 +24,8 @@
 #include <string>
 #include <map>
 #include <utility>
+
+#include <stdio.h>
 
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
@@ -54,14 +55,6 @@ class LeSdlRendererManager
 	
 	//private:
 
-#ifdef TEXT_RENDER
-	TTF_Font* m_ttf_font;
-#endif	
-	SDL_Texture* m_bg_texture;
-	SDL_Window* m_window;
-	SDL_Renderer* m_render;
-	static LeSdlRendererManager* m_instance;
-
 	
 
 	//TODO seperate each init to different inits. 
@@ -77,7 +70,7 @@ class LeSdlRendererManager
 				exit(1);
 			}
 
-			m_ttf_font = TTF_OpenFont("./deps/FreeSans.ttf", 10); 
+			m_ttf_font = TTF_OpenFont("./bin/FreeSans.ttf", 50); 
 			if(!m_ttf_font) {  
 				LOG("TTF_OpenFont: %s\n", TTF_GetError());
 			//exit(1);
@@ -232,6 +225,35 @@ class LeSdlRendererManager
 	}
 	
 
+	void draw_text(const char* s, unsigned int y, unsigned int x, unsigned int sy, unsigned int sx)
+	{
+	#ifdef TEXT_RENDER
+		SDL_Point p;
+		p.x=x;
+		p.y=y;
+		SDL_Color c = {255, 255, 255};  
+		SDL_Surface* surfaceMessage = TTF_RenderText_Solid(m_ttf_font, s , c); 
+		SDL_Texture* Message = SDL_CreateTextureFromSurface(m_render, surfaceMessage); 
+
+		SDL_Rect Message_rect; 
+		Message_rect.x = p.x;  
+		Message_rect.y = p.y; 
+		Message_rect.w = sy; 
+		Message_rect.h = sx; 
+
+		SDL_RenderCopy(m_render, Message, NULL, &Message_rect); 
+	#endif		
+	}
+
+
+
+#ifdef TEXT_RENDER
+	TTF_Font* m_ttf_font;
+#endif	
+	SDL_Texture* m_bg_texture;
+	SDL_Window* m_window;
+	SDL_Renderer* m_render;
+	static LeSdlRendererManager* m_instance;
 };
 
 
@@ -348,24 +370,9 @@ public:
 		m_render_manager->set_background_image(path);
 	}
 	
-	void draw_text(const char* s, unsigned int y, unsigned int x)
+	void draw_text(const char* s, unsigned int y, unsigned int x, unsigned int sy, unsigned int sx)
 	{
-	#ifdef TEXT_RENDER
-		SDL_Point p;
-		p.x=x;
-		p.y=y;
-		SDL_Color c = {255, 0, 0};  
-		SDL_Surface* surfaceMessage = TTF_RenderText_Solid(m_ttf_font, s , c); 
-		SDL_Texture* Message = SDL_CreateTextureFromSurface(m_render, surfaceMessage); 
-
-		SDL_Rect Message_rect; 
-		Message_rect.x = p.x;  
-		Message_rect.y = p.y; 
-		Message_rect.w = 80; 
-		Message_rect.h = 40; 
-
-		SDL_RenderCopy(m_render, Message, NULL, &Message_rect); 
-	#endif		
+		m_render_manager->draw_text(s,y,x,sy,sx);
 	}
 
 
@@ -398,6 +405,24 @@ public:
 	
 		SDL_RenderCopy(m_render, info.first, NULL, &irect);
 	}
+	
+	void draw_image(const char* ipath, unsigned int y, unsigned int x, unsigned int cropw, unsigned int croph, double angle, bool flip) {
+		std::pair<SDL_Texture*,SDL_Rect> info = name2texture[ipath];
+		
+		//fixme get rid of this temp. variables
+		SDL_Rect irect;
+		irect.x = x;
+		irect.y = y;
+		irect.w = info.second.w/cropw;
+		irect.h = info.second.h/croph;
+	
+		if ( flip )
+			SDL_RenderCopyEx(m_render, info.first, NULL, &irect, angle, NULL ,SDL_FLIP_HORIZONTAL );	
+		else	
+			SDL_RenderCopyEx(m_render, info.first, NULL, &irect, angle, NULL, SDL_FLIP_VERTICAL );
+		
+	}
+	
 	
 	void draw_square(unsigned int y, unsigned int x, unsigned int delta) {
 		draw_rect(y-delta,x-delta,2*delta,2*delta);

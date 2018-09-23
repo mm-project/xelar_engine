@@ -16,9 +16,6 @@ class LeTimer {
 			}
 			
 			void add_continuous_checkpoint(const actionFun& f, unsigned int t) {
-				//m_fun2freq.push_back(std::make_pair(f,t));
-				//aactionFun* ff = &f;
-				//m_fun2freq[&f] = t;
 				m_structure.push_back(LeHavaqakanStruktura(f, t));
 			}
 
@@ -26,18 +23,17 @@ class LeTimer {
 			//
 			//}
 			
-			void step(unsigned int t) {
-				//LOG("current: %i , last: %i \n",t,m_last_time);
-				for(auto it : m_structure ) {
-					//LOG(" --> current: %i , last: %i , sum: %i , funct: \n",t,m_last_time,m_last_time+it->second);
-					if ( t > it.last_time + it.freq ) {
-							//LOG("   ----> current: %i , last: %i , sum: %i , funct \n",t,m_last_time,m_last_time+it->second);
-							//it->second+=m_last_time;
-							//actionFun f = *(it->first);
-							//f();
-							it.f();
+			void step(unsigned int current_time ) {
+				for( auto it : m_structure ) {
+					//LOG(" --> current: %i , last: %i , sum: %i\n", current_time, it.last_time,  it.last_time + it.freq);
+					if ( current_time > it.last_time + it.freq ) {
+						//LOG("     --> current: %i , last: %i , sum: %i\n", current_time, it.last_time,  it.last_time + it.freq);
+						//it->second+=m_last_time;
+						//actionFun f = *(it->first);
+						//f();
+						it.f();
+						it.last_time = current_time;
 					}
-				it.last_time = t;
 				}	
 			}
 	

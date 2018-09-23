@@ -13,7 +13,7 @@ typedef unsigned int uint;
 	#define LOG printf
 #endif
 
-//*
+/*
 #ifndef DEBUG
 #	define LOG ;
 #endif

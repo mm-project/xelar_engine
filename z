@@ -1,1506 +1,1146 @@
 init start
-Regstate -> 1 0x3f1ed0
-Regstate -> 2 0x2430e40
-Regstate -> 3 0x2430e90
+Regstate -> 1 0x881ed0
+Regstate -> 2 0x2470e40
+Regstate -> 3 0x2470e90
 STATEMANAGER: set_state 3
-STATEMANAGER: m_current_state 02430e90
-set_rendering_controller 02430e90 
-current: 242 , last: 0 
- --> current: 242 , last: 0 , sum: 10 , funct: 
-   ----> current: 242 , last: 0 , sum: 10 , funct 
- --> current: 242 , last: 0 , sum: 30 , funct: 
-   ----> current: 242 , last: 0 , sum: 30 , funct 
- --> current: 242 , last: 0 , sum: 100 , funct: 
-   ----> current: 242 , last: 0 , sum: 100 , funct 
- --> current: 242 , last: 0 , sum: 10 , funct: 
-   ----> current: 242 , last: 0 , sum: 10 , funct 
-22222
-current: 310 , last: 242 
- --> current: 310 , last: 242 , sum: 252 , funct: 
-   ----> current: 310 , last: 242 , sum: 252 , funct 
- --> current: 310 , last: 242 , sum: 272 , funct: 
-   ----> current: 310 , last: 242 , sum: 272 , funct 
- --> current: 310 , last: 242 , sum: 342 , funct: 
- --> current: 310 , last: 242 , sum: 252 , funct: 
-   ----> current: 310 , last: 242 , sum: 252 , funct 
-22222
-current: 321 , last: 310 
- --> current: 321 , last: 310 , sum: 320 , funct: 
-   ----> current: 321 , last: 310 , sum: 320 , funct 
- --> current: 321 , last: 310 , sum: 340 , funct: 
- --> current: 321 , last: 310 , sum: 410 , funct: 
- --> current: 321 , last: 310 , sum: 320 , funct: 
-   ----> current: 321 , last: 310 , sum: 320 , funct 
-22222
-current: 332 , last: 321 
- --> current: 332 , last: 321 , sum: 331 , funct: 
-   ----> current: 332 , last: 321 , sum: 331 , funct 
- --> current: 332 , last: 321 , sum: 351 , funct: 
- --> current: 332 , last: 321 , sum: 421 , funct: 
- --> current: 332 , last: 321 , sum: 331 , funct: 
-   ----> current: 332 , last: 321 , sum: 331 , funct 
-22222
-current: 343 , last: 332 
- --> current: 343 , last: 332 , sum: 342 , funct: 
-   ----> current: 343 , last: 332 , sum: 342 , funct 
- --> current: 343 , last: 332 , sum: 362 , funct: 
- --> current: 343 , last: 332 , sum: 432 , funct: 
- --> current: 343 , last: 332 , sum: 342 , funct: 
-   ----> current: 343 , last: 332 , sum: 342 , funct 
-22222
-current: 354 , last: 343 
- --> current: 354 , last: 343 , sum: 353 , funct: 
-   ----> current: 354 , last: 343 , sum: 353 , funct 
- --> current: 354 , last: 343 , sum: 373 , funct: 
- --> current: 354 , last: 343 , sum: 443 , funct: 
- --> current: 354 , last: 343 , sum: 353 , funct: 
-   ----> current: 354 , last: 343 , sum: 353 , funct 
-22222
-current: 365 , last: 354 
- --> current: 365 , last: 354 , sum: 364 , funct: 
-   ----> current: 365 , last: 354 , sum: 364 , funct 
- --> current: 365 , last: 354 , sum: 384 , funct: 
- --> current: 365 , last: 354 , sum: 454 , funct: 
- --> current: 365 , last: 354 , sum: 364 , funct: 
-   ----> current: 365 , last: 354 , sum: 364 , funct 
-22222
-current: 376 , last: 365 
- --> current: 376 , last: 365 , sum: 375 , funct: 
-   ----> current: 376 , last: 365 , sum: 375 , funct 
- --> current: 376 , last: 365 , sum: 395 , funct: 
- --> current: 376 , last: 365 , sum: 465 , funct: 
- --> current: 376 , last: 365 , sum: 375 , funct: 
-   ----> current: 376 , last: 365 , sum: 375 , funct 
-22222
-current: 387 , last: 376 
- --> current: 387 , last: 376 , sum: 386 , funct: 
-   ----> current: 387 , last: 376 , sum: 386 , funct 
- --> current: 387 , last: 376 , sum: 406 , funct: 
- --> current: 387 , last: 376 , sum: 476 , funct: 
- --> current: 387 , last: 376 , sum: 386 , funct: 
-   ----> current: 387 , last: 376 , sum: 386 , funct 
-22222
-current: 398 , last: 387 
- --> current: 398 , last: 387 , sum: 397 , funct: 
-   ----> current: 398 , last: 387 , sum: 397 , funct 
- --> current: 398 , last: 387 , sum: 417 , funct: 
- --> current: 398 , last: 387 , sum: 487 , funct: 
- --> current: 398 , last: 387 , sum: 397 , funct: 
-   ----> current: 398 , last: 387 , sum: 397 , funct 
-22222
-current: 409 , last: 398 
- --> current: 409 , last: 398 , sum: 408 , funct: 
-   ----> current: 409 , last: 398 , sum: 408 , funct 
- --> current: 409 , last: 398 , sum: 428 , funct: 
- --> current: 409 , last: 398 , sum: 498 , funct: 
- --> current: 409 , last: 398 , sum: 408 , funct: 
-   ----> current: 409 , last: 398 , sum: 408 , funct 
-22222
-current: 420 , last: 409 
- --> current: 420 , last: 409 , sum: 419 , funct: 
-   ----> current: 420 , last: 409 , sum: 419 , funct 
- --> current: 420 , last: 409 , sum: 439 , funct: 
- --> current: 420 , last: 409 , sum: 509 , funct: 
- --> current: 420 , last: 409 , sum: 419 , funct: 
-   ----> current: 420 , last: 409 , sum: 419 , funct 
-22222
-current: 431 , last: 420 
- --> current: 431 , last: 420 , sum: 430 , funct: 
-   ----> current: 431 , last: 420 , sum: 430 , funct 
- --> current: 431 , last: 420 , sum: 450 , funct: 
- --> current: 431 , last: 420 , sum: 520 , funct: 
- --> current: 431 , last: 420 , sum: 430 , funct: 
-   ----> current: 431 , last: 420 , sum: 430 , funct 
-22222
-current: 442 , last: 431 
- --> current: 442 , last: 431 , sum: 441 , funct: 
-   ----> current: 442 , last: 431 , sum: 441 , funct 
- --> current: 442 , last: 431 , sum: 461 , funct: 
- --> current: 442 , last: 431 , sum: 531 , funct: 
- --> current: 442 , last: 431 , sum: 441 , funct: 
-   ----> current: 442 , last: 431 , sum: 441 , funct 
-22222
-current: 453 , last: 442 
- --> current: 453 , last: 442 , sum: 452 , funct: 
-   ----> current: 453 , last: 442 , sum: 452 , funct 
- --> current: 453 , last: 442 , sum: 472 , funct: 
- --> current: 453 , last: 442 , sum: 542 , funct: 
- --> current: 453 , last: 442 , sum: 452 , funct: 
-   ----> current: 453 , last: 442 , sum: 452 , funct 
-22222
-current: 464 , last: 453 
- --> current: 464 , last: 453 , sum: 463 , funct: 
-   ----> current: 464 , last: 453 , sum: 463 , funct 
- --> current: 464 , last: 453 , sum: 483 , funct: 
- --> current: 464 , last: 453 , sum: 553 , funct: 
- --> current: 464 , last: 453 , sum: 463 , funct: 
-   ----> current: 464 , last: 453 , sum: 463 , funct 
-22222
-current: 475 , last: 464 
- --> current: 475 , last: 464 , sum: 474 , funct: 
-   ----> current: 475 , last: 464 , sum: 474 , funct 
- --> current: 475 , last: 464 , sum: 494 , funct: 
- --> current: 475 , last: 464 , sum: 564 , funct: 
- --> current: 475 , last: 464 , sum: 474 , funct: 
-   ----> current: 475 , last: 464 , sum: 474 , funct 
-22222
-current: 486 , last: 475 
- --> current: 486 , last: 475 , sum: 485 , funct: 
-   ----> current: 486 , last: 475 , sum: 485 , funct 
- --> current: 486 , last: 475 , sum: 505 , funct: 
- --> current: 486 , last: 475 , sum: 575 , funct: 
- --> current: 486 , last: 475 , sum: 485 , funct: 
-   ----> current: 486 , last: 475 , sum: 485 , funct 
-22222
-current: 497 , last: 486 
- --> current: 497 , last: 486 , sum: 496 , funct: 
-   ----> current: 497 , last: 486 , sum: 496 , funct 
- --> current: 497 , last: 486 , sum: 516 , funct: 
- --> current: 497 , last: 486 , sum: 586 , funct: 
- --> current: 497 , last: 486 , sum: 496 , funct: 
-   ----> current: 497 , last: 486 , sum: 496 , funct 
-22222
-current: 508 , last: 497 
- --> current: 508 , last: 497 , sum: 507 , funct: 
-   ----> current: 508 , last: 497 , sum: 507 , funct 
- --> current: 508 , last: 497 , sum: 527 , funct: 
- --> current: 508 , last: 497 , sum: 597 , funct: 
- --> current: 508 , last: 497 , sum: 507 , funct: 
-   ----> current: 508 , last: 497 , sum: 507 , funct 
-22222
-current: 519 , last: 508 
- --> current: 519 , last: 508 , sum: 518 , funct: 
-   ----> current: 519 , last: 508 , sum: 518 , funct 
- --> current: 519 , last: 508 , sum: 538 , funct: 
- --> current: 519 , last: 508 , sum: 608 , funct: 
- --> current: 519 , last: 508 , sum: 518 , funct: 
-   ----> current: 519 , last: 508 , sum: 518 , funct 
-22222
-current: 530 , last: 519 
- --> current: 530 , last: 519 , sum: 529 , funct: 
-   ----> current: 530 , last: 519 , sum: 529 , funct 
- --> current: 530 , last: 519 , sum: 549 , funct: 
- --> current: 530 , last: 519 , sum: 619 , funct: 
- --> current: 530 , last: 519 , sum: 529 , funct: 
-   ----> current: 530 , last: 519 , sum: 529 , funct 
-22222
-current: 541 , last: 530 
- --> current: 541 , last: 530 , sum: 540 , funct: 
-   ----> current: 541 , last: 530 , sum: 540 , funct 
- --> current: 541 , last: 530 , sum: 560 , funct: 
- --> current: 541 , last: 530 , sum: 630 , funct: 
- --> current: 541 , last: 530 , sum: 540 , funct: 
-   ----> current: 541 , last: 530 , sum: 540 , funct 
-22222
-current: 552 , last: 541 
- --> current: 552 , last: 541 , sum: 551 , funct: 
-   ----> current: 552 , last: 541 , sum: 551 , funct 
- --> current: 552 , last: 541 , sum: 571 , funct: 
- --> current: 552 , last: 541 , sum: 641 , funct: 
- --> current: 552 , last: 541 , sum: 551 , funct: 
-   ----> current: 552 , last: 541 , sum: 551 , funct 
-22222
-current: 563 , last: 552 
- --> current: 563 , last: 552 , sum: 562 , funct: 
-   ----> current: 563 , last: 552 , sum: 562 , funct 
- --> current: 563 , last: 552 , sum: 582 , funct: 
- --> current: 563 , last: 552 , sum: 652 , funct: 
- --> current: 563 , last: 552 , sum: 562 , funct: 
-   ----> current: 563 , last: 552 , sum: 562 , funct 
-22222
-current: 574 , last: 563 
- --> current: 574 , last: 563 , sum: 573 , funct: 
-   ----> current: 574 , last: 563 , sum: 573 , funct 
- --> current: 574 , last: 563 , sum: 593 , funct: 
- --> current: 574 , last: 563 , sum: 663 , funct: 
- --> current: 574 , last: 563 , sum: 573 , funct: 
-   ----> current: 574 , last: 563 , sum: 573 , funct 
-22222
-current: 585 , last: 574 
- --> current: 585 , last: 574 , sum: 584 , funct: 
-   ----> current: 585 , last: 574 , sum: 584 , funct 
- --> current: 585 , last: 574 , sum: 604 , funct: 
- --> current: 585 , last: 574 , sum: 674 , funct: 
- --> current: 585 , last: 574 , sum: 584 , funct: 
-   ----> current: 585 , last: 574 , sum: 584 , funct 
-22222
-current: 596 , last: 585 
- --> current: 596 , last: 585 , sum: 595 , funct: 
-   ----> current: 596 , last: 585 , sum: 595 , funct 
- --> current: 596 , last: 585 , sum: 615 , funct: 
- --> current: 596 , last: 585 , sum: 685 , funct: 
- --> current: 596 , last: 585 , sum: 595 , funct: 
-   ----> current: 596 , last: 585 , sum: 595 , funct 
-22222
-current: 607 , last: 596 
- --> current: 607 , last: 596 , sum: 606 , funct: 
-   ----> current: 607 , last: 596 , sum: 606 , funct 
- --> current: 607 , last: 596 , sum: 626 , funct: 
- --> current: 607 , last: 596 , sum: 696 , funct: 
- --> current: 607 , last: 596 , sum: 606 , funct: 
-   ----> current: 607 , last: 596 , sum: 606 , funct 
-22222
-current: 618 , last: 607 
- --> current: 618 , last: 607 , sum: 617 , funct: 
-   ----> current: 618 , last: 607 , sum: 617 , funct 
- --> current: 618 , last: 607 , sum: 637 , funct: 
- --> current: 618 , last: 607 , sum: 707 , funct: 
- --> current: 618 , last: 607 , sum: 617 , funct: 
-   ----> current: 618 , last: 607 , sum: 617 , funct 
-22222
-current: 629 , last: 618 
- --> current: 629 , last: 618 , sum: 628 , funct: 
-   ----> current: 629 , last: 618 , sum: 628 , funct 
- --> current: 629 , last: 618 , sum: 648 , funct: 
- --> current: 629 , last: 618 , sum: 718 , funct: 
- --> current: 629 , last: 618 , sum: 628 , funct: 
-   ----> current: 629 , last: 618 , sum: 628 , funct 
-22222
-current: 640 , last: 629 
- --> current: 640 , last: 629 , sum: 639 , funct: 
-   ----> current: 640 , last: 629 , sum: 639 , funct 
- --> current: 640 , last: 629 , sum: 659 , funct: 
- --> current: 640 , last: 629 , sum: 729 , funct: 
- --> current: 640 , last: 629 , sum: 639 , funct: 
-   ----> current: 640 , last: 629 , sum: 639 , funct 
-22222
-current: 651 , last: 640 
- --> current: 651 , last: 640 , sum: 650 , funct: 
-   ----> current: 651 , last: 640 , sum: 650 , funct 
- --> current: 651 , last: 640 , sum: 670 , funct: 
- --> current: 651 , last: 640 , sum: 740 , funct: 
- --> current: 651 , last: 640 , sum: 650 , funct: 
-   ----> current: 651 , last: 640 , sum: 650 , funct 
-22222
-current: 662 , last: 651 
- --> current: 662 , last: 651 , sum: 661 , funct: 
-   ----> current: 662 , last: 651 , sum: 661 , funct 
- --> current: 662 , last: 651 , sum: 681 , funct: 
- --> current: 662 , last: 651 , sum: 751 , funct: 
- --> current: 662 , last: 651 , sum: 661 , funct: 
-   ----> current: 662 , last: 651 , sum: 661 , funct 
-22222
-current: 673 , last: 662 
- --> current: 673 , last: 662 , sum: 672 , funct: 
-   ----> current: 673 , last: 662 , sum: 672 , funct 
- --> current: 673 , last: 662 , sum: 692 , funct: 
- --> current: 673 , last: 662 , sum: 762 , funct: 
- --> current: 673 , last: 662 , sum: 672 , funct: 
-   ----> current: 673 , last: 662 , sum: 672 , funct 
-22222
-current: 684 , last: 673 
- --> current: 684 , last: 673 , sum: 683 , funct: 
-   ----> current: 684 , last: 673 , sum: 683 , funct 
- --> current: 684 , last: 673 , sum: 703 , funct: 
- --> current: 684 , last: 673 , sum: 773 , funct: 
- --> current: 684 , last: 673 , sum: 683 , funct: 
-   ----> current: 684 , last: 673 , sum: 683 , funct 
-22222
-current: 695 , last: 684 
- --> current: 695 , last: 684 , sum: 694 , funct: 
-   ----> current: 695 , last: 684 , sum: 694 , funct 
- --> current: 695 , last: 684 , sum: 714 , funct: 
- --> current: 695 , last: 684 , sum: 784 , funct: 
- --> current: 695 , last: 684 , sum: 694 , funct: 
-   ----> current: 695 , last: 684 , sum: 694 , funct 
-22222
-current: 706 , last: 695 
- --> current: 706 , last: 695 , sum: 705 , funct: 
-   ----> current: 706 , last: 695 , sum: 705 , funct 
- --> current: 706 , last: 695 , sum: 725 , funct: 
- --> current: 706 , last: 695 , sum: 795 , funct: 
- --> current: 706 , last: 695 , sum: 705 , funct: 
-   ----> current: 706 , last: 695 , sum: 705 , funct 
-22222
-current: 717 , last: 706 
- --> current: 717 , last: 706 , sum: 716 , funct: 
-   ----> current: 717 , last: 706 , sum: 716 , funct 
- --> current: 717 , last: 706 , sum: 736 , funct: 
- --> current: 717 , last: 706 , sum: 806 , funct: 
- --> current: 717 , last: 706 , sum: 716 , funct: 
-   ----> current: 717 , last: 706 , sum: 716 , funct 
-22222
-current: 728 , last: 717 
- --> current: 728 , last: 717 , sum: 727 , funct: 
-   ----> current: 728 , last: 717 , sum: 727 , funct 
- --> current: 728 , last: 717 , sum: 747 , funct: 
- --> current: 728 , last: 717 , sum: 817 , funct: 
- --> current: 728 , last: 717 , sum: 727 , funct: 
-   ----> current: 728 , last: 717 , sum: 727 , funct 
-22222
-current: 739 , last: 728 
- --> current: 739 , last: 728 , sum: 738 , funct: 
-   ----> current: 739 , last: 728 , sum: 738 , funct 
- --> current: 739 , last: 728 , sum: 758 , funct: 
- --> current: 739 , last: 728 , sum: 828 , funct: 
- --> current: 739 , last: 728 , sum: 738 , funct: 
-   ----> current: 739 , last: 728 , sum: 738 , funct 
-22222
-current: 750 , last: 739 
- --> current: 750 , last: 739 , sum: 749 , funct: 
-   ----> current: 750 , last: 739 , sum: 749 , funct 
- --> current: 750 , last: 739 , sum: 769 , funct: 
- --> current: 750 , last: 739 , sum: 839 , funct: 
- --> current: 750 , last: 739 , sum: 749 , funct: 
-   ----> current: 750 , last: 739 , sum: 749 , funct 
-22222
-current: 761 , last: 750 
- --> current: 761 , last: 750 , sum: 760 , funct: 
-   ----> current: 761 , last: 750 , sum: 760 , funct 
- --> current: 761 , last: 750 , sum: 780 , funct: 
- --> current: 761 , last: 750 , sum: 850 , funct: 
- --> current: 761 , last: 750 , sum: 760 , funct: 
-   ----> current: 761 , last: 750 , sum: 760 , funct 
-22222
-current: 772 , last: 761 
- --> current: 772 , last: 761 , sum: 771 , funct: 
-   ----> current: 772 , last: 761 , sum: 771 , funct 
- --> current: 772 , last: 761 , sum: 791 , funct: 
- --> current: 772 , last: 761 , sum: 861 , funct: 
- --> current: 772 , last: 761 , sum: 771 , funct: 
-   ----> current: 772 , last: 761 , sum: 771 , funct 
-22222
-current: 783 , last: 772 
- --> current: 783 , last: 772 , sum: 782 , funct: 
-   ----> current: 783 , last: 772 , sum: 782 , funct 
- --> current: 783 , last: 772 , sum: 802 , funct: 
- --> current: 783 , last: 772 , sum: 872 , funct: 
- --> current: 783 , last: 772 , sum: 782 , funct: 
-   ----> current: 783 , last: 772 , sum: 782 , funct 
-22222
-current: 794 , last: 783 
- --> current: 794 , last: 783 , sum: 793 , funct: 
-   ----> current: 794 , last: 783 , sum: 793 , funct 
- --> current: 794 , last: 783 , sum: 813 , funct: 
- --> current: 794 , last: 783 , sum: 883 , funct: 
- --> current: 794 , last: 783 , sum: 793 , funct: 
-   ----> current: 794 , last: 783 , sum: 793 , funct 
-22222
-current: 805 , last: 794 
- --> current: 805 , last: 794 , sum: 804 , funct: 
-   ----> current: 805 , last: 794 , sum: 804 , funct 
- --> current: 805 , last: 794 , sum: 824 , funct: 
- --> current: 805 , last: 794 , sum: 894 , funct: 
- --> current: 805 , last: 794 , sum: 804 , funct: 
-   ----> current: 805 , last: 794 , sum: 804 , funct 
-22222
-current: 816 , last: 805 
- --> current: 816 , last: 805 , sum: 815 , funct: 
-   ----> current: 816 , last: 805 , sum: 815 , funct 
- --> current: 816 , last: 805 , sum: 835 , funct: 
- --> current: 816 , last: 805 , sum: 905 , funct: 
- --> current: 816 , last: 805 , sum: 815 , funct: 
-   ----> current: 816 , last: 805 , sum: 815 , funct 
-22222
-current: 827 , last: 816 
- --> current: 827 , last: 816 , sum: 826 , funct: 
-   ----> current: 827 , last: 816 , sum: 826 , funct 
- --> current: 827 , last: 816 , sum: 846 , funct: 
- --> current: 827 , last: 816 , sum: 916 , funct: 
- --> current: 827 , last: 816 , sum: 826 , funct: 
-   ----> current: 827 , last: 816 , sum: 826 , funct 
-22222
-current: 838 , last: 827 
- --> current: 838 , last: 827 , sum: 837 , funct: 
-   ----> current: 838 , last: 827 , sum: 837 , funct 
- --> current: 838 , last: 827 , sum: 857 , funct: 
- --> current: 838 , last: 827 , sum: 927 , funct: 
- --> current: 838 , last: 827 , sum: 837 , funct: 
-   ----> current: 838 , last: 827 , sum: 837 , funct 
-22222
-current: 849 , last: 838 
- --> current: 849 , last: 838 , sum: 848 , funct: 
-   ----> current: 849 , last: 838 , sum: 848 , funct 
- --> current: 849 , last: 838 , sum: 868 , funct: 
- --> current: 849 , last: 838 , sum: 938 , funct: 
- --> current: 849 , last: 838 , sum: 848 , funct: 
-   ----> current: 849 , last: 838 , sum: 848 , funct 
-22222
-current: 860 , last: 849 
- --> current: 860 , last: 849 , sum: 859 , funct: 
-   ----> current: 860 , last: 849 , sum: 859 , funct 
- --> current: 860 , last: 849 , sum: 879 , funct: 
- --> current: 860 , last: 849 , sum: 949 , funct: 
- --> current: 860 , last: 849 , sum: 859 , funct: 
-   ----> current: 860 , last: 849 , sum: 859 , funct 
-22222
-current: 871 , last: 860 
- --> current: 871 , last: 860 , sum: 870 , funct: 
-   ----> current: 871 , last: 860 , sum: 870 , funct 
- --> current: 871 , last: 860 , sum: 890 , funct: 
- --> current: 871 , last: 860 , sum: 960 , funct: 
- --> current: 871 , last: 860 , sum: 870 , funct: 
-   ----> current: 871 , last: 860 , sum: 870 , funct 
-22222
-current: 882 , last: 871 
- --> current: 882 , last: 871 , sum: 881 , funct: 
-   ----> current: 882 , last: 871 , sum: 881 , funct 
- --> current: 882 , last: 871 , sum: 901 , funct: 
- --> current: 882 , last: 871 , sum: 971 , funct: 
- --> current: 882 , last: 871 , sum: 881 , funct: 
-   ----> current: 882 , last: 871 , sum: 881 , funct 
-22222
-current: 893 , last: 882 
- --> current: 893 , last: 882 , sum: 892 , funct: 
-   ----> current: 893 , last: 882 , sum: 892 , funct 
- --> current: 893 , last: 882 , sum: 912 , funct: 
- --> current: 893 , last: 882 , sum: 982 , funct: 
- --> current: 893 , last: 882 , sum: 892 , funct: 
-   ----> current: 893 , last: 882 , sum: 892 , funct 
-22222
-current: 904 , last: 893 
- --> current: 904 , last: 893 , sum: 903 , funct: 
-   ----> current: 904 , last: 893 , sum: 903 , funct 
- --> current: 904 , last: 893 , sum: 923 , funct: 
- --> current: 904 , last: 893 , sum: 993 , funct: 
- --> current: 904 , last: 893 , sum: 903 , funct: 
-   ----> current: 904 , last: 893 , sum: 903 , funct 
-22222
-current: 915 , last: 904 
- --> current: 915 , last: 904 , sum: 914 , funct: 
-   ----> current: 915 , last: 904 , sum: 914 , funct 
- --> current: 915 , last: 904 , sum: 934 , funct: 
- --> current: 915 , last: 904 , sum: 1004 , funct: 
- --> current: 915 , last: 904 , sum: 914 , funct: 
-   ----> current: 915 , last: 904 , sum: 914 , funct 
-22222
-current: 926 , last: 915 
- --> current: 926 , last: 915 , sum: 925 , funct: 
-   ----> current: 926 , last: 915 , sum: 925 , funct 
- --> current: 926 , last: 915 , sum: 945 , funct: 
- --> current: 926 , last: 915 , sum: 1015 , funct: 
- --> current: 926 , last: 915 , sum: 925 , funct: 
-   ----> current: 926 , last: 915 , sum: 925 , funct 
-22222
-current: 937 , last: 926 
- --> current: 937 , last: 926 , sum: 936 , funct: 
-   ----> current: 937 , last: 926 , sum: 936 , funct 
- --> current: 937 , last: 926 , sum: 956 , funct: 
- --> current: 937 , last: 926 , sum: 1026 , funct: 
- --> current: 937 , last: 926 , sum: 936 , funct: 
-   ----> current: 937 , last: 926 , sum: 936 , funct 
-22222
-current: 948 , last: 937 
- --> current: 948 , last: 937 , sum: 947 , funct: 
-   ----> current: 948 , last: 937 , sum: 947 , funct 
- --> current: 948 , last: 937 , sum: 967 , funct: 
- --> current: 948 , last: 937 , sum: 1037 , funct: 
- --> current: 948 , last: 937 , sum: 947 , funct: 
-   ----> current: 948 , last: 937 , sum: 947 , funct 
-22222
-current: 959 , last: 948 
- --> current: 959 , last: 948 , sum: 958 , funct: 
-   ----> current: 959 , last: 948 , sum: 958 , funct 
- --> current: 959 , last: 948 , sum: 978 , funct: 
- --> current: 959 , last: 948 , sum: 1048 , funct: 
- --> current: 959 , last: 948 , sum: 958 , funct: 
-   ----> current: 959 , last: 948 , sum: 958 , funct 
-22222
-current: 970 , last: 959 
- --> current: 970 , last: 959 , sum: 969 , funct: 
-   ----> current: 970 , last: 959 , sum: 969 , funct 
- --> current: 970 , last: 959 , sum: 989 , funct: 
- --> current: 970 , last: 959 , sum: 1059 , funct: 
- --> current: 970 , last: 959 , sum: 969 , funct: 
-   ----> current: 970 , last: 959 , sum: 969 , funct 
-22222
-current: 981 , last: 970 
- --> current: 981 , last: 970 , sum: 980 , funct: 
-   ----> current: 981 , last: 970 , sum: 980 , funct 
- --> current: 981 , last: 970 , sum: 1000 , funct: 
- --> current: 981 , last: 970 , sum: 1070 , funct: 
- --> current: 981 , last: 970 , sum: 980 , funct: 
-   ----> current: 981 , last: 970 , sum: 980 , funct 
-22222
-current: 992 , last: 981 
- --> current: 992 , last: 981 , sum: 991 , funct: 
-   ----> current: 992 , last: 981 , sum: 991 , funct 
- --> current: 992 , last: 981 , sum: 1011 , funct: 
- --> current: 992 , last: 981 , sum: 1081 , funct: 
- --> current: 992 , last: 981 , sum: 991 , funct: 
-   ----> current: 992 , last: 981 , sum: 991 , funct 
-22222
-current: 1003 , last: 992 
- --> current: 1003 , last: 992 , sum: 1002 , funct: 
-   ----> current: 1003 , last: 992 , sum: 1002 , funct 
- --> current: 1003 , last: 992 , sum: 1022 , funct: 
- --> current: 1003 , last: 992 , sum: 1092 , funct: 
- --> current: 1003 , last: 992 , sum: 1002 , funct: 
-   ----> current: 1003 , last: 992 , sum: 1002 , funct 
-22222
-current: 1014 , last: 1003 
- --> current: 1014 , last: 1003 , sum: 1013 , funct: 
-   ----> current: 1014 , last: 1003 , sum: 1013 , funct 
- --> current: 1014 , last: 1003 , sum: 1033 , funct: 
- --> current: 1014 , last: 1003 , sum: 1103 , funct: 
- --> current: 1014 , last: 1003 , sum: 1013 , funct: 
-   ----> current: 1014 , last: 1003 , sum: 1013 , funct 
-22222
-current: 1025 , last: 1014 
- --> current: 1025 , last: 1014 , sum: 1024 , funct: 
-   ----> current: 1025 , last: 1014 , sum: 1024 , funct 
- --> current: 1025 , last: 1014 , sum: 1044 , funct: 
- --> current: 1025 , last: 1014 , sum: 1114 , funct: 
- --> current: 1025 , last: 1014 , sum: 1024 , funct: 
-   ----> current: 1025 , last: 1014 , sum: 1024 , funct 
-22222
-current: 1036 , last: 1025 
- --> current: 1036 , last: 1025 , sum: 1035 , funct: 
-   ----> current: 1036 , last: 1025 , sum: 1035 , funct 
- --> current: 1036 , last: 1025 , sum: 1055 , funct: 
- --> current: 1036 , last: 1025 , sum: 1125 , funct: 
- --> current: 1036 , last: 1025 , sum: 1035 , funct: 
-   ----> current: 1036 , last: 1025 , sum: 1035 , funct 
-22222
-current: 1047 , last: 1036 
- --> current: 1047 , last: 1036 , sum: 1046 , funct: 
-   ----> current: 1047 , last: 1036 , sum: 1046 , funct 
- --> current: 1047 , last: 1036 , sum: 1066 , funct: 
- --> current: 1047 , last: 1036 , sum: 1136 , funct: 
- --> current: 1047 , last: 1036 , sum: 1046 , funct: 
-   ----> current: 1047 , last: 1036 , sum: 1046 , funct 
-22222
-current: 1058 , last: 1047 
- --> current: 1058 , last: 1047 , sum: 1057 , funct: 
-   ----> current: 1058 , last: 1047 , sum: 1057 , funct 
- --> current: 1058 , last: 1047 , sum: 1077 , funct: 
- --> current: 1058 , last: 1047 , sum: 1147 , funct: 
- --> current: 1058 , last: 1047 , sum: 1057 , funct: 
-   ----> current: 1058 , last: 1047 , sum: 1057 , funct 
-22222
-current: 1069 , last: 1058 
- --> current: 1069 , last: 1058 , sum: 1068 , funct: 
-   ----> current: 1069 , last: 1058 , sum: 1068 , funct 
- --> current: 1069 , last: 1058 , sum: 1088 , funct: 
- --> current: 1069 , last: 1058 , sum: 1158 , funct: 
- --> current: 1069 , last: 1058 , sum: 1068 , funct: 
-   ----> current: 1069 , last: 1058 , sum: 1068 , funct 
-22222
-current: 1080 , last: 1069 
- --> current: 1080 , last: 1069 , sum: 1079 , funct: 
-   ----> current: 1080 , last: 1069 , sum: 1079 , funct 
- --> current: 1080 , last: 1069 , sum: 1099 , funct: 
- --> current: 1080 , last: 1069 , sum: 1169 , funct: 
- --> current: 1080 , last: 1069 , sum: 1079 , funct: 
-   ----> current: 1080 , last: 1069 , sum: 1079 , funct 
-22222
-current: 1091 , last: 1080 
- --> current: 1091 , last: 1080 , sum: 1090 , funct: 
-   ----> current: 1091 , last: 1080 , sum: 1090 , funct 
- --> current: 1091 , last: 1080 , sum: 1110 , funct: 
- --> current: 1091 , last: 1080 , sum: 1180 , funct: 
- --> current: 1091 , last: 1080 , sum: 1090 , funct: 
-   ----> current: 1091 , last: 1080 , sum: 1090 , funct 
-22222
-current: 1102 , last: 1091 
- --> current: 1102 , last: 1091 , sum: 1101 , funct: 
-   ----> current: 1102 , last: 1091 , sum: 1101 , funct 
- --> current: 1102 , last: 1091 , sum: 1121 , funct: 
- --> current: 1102 , last: 1091 , sum: 1191 , funct: 
- --> current: 1102 , last: 1091 , sum: 1101 , funct: 
-   ----> current: 1102 , last: 1091 , sum: 1101 , funct 
-22222
-current: 1113 , last: 1102 
- --> current: 1113 , last: 1102 , sum: 1112 , funct: 
-   ----> current: 1113 , last: 1102 , sum: 1112 , funct 
- --> current: 1113 , last: 1102 , sum: 1132 , funct: 
- --> current: 1113 , last: 1102 , sum: 1202 , funct: 
- --> current: 1113 , last: 1102 , sum: 1112 , funct: 
-   ----> current: 1113 , last: 1102 , sum: 1112 , funct 
-22222
-current: 1124 , last: 1113 
- --> current: 1124 , last: 1113 , sum: 1123 , funct: 
-   ----> current: 1124 , last: 1113 , sum: 1123 , funct 
- --> current: 1124 , last: 1113 , sum: 1143 , funct: 
- --> current: 1124 , last: 1113 , sum: 1213 , funct: 
- --> current: 1124 , last: 1113 , sum: 1123 , funct: 
-   ----> current: 1124 , last: 1113 , sum: 1123 , funct 
-22222
-current: 1135 , last: 1124 
- --> current: 1135 , last: 1124 , sum: 1134 , funct: 
-   ----> current: 1135 , last: 1124 , sum: 1134 , funct 
- --> current: 1135 , last: 1124 , sum: 1154 , funct: 
- --> current: 1135 , last: 1124 , sum: 1224 , funct: 
- --> current: 1135 , last: 1124 , sum: 1134 , funct: 
-   ----> current: 1135 , last: 1124 , sum: 1134 , funct 
-22222
-current: 1146 , last: 1135 
- --> current: 1146 , last: 1135 , sum: 1145 , funct: 
-   ----> current: 1146 , last: 1135 , sum: 1145 , funct 
- --> current: 1146 , last: 1135 , sum: 1165 , funct: 
- --> current: 1146 , last: 1135 , sum: 1235 , funct: 
- --> current: 1146 , last: 1135 , sum: 1145 , funct: 
-   ----> current: 1146 , last: 1135 , sum: 1145 , funct 
-22222
-current: 1157 , last: 1146 
- --> current: 1157 , last: 1146 , sum: 1156 , funct: 
-   ----> current: 1157 , last: 1146 , sum: 1156 , funct 
- --> current: 1157 , last: 1146 , sum: 1176 , funct: 
- --> current: 1157 , last: 1146 , sum: 1246 , funct: 
- --> current: 1157 , last: 1146 , sum: 1156 , funct: 
-   ----> current: 1157 , last: 1146 , sum: 1156 , funct 
-22222
-current: 1168 , last: 1157 
- --> current: 1168 , last: 1157 , sum: 1167 , funct: 
-   ----> current: 1168 , last: 1157 , sum: 1167 , funct 
- --> current: 1168 , last: 1157 , sum: 1187 , funct: 
- --> current: 1168 , last: 1157 , sum: 1257 , funct: 
- --> current: 1168 , last: 1157 , sum: 1167 , funct: 
-   ----> current: 1168 , last: 1157 , sum: 1167 , funct 
-22222
-current: 1179 , last: 1168 
- --> current: 1179 , last: 1168 , sum: 1178 , funct: 
-   ----> current: 1179 , last: 1168 , sum: 1178 , funct 
- --> current: 1179 , last: 1168 , sum: 1198 , funct: 
- --> current: 1179 , last: 1168 , sum: 1268 , funct: 
- --> current: 1179 , last: 1168 , sum: 1178 , funct: 
-   ----> current: 1179 , last: 1168 , sum: 1178 , funct 
-22222
-current: 1190 , last: 1179 
- --> current: 1190 , last: 1179 , sum: 1189 , funct: 
-   ----> current: 1190 , last: 1179 , sum: 1189 , funct 
- --> current: 1190 , last: 1179 , sum: 1209 , funct: 
- --> current: 1190 , last: 1179 , sum: 1279 , funct: 
- --> current: 1190 , last: 1179 , sum: 1189 , funct: 
-   ----> current: 1190 , last: 1179 , sum: 1189 , funct 
-22222
-current: 1201 , last: 1190 
- --> current: 1201 , last: 1190 , sum: 1200 , funct: 
-   ----> current: 1201 , last: 1190 , sum: 1200 , funct 
- --> current: 1201 , last: 1190 , sum: 1220 , funct: 
- --> current: 1201 , last: 1190 , sum: 1290 , funct: 
- --> current: 1201 , last: 1190 , sum: 1200 , funct: 
-   ----> current: 1201 , last: 1190 , sum: 1200 , funct 
-22222
-current: 1212 , last: 1201 
- --> current: 1212 , last: 1201 , sum: 1211 , funct: 
-   ----> current: 1212 , last: 1201 , sum: 1211 , funct 
- --> current: 1212 , last: 1201 , sum: 1231 , funct: 
- --> current: 1212 , last: 1201 , sum: 1301 , funct: 
- --> current: 1212 , last: 1201 , sum: 1211 , funct: 
-   ----> current: 1212 , last: 1201 , sum: 1211 , funct 
-22222
-current: 1223 , last: 1212 
- --> current: 1223 , last: 1212 , sum: 1222 , funct: 
-   ----> current: 1223 , last: 1212 , sum: 1222 , funct 
- --> current: 1223 , last: 1212 , sum: 1242 , funct: 
- --> current: 1223 , last: 1212 , sum: 1312 , funct: 
- --> current: 1223 , last: 1212 , sum: 1222 , funct: 
-   ----> current: 1223 , last: 1212 , sum: 1222 , funct 
-22222
-current: 1234 , last: 1223 
- --> current: 1234 , last: 1223 , sum: 1233 , funct: 
-   ----> current: 1234 , last: 1223 , sum: 1233 , funct 
- --> current: 1234 , last: 1223 , sum: 1253 , funct: 
- --> current: 1234 , last: 1223 , sum: 1323 , funct: 
- --> current: 1234 , last: 1223 , sum: 1233 , funct: 
-   ----> current: 1234 , last: 1223 , sum: 1233 , funct 
-22222
-current: 1245 , last: 1234 
- --> current: 1245 , last: 1234 , sum: 1244 , funct: 
-   ----> current: 1245 , last: 1234 , sum: 1244 , funct 
- --> current: 1245 , last: 1234 , sum: 1264 , funct: 
- --> current: 1245 , last: 1234 , sum: 1334 , funct: 
- --> current: 1245 , last: 1234 , sum: 1244 , funct: 
-   ----> current: 1245 , last: 1234 , sum: 1244 , funct 
-22222
-current: 1256 , last: 1245 
- --> current: 1256 , last: 1245 , sum: 1255 , funct: 
-   ----> current: 1256 , last: 1245 , sum: 1255 , funct 
- --> current: 1256 , last: 1245 , sum: 1275 , funct: 
- --> current: 1256 , last: 1245 , sum: 1345 , funct: 
- --> current: 1256 , last: 1245 , sum: 1255 , funct: 
-   ----> current: 1256 , last: 1245 , sum: 1255 , funct 
-22222
-current: 1267 , last: 1256 
- --> current: 1267 , last: 1256 , sum: 1266 , funct: 
-   ----> current: 1267 , last: 1256 , sum: 1266 , funct 
- --> current: 1267 , last: 1256 , sum: 1286 , funct: 
- --> current: 1267 , last: 1256 , sum: 1356 , funct: 
- --> current: 1267 , last: 1256 , sum: 1266 , funct: 
-   ----> current: 1267 , last: 1256 , sum: 1266 , funct 
-22222
-current: 1278 , last: 1267 
- --> current: 1278 , last: 1267 , sum: 1277 , funct: 
-   ----> current: 1278 , last: 1267 , sum: 1277 , funct 
- --> current: 1278 , last: 1267 , sum: 1297 , funct: 
- --> current: 1278 , last: 1267 , sum: 1367 , funct: 
- --> current: 1278 , last: 1267 , sum: 1277 , funct: 
-   ----> current: 1278 , last: 1267 , sum: 1277 , funct 
-22222
-current: 1289 , last: 1278 
- --> current: 1289 , last: 1278 , sum: 1288 , funct: 
-   ----> current: 1289 , last: 1278 , sum: 1288 , funct 
- --> current: 1289 , last: 1278 , sum: 1308 , funct: 
- --> current: 1289 , last: 1278 , sum: 1378 , funct: 
- --> current: 1289 , last: 1278 , sum: 1288 , funct: 
-   ----> current: 1289 , last: 1278 , sum: 1288 , funct 
-22222
-current: 1300 , last: 1289 
- --> current: 1300 , last: 1289 , sum: 1299 , funct: 
-   ----> current: 1300 , last: 1289 , sum: 1299 , funct 
- --> current: 1300 , last: 1289 , sum: 1319 , funct: 
- --> current: 1300 , last: 1289 , sum: 1389 , funct: 
- --> current: 1300 , last: 1289 , sum: 1299 , funct: 
-   ----> current: 1300 , last: 1289 , sum: 1299 , funct 
-22222
-current: 1311 , last: 1300 
- --> current: 1311 , last: 1300 , sum: 1310 , funct: 
-   ----> current: 1311 , last: 1300 , sum: 1310 , funct 
- --> current: 1311 , last: 1300 , sum: 1330 , funct: 
- --> current: 1311 , last: 1300 , sum: 1400 , funct: 
- --> current: 1311 , last: 1300 , sum: 1310 , funct: 
-   ----> current: 1311 , last: 1300 , sum: 1310 , funct 
-22222
-current: 1322 , last: 1311 
- --> current: 1322 , last: 1311 , sum: 1321 , funct: 
-   ----> current: 1322 , last: 1311 , sum: 1321 , funct 
- --> current: 1322 , last: 1311 , sum: 1341 , funct: 
- --> current: 1322 , last: 1311 , sum: 1411 , funct: 
- --> current: 1322 , last: 1311 , sum: 1321 , funct: 
-   ----> current: 1322 , last: 1311 , sum: 1321 , funct 
-22222
-current: 1333 , last: 1322 
- --> current: 1333 , last: 1322 , sum: 1332 , funct: 
-   ----> current: 1333 , last: 1322 , sum: 1332 , funct 
- --> current: 1333 , last: 1322 , sum: 1352 , funct: 
- --> current: 1333 , last: 1322 , sum: 1422 , funct: 
- --> current: 1333 , last: 1322 , sum: 1332 , funct: 
-   ----> current: 1333 , last: 1322 , sum: 1332 , funct 
-22222
-current: 1344 , last: 1333 
- --> current: 1344 , last: 1333 , sum: 1343 , funct: 
-   ----> current: 1344 , last: 1333 , sum: 1343 , funct 
- --> current: 1344 , last: 1333 , sum: 1363 , funct: 
- --> current: 1344 , last: 1333 , sum: 1433 , funct: 
- --> current: 1344 , last: 1333 , sum: 1343 , funct: 
-   ----> current: 1344 , last: 1333 , sum: 1343 , funct 
-22222
-current: 1355 , last: 1344 
- --> current: 1355 , last: 1344 , sum: 1354 , funct: 
-   ----> current: 1355 , last: 1344 , sum: 1354 , funct 
- --> current: 1355 , last: 1344 , sum: 1374 , funct: 
- --> current: 1355 , last: 1344 , sum: 1444 , funct: 
- --> current: 1355 , last: 1344 , sum: 1354 , funct: 
-   ----> current: 1355 , last: 1344 , sum: 1354 , funct 
-22222
-current: 1366 , last: 1355 
- --> current: 1366 , last: 1355 , sum: 1365 , funct: 
-   ----> current: 1366 , last: 1355 , sum: 1365 , funct 
- --> current: 1366 , last: 1355 , sum: 1385 , funct: 
- --> current: 1366 , last: 1355 , sum: 1455 , funct: 
- --> current: 1366 , last: 1355 , sum: 1365 , funct: 
-   ----> current: 1366 , last: 1355 , sum: 1365 , funct 
-22222
-current: 1377 , last: 1366 
- --> current: 1377 , last: 1366 , sum: 1376 , funct: 
-   ----> current: 1377 , last: 1366 , sum: 1376 , funct 
- --> current: 1377 , last: 1366 , sum: 1396 , funct: 
- --> current: 1377 , last: 1366 , sum: 1466 , funct: 
- --> current: 1377 , last: 1366 , sum: 1376 , funct: 
-   ----> current: 1377 , last: 1366 , sum: 1376 , funct 
-22222
-current: 1388 , last: 1377 
- --> current: 1388 , last: 1377 , sum: 1387 , funct: 
-   ----> current: 1388 , last: 1377 , sum: 1387 , funct 
- --> current: 1388 , last: 1377 , sum: 1407 , funct: 
- --> current: 1388 , last: 1377 , sum: 1477 , funct: 
- --> current: 1388 , last: 1377 , sum: 1387 , funct: 
-   ----> current: 1388 , last: 1377 , sum: 1387 , funct 
-22222
-current: 1399 , last: 1388 
- --> current: 1399 , last: 1388 , sum: 1398 , funct: 
-   ----> current: 1399 , last: 1388 , sum: 1398 , funct 
- --> current: 1399 , last: 1388 , sum: 1418 , funct: 
- --> current: 1399 , last: 1388 , sum: 1488 , funct: 
- --> current: 1399 , last: 1388 , sum: 1398 , funct: 
-   ----> current: 1399 , last: 1388 , sum: 1398 , funct 
-22222
-current: 1410 , last: 1399 
- --> current: 1410 , last: 1399 , sum: 1409 , funct: 
-   ----> current: 1410 , last: 1399 , sum: 1409 , funct 
- --> current: 1410 , last: 1399 , sum: 1429 , funct: 
- --> current: 1410 , last: 1399 , sum: 1499 , funct: 
- --> current: 1410 , last: 1399 , sum: 1409 , funct: 
-   ----> current: 1410 , last: 1399 , sum: 1409 , funct 
-22222
-current: 1421 , last: 1410 
- --> current: 1421 , last: 1410 , sum: 1420 , funct: 
-   ----> current: 1421 , last: 1410 , sum: 1420 , funct 
- --> current: 1421 , last: 1410 , sum: 1440 , funct: 
- --> current: 1421 , last: 1410 , sum: 1510 , funct: 
- --> current: 1421 , last: 1410 , sum: 1420 , funct: 
-   ----> current: 1421 , last: 1410 , sum: 1420 , funct 
-22222
-current: 1432 , last: 1421 
- --> current: 1432 , last: 1421 , sum: 1431 , funct: 
-   ----> current: 1432 , last: 1421 , sum: 1431 , funct 
- --> current: 1432 , last: 1421 , sum: 1451 , funct: 
- --> current: 1432 , last: 1421 , sum: 1521 , funct: 
- --> current: 1432 , last: 1421 , sum: 1431 , funct: 
-   ----> current: 1432 , last: 1421 , sum: 1431 , funct 
-22222
-current: 1443 , last: 1432 
- --> current: 1443 , last: 1432 , sum: 1442 , funct: 
-   ----> current: 1443 , last: 1432 , sum: 1442 , funct 
- --> current: 1443 , last: 1432 , sum: 1462 , funct: 
- --> current: 1443 , last: 1432 , sum: 1532 , funct: 
- --> current: 1443 , last: 1432 , sum: 1442 , funct: 
-   ----> current: 1443 , last: 1432 , sum: 1442 , funct 
-22222
-current: 1454 , last: 1443 
- --> current: 1454 , last: 1443 , sum: 1453 , funct: 
-   ----> current: 1454 , last: 1443 , sum: 1453 , funct 
- --> current: 1454 , last: 1443 , sum: 1473 , funct: 
- --> current: 1454 , last: 1443 , sum: 1543 , funct: 
- --> current: 1454 , last: 1443 , sum: 1453 , funct: 
-   ----> current: 1454 , last: 1443 , sum: 1453 , funct 
-22222
-current: 1465 , last: 1454 
- --> current: 1465 , last: 1454 , sum: 1464 , funct: 
-   ----> current: 1465 , last: 1454 , sum: 1464 , funct 
- --> current: 1465 , last: 1454 , sum: 1484 , funct: 
- --> current: 1465 , last: 1454 , sum: 1554 , funct: 
- --> current: 1465 , last: 1454 , sum: 1464 , funct: 
-   ----> current: 1465 , last: 1454 , sum: 1464 , funct 
-22222
-current: 1476 , last: 1465 
- --> current: 1476 , last: 1465 , sum: 1475 , funct: 
-   ----> current: 1476 , last: 1465 , sum: 1475 , funct 
- --> current: 1476 , last: 1465 , sum: 1495 , funct: 
- --> current: 1476 , last: 1465 , sum: 1565 , funct: 
- --> current: 1476 , last: 1465 , sum: 1475 , funct: 
-   ----> current: 1476 , last: 1465 , sum: 1475 , funct 
-22222
-current: 1487 , last: 1476 
- --> current: 1487 , last: 1476 , sum: 1486 , funct: 
-   ----> current: 1487 , last: 1476 , sum: 1486 , funct 
- --> current: 1487 , last: 1476 , sum: 1506 , funct: 
- --> current: 1487 , last: 1476 , sum: 1576 , funct: 
- --> current: 1487 , last: 1476 , sum: 1486 , funct: 
-   ----> current: 1487 , last: 1476 , sum: 1486 , funct 
-22222
-current: 1498 , last: 1487 
- --> current: 1498 , last: 1487 , sum: 1497 , funct: 
-   ----> current: 1498 , last: 1487 , sum: 1497 , funct 
- --> current: 1498 , last: 1487 , sum: 1517 , funct: 
- --> current: 1498 , last: 1487 , sum: 1587 , funct: 
- --> current: 1498 , last: 1487 , sum: 1497 , funct: 
-   ----> current: 1498 , last: 1487 , sum: 1497 , funct 
-22222
-current: 1509 , last: 1498 
- --> current: 1509 , last: 1498 , sum: 1508 , funct: 
-   ----> current: 1509 , last: 1498 , sum: 1508 , funct 
- --> current: 1509 , last: 1498 , sum: 1528 , funct: 
- --> current: 1509 , last: 1498 , sum: 1598 , funct: 
- --> current: 1509 , last: 1498 , sum: 1508 , funct: 
-   ----> current: 1509 , last: 1498 , sum: 1508 , funct 
-22222
-current: 1520 , last: 1509 
- --> current: 1520 , last: 1509 , sum: 1519 , funct: 
-   ----> current: 1520 , last: 1509 , sum: 1519 , funct 
- --> current: 1520 , last: 1509 , sum: 1539 , funct: 
- --> current: 1520 , last: 1509 , sum: 1609 , funct: 
- --> current: 1520 , last: 1509 , sum: 1519 , funct: 
-   ----> current: 1520 , last: 1509 , sum: 1519 , funct 
-22222
-current: 1531 , last: 1520 
- --> current: 1531 , last: 1520 , sum: 1530 , funct: 
-   ----> current: 1531 , last: 1520 , sum: 1530 , funct 
- --> current: 1531 , last: 1520 , sum: 1550 , funct: 
- --> current: 1531 , last: 1520 , sum: 1620 , funct: 
- --> current: 1531 , last: 1520 , sum: 1530 , funct: 
-   ----> current: 1531 , last: 1520 , sum: 1530 , funct 
-22222
-current: 1542 , last: 1531 
- --> current: 1542 , last: 1531 , sum: 1541 , funct: 
-   ----> current: 1542 , last: 1531 , sum: 1541 , funct 
- --> current: 1542 , last: 1531 , sum: 1561 , funct: 
- --> current: 1542 , last: 1531 , sum: 1631 , funct: 
- --> current: 1542 , last: 1531 , sum: 1541 , funct: 
-   ----> current: 1542 , last: 1531 , sum: 1541 , funct 
-22222
-current: 1553 , last: 1542 
- --> current: 1553 , last: 1542 , sum: 1552 , funct: 
-   ----> current: 1553 , last: 1542 , sum: 1552 , funct 
- --> current: 1553 , last: 1542 , sum: 1572 , funct: 
- --> current: 1553 , last: 1542 , sum: 1642 , funct: 
- --> current: 1553 , last: 1542 , sum: 1552 , funct: 
-   ----> current: 1553 , last: 1542 , sum: 1552 , funct 
-22222
-current: 1564 , last: 1553 
- --> current: 1564 , last: 1553 , sum: 1563 , funct: 
-   ----> current: 1564 , last: 1553 , sum: 1563 , funct 
- --> current: 1564 , last: 1553 , sum: 1583 , funct: 
- --> current: 1564 , last: 1553 , sum: 1653 , funct: 
- --> current: 1564 , last: 1553 , sum: 1563 , funct: 
-   ----> current: 1564 , last: 1553 , sum: 1563 , funct 
-22222
-current: 1575 , last: 1564 
- --> current: 1575 , last: 1564 , sum: 1574 , funct: 
-   ----> current: 1575 , last: 1564 , sum: 1574 , funct 
- --> current: 1575 , last: 1564 , sum: 1594 , funct: 
- --> current: 1575 , last: 1564 , sum: 1664 , funct: 
- --> current: 1575 , last: 1564 , sum: 1574 , funct: 
-   ----> current: 1575 , last: 1564 , sum: 1574 , funct 
-22222
-current: 1586 , last: 1575 
- --> current: 1586 , last: 1575 , sum: 1585 , funct: 
-   ----> current: 1586 , last: 1575 , sum: 1585 , funct 
- --> current: 1586 , last: 1575 , sum: 1605 , funct: 
- --> current: 1586 , last: 1575 , sum: 1675 , funct: 
- --> current: 1586 , last: 1575 , sum: 1585 , funct: 
-   ----> current: 1586 , last: 1575 , sum: 1585 , funct 
-22222
-current: 1597 , last: 1586 
- --> current: 1597 , last: 1586 , sum: 1596 , funct: 
-   ----> current: 1597 , last: 1586 , sum: 1596 , funct 
- --> current: 1597 , last: 1586 , sum: 1616 , funct: 
- --> current: 1597 , last: 1586 , sum: 1686 , funct: 
- --> current: 1597 , last: 1586 , sum: 1596 , funct: 
-   ----> current: 1597 , last: 1586 , sum: 1596 , funct 
-22222
-current: 1608 , last: 1597 
- --> current: 1608 , last: 1597 , sum: 1607 , funct: 
-   ----> current: 1608 , last: 1597 , sum: 1607 , funct 
- --> current: 1608 , last: 1597 , sum: 1627 , funct: 
- --> current: 1608 , last: 1597 , sum: 1697 , funct: 
- --> current: 1608 , last: 1597 , sum: 1607 , funct: 
-   ----> current: 1608 , last: 1597 , sum: 1607 , funct 
-22222
-current: 1619 , last: 1608 
- --> current: 1619 , last: 1608 , sum: 1618 , funct: 
-   ----> current: 1619 , last: 1608 , sum: 1618 , funct 
- --> current: 1619 , last: 1608 , sum: 1638 , funct: 
- --> current: 1619 , last: 1608 , sum: 1708 , funct: 
- --> current: 1619 , last: 1608 , sum: 1618 , funct: 
-   ----> current: 1619 , last: 1608 , sum: 1618 , funct 
-22222
-current: 1630 , last: 1619 
- --> current: 1630 , last: 1619 , sum: 1629 , funct: 
-   ----> current: 1630 , last: 1619 , sum: 1629 , funct 
- --> current: 1630 , last: 1619 , sum: 1649 , funct: 
- --> current: 1630 , last: 1619 , sum: 1719 , funct: 
- --> current: 1630 , last: 1619 , sum: 1629 , funct: 
-   ----> current: 1630 , last: 1619 , sum: 1629 , funct 
-22222
-current: 1641 , last: 1630 
- --> current: 1641 , last: 1630 , sum: 1640 , funct: 
-   ----> current: 1641 , last: 1630 , sum: 1640 , funct 
- --> current: 1641 , last: 1630 , sum: 1660 , funct: 
- --> current: 1641 , last: 1630 , sum: 1730 , funct: 
- --> current: 1641 , last: 1630 , sum: 1640 , funct: 
-   ----> current: 1641 , last: 1630 , sum: 1640 , funct 
-22222
-current: 1652 , last: 1641 
- --> current: 1652 , last: 1641 , sum: 1651 , funct: 
-   ----> current: 1652 , last: 1641 , sum: 1651 , funct 
- --> current: 1652 , last: 1641 , sum: 1671 , funct: 
- --> current: 1652 , last: 1641 , sum: 1741 , funct: 
- --> current: 1652 , last: 1641 , sum: 1651 , funct: 
-   ----> current: 1652 , last: 1641 , sum: 1651 , funct 
-22222
-current: 1663 , last: 1652 
- --> current: 1663 , last: 1652 , sum: 1662 , funct: 
-   ----> current: 1663 , last: 1652 , sum: 1662 , funct 
- --> current: 1663 , last: 1652 , sum: 1682 , funct: 
- --> current: 1663 , last: 1652 , sum: 1752 , funct: 
- --> current: 1663 , last: 1652 , sum: 1662 , funct: 
-   ----> current: 1663 , last: 1652 , sum: 1662 , funct 
-22222
-current: 1674 , last: 1663 
- --> current: 1674 , last: 1663 , sum: 1673 , funct: 
-   ----> current: 1674 , last: 1663 , sum: 1673 , funct 
- --> current: 1674 , last: 1663 , sum: 1693 , funct: 
- --> current: 1674 , last: 1663 , sum: 1763 , funct: 
- --> current: 1674 , last: 1663 , sum: 1673 , funct: 
-   ----> current: 1674 , last: 1663 , sum: 1673 , funct 
-22222
-current: 1685 , last: 1674 
- --> current: 1685 , last: 1674 , sum: 1684 , funct: 
-   ----> current: 1685 , last: 1674 , sum: 1684 , funct 
- --> current: 1685 , last: 1674 , sum: 1704 , funct: 
- --> current: 1685 , last: 1674 , sum: 1774 , funct: 
- --> current: 1685 , last: 1674 , sum: 1684 , funct: 
-   ----> current: 1685 , last: 1674 , sum: 1684 , funct 
-22222
-current: 1696 , last: 1685 
- --> current: 1696 , last: 1685 , sum: 1695 , funct: 
-   ----> current: 1696 , last: 1685 , sum: 1695 , funct 
- --> current: 1696 , last: 1685 , sum: 1715 , funct: 
- --> current: 1696 , last: 1685 , sum: 1785 , funct: 
- --> current: 1696 , last: 1685 , sum: 1695 , funct: 
-   ----> current: 1696 , last: 1685 , sum: 1695 , funct 
-22222
-current: 1707 , last: 1696 
- --> current: 1707 , last: 1696 , sum: 1706 , funct: 
-   ----> current: 1707 , last: 1696 , sum: 1706 , funct 
- --> current: 1707 , last: 1696 , sum: 1726 , funct: 
- --> current: 1707 , last: 1696 , sum: 1796 , funct: 
- --> current: 1707 , last: 1696 , sum: 1706 , funct: 
-   ----> current: 1707 , last: 1696 , sum: 1706 , funct 
-22222
-current: 1718 , last: 1707 
- --> current: 1718 , last: 1707 , sum: 1717 , funct: 
-   ----> current: 1718 , last: 1707 , sum: 1717 , funct 
- --> current: 1718 , last: 1707 , sum: 1737 , funct: 
- --> current: 1718 , last: 1707 , sum: 1807 , funct: 
- --> current: 1718 , last: 1707 , sum: 1717 , funct: 
-   ----> current: 1718 , last: 1707 , sum: 1717 , funct 
-22222
-current: 1729 , last: 1718 
- --> current: 1729 , last: 1718 , sum: 1728 , funct: 
-   ----> current: 1729 , last: 1718 , sum: 1728 , funct 
- --> current: 1729 , last: 1718 , sum: 1748 , funct: 
- --> current: 1729 , last: 1718 , sum: 1818 , funct: 
- --> current: 1729 , last: 1718 , sum: 1728 , funct: 
-   ----> current: 1729 , last: 1718 , sum: 1728 , funct 
-22222
-current: 1740 , last: 1729 
- --> current: 1740 , last: 1729 , sum: 1739 , funct: 
-   ----> current: 1740 , last: 1729 , sum: 1739 , funct 
- --> current: 1740 , last: 1729 , sum: 1759 , funct: 
- --> current: 1740 , last: 1729 , sum: 1829 , funct: 
- --> current: 1740 , last: 1729 , sum: 1739 , funct: 
-   ----> current: 1740 , last: 1729 , sum: 1739 , funct 
-22222
-current: 1751 , last: 1740 
- --> current: 1751 , last: 1740 , sum: 1750 , funct: 
-   ----> current: 1751 , last: 1740 , sum: 1750 , funct 
- --> current: 1751 , last: 1740 , sum: 1770 , funct: 
- --> current: 1751 , last: 1740 , sum: 1840 , funct: 
- --> current: 1751 , last: 1740 , sum: 1750 , funct: 
-   ----> current: 1751 , last: 1740 , sum: 1750 , funct 
-22222
-current: 1762 , last: 1751 
- --> current: 1762 , last: 1751 , sum: 1761 , funct: 
-   ----> current: 1762 , last: 1751 , sum: 1761 , funct 
- --> current: 1762 , last: 1751 , sum: 1781 , funct: 
- --> current: 1762 , last: 1751 , sum: 1851 , funct: 
- --> current: 1762 , last: 1751 , sum: 1761 , funct: 
-   ----> current: 1762 , last: 1751 , sum: 1761 , funct 
-22222
-current: 1773 , last: 1762 
- --> current: 1773 , last: 1762 , sum: 1772 , funct: 
-   ----> current: 1773 , last: 1762 , sum: 1772 , funct 
- --> current: 1773 , last: 1762 , sum: 1792 , funct: 
- --> current: 1773 , last: 1762 , sum: 1862 , funct: 
- --> current: 1773 , last: 1762 , sum: 1772 , funct: 
-   ----> current: 1773 , last: 1762 , sum: 1772 , funct 
-22222
-current: 1784 , last: 1773 
- --> current: 1784 , last: 1773 , sum: 1783 , funct: 
-   ----> current: 1784 , last: 1773 , sum: 1783 , funct 
- --> current: 1784 , last: 1773 , sum: 1803 , funct: 
- --> current: 1784 , last: 1773 , sum: 1873 , funct: 
- --> current: 1784 , last: 1773 , sum: 1783 , funct: 
-   ----> current: 1784 , last: 1773 , sum: 1783 , funct 
-22222
-current: 1795 , last: 1784 
- --> current: 1795 , last: 1784 , sum: 1794 , funct: 
-   ----> current: 1795 , last: 1784 , sum: 1794 , funct 
- --> current: 1795 , last: 1784 , sum: 1814 , funct: 
- --> current: 1795 , last: 1784 , sum: 1884 , funct: 
- --> current: 1795 , last: 1784 , sum: 1794 , funct: 
-   ----> current: 1795 , last: 1784 , sum: 1794 , funct 
-22222
-current: 1806 , last: 1795 
- --> current: 1806 , last: 1795 , sum: 1805 , funct: 
-   ----> current: 1806 , last: 1795 , sum: 1805 , funct 
- --> current: 1806 , last: 1795 , sum: 1825 , funct: 
- --> current: 1806 , last: 1795 , sum: 1895 , funct: 
- --> current: 1806 , last: 1795 , sum: 1805 , funct: 
-   ----> current: 1806 , last: 1795 , sum: 1805 , funct 
-22222
-current: 1817 , last: 1806 
- --> current: 1817 , last: 1806 , sum: 1816 , funct: 
-   ----> current: 1817 , last: 1806 , sum: 1816 , funct 
- --> current: 1817 , last: 1806 , sum: 1836 , funct: 
- --> current: 1817 , last: 1806 , sum: 1906 , funct: 
- --> current: 1817 , last: 1806 , sum: 1816 , funct: 
-   ----> current: 1817 , last: 1806 , sum: 1816 , funct 
-22222
-current: 1828 , last: 1817 
- --> current: 1828 , last: 1817 , sum: 1827 , funct: 
-   ----> current: 1828 , last: 1817 , sum: 1827 , funct 
- --> current: 1828 , last: 1817 , sum: 1847 , funct: 
- --> current: 1828 , last: 1817 , sum: 1917 , funct: 
- --> current: 1828 , last: 1817 , sum: 1827 , funct: 
-   ----> current: 1828 , last: 1817 , sum: 1827 , funct 
-22222
-current: 1839 , last: 1828 
- --> current: 1839 , last: 1828 , sum: 1838 , funct: 
-   ----> current: 1839 , last: 1828 , sum: 1838 , funct 
- --> current: 1839 , last: 1828 , sum: 1858 , funct: 
- --> current: 1839 , last: 1828 , sum: 1928 , funct: 
- --> current: 1839 , last: 1828 , sum: 1838 , funct: 
-   ----> current: 1839 , last: 1828 , sum: 1838 , funct 
-22222
-current: 1850 , last: 1839 
- --> current: 1850 , last: 1839 , sum: 1849 , funct: 
-   ----> current: 1850 , last: 1839 , sum: 1849 , funct 
- --> current: 1850 , last: 1839 , sum: 1869 , funct: 
- --> current: 1850 , last: 1839 , sum: 1939 , funct: 
- --> current: 1850 , last: 1839 , sum: 1849 , funct: 
-   ----> current: 1850 , last: 1839 , sum: 1849 , funct 
-22222
-current: 1861 , last: 1850 
- --> current: 1861 , last: 1850 , sum: 1860 , funct: 
-   ----> current: 1861 , last: 1850 , sum: 1860 , funct 
- --> current: 1861 , last: 1850 , sum: 1880 , funct: 
- --> current: 1861 , last: 1850 , sum: 1950 , funct: 
- --> current: 1861 , last: 1850 , sum: 1860 , funct: 
-   ----> current: 1861 , last: 1850 , sum: 1860 , funct 
-22222
-current: 1872 , last: 1861 
- --> current: 1872 , last: 1861 , sum: 1871 , funct: 
-   ----> current: 1872 , last: 1861 , sum: 1871 , funct 
- --> current: 1872 , last: 1861 , sum: 1891 , funct: 
- --> current: 1872 , last: 1861 , sum: 1961 , funct: 
- --> current: 1872 , last: 1861 , sum: 1871 , funct: 
-   ----> current: 1872 , last: 1861 , sum: 1871 , funct 
-22222
-current: 1883 , last: 1872 
- --> current: 1883 , last: 1872 , sum: 1882 , funct: 
-   ----> current: 1883 , last: 1872 , sum: 1882 , funct 
- --> current: 1883 , last: 1872 , sum: 1902 , funct: 
- --> current: 1883 , last: 1872 , sum: 1972 , funct: 
- --> current: 1883 , last: 1872 , sum: 1882 , funct: 
-   ----> current: 1883 , last: 1872 , sum: 1882 , funct 
-22222
-current: 1894 , last: 1883 
- --> current: 1894 , last: 1883 , sum: 1893 , funct: 
-   ----> current: 1894 , last: 1883 , sum: 1893 , funct 
- --> current: 1894 , last: 1883 , sum: 1913 , funct: 
- --> current: 1894 , last: 1883 , sum: 1983 , funct: 
- --> current: 1894 , last: 1883 , sum: 1893 , funct: 
-   ----> current: 1894 , last: 1883 , sum: 1893 , funct 
-22222
-current: 1905 , last: 1894 
- --> current: 1905 , last: 1894 , sum: 1904 , funct: 
-   ----> current: 1905 , last: 1894 , sum: 1904 , funct 
- --> current: 1905 , last: 1894 , sum: 1924 , funct: 
- --> current: 1905 , last: 1894 , sum: 1994 , funct: 
- --> current: 1905 , last: 1894 , sum: 1904 , funct: 
-   ----> current: 1905 , last: 1894 , sum: 1904 , funct 
-22222
-current: 1916 , last: 1905 
- --> current: 1916 , last: 1905 , sum: 1915 , funct: 
-   ----> current: 1916 , last: 1905 , sum: 1915 , funct 
- --> current: 1916 , last: 1905 , sum: 1935 , funct: 
- --> current: 1916 , last: 1905 , sum: 2005 , funct: 
- --> current: 1916 , last: 1905 , sum: 1915 , funct: 
-   ----> current: 1916 , last: 1905 , sum: 1915 , funct 
-22222
-current: 1927 , last: 1916 
- --> current: 1927 , last: 1916 , sum: 1926 , funct: 
-   ----> current: 1927 , last: 1916 , sum: 1926 , funct 
- --> current: 1927 , last: 1916 , sum: 1946 , funct: 
- --> current: 1927 , last: 1916 , sum: 2016 , funct: 
- --> current: 1927 , last: 1916 , sum: 1926 , funct: 
-   ----> current: 1927 , last: 1916 , sum: 1926 , funct 
-22222
-current: 1938 , last: 1927 
- --> current: 1938 , last: 1927 , sum: 1937 , funct: 
-   ----> current: 1938 , last: 1927 , sum: 1937 , funct 
- --> current: 1938 , last: 1927 , sum: 1957 , funct: 
- --> current: 1938 , last: 1927 , sum: 2027 , funct: 
- --> current: 1938 , last: 1927 , sum: 1937 , funct: 
-   ----> current: 1938 , last: 1927 , sum: 1937 , funct 
-22222
-current: 1949 , last: 1938 
- --> current: 1949 , last: 1938 , sum: 1948 , funct: 
-   ----> current: 1949 , last: 1938 , sum: 1948 , funct 
- --> current: 1949 , last: 1938 , sum: 1968 , funct: 
- --> current: 1949 , last: 1938 , sum: 2038 , funct: 
- --> current: 1949 , last: 1938 , sum: 1948 , funct: 
-   ----> current: 1949 , last: 1938 , sum: 1948 , funct 
-22222
-current: 1960 , last: 1949 
- --> current: 1960 , last: 1949 , sum: 1959 , funct: 
-   ----> current: 1960 , last: 1949 , sum: 1959 , funct 
- --> current: 1960 , last: 1949 , sum: 1979 , funct: 
- --> current: 1960 , last: 1949 , sum: 2049 , funct: 
- --> current: 1960 , last: 1949 , sum: 1959 , funct: 
-   ----> current: 1960 , last: 1949 , sum: 1959 , funct 
-22222
-current: 1971 , last: 1960 
- --> current: 1971 , last: 1960 , sum: 1970 , funct: 
-   ----> current: 1971 , last: 1960 , sum: 1970 , funct 
- --> current: 1971 , last: 1960 , sum: 1990 , funct: 
- --> current: 1971 , last: 1960 , sum: 2060 , funct: 
- --> current: 1971 , last: 1960 , sum: 1970 , funct: 
-   ----> current: 1971 , last: 1960 , sum: 1970 , funct 
-22222
-current: 1982 , last: 1971 
- --> current: 1982 , last: 1971 , sum: 1981 , funct: 
-   ----> current: 1982 , last: 1971 , sum: 1981 , funct 
- --> current: 1982 , last: 1971 , sum: 2001 , funct: 
- --> current: 1982 , last: 1971 , sum: 2071 , funct: 
- --> current: 1982 , last: 1971 , sum: 1981 , funct: 
-   ----> current: 1982 , last: 1971 , sum: 1981 , funct 
-22222
-current: 1993 , last: 1982 
- --> current: 1993 , last: 1982 , sum: 1992 , funct: 
-   ----> current: 1993 , last: 1982 , sum: 1992 , funct 
- --> current: 1993 , last: 1982 , sum: 2012 , funct: 
- --> current: 1993 , last: 1982 , sum: 2082 , funct: 
- --> current: 1993 , last: 1982 , sum: 1992 , funct: 
-   ----> current: 1993 , last: 1982 , sum: 1992 , funct 
-22222
-current: 2004 , last: 1993 
- --> current: 2004 , last: 1993 , sum: 2003 , funct: 
-   ----> current: 2004 , last: 1993 , sum: 2003 , funct 
- --> current: 2004 , last: 1993 , sum: 2023 , funct: 
- --> current: 2004 , last: 1993 , sum: 2093 , funct: 
- --> current: 2004 , last: 1993 , sum: 2003 , funct: 
-   ----> current: 2004 , last: 1993 , sum: 2003 , funct 
-22222
-current: 2015 , last: 2004 
- --> current: 2015 , last: 2004 , sum: 2014 , funct: 
-   ----> current: 2015 , last: 2004 , sum: 2014 , funct 
- --> current: 2015 , last: 2004 , sum: 2034 , funct: 
- --> current: 2015 , last: 2004 , sum: 2104 , funct: 
- --> current: 2015 , last: 2004 , sum: 2014 , funct: 
-   ----> current: 2015 , last: 2004 , sum: 2014 , funct 
-22222
-current: 2026 , last: 2015 
- --> current: 2026 , last: 2015 , sum: 2025 , funct: 
-   ----> current: 2026 , last: 2015 , sum: 2025 , funct 
- --> current: 2026 , last: 2015 , sum: 2045 , funct: 
- --> current: 2026 , last: 2015 , sum: 2115 , funct: 
- --> current: 2026 , last: 2015 , sum: 2025 , funct: 
-   ----> current: 2026 , last: 2015 , sum: 2025 , funct 
-22222
-current: 2037 , last: 2026 
- --> current: 2037 , last: 2026 , sum: 2036 , funct: 
-   ----> current: 2037 , last: 2026 , sum: 2036 , funct 
- --> current: 2037 , last: 2026 , sum: 2056 , funct: 
- --> current: 2037 , last: 2026 , sum: 2126 , funct: 
- --> current: 2037 , last: 2026 , sum: 2036 , funct: 
-   ----> current: 2037 , last: 2026 , sum: 2036 , funct 
-22222
-current: 2048 , last: 2037 
- --> current: 2048 , last: 2037 , sum: 2047 , funct: 
-   ----> current: 2048 , last: 2037 , sum: 2047 , funct 
- --> current: 2048 , last: 2037 , sum: 2067 , funct: 
- --> current: 2048 , last: 2037 , sum: 2137 , funct: 
- --> current: 2048 , last: 2037 , sum: 2047 , funct: 
-   ----> current: 2048 , last: 2037 , sum: 2047 , funct 
-22222
-current: 2059 , last: 2048 
- --> current: 2059 , last: 2048 , sum: 2058 , funct: 
-   ----> current: 2059 , last: 2048 , sum: 2058 , funct 
- --> current: 2059 , last: 2048 , sum: 2078 , funct: 
- --> current: 2059 , last: 2048 , sum: 2148 , funct: 
- --> current: 2059 , last: 2048 , sum: 2058 , funct: 
-   ----> current: 2059 , last: 2048 , sum: 2058 , funct 
-22222
-current: 2070 , last: 2059 
- --> current: 2070 , last: 2059 , sum: 2069 , funct: 
-   ----> current: 2070 , last: 2059 , sum: 2069 , funct 
- --> current: 2070 , last: 2059 , sum: 2089 , funct: 
- --> current: 2070 , last: 2059 , sum: 2159 , funct: 
- --> current: 2070 , last: 2059 , sum: 2069 , funct: 
-   ----> current: 2070 , last: 2059 , sum: 2069 , funct 
-22222
-current: 2081 , last: 2070 
- --> current: 2081 , last: 2070 , sum: 2080 , funct: 
-   ----> current: 2081 , last: 2070 , sum: 2080 , funct 
- --> current: 2081 , last: 2070 , sum: 2100 , funct: 
- --> current: 2081 , last: 2070 , sum: 2170 , funct: 
- --> current: 2081 , last: 2070 , sum: 2080 , funct: 
-   ----> current: 2081 , last: 2070 , sum: 2080 , funct 
-22222
-current: 2092 , last: 2081 
- --> current: 2092 , last: 2081 , sum: 2091 , funct: 
-   ----> current: 2092 , last: 2081 , sum: 2091 , funct 
- --> current: 2092 , last: 2081 , sum: 2111 , funct: 
- --> current: 2092 , last: 2081 , sum: 2181 , funct: 
- --> current: 2092 , last: 2081 , sum: 2091 , funct: 
-   ----> current: 2092 , last: 2081 , sum: 2091 , funct 
-22222
-current: 2103 , last: 2092 
- --> current: 2103 , last: 2092 , sum: 2102 , funct: 
-   ----> current: 2103 , last: 2092 , sum: 2102 , funct 
- --> current: 2103 , last: 2092 , sum: 2122 , funct: 
- --> current: 2103 , last: 2092 , sum: 2192 , funct: 
- --> current: 2103 , last: 2092 , sum: 2102 , funct: 
-   ----> current: 2103 , last: 2092 , sum: 2102 , funct 
-22222
-current: 2114 , last: 2103 
- --> current: 2114 , last: 2103 , sum: 2113 , funct: 
-   ----> current: 2114 , last: 2103 , sum: 2113 , funct 
- --> current: 2114 , last: 2103 , sum: 2133 , funct: 
- --> current: 2114 , last: 2103 , sum: 2203 , funct: 
- --> current: 2114 , last: 2103 , sum: 2113 , funct: 
-   ----> current: 2114 , last: 2103 , sum: 2113 , funct 
-22222
-current: 2125 , last: 2114 
- --> current: 2125 , last: 2114 , sum: 2124 , funct: 
-   ----> current: 2125 , last: 2114 , sum: 2124 , funct 
- --> current: 2125 , last: 2114 , sum: 2144 , funct: 
- --> current: 2125 , last: 2114 , sum: 2214 , funct: 
- --> current: 2125 , last: 2114 , sum: 2124 , funct: 
-   ----> current: 2125 , last: 2114 , sum: 2124 , funct 
-22222
-current: 2136 , last: 2125 
- --> current: 2136 , last: 2125 , sum: 2135 , funct: 
-   ----> current: 2136 , last: 2125 , sum: 2135 , funct 
- --> current: 2136 , last: 2125 , sum: 2155 , funct: 
- --> current: 2136 , last: 2125 , sum: 2225 , funct: 
- --> current: 2136 , last: 2125 , sum: 2135 , funct: 
-   ----> current: 2136 , last: 2125 , sum: 2135 , funct 
-22222
-current: 2147 , last: 2136 
- --> current: 2147 , last: 2136 , sum: 2146 , funct: 
-   ----> current: 2147 , last: 2136 , sum: 2146 , funct 
- --> current: 2147 , last: 2136 , sum: 2166 , funct: 
- --> current: 2147 , last: 2136 , sum: 2236 , funct: 
- --> current: 2147 , last: 2136 , sum: 2146 , funct: 
-   ----> current: 2147 , last: 2136 , sum: 2146 , funct 
-22222
-current: 2158 , last: 2147 
- --> current: 2158 , last: 2147 , sum: 2157 , funct: 
-   ----> current: 2158 , last: 2147 , sum: 2157 , funct 
- --> current: 2158 , last: 2147 , sum: 2177 , funct: 
- --> current: 2158 , last: 2147 , sum: 2247 , funct: 
- --> current: 2158 , last: 2147 , sum: 2157 , funct: 
-   ----> current: 2158 , last: 2147 , sum: 2157 , funct 
-22222
-current: 2169 , last: 2158 
- --> current: 2169 , last: 2158 , sum: 2168 , funct: 
-   ----> current: 2169 , last: 2158 , sum: 2168 , funct 
- --> current: 2169 , last: 2158 , sum: 2188 , funct: 
- --> current: 2169 , last: 2158 , sum: 2258 , funct: 
- --> current: 2169 , last: 2158 , sum: 2168 , funct: 
-   ----> current: 2169 , last: 2158 , sum: 2168 , funct 
-22222
-current: 2180 , last: 2169 
- --> current: 2180 , last: 2169 , sum: 2179 , funct: 
-   ----> current: 2180 , last: 2169 , sum: 2179 , funct 
- --> current: 2180 , last: 2169 , sum: 2199 , funct: 
- --> current: 2180 , last: 2169 , sum: 2269 , funct: 
- --> current: 2180 , last: 2169 , sum: 2179 , funct: 
-   ----> current: 2180 , last: 2169 , sum: 2179 , funct 
-22222
-current: 2191 , last: 2180 
- --> current: 2191 , last: 2180 , sum: 2190 , funct: 
-   ----> current: 2191 , last: 2180 , sum: 2190 , funct 
- --> current: 2191 , last: 2180 , sum: 2210 , funct: 
- --> current: 2191 , last: 2180 , sum: 2280 , funct: 
- --> current: 2191 , last: 2180 , sum: 2190 , funct: 
-   ----> current: 2191 , last: 2180 , sum: 2190 , funct 
-22222
-current: 2202 , last: 2191 
- --> current: 2202 , last: 2191 , sum: 2201 , funct: 
-   ----> current: 2202 , last: 2191 , sum: 2201 , funct 
- --> current: 2202 , last: 2191 , sum: 2221 , funct: 
- --> current: 2202 , last: 2191 , sum: 2291 , funct: 
- --> current: 2202 , last: 2191 , sum: 2201 , funct: 
-   ----> current: 2202 , last: 2191 , sum: 2201 , funct 
-22222
-current: 2213 , last: 2202 
- --> current: 2213 , last: 2202 , sum: 2212 , funct: 
-   ----> current: 2213 , last: 2202 , sum: 2212 , funct 
- --> current: 2213 , last: 2202 , sum: 2232 , funct: 
- --> current: 2213 , last: 2202 , sum: 2302 , funct: 
- --> current: 2213 , last: 2202 , sum: 2212 , funct: 
-   ----> current: 2213 , last: 2202 , sum: 2212 , funct 
-22222
-current: 2224 , last: 2213 
- --> current: 2224 , last: 2213 , sum: 2223 , funct: 
-   ----> current: 2224 , last: 2213 , sum: 2223 , funct 
- --> current: 2224 , last: 2213 , sum: 2243 , funct: 
- --> current: 2224 , last: 2213 , sum: 2313 , funct: 
- --> current: 2224 , last: 2213 , sum: 2223 , funct: 
-   ----> current: 2224 , last: 2213 , sum: 2223 , funct 
-22222
-current: 2235 , last: 2224 
- --> current: 2235 , last: 2224 , sum: 2234 , funct: 
-   ----> current: 2235 , last: 2224 , sum: 2234 , funct 
- --> current: 2235 , last: 2224 , sum: 2254 , funct: 
- --> current: 2235 , last: 2224 , sum: 2324 , funct: 
- --> current: 2235 , last: 2224 , sum: 2234 , funct: 
-   ----> current: 2235 , last: 2224 , sum: 2234 , funct 
-22222
-current: 2246 , last: 2235 
- --> current: 2246 , last: 2235 , sum: 2245 , funct: 
-   ----> current: 2246 , last: 2235 , sum: 2245 , funct 
- --> current: 2246 , last: 2235 , sum: 2265 , funct: 
- --> current: 2246 , last: 2235 , sum: 2335 , funct: 
- --> current: 2246 , last: 2235 , sum: 2245 , funct: 
-   ----> current: 2246 , last: 2235 , sum: 2245 , funct 
-22222
-current: 2257 , last: 2246 
- --> current: 2257 , last: 2246 , sum: 2256 , funct: 
-   ----> current: 2257 , last: 2246 , sum: 2256 , funct 
- --> current: 2257 , last: 2246 , sum: 2276 , funct: 
- --> current: 2257 , last: 2246 , sum: 2346 , funct: 
- --> current: 2257 , last: 2246 , sum: 2256 , funct: 
-   ----> current: 2257 , last: 2246 , sum: 2256 , funct 
-22222
-current: 2268 , last: 2257 
- --> current: 2268 , last: 2257 , sum: 2267 , funct: 
-   ----> current: 2268 , last: 2257 , sum: 2267 , funct 
- --> current: 2268 , last: 2257 , sum: 2287 , funct: 
- --> current: 2268 , last: 2257 , sum: 2357 , funct: 
- --> current: 2268 , last: 2257 , sum: 2267 , funct: 
-   ----> current: 2268 , last: 2257 , sum: 2267 , funct 
-22222
-current: 2279 , last: 2268 
- --> current: 2279 , last: 2268 , sum: 2278 , funct: 
-   ----> current: 2279 , last: 2268 , sum: 2278 , funct 
- --> current: 2279 , last: 2268 , sum: 2298 , funct: 
- --> current: 2279 , last: 2268 , sum: 2368 , funct: 
- --> current: 2279 , last: 2268 , sum: 2278 , funct: 
-   ----> current: 2279 , last: 2268 , sum: 2278 , funct 
-22222
-current: 2290 , last: 2279 
- --> current: 2290 , last: 2279 , sum: 2289 , funct: 
-   ----> current: 2290 , last: 2279 , sum: 2289 , funct 
- --> current: 2290 , last: 2279 , sum: 2309 , funct: 
- --> current: 2290 , last: 2279 , sum: 2379 , funct: 
- --> current: 2290 , last: 2279 , sum: 2289 , funct: 
-   ----> current: 2290 , last: 2279 , sum: 2289 , funct 
-22222
-current: 2301 , last: 2290 
- --> current: 2301 , last: 2290 , sum: 2300 , funct: 
-   ----> current: 2301 , last: 2290 , sum: 2300 , funct 
- --> current: 2301 , last: 2290 , sum: 2320 , funct: 
- --> current: 2301 , last: 2290 , sum: 2390 , funct: 
- --> current: 2301 , last: 2290 , sum: 2300 , funct: 
-   ----> current: 2301 , last: 2290 , sum: 2300 , funct 
-22222
-current: 2312 , last: 2301 
- --> current: 2312 , last: 2301 , sum: 2311 , funct: 
-   ----> current: 2312 , last: 2301 , sum: 2311 , funct 
- --> current: 2312 , last: 2301 , sum: 2331 , funct: 
- --> current: 2312 , last: 2301 , sum: 2401 , funct: 
- --> current: 2312 , last: 2301 , sum: 2311 , funct: 
-   ----> current: 2312 , last: 2301 , sum: 2311 , funct 
-22222
-current: 2323 , last: 2312 
- --> current: 2323 , last: 2312 , sum: 2322 , funct: 
-   ----> current: 2323 , last: 2312 , sum: 2322 , funct 
- --> current: 2323 , last: 2312 , sum: 2342 , funct: 
- --> current: 2323 , last: 2312 , sum: 2412 , funct: 
- --> current: 2323 , last: 2312 , sum: 2322 , funct: 
-   ----> current: 2323 , last: 2312 , sum: 2322 , funct 
-22222
-current: 2334 , last: 2323 
- --> current: 2334 , last: 2323 , sum: 2333 , funct: 
-   ----> current: 2334 , last: 2323 , sum: 2333 , funct 
- --> current: 2334 , last: 2323 , sum: 2353 , funct: 
- --> current: 2334 , last: 2323 , sum: 2423 , funct: 
- --> current: 2334 , last: 2323 , sum: 2333 , funct: 
-   ----> current: 2334 , last: 2323 , sum: 2333 , funct 
-22222
-current: 2345 , last: 2334 
- --> current: 2345 , last: 2334 , sum: 2344 , funct: 
-   ----> current: 2345 , last: 2334 , sum: 2344 , funct 
- --> current: 2345 , last: 2334 , sum: 2364 , funct: 
- --> current: 2345 , last: 2334 , sum: 2434 , funct: 
- --> current: 2345 , last: 2334 , sum: 2344 , funct: 
-   ----> current: 2345 , last: 2334 , sum: 2344 , funct 
-22222
+STATEMANAGER: m_current_state 02470e90
+set_rendering_controller 02470e90 
+ --> current: 302 , last: 0 , sum: 3
+     --> current: 302 , last: 0 , sum: 3
+ --> current: 302 , last: 0 , sum: 20
+     --> current: 302 , last: 0 , sum: 20
+ --> current: 302 , last: 0 , sum: 3000
+ --> current: 302 , last: 0 , sum: 5
+     --> current: 302 , last: 0 , sum: 5
+22222
+ --> current: 371 , last: 0 , sum: 3
+     --> current: 371 , last: 0 , sum: 3
+ --> current: 371 , last: 0 , sum: 20
+     --> current: 371 , last: 0 , sum: 20
+ --> current: 371 , last: 0 , sum: 3000
+ --> current: 371 , last: 0 , sum: 5
+     --> current: 371 , last: 0 , sum: 5
+22222
+ --> current: 382 , last: 0 , sum: 3
+     --> current: 382 , last: 0 , sum: 3
+ --> current: 382 , last: 0 , sum: 20
+     --> current: 382 , last: 0 , sum: 20
+ --> current: 382 , last: 0 , sum: 3000
+ --> current: 382 , last: 0 , sum: 5
+     --> current: 382 , last: 0 , sum: 5
+22222
+ --> current: 393 , last: 0 , sum: 3
+     --> current: 393 , last: 0 , sum: 3
+ --> current: 393 , last: 0 , sum: 20
+     --> current: 393 , last: 0 , sum: 20
+ --> current: 393 , last: 0 , sum: 3000
+ --> current: 393 , last: 0 , sum: 5
+     --> current: 393 , last: 0 , sum: 5
+22222
+ --> current: 404 , last: 0 , sum: 3
+     --> current: 404 , last: 0 , sum: 3
+ --> current: 404 , last: 0 , sum: 20
+     --> current: 404 , last: 0 , sum: 20
+ --> current: 404 , last: 0 , sum: 3000
+ --> current: 404 , last: 0 , sum: 5
+     --> current: 404 , last: 0 , sum: 5
+22222
+ --> current: 415 , last: 0 , sum: 3
+     --> current: 415 , last: 0 , sum: 3
+ --> current: 415 , last: 0 , sum: 20
+     --> current: 415 , last: 0 , sum: 20
+ --> current: 415 , last: 0 , sum: 3000
+ --> current: 415 , last: 0 , sum: 5
+     --> current: 415 , last: 0 , sum: 5
+22222
+ --> current: 426 , last: 0 , sum: 3
+     --> current: 426 , last: 0 , sum: 3
+ --> current: 426 , last: 0 , sum: 20
+     --> current: 426 , last: 0 , sum: 20
+ --> current: 426 , last: 0 , sum: 3000
+ --> current: 426 , last: 0 , sum: 5
+     --> current: 426 , last: 0 , sum: 5
+22222
+ --> current: 437 , last: 0 , sum: 3
+     --> current: 437 , last: 0 , sum: 3
+ --> current: 437 , last: 0 , sum: 20
+     --> current: 437 , last: 0 , sum: 20
+ --> current: 437 , last: 0 , sum: 3000
+ --> current: 437 , last: 0 , sum: 5
+     --> current: 437 , last: 0 , sum: 5
+22222
+ --> current: 448 , last: 0 , sum: 3
+     --> current: 448 , last: 0 , sum: 3
+ --> current: 448 , last: 0 , sum: 20
+     --> current: 448 , last: 0 , sum: 20
+ --> current: 448 , last: 0 , sum: 3000
+ --> current: 448 , last: 0 , sum: 5
+     --> current: 448 , last: 0 , sum: 5
+22222
+ --> current: 460 , last: 0 , sum: 3
+     --> current: 460 , last: 0 , sum: 3
+ --> current: 460 , last: 0 , sum: 20
+     --> current: 460 , last: 0 , sum: 20
+ --> current: 460 , last: 0 , sum: 3000
+ --> current: 460 , last: 0 , sum: 5
+     --> current: 460 , last: 0 , sum: 5
+22222
+ --> current: 471 , last: 0 , sum: 3
+     --> current: 471 , last: 0 , sum: 3
+ --> current: 471 , last: 0 , sum: 20
+     --> current: 471 , last: 0 , sum: 20
+ --> current: 471 , last: 0 , sum: 3000
+ --> current: 471 , last: 0 , sum: 5
+     --> current: 471 , last: 0 , sum: 5
+22222
+ --> current: 482 , last: 0 , sum: 3
+     --> current: 482 , last: 0 , sum: 3
+ --> current: 482 , last: 0 , sum: 20
+     --> current: 482 , last: 0 , sum: 20
+ --> current: 482 , last: 0 , sum: 3000
+ --> current: 482 , last: 0 , sum: 5
+     --> current: 482 , last: 0 , sum: 5
+22222
+ --> current: 493 , last: 0 , sum: 3
+     --> current: 493 , last: 0 , sum: 3
+ --> current: 493 , last: 0 , sum: 20
+     --> current: 493 , last: 0 , sum: 20
+ --> current: 493 , last: 0 , sum: 3000
+ --> current: 493 , last: 0 , sum: 5
+     --> current: 493 , last: 0 , sum: 5
+22222
+ --> current: 504 , last: 0 , sum: 3
+     --> current: 504 , last: 0 , sum: 3
+ --> current: 504 , last: 0 , sum: 20
+     --> current: 504 , last: 0 , sum: 20
+ --> current: 504 , last: 0 , sum: 3000
+ --> current: 504 , last: 0 , sum: 5
+     --> current: 504 , last: 0 , sum: 5
+22222
+ --> current: 515 , last: 0 , sum: 3
+     --> current: 515 , last: 0 , sum: 3
+ --> current: 515 , last: 0 , sum: 20
+     --> current: 515 , last: 0 , sum: 20
+ --> current: 515 , last: 0 , sum: 3000
+ --> current: 515 , last: 0 , sum: 5
+     --> current: 515 , last: 0 , sum: 5
+22222
+ --> current: 526 , last: 0 , sum: 3
+     --> current: 526 , last: 0 , sum: 3
+ --> current: 526 , last: 0 , sum: 20
+     --> current: 526 , last: 0 , sum: 20
+ --> current: 526 , last: 0 , sum: 3000
+ --> current: 526 , last: 0 , sum: 5
+     --> current: 526 , last: 0 , sum: 5
+22222
+ --> current: 537 , last: 0 , sum: 3
+     --> current: 537 , last: 0 , sum: 3
+ --> current: 537 , last: 0 , sum: 20
+     --> current: 537 , last: 0 , sum: 20
+ --> current: 537 , last: 0 , sum: 3000
+ --> current: 537 , last: 0 , sum: 5
+     --> current: 537 , last: 0 , sum: 5
+22222
+ --> current: 548 , last: 0 , sum: 3
+     --> current: 548 , last: 0 , sum: 3
+ --> current: 548 , last: 0 , sum: 20
+     --> current: 548 , last: 0 , sum: 20
+ --> current: 548 , last: 0 , sum: 3000
+ --> current: 548 , last: 0 , sum: 5
+     --> current: 548 , last: 0 , sum: 5
+22222
+ --> current: 559 , last: 0 , sum: 3
+     --> current: 559 , last: 0 , sum: 3
+ --> current: 559 , last: 0 , sum: 20
+     --> current: 559 , last: 0 , sum: 20
+ --> current: 559 , last: 0 , sum: 3000
+ --> current: 559 , last: 0 , sum: 5
+     --> current: 559 , last: 0 , sum: 5
+22222
+ --> current: 570 , last: 0 , sum: 3
+     --> current: 570 , last: 0 , sum: 3
+ --> current: 570 , last: 0 , sum: 20
+     --> current: 570 , last: 0 , sum: 20
+ --> current: 570 , last: 0 , sum: 3000
+ --> current: 570 , last: 0 , sum: 5
+     --> current: 570 , last: 0 , sum: 5
+22222
+ --> current: 581 , last: 0 , sum: 3
+     --> current: 581 , last: 0 , sum: 3
+ --> current: 581 , last: 0 , sum: 20
+     --> current: 581 , last: 0 , sum: 20
+ --> current: 581 , last: 0 , sum: 3000
+ --> current: 581 , last: 0 , sum: 5
+     --> current: 581 , last: 0 , sum: 5
+22222
+ --> current: 592 , last: 0 , sum: 3
+     --> current: 592 , last: 0 , sum: 3
+ --> current: 592 , last: 0 , sum: 20
+     --> current: 592 , last: 0 , sum: 20
+ --> current: 592 , last: 0 , sum: 3000
+ --> current: 592 , last: 0 , sum: 5
+     --> current: 592 , last: 0 , sum: 5
+22222
+ --> current: 603 , last: 0 , sum: 3
+     --> current: 603 , last: 0 , sum: 3
+ --> current: 603 , last: 0 , sum: 20
+     --> current: 603 , last: 0 , sum: 20
+ --> current: 603 , last: 0 , sum: 3000
+ --> current: 603 , last: 0 , sum: 5
+     --> current: 603 , last: 0 , sum: 5
+22222
+ --> current: 614 , last: 0 , sum: 3
+     --> current: 614 , last: 0 , sum: 3
+ --> current: 614 , last: 0 , sum: 20
+     --> current: 614 , last: 0 , sum: 20
+ --> current: 614 , last: 0 , sum: 3000
+ --> current: 614 , last: 0 , sum: 5
+     --> current: 614 , last: 0 , sum: 5
+22222
+ --> current: 625 , last: 0 , sum: 3
+     --> current: 625 , last: 0 , sum: 3
+ --> current: 625 , last: 0 , sum: 20
+     --> current: 625 , last: 0 , sum: 20
+ --> current: 625 , last: 0 , sum: 3000
+ --> current: 625 , last: 0 , sum: 5
+     --> current: 625 , last: 0 , sum: 5
+22222
+ --> current: 636 , last: 0 , sum: 3
+     --> current: 636 , last: 0 , sum: 3
+ --> current: 636 , last: 0 , sum: 20
+     --> current: 636 , last: 0 , sum: 20
+ --> current: 636 , last: 0 , sum: 3000
+ --> current: 636 , last: 0 , sum: 5
+     --> current: 636 , last: 0 , sum: 5
+22222
+ --> current: 647 , last: 0 , sum: 3
+     --> current: 647 , last: 0 , sum: 3
+ --> current: 647 , last: 0 , sum: 20
+     --> current: 647 , last: 0 , sum: 20
+ --> current: 647 , last: 0 , sum: 3000
+ --> current: 647 , last: 0 , sum: 5
+     --> current: 647 , last: 0 , sum: 5
+22222
+ --> current: 658 , last: 0 , sum: 3
+     --> current: 658 , last: 0 , sum: 3
+ --> current: 658 , last: 0 , sum: 20
+     --> current: 658 , last: 0 , sum: 20
+ --> current: 658 , last: 0 , sum: 3000
+ --> current: 658 , last: 0 , sum: 5
+     --> current: 658 , last: 0 , sum: 5
+22222
+ --> current: 669 , last: 0 , sum: 3
+     --> current: 669 , last: 0 , sum: 3
+ --> current: 669 , last: 0 , sum: 20
+     --> current: 669 , last: 0 , sum: 20
+ --> current: 669 , last: 0 , sum: 3000
+ --> current: 669 , last: 0 , sum: 5
+     --> current: 669 , last: 0 , sum: 5
+22222
+ --> current: 680 , last: 0 , sum: 3
+     --> current: 680 , last: 0 , sum: 3
+ --> current: 680 , last: 0 , sum: 20
+     --> current: 680 , last: 0 , sum: 20
+ --> current: 680 , last: 0 , sum: 3000
+ --> current: 680 , last: 0 , sum: 5
+     --> current: 680 , last: 0 , sum: 5
+22222
+ --> current: 691 , last: 0 , sum: 3
+     --> current: 691 , last: 0 , sum: 3
+ --> current: 691 , last: 0 , sum: 20
+     --> current: 691 , last: 0 , sum: 20
+ --> current: 691 , last: 0 , sum: 3000
+ --> current: 691 , last: 0 , sum: 5
+     --> current: 691 , last: 0 , sum: 5
+22222
+ --> current: 702 , last: 0 , sum: 3
+     --> current: 702 , last: 0 , sum: 3
+ --> current: 702 , last: 0 , sum: 20
+     --> current: 702 , last: 0 , sum: 20
+ --> current: 702 , last: 0 , sum: 3000
+ --> current: 702 , last: 0 , sum: 5
+     --> current: 702 , last: 0 , sum: 5
+22222
+ --> current: 713 , last: 0 , sum: 3
+     --> current: 713 , last: 0 , sum: 3
+ --> current: 713 , last: 0 , sum: 20
+     --> current: 713 , last: 0 , sum: 20
+ --> current: 713 , last: 0 , sum: 3000
+ --> current: 713 , last: 0 , sum: 5
+     --> current: 713 , last: 0 , sum: 5
+22222
+ --> current: 724 , last: 0 , sum: 3
+     --> current: 724 , last: 0 , sum: 3
+ --> current: 724 , last: 0 , sum: 20
+     --> current: 724 , last: 0 , sum: 20
+ --> current: 724 , last: 0 , sum: 3000
+ --> current: 724 , last: 0 , sum: 5
+     --> current: 724 , last: 0 , sum: 5
+22222
+ --> current: 735 , last: 0 , sum: 3
+     --> current: 735 , last: 0 , sum: 3
+ --> current: 735 , last: 0 , sum: 20
+     --> current: 735 , last: 0 , sum: 20
+ --> current: 735 , last: 0 , sum: 3000
+ --> current: 735 , last: 0 , sum: 5
+     --> current: 735 , last: 0 , sum: 5
+22222
+ --> current: 746 , last: 0 , sum: 3
+     --> current: 746 , last: 0 , sum: 3
+ --> current: 746 , last: 0 , sum: 20
+     --> current: 746 , last: 0 , sum: 20
+ --> current: 746 , last: 0 , sum: 3000
+ --> current: 746 , last: 0 , sum: 5
+     --> current: 746 , last: 0 , sum: 5
+22222
+ --> current: 757 , last: 0 , sum: 3
+     --> current: 757 , last: 0 , sum: 3
+ --> current: 757 , last: 0 , sum: 20
+     --> current: 757 , last: 0 , sum: 20
+ --> current: 757 , last: 0 , sum: 3000
+ --> current: 757 , last: 0 , sum: 5
+     --> current: 757 , last: 0 , sum: 5
+22222
+ --> current: 768 , last: 0 , sum: 3
+     --> current: 768 , last: 0 , sum: 3
+ --> current: 768 , last: 0 , sum: 20
+     --> current: 768 , last: 0 , sum: 20
+ --> current: 768 , last: 0 , sum: 3000
+ --> current: 768 , last: 0 , sum: 5
+     --> current: 768 , last: 0 , sum: 5
+22222
+ --> current: 779 , last: 0 , sum: 3
+     --> current: 779 , last: 0 , sum: 3
+ --> current: 779 , last: 0 , sum: 20
+     --> current: 779 , last: 0 , sum: 20
+ --> current: 779 , last: 0 , sum: 3000
+ --> current: 779 , last: 0 , sum: 5
+     --> current: 779 , last: 0 , sum: 5
+22222
+ --> current: 790 , last: 0 , sum: 3
+     --> current: 790 , last: 0 , sum: 3
+ --> current: 790 , last: 0 , sum: 20
+     --> current: 790 , last: 0 , sum: 20
+ --> current: 790 , last: 0 , sum: 3000
+ --> current: 790 , last: 0 , sum: 5
+     --> current: 790 , last: 0 , sum: 5
+22222
+ --> current: 801 , last: 0 , sum: 3
+     --> current: 801 , last: 0 , sum: 3
+ --> current: 801 , last: 0 , sum: 20
+     --> current: 801 , last: 0 , sum: 20
+ --> current: 801 , last: 0 , sum: 3000
+ --> current: 801 , last: 0 , sum: 5
+     --> current: 801 , last: 0 , sum: 5
+22222
+ --> current: 812 , last: 0 , sum: 3
+     --> current: 812 , last: 0 , sum: 3
+ --> current: 812 , last: 0 , sum: 20
+     --> current: 812 , last: 0 , sum: 20
+ --> current: 812 , last: 0 , sum: 3000
+ --> current: 812 , last: 0 , sum: 5
+     --> current: 812 , last: 0 , sum: 5
+22222
+ --> current: 823 , last: 0 , sum: 3
+     --> current: 823 , last: 0 , sum: 3
+ --> current: 823 , last: 0 , sum: 20
+     --> current: 823 , last: 0 , sum: 20
+ --> current: 823 , last: 0 , sum: 3000
+ --> current: 823 , last: 0 , sum: 5
+     --> current: 823 , last: 0 , sum: 5
+22222
+ --> current: 834 , last: 0 , sum: 3
+     --> current: 834 , last: 0 , sum: 3
+ --> current: 834 , last: 0 , sum: 20
+     --> current: 834 , last: 0 , sum: 20
+ --> current: 834 , last: 0 , sum: 3000
+ --> current: 834 , last: 0 , sum: 5
+     --> current: 834 , last: 0 , sum: 5
+22222
+ --> current: 845 , last: 0 , sum: 3
+     --> current: 845 , last: 0 , sum: 3
+ --> current: 845 , last: 0 , sum: 20
+     --> current: 845 , last: 0 , sum: 20
+ --> current: 845 , last: 0 , sum: 3000
+ --> current: 845 , last: 0 , sum: 5
+     --> current: 845 , last: 0 , sum: 5
+22222
+ --> current: 856 , last: 0 , sum: 3
+     --> current: 856 , last: 0 , sum: 3
+ --> current: 856 , last: 0 , sum: 20
+     --> current: 856 , last: 0 , sum: 20
+ --> current: 856 , last: 0 , sum: 3000
+ --> current: 856 , last: 0 , sum: 5
+     --> current: 856 , last: 0 , sum: 5
+22222
+ --> current: 867 , last: 0 , sum: 3
+     --> current: 867 , last: 0 , sum: 3
+ --> current: 867 , last: 0 , sum: 20
+     --> current: 867 , last: 0 , sum: 20
+ --> current: 867 , last: 0 , sum: 3000
+ --> current: 867 , last: 0 , sum: 5
+     --> current: 867 , last: 0 , sum: 5
+22222
+ --> current: 878 , last: 0 , sum: 3
+     --> current: 878 , last: 0 , sum: 3
+ --> current: 878 , last: 0 , sum: 20
+     --> current: 878 , last: 0 , sum: 20
+ --> current: 878 , last: 0 , sum: 3000
+ --> current: 878 , last: 0 , sum: 5
+     --> current: 878 , last: 0 , sum: 5
+22222
+ --> current: 889 , last: 0 , sum: 3
+     --> current: 889 , last: 0 , sum: 3
+ --> current: 889 , last: 0 , sum: 20
+     --> current: 889 , last: 0 , sum: 20
+ --> current: 889 , last: 0 , sum: 3000
+ --> current: 889 , last: 0 , sum: 5
+     --> current: 889 , last: 0 , sum: 5
+22222
+ --> current: 900 , last: 0 , sum: 3
+     --> current: 900 , last: 0 , sum: 3
+ --> current: 900 , last: 0 , sum: 20
+     --> current: 900 , last: 0 , sum: 20
+ --> current: 900 , last: 0 , sum: 3000
+ --> current: 900 , last: 0 , sum: 5
+     --> current: 900 , last: 0 , sum: 5
+22222
+ --> current: 911 , last: 0 , sum: 3
+     --> current: 911 , last: 0 , sum: 3
+ --> current: 911 , last: 0 , sum: 20
+     --> current: 911 , last: 0 , sum: 20
+ --> current: 911 , last: 0 , sum: 3000
+ --> current: 911 , last: 0 , sum: 5
+     --> current: 911 , last: 0 , sum: 5
+22222
+ --> current: 922 , last: 0 , sum: 3
+     --> current: 922 , last: 0 , sum: 3
+ --> current: 922 , last: 0 , sum: 20
+     --> current: 922 , last: 0 , sum: 20
+ --> current: 922 , last: 0 , sum: 3000
+ --> current: 922 , last: 0 , sum: 5
+     --> current: 922 , last: 0 , sum: 5
+22222
+ --> current: 933 , last: 0 , sum: 3
+     --> current: 933 , last: 0 , sum: 3
+ --> current: 933 , last: 0 , sum: 20
+     --> current: 933 , last: 0 , sum: 20
+ --> current: 933 , last: 0 , sum: 3000
+ --> current: 933 , last: 0 , sum: 5
+     --> current: 933 , last: 0 , sum: 5
+22222
+ --> current: 944 , last: 0 , sum: 3
+     --> current: 944 , last: 0 , sum: 3
+ --> current: 944 , last: 0 , sum: 20
+     --> current: 944 , last: 0 , sum: 20
+ --> current: 944 , last: 0 , sum: 3000
+ --> current: 944 , last: 0 , sum: 5
+     --> current: 944 , last: 0 , sum: 5
+22222
+ --> current: 955 , last: 0 , sum: 3
+     --> current: 955 , last: 0 , sum: 3
+ --> current: 955 , last: 0 , sum: 20
+     --> current: 955 , last: 0 , sum: 20
+ --> current: 955 , last: 0 , sum: 3000
+ --> current: 955 , last: 0 , sum: 5
+     --> current: 955 , last: 0 , sum: 5
+22222
+ --> current: 966 , last: 0 , sum: 3
+     --> current: 966 , last: 0 , sum: 3
+ --> current: 966 , last: 0 , sum: 20
+     --> current: 966 , last: 0 , sum: 20
+ --> current: 966 , last: 0 , sum: 3000
+ --> current: 966 , last: 0 , sum: 5
+     --> current: 966 , last: 0 , sum: 5
+22222
+ --> current: 977 , last: 0 , sum: 3
+     --> current: 977 , last: 0 , sum: 3
+ --> current: 977 , last: 0 , sum: 20
+     --> current: 977 , last: 0 , sum: 20
+ --> current: 977 , last: 0 , sum: 3000
+ --> current: 977 , last: 0 , sum: 5
+     --> current: 977 , last: 0 , sum: 5
+22222
+ --> current: 989 , last: 0 , sum: 3
+     --> current: 989 , last: 0 , sum: 3
+ --> current: 989 , last: 0 , sum: 20
+     --> current: 989 , last: 0 , sum: 20
+ --> current: 989 , last: 0 , sum: 3000
+ --> current: 989 , last: 0 , sum: 5
+     --> current: 989 , last: 0 , sum: 5
+22222
+ --> current: 1000 , last: 0 , sum: 3
+     --> current: 1000 , last: 0 , sum: 3
+ --> current: 1000 , last: 0 , sum: 20
+     --> current: 1000 , last: 0 , sum: 20
+ --> current: 1000 , last: 0 , sum: 3000
+ --> current: 1000 , last: 0 , sum: 5
+     --> current: 1000 , last: 0 , sum: 5
+22222
+ --> current: 1011 , last: 0 , sum: 3
+     --> current: 1011 , last: 0 , sum: 3
+ --> current: 1011 , last: 0 , sum: 20
+     --> current: 1011 , last: 0 , sum: 20
+ --> current: 1011 , last: 0 , sum: 3000
+ --> current: 1011 , last: 0 , sum: 5
+     --> current: 1011 , last: 0 , sum: 5
+22222
+ --> current: 1022 , last: 0 , sum: 3
+     --> current: 1022 , last: 0 , sum: 3
+ --> current: 1022 , last: 0 , sum: 20
+     --> current: 1022 , last: 0 , sum: 20
+ --> current: 1022 , last: 0 , sum: 3000
+ --> current: 1022 , last: 0 , sum: 5
+     --> current: 1022 , last: 0 , sum: 5
+22222
+ --> current: 1033 , last: 0 , sum: 3
+     --> current: 1033 , last: 0 , sum: 3
+ --> current: 1033 , last: 0 , sum: 20
+     --> current: 1033 , last: 0 , sum: 20
+ --> current: 1033 , last: 0 , sum: 3000
+ --> current: 1033 , last: 0 , sum: 5
+     --> current: 1033 , last: 0 , sum: 5
+22222
+ --> current: 1044 , last: 0 , sum: 3
+     --> current: 1044 , last: 0 , sum: 3
+ --> current: 1044 , last: 0 , sum: 20
+     --> current: 1044 , last: 0 , sum: 20
+ --> current: 1044 , last: 0 , sum: 3000
+ --> current: 1044 , last: 0 , sum: 5
+     --> current: 1044 , last: 0 , sum: 5
+22222
+ --> current: 1055 , last: 0 , sum: 3
+     --> current: 1055 , last: 0 , sum: 3
+ --> current: 1055 , last: 0 , sum: 20
+     --> current: 1055 , last: 0 , sum: 20
+ --> current: 1055 , last: 0 , sum: 3000
+ --> current: 1055 , last: 0 , sum: 5
+     --> current: 1055 , last: 0 , sum: 5
+22222
+ --> current: 1066 , last: 0 , sum: 3
+     --> current: 1066 , last: 0 , sum: 3
+ --> current: 1066 , last: 0 , sum: 20
+     --> current: 1066 , last: 0 , sum: 20
+ --> current: 1066 , last: 0 , sum: 3000
+ --> current: 1066 , last: 0 , sum: 5
+     --> current: 1066 , last: 0 , sum: 5
+22222
+ --> current: 1077 , last: 0 , sum: 3
+     --> current: 1077 , last: 0 , sum: 3
+ --> current: 1077 , last: 0 , sum: 20
+     --> current: 1077 , last: 0 , sum: 20
+ --> current: 1077 , last: 0 , sum: 3000
+ --> current: 1077 , last: 0 , sum: 5
+     --> current: 1077 , last: 0 , sum: 5
+22222
+ --> current: 1088 , last: 0 , sum: 3
+     --> current: 1088 , last: 0 , sum: 3
+ --> current: 1088 , last: 0 , sum: 20
+     --> current: 1088 , last: 0 , sum: 20
+ --> current: 1088 , last: 0 , sum: 3000
+ --> current: 1088 , last: 0 , sum: 5
+     --> current: 1088 , last: 0 , sum: 5
+22222
+ --> current: 1099 , last: 0 , sum: 3
+     --> current: 1099 , last: 0 , sum: 3
+ --> current: 1099 , last: 0 , sum: 20
+     --> current: 1099 , last: 0 , sum: 20
+ --> current: 1099 , last: 0 , sum: 3000
+ --> current: 1099 , last: 0 , sum: 5
+     --> current: 1099 , last: 0 , sum: 5
+22222
+ --> current: 1110 , last: 0 , sum: 3
+     --> current: 1110 , last: 0 , sum: 3
+ --> current: 1110 , last: 0 , sum: 20
+     --> current: 1110 , last: 0 , sum: 20
+ --> current: 1110 , last: 0 , sum: 3000
+ --> current: 1110 , last: 0 , sum: 5
+     --> current: 1110 , last: 0 , sum: 5
+22222
+ --> current: 1121 , last: 0 , sum: 3
+     --> current: 1121 , last: 0 , sum: 3
+ --> current: 1121 , last: 0 , sum: 20
+     --> current: 1121 , last: 0 , sum: 20
+ --> current: 1121 , last: 0 , sum: 3000
+ --> current: 1121 , last: 0 , sum: 5
+     --> current: 1121 , last: 0 , sum: 5
+22222
+ --> current: 1132 , last: 0 , sum: 3
+     --> current: 1132 , last: 0 , sum: 3
+ --> current: 1132 , last: 0 , sum: 20
+     --> current: 1132 , last: 0 , sum: 20
+ --> current: 1132 , last: 0 , sum: 3000
+ --> current: 1132 , last: 0 , sum: 5
+     --> current: 1132 , last: 0 , sum: 5
+22222
+ --> current: 1143 , last: 0 , sum: 3
+     --> current: 1143 , last: 0 , sum: 3
+ --> current: 1143 , last: 0 , sum: 20
+     --> current: 1143 , last: 0 , sum: 20
+ --> current: 1143 , last: 0 , sum: 3000
+ --> current: 1143 , last: 0 , sum: 5
+     --> current: 1143 , last: 0 , sum: 5
+22222
+ --> current: 1154 , last: 0 , sum: 3
+     --> current: 1154 , last: 0 , sum: 3
+ --> current: 1154 , last: 0 , sum: 20
+     --> current: 1154 , last: 0 , sum: 20
+ --> current: 1154 , last: 0 , sum: 3000
+ --> current: 1154 , last: 0 , sum: 5
+     --> current: 1154 , last: 0 , sum: 5
+22222
+ --> current: 1165 , last: 0 , sum: 3
+     --> current: 1165 , last: 0 , sum: 3
+ --> current: 1165 , last: 0 , sum: 20
+     --> current: 1165 , last: 0 , sum: 20
+ --> current: 1165 , last: 0 , sum: 3000
+ --> current: 1165 , last: 0 , sum: 5
+     --> current: 1165 , last: 0 , sum: 5
+22222
+ --> current: 1176 , last: 0 , sum: 3
+     --> current: 1176 , last: 0 , sum: 3
+ --> current: 1176 , last: 0 , sum: 20
+     --> current: 1176 , last: 0 , sum: 20
+ --> current: 1176 , last: 0 , sum: 3000
+ --> current: 1176 , last: 0 , sum: 5
+     --> current: 1176 , last: 0 , sum: 5
+22222
+ --> current: 1187 , last: 0 , sum: 3
+     --> current: 1187 , last: 0 , sum: 3
+ --> current: 1187 , last: 0 , sum: 20
+     --> current: 1187 , last: 0 , sum: 20
+ --> current: 1187 , last: 0 , sum: 3000
+ --> current: 1187 , last: 0 , sum: 5
+     --> current: 1187 , last: 0 , sum: 5
+22222
+ --> current: 1198 , last: 0 , sum: 3
+     --> current: 1198 , last: 0 , sum: 3
+ --> current: 1198 , last: 0 , sum: 20
+     --> current: 1198 , last: 0 , sum: 20
+ --> current: 1198 , last: 0 , sum: 3000
+ --> current: 1198 , last: 0 , sum: 5
+     --> current: 1198 , last: 0 , sum: 5
+22222
+ --> current: 1209 , last: 0 , sum: 3
+     --> current: 1209 , last: 0 , sum: 3
+ --> current: 1209 , last: 0 , sum: 20
+     --> current: 1209 , last: 0 , sum: 20
+ --> current: 1209 , last: 0 , sum: 3000
+ --> current: 1209 , last: 0 , sum: 5
+     --> current: 1209 , last: 0 , sum: 5
+22222
+ --> current: 1220 , last: 0 , sum: 3
+     --> current: 1220 , last: 0 , sum: 3
+ --> current: 1220 , last: 0 , sum: 20
+     --> current: 1220 , last: 0 , sum: 20
+ --> current: 1220 , last: 0 , sum: 3000
+ --> current: 1220 , last: 0 , sum: 5
+     --> current: 1220 , last: 0 , sum: 5
+22222
+ --> current: 1231 , last: 0 , sum: 3
+     --> current: 1231 , last: 0 , sum: 3
+ --> current: 1231 , last: 0 , sum: 20
+     --> current: 1231 , last: 0 , sum: 20
+ --> current: 1231 , last: 0 , sum: 3000
+ --> current: 1231 , last: 0 , sum: 5
+     --> current: 1231 , last: 0 , sum: 5
+22222
+ --> current: 1242 , last: 0 , sum: 3
+     --> current: 1242 , last: 0 , sum: 3
+ --> current: 1242 , last: 0 , sum: 20
+     --> current: 1242 , last: 0 , sum: 20
+ --> current: 1242 , last: 0 , sum: 3000
+ --> current: 1242 , last: 0 , sum: 5
+     --> current: 1242 , last: 0 , sum: 5
+22222
+ --> current: 1253 , last: 0 , sum: 3
+     --> current: 1253 , last: 0 , sum: 3
+ --> current: 1253 , last: 0 , sum: 20
+     --> current: 1253 , last: 0 , sum: 20
+ --> current: 1253 , last: 0 , sum: 3000
+ --> current: 1253 , last: 0 , sum: 5
+     --> current: 1253 , last: 0 , sum: 5
+22222
+ --> current: 1264 , last: 0 , sum: 3
+     --> current: 1264 , last: 0 , sum: 3
+ --> current: 1264 , last: 0 , sum: 20
+     --> current: 1264 , last: 0 , sum: 20
+ --> current: 1264 , last: 0 , sum: 3000
+ --> current: 1264 , last: 0 , sum: 5
+     --> current: 1264 , last: 0 , sum: 5
+22222
+ --> current: 1275 , last: 0 , sum: 3
+     --> current: 1275 , last: 0 , sum: 3
+ --> current: 1275 , last: 0 , sum: 20
+     --> current: 1275 , last: 0 , sum: 20
+ --> current: 1275 , last: 0 , sum: 3000
+ --> current: 1275 , last: 0 , sum: 5
+     --> current: 1275 , last: 0 , sum: 5
+22222
+ --> current: 1286 , last: 0 , sum: 3
+     --> current: 1286 , last: 0 , sum: 3
+ --> current: 1286 , last: 0 , sum: 20
+     --> current: 1286 , last: 0 , sum: 20
+ --> current: 1286 , last: 0 , sum: 3000
+ --> current: 1286 , last: 0 , sum: 5
+     --> current: 1286 , last: 0 , sum: 5
+22222
+ --> current: 1297 , last: 0 , sum: 3
+     --> current: 1297 , last: 0 , sum: 3
+ --> current: 1297 , last: 0 , sum: 20
+     --> current: 1297 , last: 0 , sum: 20
+ --> current: 1297 , last: 0 , sum: 3000
+ --> current: 1297 , last: 0 , sum: 5
+     --> current: 1297 , last: 0 , sum: 5
+22222
+ --> current: 1308 , last: 0 , sum: 3
+     --> current: 1308 , last: 0 , sum: 3
+ --> current: 1308 , last: 0 , sum: 20
+     --> current: 1308 , last: 0 , sum: 20
+ --> current: 1308 , last: 0 , sum: 3000
+ --> current: 1308 , last: 0 , sum: 5
+     --> current: 1308 , last: 0 , sum: 5
+22222
+ --> current: 1319 , last: 0 , sum: 3
+     --> current: 1319 , last: 0 , sum: 3
+ --> current: 1319 , last: 0 , sum: 20
+     --> current: 1319 , last: 0 , sum: 20
+ --> current: 1319 , last: 0 , sum: 3000
+ --> current: 1319 , last: 0 , sum: 5
+     --> current: 1319 , last: 0 , sum: 5
+22222
+ --> current: 1330 , last: 0 , sum: 3
+     --> current: 1330 , last: 0 , sum: 3
+ --> current: 1330 , last: 0 , sum: 20
+     --> current: 1330 , last: 0 , sum: 20
+ --> current: 1330 , last: 0 , sum: 3000
+ --> current: 1330 , last: 0 , sum: 5
+     --> current: 1330 , last: 0 , sum: 5
+22222
+ --> current: 1341 , last: 0 , sum: 3
+     --> current: 1341 , last: 0 , sum: 3
+ --> current: 1341 , last: 0 , sum: 20
+     --> current: 1341 , last: 0 , sum: 20
+ --> current: 1341 , last: 0 , sum: 3000
+ --> current: 1341 , last: 0 , sum: 5
+     --> current: 1341 , last: 0 , sum: 5
+22222
+ --> current: 1352 , last: 0 , sum: 3
+     --> current: 1352 , last: 0 , sum: 3
+ --> current: 1352 , last: 0 , sum: 20
+     --> current: 1352 , last: 0 , sum: 20
+ --> current: 1352 , last: 0 , sum: 3000
+ --> current: 1352 , last: 0 , sum: 5
+     --> current: 1352 , last: 0 , sum: 5
+22222
+ --> current: 1363 , last: 0 , sum: 3
+     --> current: 1363 , last: 0 , sum: 3
+ --> current: 1363 , last: 0 , sum: 20
+     --> current: 1363 , last: 0 , sum: 20
+ --> current: 1363 , last: 0 , sum: 3000
+ --> current: 1363 , last: 0 , sum: 5
+     --> current: 1363 , last: 0 , sum: 5
+22222
+ --> current: 1374 , last: 0 , sum: 3
+     --> current: 1374 , last: 0 , sum: 3
+ --> current: 1374 , last: 0 , sum: 20
+     --> current: 1374 , last: 0 , sum: 20
+ --> current: 1374 , last: 0 , sum: 3000
+ --> current: 1374 , last: 0 , sum: 5
+     --> current: 1374 , last: 0 , sum: 5
+22222
+ --> current: 1385 , last: 0 , sum: 3
+     --> current: 1385 , last: 0 , sum: 3
+ --> current: 1385 , last: 0 , sum: 20
+     --> current: 1385 , last: 0 , sum: 20
+ --> current: 1385 , last: 0 , sum: 3000
+ --> current: 1385 , last: 0 , sum: 5
+     --> current: 1385 , last: 0 , sum: 5
+22222
+ --> current: 1396 , last: 0 , sum: 3
+     --> current: 1396 , last: 0 , sum: 3
+ --> current: 1396 , last: 0 , sum: 20
+     --> current: 1396 , last: 0 , sum: 20
+ --> current: 1396 , last: 0 , sum: 3000
+ --> current: 1396 , last: 0 , sum: 5
+     --> current: 1396 , last: 0 , sum: 5
+22222
+ --> current: 1407 , last: 0 , sum: 3
+     --> current: 1407 , last: 0 , sum: 3
+ --> current: 1407 , last: 0 , sum: 20
+     --> current: 1407 , last: 0 , sum: 20
+ --> current: 1407 , last: 0 , sum: 3000
+ --> current: 1407 , last: 0 , sum: 5
+     --> current: 1407 , last: 0 , sum: 5
+22222
+ --> current: 1418 , last: 0 , sum: 3
+     --> current: 1418 , last: 0 , sum: 3
+ --> current: 1418 , last: 0 , sum: 20
+     --> current: 1418 , last: 0 , sum: 20
+ --> current: 1418 , last: 0 , sum: 3000
+ --> current: 1418 , last: 0 , sum: 5
+     --> current: 1418 , last: 0 , sum: 5
+22222
+ --> current: 1429 , last: 0 , sum: 3
+     --> current: 1429 , last: 0 , sum: 3
+ --> current: 1429 , last: 0 , sum: 20
+     --> current: 1429 , last: 0 , sum: 20
+ --> current: 1429 , last: 0 , sum: 3000
+ --> current: 1429 , last: 0 , sum: 5
+     --> current: 1429 , last: 0 , sum: 5
+22222
+ --> current: 1440 , last: 0 , sum: 3
+     --> current: 1440 , last: 0 , sum: 3
+ --> current: 1440 , last: 0 , sum: 20
+     --> current: 1440 , last: 0 , sum: 20
+ --> current: 1440 , last: 0 , sum: 3000
+ --> current: 1440 , last: 0 , sum: 5
+     --> current: 1440 , last: 0 , sum: 5
+22222
+ --> current: 1451 , last: 0 , sum: 3
+     --> current: 1451 , last: 0 , sum: 3
+ --> current: 1451 , last: 0 , sum: 20
+     --> current: 1451 , last: 0 , sum: 20
+ --> current: 1451 , last: 0 , sum: 3000
+ --> current: 1451 , last: 0 , sum: 5
+     --> current: 1451 , last: 0 , sum: 5
+22222
+ --> current: 1462 , last: 0 , sum: 3
+     --> current: 1462 , last: 0 , sum: 3
+ --> current: 1462 , last: 0 , sum: 20
+     --> current: 1462 , last: 0 , sum: 20
+ --> current: 1462 , last: 0 , sum: 3000
+ --> current: 1462 , last: 0 , sum: 5
+     --> current: 1462 , last: 0 , sum: 5
+22222
+ --> current: 1473 , last: 0 , sum: 3
+     --> current: 1473 , last: 0 , sum: 3
+ --> current: 1473 , last: 0 , sum: 20
+     --> current: 1473 , last: 0 , sum: 20
+ --> current: 1473 , last: 0 , sum: 3000
+ --> current: 1473 , last: 0 , sum: 5
+     --> current: 1473 , last: 0 , sum: 5
+22222
+ --> current: 1484 , last: 0 , sum: 3
+     --> current: 1484 , last: 0 , sum: 3
+ --> current: 1484 , last: 0 , sum: 20
+     --> current: 1484 , last: 0 , sum: 20
+ --> current: 1484 , last: 0 , sum: 3000
+ --> current: 1484 , last: 0 , sum: 5
+     --> current: 1484 , last: 0 , sum: 5
+22222
+ --> current: 1495 , last: 0 , sum: 3
+     --> current: 1495 , last: 0 , sum: 3
+ --> current: 1495 , last: 0 , sum: 20
+     --> current: 1495 , last: 0 , sum: 20
+ --> current: 1495 , last: 0 , sum: 3000
+ --> current: 1495 , last: 0 , sum: 5
+     --> current: 1495 , last: 0 , sum: 5
+22222
+ --> current: 1506 , last: 0 , sum: 3
+     --> current: 1506 , last: 0 , sum: 3
+ --> current: 1506 , last: 0 , sum: 20
+     --> current: 1506 , last: 0 , sum: 20
+ --> current: 1506 , last: 0 , sum: 3000
+ --> current: 1506 , last: 0 , sum: 5
+     --> current: 1506 , last: 0 , sum: 5
+22222
+ --> current: 1517 , last: 0 , sum: 3
+     --> current: 1517 , last: 0 , sum: 3
+ --> current: 1517 , last: 0 , sum: 20
+     --> current: 1517 , last: 0 , sum: 20
+ --> current: 1517 , last: 0 , sum: 3000
+ --> current: 1517 , last: 0 , sum: 5
+     --> current: 1517 , last: 0 , sum: 5
+22222
+ --> current: 1528 , last: 0 , sum: 3
+     --> current: 1528 , last: 0 , sum: 3
+ --> current: 1528 , last: 0 , sum: 20
+     --> current: 1528 , last: 0 , sum: 20
+ --> current: 1528 , last: 0 , sum: 3000
+ --> current: 1528 , last: 0 , sum: 5
+     --> current: 1528 , last: 0 , sum: 5
+22222
+ --> current: 1539 , last: 0 , sum: 3
+     --> current: 1539 , last: 0 , sum: 3
+ --> current: 1539 , last: 0 , sum: 20
+     --> current: 1539 , last: 0 , sum: 20
+ --> current: 1539 , last: 0 , sum: 3000
+ --> current: 1539 , last: 0 , sum: 5
+     --> current: 1539 , last: 0 , sum: 5
+22222
+ --> current: 1550 , last: 0 , sum: 3
+     --> current: 1550 , last: 0 , sum: 3
+ --> current: 1550 , last: 0 , sum: 20
+     --> current: 1550 , last: 0 , sum: 20
+ --> current: 1550 , last: 0 , sum: 3000
+ --> current: 1550 , last: 0 , sum: 5
+     --> current: 1550 , last: 0 , sum: 5
+22222
+ --> current: 1561 , last: 0 , sum: 3
+     --> current: 1561 , last: 0 , sum: 3
+ --> current: 1561 , last: 0 , sum: 20
+     --> current: 1561 , last: 0 , sum: 20
+ --> current: 1561 , last: 0 , sum: 3000
+ --> current: 1561 , last: 0 , sum: 5
+     --> current: 1561 , last: 0 , sum: 5
+22222
+ --> current: 1572 , last: 0 , sum: 3
+     --> current: 1572 , last: 0 , sum: 3
+ --> current: 1572 , last: 0 , sum: 20
+     --> current: 1572 , last: 0 , sum: 20
+ --> current: 1572 , last: 0 , sum: 3000
+ --> current: 1572 , last: 0 , sum: 5
+     --> current: 1572 , last: 0 , sum: 5
+22222
+ --> current: 1583 , last: 0 , sum: 3
+     --> current: 1583 , last: 0 , sum: 3
+ --> current: 1583 , last: 0 , sum: 20
+     --> current: 1583 , last: 0 , sum: 20
+ --> current: 1583 , last: 0 , sum: 3000
+ --> current: 1583 , last: 0 , sum: 5
+     --> current: 1583 , last: 0 , sum: 5
+22222
+ --> current: 1594 , last: 0 , sum: 3
+     --> current: 1594 , last: 0 , sum: 3
+ --> current: 1594 , last: 0 , sum: 20
+     --> current: 1594 , last: 0 , sum: 20
+ --> current: 1594 , last: 0 , sum: 3000
+ --> current: 1594 , last: 0 , sum: 5
+     --> current: 1594 , last: 0 , sum: 5
+22222
+ --> current: 1605 , last: 0 , sum: 3
+     --> current: 1605 , last: 0 , sum: 3
+ --> current: 1605 , last: 0 , sum: 20
+     --> current: 1605 , last: 0 , sum: 20
+ --> current: 1605 , last: 0 , sum: 3000
+ --> current: 1605 , last: 0 , sum: 5
+     --> current: 1605 , last: 0 , sum: 5
+22222
+ --> current: 1616 , last: 0 , sum: 3
+     --> current: 1616 , last: 0 , sum: 3
+ --> current: 1616 , last: 0 , sum: 20
+     --> current: 1616 , last: 0 , sum: 20
+ --> current: 1616 , last: 0 , sum: 3000
+ --> current: 1616 , last: 0 , sum: 5
+     --> current: 1616 , last: 0 , sum: 5
+22222
+ --> current: 1627 , last: 0 , sum: 3
+     --> current: 1627 , last: 0 , sum: 3
+ --> current: 1627 , last: 0 , sum: 20
+     --> current: 1627 , last: 0 , sum: 20
+ --> current: 1627 , last: 0 , sum: 3000
+ --> current: 1627 , last: 0 , sum: 5
+     --> current: 1627 , last: 0 , sum: 5
+22222
+ --> current: 1638 , last: 0 , sum: 3
+     --> current: 1638 , last: 0 , sum: 3
+ --> current: 1638 , last: 0 , sum: 20
+     --> current: 1638 , last: 0 , sum: 20
+ --> current: 1638 , last: 0 , sum: 3000
+ --> current: 1638 , last: 0 , sum: 5
+     --> current: 1638 , last: 0 , sum: 5
+22222
+ --> current: 1649 , last: 0 , sum: 3
+     --> current: 1649 , last: 0 , sum: 3
+ --> current: 1649 , last: 0 , sum: 20
+     --> current: 1649 , last: 0 , sum: 20
+ --> current: 1649 , last: 0 , sum: 3000
+ --> current: 1649 , last: 0 , sum: 5
+     --> current: 1649 , last: 0 , sum: 5
+22222
+ --> current: 1660 , last: 0 , sum: 3
+     --> current: 1660 , last: 0 , sum: 3
+ --> current: 1660 , last: 0 , sum: 20
+     --> current: 1660 , last: 0 , sum: 20
+ --> current: 1660 , last: 0 , sum: 3000
+ --> current: 1660 , last: 0 , sum: 5
+     --> current: 1660 , last: 0 , sum: 5
+22222
+ --> current: 1671 , last: 0 , sum: 3
+     --> current: 1671 , last: 0 , sum: 3
+ --> current: 1671 , last: 0 , sum: 20
+     --> current: 1671 , last: 0 , sum: 20
+ --> current: 1671 , last: 0 , sum: 3000
+ --> current: 1671 , last: 0 , sum: 5
+     --> current: 1671 , last: 0 , sum: 5
+22222
+ --> current: 1682 , last: 0 , sum: 3
+     --> current: 1682 , last: 0 , sum: 3
+ --> current: 1682 , last: 0 , sum: 20
+     --> current: 1682 , last: 0 , sum: 20
+ --> current: 1682 , last: 0 , sum: 3000
+ --> current: 1682 , last: 0 , sum: 5
+     --> current: 1682 , last: 0 , sum: 5
+22222
+ --> current: 1693 , last: 0 , sum: 3
+     --> current: 1693 , last: 0 , sum: 3
+ --> current: 1693 , last: 0 , sum: 20
+     --> current: 1693 , last: 0 , sum: 20
+ --> current: 1693 , last: 0 , sum: 3000
+ --> current: 1693 , last: 0 , sum: 5
+     --> current: 1693 , last: 0 , sum: 5
+22222
+ --> current: 1704 , last: 0 , sum: 3
+     --> current: 1704 , last: 0 , sum: 3
+ --> current: 1704 , last: 0 , sum: 20
+     --> current: 1704 , last: 0 , sum: 20
+ --> current: 1704 , last: 0 , sum: 3000
+ --> current: 1704 , last: 0 , sum: 5
+     --> current: 1704 , last: 0 , sum: 5
+22222
+ --> current: 1715 , last: 0 , sum: 3
+     --> current: 1715 , last: 0 , sum: 3
+ --> current: 1715 , last: 0 , sum: 20
+     --> current: 1715 , last: 0 , sum: 20
+ --> current: 1715 , last: 0 , sum: 3000
+ --> current: 1715 , last: 0 , sum: 5
+     --> current: 1715 , last: 0 , sum: 5
+22222
+ --> current: 1726 , last: 0 , sum: 3
+     --> current: 1726 , last: 0 , sum: 3
+ --> current: 1726 , last: 0 , sum: 20
+     --> current: 1726 , last: 0 , sum: 20
+ --> current: 1726 , last: 0 , sum: 3000
+ --> current: 1726 , last: 0 , sum: 5
+     --> current: 1726 , last: 0 , sum: 5
+22222
+ --> current: 1737 , last: 0 , sum: 3
+     --> current: 1737 , last: 0 , sum: 3
+ --> current: 1737 , last: 0 , sum: 20
+     --> current: 1737 , last: 0 , sum: 20
+ --> current: 1737 , last: 0 , sum: 3000
+ --> current: 1737 , last: 0 , sum: 5
+     --> current: 1737 , last: 0 , sum: 5
+22222
+ --> current: 1748 , last: 0 , sum: 3
+     --> current: 1748 , last: 0 , sum: 3
+ --> current: 1748 , last: 0 , sum: 20
+     --> current: 1748 , last: 0 , sum: 20
+ --> current: 1748 , last: 0 , sum: 3000
+ --> current: 1748 , last: 0 , sum: 5
+     --> current: 1748 , last: 0 , sum: 5
+22222
+ --> current: 1759 , last: 0 , sum: 3
+     --> current: 1759 , last: 0 , sum: 3
+ --> current: 1759 , last: 0 , sum: 20
+     --> current: 1759 , last: 0 , sum: 20
+ --> current: 1759 , last: 0 , sum: 3000
+ --> current: 1759 , last: 0 , sum: 5
+     --> current: 1759 , last: 0 , sum: 5
+22222
+ --> current: 1770 , last: 0 , sum: 3
+     --> current: 1770 , last: 0 , sum: 3
+ --> current: 1770 , last: 0 , sum: 20
+     --> current: 1770 , last: 0 , sum: 20
+ --> current: 1770 , last: 0 , sum: 3000
+ --> current: 1770 , last: 0 , sum: 5
+     --> current: 1770 , last: 0 , sum: 5
+22222
+ --> current: 1781 , last: 0 , sum: 3
+     --> current: 1781 , last: 0 , sum: 3
+ --> current: 1781 , last: 0 , sum: 20
+     --> current: 1781 , last: 0 , sum: 20
+ --> current: 1781 , last: 0 , sum: 3000
+ --> current: 1781 , last: 0 , sum: 5
+     --> current: 1781 , last: 0 , sum: 5
+22222
+ --> current: 1792 , last: 0 , sum: 3
+     --> current: 1792 , last: 0 , sum: 3
+ --> current: 1792 , last: 0 , sum: 20
+     --> current: 1792 , last: 0 , sum: 20
+ --> current: 1792 , last: 0 , sum: 3000
+ --> current: 1792 , last: 0 , sum: 5
+     --> current: 1792 , last: 0 , sum: 5
+22222
+ --> current: 1803 , last: 0 , sum: 3
+     --> current: 1803 , last: 0 , sum: 3
+ --> current: 1803 , last: 0 , sum: 20
+     --> current: 1803 , last: 0 , sum: 20
+ --> current: 1803 , last: 0 , sum: 3000
+ --> current: 1803 , last: 0 , sum: 5
+     --> current: 1803 , last: 0 , sum: 5
+22222
+ --> current: 1814 , last: 0 , sum: 3
+     --> current: 1814 , last: 0 , sum: 3
+ --> current: 1814 , last: 0 , sum: 20
+     --> current: 1814 , last: 0 , sum: 20
+ --> current: 1814 , last: 0 , sum: 3000
+ --> current: 1814 , last: 0 , sum: 5
+     --> current: 1814 , last: 0 , sum: 5
+22222
+ --> current: 1825 , last: 0 , sum: 3
+     --> current: 1825 , last: 0 , sum: 3
+ --> current: 1825 , last: 0 , sum: 20
+     --> current: 1825 , last: 0 , sum: 20
+ --> current: 1825 , last: 0 , sum: 3000
+ --> current: 1825 , last: 0 , sum: 5
+     --> current: 1825 , last: 0 , sum: 5
+22222
+ --> current: 1836 , last: 0 , sum: 3
+     --> current: 1836 , last: 0 , sum: 3
+ --> current: 1836 , last: 0 , sum: 20
+     --> current: 1836 , last: 0 , sum: 20
+ --> current: 1836 , last: 0 , sum: 3000
+ --> current: 1836 , last: 0 , sum: 5
+     --> current: 1836 , last: 0 , sum: 5
+22222
+ --> current: 1847 , last: 0 , sum: 3
+     --> current: 1847 , last: 0 , sum: 3
+ --> current: 1847 , last: 0 , sum: 20
+     --> current: 1847 , last: 0 , sum: 20
+ --> current: 1847 , last: 0 , sum: 3000
+ --> current: 1847 , last: 0 , sum: 5
+     --> current: 1847 , last: 0 , sum: 5
+22222
+ --> current: 1858 , last: 0 , sum: 3
+     --> current: 1858 , last: 0 , sum: 3
+ --> current: 1858 , last: 0 , sum: 20
+     --> current: 1858 , last: 0 , sum: 20
+ --> current: 1858 , last: 0 , sum: 3000
+ --> current: 1858 , last: 0 , sum: 5
+     --> current: 1858 , last: 0 , sum: 5
+22222
+ --> current: 1869 , last: 0 , sum: 3
+     --> current: 1869 , last: 0 , sum: 3
+ --> current: 1869 , last: 0 , sum: 20
+     --> current: 1869 , last: 0 , sum: 20
+ --> current: 1869 , last: 0 , sum: 3000
+ --> current: 1869 , last: 0 , sum: 5
+     --> current: 1869 , last: 0 , sum: 5
+22222
+ --> current: 1880 , last: 0 , sum: 3
+     --> current: 1880 , last: 0 , sum: 3
+ --> current: 1880 , last: 0 , sum: 20
+     --> current: 1880 , last: 0 , sum: 20
+ --> current: 1880 , last: 0 , sum: 3000
+ --> current: 1880 , last: 0 , sum: 5
+     --> current: 1880 , last: 0 , sum: 5
+22222
+ --> current: 1891 , last: 0 , sum: 3
+     --> current: 1891 , last: 0 , sum: 3
+ --> current: 1891 , last: 0 , sum: 20
+     --> current: 1891 , last: 0 , sum: 20
+ --> current: 1891 , last: 0 , sum: 3000
+ --> current: 1891 , last: 0 , sum: 5
+     --> current: 1891 , last: 0 , sum: 5
+22222
+ --> current: 1902 , last: 0 , sum: 3
+     --> current: 1902 , last: 0 , sum: 3
+ --> current: 1902 , last: 0 , sum: 20
+     --> current: 1902 , last: 0 , sum: 20
+ --> current: 1902 , last: 0 , sum: 3000
+ --> current: 1902 , last: 0 , sum: 5
+     --> current: 1902 , last: 0 , sum: 5
+22222
+ --> current: 1913 , last: 0 , sum: 3
+     --> current: 1913 , last: 0 , sum: 3
+ --> current: 1913 , last: 0 , sum: 20
+     --> current: 1913 , last: 0 , sum: 20
+ --> current: 1913 , last: 0 , sum: 3000
+ --> current: 1913 , last: 0 , sum: 5
+     --> current: 1913 , last: 0 , sum: 5
+22222
+ --> current: 1924 , last: 0 , sum: 3
+     --> current: 1924 , last: 0 , sum: 3
+ --> current: 1924 , last: 0 , sum: 20
