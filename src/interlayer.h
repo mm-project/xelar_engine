@@ -1,7 +1,7 @@
 #ifndef interlayer_h
 #define interlayer_h
 
-#include "sdl_renderer.h"
+#include "sdl_wrapper.h"
 
 class LeInterLayer : public LeSdlWrapper
 {

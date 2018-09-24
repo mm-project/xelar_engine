@@ -2,40 +2,18 @@
 #define game_h
 
 #include "state_manager.h"
-#include "menu_state.h"
-#include "game_state.h"
-#include "pause_state.h"
 
-#include <iostream>
 
 class LeGame
 {
 	public:
-		LeGame() {
-			m_state_mgr = LeStateManager::get();
+		LeGame();
 
-			m_state_mgr->reg_state(ST_MENU,new LeMenuState);
-			m_state_mgr->reg_state(ST_PAUSE,new LePauseState);
-			m_state_mgr->reg_state(ST_GAME,new LeGameState);
-		}
-
-		void start() {
-			//todo check for some conditions
-			//maybe load something
-			m_state_mgr->set_start_state(ST_GAME);
-			
-		}
-
-		void stop() {
-			//save as 
-            //m_state_mgr-
-            //LeStateManager.set
-		}
+		void start();
+		void stop();
 
 	private:
-            LeStateManager* m_state_mgr;
-            //rendering manager
-            //sound manager
+		LeStateManager* m_state_mgr;
 			
 	
 };
