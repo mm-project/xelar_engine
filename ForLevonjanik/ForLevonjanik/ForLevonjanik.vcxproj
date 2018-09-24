@@ -72,7 +72,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Users\elen\Desktop\sdl_game\deps\win\SDL2-2.0.8\include;C:\Users\elen\Desktop\sdl_game\deps\win\SDL2_ttf-2.0.14\include;C:\Users\elen\Desktop\sdl_game\deps\win\SDL2_image-2.0.3\include;C:\Users\elen\Desktop\sdl_game\deps\win\SDL2\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\deps\win\SDL2-2.0.8\include;..\..\deps\win\SDL2_ttf-2.0.14\include;..\..\deps\win\SDL2_image-2.0.3\include;..\..\deps\win\SDL2\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -96,7 +96,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\elen\Desktop\sdl_game\deps\win\SDL2_ttf-2.0.14\lib\x86;C:\Users\elen\Desktop\sdl_game\deps\win\SDL2-2.0.8\lib\x86;C:\Users\elen\Desktop\sdl_game\deps\win\SDL2_image-2.0.3\lib\x86;C:\Users\elen\Desktop\sdl_game\deps\win\SDL2\lib\win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\deps\win\SDL2_ttf-2.0.14\lib\x86;..\..\deps\win\SDL2-2.0.8\lib\x86;..\..\deps\win\SDL2_image-2.0.3\lib\x86;..\..\deps\win\SDL2\lib\win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2main.lib;SDL2.lib;SDL2_image.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
