@@ -19,7 +19,7 @@ class LeResourceManager
 
 	public:
 		void register_images();
-		LeImg get_image();
+		//LeImg get_image();
 
 	private:
 		//std::map<LeImageType,LeImg> m_enum2img;

@@ -181,8 +181,9 @@ void LeGameState::notify_mouse_pressed(unsigned int) {
 	
 	m_player.m_x = m_pressed_y;
 	m_player.m_y = m_pressed_x;
+	m_player.m_angle = 0;
 	
-	m_player.m_angle = atan2(abs(m_player.m_x - m_player.m_old_x),abs(m_player.m_y - m_player.m_old_y)) * 180 / PI;
+	//m_player.m_angle = atan2(abs(m_player.m_x - m_player.m_old_x),abs(m_player.m_y - m_player.m_old_y)) * 180 / PI;
 	
 }
 

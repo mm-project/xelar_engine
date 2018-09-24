@@ -81,6 +81,7 @@ void LeSdlWrapper::draw_text(const char* s, unsigned int y, unsigned int x, unsi
 
 //todo more clever way?
 std::pair<std::string, std::pair<unsigned int,unsigned int> > LeSdlWrapper::register_image(const char* ipath) {
+#ifdef IMAGE_RENDER
 	SDL_Surface* sf  = IMG_Load(ipath);
 	SDL_Texture* itexture = SDL_CreateTextureFromSurface(m_render,sf);
 	delete sf;
@@ -95,6 +96,11 @@ std::pair<std::string, std::pair<unsigned int,unsigned int> > LeSdlWrapper::regi
 	
 	name2texture[ipath] = std::make_pair(itexture,irect);
 	return std::make_pair(ipath,std::make_pair(w,h));
+#else
+	return std::make_pair("", std::make_pair(0, 0));
+
+#endif
+	//return std::make_pair("", std::make_pair(0, 0));
 }
 
 void LeSdlWrapper::draw_image(const char* ipath, unsigned int y, unsigned int x, unsigned int cropw, unsigned int croph) {
