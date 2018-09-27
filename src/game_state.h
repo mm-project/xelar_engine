@@ -20,7 +20,7 @@ class LeGameState : public LeInterLayer
 		virtual void draw();
 		virtual void update(unsigned int t);
 		
-		
+	public:		
 		virtual void notify_mouse_pressed(unsigned int);
 		virtual void notify_key_pressed(unsigned int);
 		virtual void notify_mouse_move(unsigned int x, unsigned int y);
@@ -29,6 +29,15 @@ class LeGameState : public LeInterLayer
 	private:
 		void set_timer_checkpoints();
 
+	private:
+		void create_world();
+		void create_enemies();
+
+	private:
+		void init_player();
+		void init_world();
+		void init_enemies();
+		
 	private:
 		void draw_boundaries();
 		void draw_obj(LeObj& obj);

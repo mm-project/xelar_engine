@@ -27,7 +27,9 @@ class LeObj {
 		unsigned int m_c_x;
 		unsigned int m_c_y;
 		unsigned int m_angle;
-		bool m_flip; 
+		bool m_need_flip; 
+		uint m_flip_mode; 
+		
 		unsigned m_width;
 		unsigned m_height;
 		

@@ -15,8 +15,8 @@
 
 
 
-const int SCREEN_WIDTH = 640;
-const int SCREEN_HEIGHT = 480;
+const int SCREEN_WIDTH = 900;
+const int SCREEN_HEIGHT = 500;
 
 class LeSdlRendererManager 
 {
@@ -38,6 +38,14 @@ class LeSdlRendererManager
 		void scene_clear();
 		void scene_draw();
 		void set_background_image(const char* path);
+		
+		unsigned int get_screen_width() {
+			return SCREEN_WIDTH;
+		}
+		
+		unsigned int get_screen_height() {
+			return SCREEN_HEIGHT;
+		}
 		
 	public:
 		void render_background_image();

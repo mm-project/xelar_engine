@@ -1,26 +1,33 @@
 #include "menu_state.h"
-
+#include "state_manager.h"
 
 void LeMenuState::init() {
 	SDL_Log("LeMenuState: init");
 	m_current_item = 0;
+
+	m_top_menu.add_item(LeObj(register_image("play.png"),100,210,3,3));
 	
-	//*
-		m_top_menu.add_item(LeObj(register_image("./bin/play.png"),100,210,3,3));
-		m_top_menu.add_item(LeObj(register_image("./bin/play1.png"),190,210,3,3))->add_submenu(&m_settings_menu);
-		m_top_menu.add_item(LeObj(register_image("./bin/play2.png"),280,210,3,3));
-		m_top_menu.add_item(LeObj(register_image("./bin/play3.png"),360,210,3,3));
+	/*
+		m_top_menu.add_item(LeObj(register_image("play.png"),100,210,3,3));
+
+		m_top_menu.add_item(LeObj(register_image("play.png"),100,210,3,3));
+		m_top_menu.add_item(LeObj(register_image("play1.png"),190,210,3,3))->add_submenu(&m_settings_menu);
+		m_top_menu.add_item(LeObj(register_image("play2.png"),280,210,3,3));
+		m_top_menu.add_item(LeObj(register_image("play3.png"),360,210,3,3));
 		
 		
 		
 		//m_settings_menu.add_item(LeObj(register_image("./bin/play.png"),100,210,3,3),std::bind(&LeGameSettings::turnoff_sound, this, std::placeholders::_1));
 		m_settings_menu.add_item(LeObj(register_image("./bin/play.png"),190,210,3,3))->add_submenu(&m_top_menu);
 				
+		/**/
 		
 	m_current_menu = m_top_menu;	
-		/**/
 }
 
+void LeMenuState::action_play() {
+	LeStateManager::get()->set_state(ST_GAME);
+}
 
 void LeMenuState::draw() {
 	//set_drawing_color(255,0,0);
@@ -43,13 +50,14 @@ void LeMenuState::update(unsigned int currentTime) {
 }
 
 void LeMenuState::notify_mouse_pressed(unsigned int) {
-	SDL_Log("===LeMenuState: notify_mouse_pressed\n");
+	//SDL_Log("===LeMenuState: notify_mouse_pressed\n");
 	//LeStateManager::get()->set_state(ST_GAME);
 	if ( !m_current_item ) return;
 	if ( m_current_item->has_submenu() )
 		m_current_menu = *m_current_item->get_submenu();
 	else
-		m_current_item->execute_action();
+		action_play();
+		//m_current_item->execute_action();
 	//if ( m_menu->on_clied(1,22) )
 	//m_current_menu = 
 		

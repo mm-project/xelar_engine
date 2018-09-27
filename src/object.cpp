@@ -24,7 +24,7 @@ LeObj::LeObj(const  LeImg& img, unsigned int x, unsigned int y, unsigned int cro
 	m_old_x = x;
 	m_old_y = y;
 	m_angle = 0;
-	m_flip = true;
+	m_need_flip = false;
 	m_visible = true;
 	m_movable = true;;
 

@@ -115,7 +115,7 @@ void LeSdlWrapper::draw_image(const char* ipath, unsigned int y, unsigned int x,
 	SDL_RenderCopy(m_render, info.first, NULL, &irect);
 }
 
-void LeSdlWrapper::draw_image(const char* ipath, unsigned int y, unsigned int x, unsigned int cropw, unsigned int croph, double angle, bool flip) {
+void LeSdlWrapper::draw_image(const char* ipath, unsigned int y, unsigned int x, unsigned int cropw, unsigned int croph, double angle, bool needflip, uint flipmode) {
 	std::pair<SDL_Texture*,SDL_Rect> info = name2texture[ipath];
 	
 	//fixme get rid of this temp. variables
@@ -125,10 +125,13 @@ void LeSdlWrapper::draw_image(const char* ipath, unsigned int y, unsigned int x,
 	irect.w = info.second.w/cropw;
 	irect.h = info.second.h/croph;
 
-	if ( flip )
-		SDL_RenderCopyEx(m_render, info.first, NULL, &irect, angle, NULL ,SDL_FLIP_HORIZONTAL );	
-	else	
-		SDL_RenderCopyEx(m_render, info.first, NULL, &irect, angle, NULL, SDL_FLIP_VERTICAL );
+	if ( needflip ) {
+		SDL_RenderCopyEx(m_render, info.first, NULL, &irect, angle, NULL , SDL_FLIP_NONE );	
+		
+		return;
+	}
+	
+	SDL_RenderCopyEx(m_render, info.first, NULL, &irect, angle, NULL, SDL_FLIP_NONE );
 	
 }
 

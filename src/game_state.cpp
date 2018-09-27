@@ -1,11 +1,12 @@
 #include "game_state.h"
 #include "interlayer.h"
+#include "state_manager.h"
 
 #include <string>
 #include <sstream>
 #include <cmath>
 
-LeGameState::LeGameState() {
+LeGameState::LeGameState() {	
 	//m_resources = LeResourceManager::get();
 	
 	//m_imgs.push_back(m_resouces->get_image(IMG_ENEMY));
@@ -17,46 +18,67 @@ LeGameState::LeGameState() {
 	
 	m_imgs.push_back(register_image("coin.png"));     //4
 	m_imgs.push_back(register_image("player.png"));   //5
-	m_imgs.push_back(register_image("live.png"));   //5
+	m_imgs.push_back(register_image("live.png"));     //6
 	
 	
 	set_timer_checkpoints();
+	create_enemies();
+	create_world();
+	
+	m_is_gameover = false;
+	m_current_score = 0;
+	m_current_time = 0;
+	m_x = 0;
+	m_y = 0;
+
+}
+
+void LeGameState::create_enemies() {
+	m_enemies.push_back(LeObj(m_imgs[0],rand()%600,rand()%700,7,7));
+	//m_enemies.push_back(LeObj(m_imgs[1],rand()%600,rand()%700,5,5));
+	m_enemies.push_back(LeObj(m_imgs[2],rand()%600,rand()%700,6,6));
+	m_enemies.push_back(LeObj(m_imgs[3],rand()%600,rand()%700,4,4));
+}
+
+void LeGameState::create_world() {
+	for(int i=0; i<30; i++ ) {
+		m_coins.push_back(LeObj(m_imgs[4],rand()%900,rand()%900,10,10));
+	}	
+}
+
+void LeGameState::LeGameState::init() {
+	SDL_Log("LeGameState: init");
+	
+	init_player();
+	init_enemies();
+	init_world();
+}
+
+void LeGameState::init_player()
+{
+	m_player = LeObj(m_imgs[5],0,0,16,16);
+}
+
+void LeGameState::init_world()
+{
+
 	m_is_gameover = false;
 	m_current_score = 0;
 	m_current_time = 0;
 
-}
-
-
-
-void LeGameState::LeGameState::init() {
-	SDL_Log("LeGameState: init");
-	//m_clicked = true;
-	
-	//m_update_time = 0;
-	//m_refresh_enemy_time = 30;
-	
-	m_x = 0;
-	m_y = 0;
-	m_player = LeObj(m_imgs[5],0,0,16,16);
-	
-	//m_coins.push_back(LeObj(m_imgs[4],100,100,10,10));
-	
-	for(int i=0; i<30; i++ ) {
-		m_coins.push_back(LeObj(m_imgs[4],rand()%900,rand()%900,10,10));
-	}
-	
-
-	m_enemies.push_back(LeObj(m_imgs[0],rand()%600,rand()%700,7,7));
-	//m_enemies.push_back(LeObj("debilik2.png",rand()%600,rand()%700,5,5));
-	m_enemies.push_back(LeObj(m_imgs[2],rand()%600,rand()%700,6,6));
-	m_enemies.push_back(LeObj(m_imgs[3],rand()%600,rand()%700,4,4));
-	
-	//rand_position(m_player);
-	rand_position(m_enemies[0]);
-	
 	set_background_image("sky_bg.jpg");
+
 }
+
+void LeGameState::init_enemies()
+{
+	rand_position(m_enemies[0]);
+	rand_position(m_enemies[1]);
+	rand_position(m_enemies[2]);
+	///rand_position(m_enemies[3]);
+
+}
+
 
 
 void LeGameState::draw() {
@@ -83,7 +105,7 @@ void LeGameState::draw_obj_in_movement(LeObj& obj) {
 
 
 void LeGameState::draw_obj_in_movement2(LeObj& obj) {
-	draw_image(obj.m_img_path.c_str(),obj.m_old_x,obj.m_old_y,obj.m_c_x,obj.m_c_y,obj.m_angle,obj.m_flip);
+	draw_image(obj.m_img_path.c_str(),obj.m_old_x,obj.m_old_y,obj.m_c_x,obj.m_c_y,obj.m_angle,obj.m_need_flip,0);//obj.m_flip_mode);
 }
 
 void LeGameState::draw_player() {
@@ -118,9 +140,13 @@ void LeGameState::draw_info() {
 	set_drawing_color(255,255,255);
 	//draw_rect(400,0,100,800);
 	draw_text(z.str().c_str(),380,10,350,100);
-	draw_image("live.png",410,380,5,5);
-	draw_image("live.png",410,430,5,5);
-	draw_image("live.png",410,480,5,5);
+	//draw_image("live.png",scr_h()-100,scr_w()-100,5,5);
+	//draw_image("live.png",scr_w()-100,scr_h()-100,5,5);
+	//draw_image("live.png",0,scr_h()-100,5,5);
+	draw_image("live.png",scr_h()-10,scr_w()-10,5,5);
+	//draw_image("live.png",scr_h()-100,0,5,5);
+	
+	
 	
 	//draw_text(z2.str().c_str(),300,300,450,150);
 	
@@ -133,16 +159,6 @@ void LeGameState::update(unsigned int t) {
 		m_timer.step(t);
 		m_current_time=+t;
 	}
-	//else
-		
-		
-	/*
-	if ( t > m_update_time + m_refresh_enemy_time ) {	
-			//assert(0);	
-			update_enemies();	
-			m_update_time = t;	
-	}
-	*/
 }
 
 void LeGameState::update_fast_enemies() {
@@ -167,23 +183,27 @@ void LeGameState::set_timer_checkpoints() {
 void LeGameState::notify_mouse_pressed(unsigned int) {
 	//SDL_Log("LeGameState: notify_mouse_pressed");
 	//m_clicked = !m_clicked;
+	if (m_is_gameover)  {
+		LeStateManager::get()->set_state(ST_MENU);	
+		return;
+	}	
 	m_pressed_x = m_x;
 	m_pressed_y = m_y;
-	//m_player.m_x = m_pressed_y;
-	//m_player.m_y = m_pressed_x;
-
-	
-	/*
-	if ( m_player.m_x > m_player.m_old_x )
-	if ( m_player.m_x < m_player.m_old_x ) m_player.m_flip = false;
-	if ( m_player.m_x < m_player.m_old_x ) m_player.m_flip = false;
-	*/
-	
 	m_player.m_x = m_pressed_y;
 	m_player.m_y = m_pressed_x;
-	m_player.m_angle = 0;
+
 	
-	//m_player.m_angle = atan2(abs(m_player.m_x - m_player.m_old_x),abs(m_player.m_y - m_player.m_old_y)) * 180 / PI;
+	//*
+	if ( m_player.m_x > m_player.m_old_x ) 
+	if ( m_player.m_x < m_player.m_old_x ) m_player.m_need_flip = false;
+	if ( m_player.m_x < m_player.m_old_x ) m_player.m_need_flip = false;
+	
+	/**/
+	
+	//m_player.m_x = m_pressed_y;
+	//m_player.m_y = m_pressed_x;
+	//m_player.m_angle = 0;
+	m_player.m_angle = atan2(m_player.m_x - m_player.m_old_x,m_player.m_y - m_player.m_old_y) * 180 / PI;
 	
 }
 
@@ -258,7 +278,8 @@ void LeGameState::check_intersection() {
 	//	return;
 	
 	for( auto it : m_enemies )
-		if ( m_player.is_intersecting_with_other_obj(it) ) {
+		//if ( m_player.is_intersecting_with_other_obj(it) ) {
+		if ( has_intersetion(m_player.m_old_x,m_player.m_old_y,m_player.m_height,m_player.m_width,it.m_old_x,it.m_old_y,it.m_height,it.m_width) ) {	
 			m_current_trouble_obj = it;
 			m_is_gameover = true;
 			return;
@@ -270,10 +291,10 @@ void LeGameState::check_intersection() {
 		//if ( m_player.is_intersecting(it) ) 
 			//delcoins.push_back(it),m_current_score++;
 
-	std::vector<int> delcoins;
-	for(  int i=0; i<m_coins.size(); ++i ) 
-		if ( m_player.is_intersecting_with_other_obj(m_coins[i]) ) 
-			delcoins.push_back(i),m_current_score++;
+	//std::vector<int> delcoins;
+	//for(  int i=0; i<m_coins.size(); ++i ) 
+		//if ( m_player.is_intersecting_with_other_obj(m_coins[i]) ) 
+			//delcoins.push_back(i),m_current_score++;
 
 	
 	//for( int i=0; i<delcoins.size(); ++i ) 

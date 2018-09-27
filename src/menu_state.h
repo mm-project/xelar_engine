@@ -15,12 +15,14 @@ class LeMenuState : public LeInterLayer
 		virtual void update(unsigned int currentTime);
 
 	public:
-		
 		virtual void notify_mouse_pressed(unsigned int);
 		virtual void notify_key_pressed(unsigned int);
 		virtual void notify_mouse_move(unsigned int x, unsigned int y);
 
-
+	
+	public:
+		void action_play();
+		
 	private:
 		void draw_highlights();
 		void draw_menu(const LeMenu& menu);

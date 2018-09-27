@@ -40,8 +40,10 @@ bool  LeSdlRendererManager::init_sdl_ttf() {
 		m_init_success = false;
 		//exit(1);
 	}
+#else
+	SDL_ShowSimpleMessageBox(0, "No SDL_ttf","Error",NULL);
+	return false;
 #endif
-	return true;
 }
 
 bool LeSdlRendererManager::init_sdl_image() {
@@ -52,8 +54,10 @@ bool LeSdlRendererManager::init_sdl_image() {
 		SDL_ShowSimpleMessageBox(0, "SDL_image could not initialize! SDL_image Error:", IMG_GetError(), NULL);
 		m_init_success = false;
 	}
-#endif
+#else
+	SDL_ShowSimpleMessageBox(0, "No SDL_image","Error",NULL);
 	return false;
+#endif
 }
 
 bool LeSdlRendererManager::init_sdl() {
@@ -77,6 +81,7 @@ bool LeSdlRendererManager::create_window(const char* title) {
 			m_init_success = false;
 		} else {
 			SDL_RenderSetScale(m_render,1,1);	
+			SDL_RenderSetLogicalSize(m_render, SCREEN_WIDTH, SCREEN_HEIGHT);
 			if( !SDL_SetHint( SDL_HINT_RENDER_SCALE_QUALITY, "1" ) )
 				LOG( "Warning: Linear texture filtering not enabled!" );
 		}			
@@ -151,8 +156,8 @@ void LeSdlRendererManager::set_background_image(const char* path) {
 }
 
 void LeSdlRendererManager::render_background_image() {
-	SDL_RenderCopy(m_render, m_bg_texture, NULL, NULL);
-
+	if ( m_bg_texture )
+		SDL_RenderCopy(m_render, m_bg_texture, NULL, NULL);
 }
 
 void LeSdlRendererManager::draw_text(const char* s, unsigned int y, unsigned int x, unsigned int sy, unsigned int sx)
