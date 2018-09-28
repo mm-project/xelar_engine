@@ -1,11 +1,12 @@
 #include "menu_state.h"
 #include "state_manager.h"
+#include "common.h"
 
 void LeMenuState::init() {
 	SDL_Log("LeMenuState: init");
 	m_current_item = 0;
 
-	m_top_menu.add_item(LeObj(register_image("play.png"),100,210,3,3));
+	m_top_menu.add_action_item(LeObj(register_image("play.png"),100,210,3,3),std::bind(&LeMenuState::action_play, this));
 	
 	/*
 		m_top_menu.add_item(LeObj(register_image("play.png"),100,210,3,3));
@@ -56,8 +57,8 @@ void LeMenuState::notify_mouse_pressed(unsigned int) {
 	if ( m_current_item->has_submenu() )
 		m_current_menu = *m_current_item->get_submenu();
 	else
-		action_play();
-		//m_current_item->execute_action();
+		//action_play();
+		m_current_item->execute_action();
 	//if ( m_menu->on_clied(1,22) )
 	//m_current_menu = 
 		

@@ -5,6 +5,7 @@
 #include <string>
 #include <sstream>
 #include <cmath>
+#include <algorithm>
 
 LeGameState::LeGameState() {	
 	//m_resources = LeResourceManager::get();
@@ -25,9 +26,7 @@ LeGameState::LeGameState() {
 	create_enemies();
 	create_world();
 	
-	m_is_gameover = false;
-	m_current_score = 0;
-	m_current_time = 0;
+
 	m_x = 0;
 	m_y = 0;
 
@@ -57,6 +56,8 @@ void LeGameState::LeGameState::init() {
 void LeGameState::init_player()
 {
 	m_player = LeObj(m_imgs[5],0,0,16,16);
+	m_lifes = 5;
+	m_is_player_vulnarable = true;
 }
 
 void LeGameState::init_world()
@@ -65,9 +66,10 @@ void LeGameState::init_world()
 	m_is_gameover = false;
 	m_current_score = 0;
 	m_current_time = 0;
-
+	
+	m_coins.clear();
+	create_world();
 	set_background_image("sky_bg.jpg");
-
 }
 
 void LeGameState::init_enemies()
@@ -133,23 +135,22 @@ void LeGameState::draw_bonuses() {
 
 void LeGameState::draw_info() {
 	std::stringstream z,z1,z2;
-	z << "Score: " << m_current_score << "    Time: " << m_current_time << "   Lifes: ";
-	z1 << "Score: " << m_current_score;
-	z2 << "Time: " << m_current_time;
+	z << "Score: " << m_current_score << "    Time: " << m_current_time << "    Lifes: ";
+	//z1 << "Score: " << m_current_score;
+	//z2 << "Time: " << m_current_time;
+	
 	
 	set_drawing_color(255,255,255);
 	//draw_rect(400,0,100,800);
-	draw_text(z.str().c_str(),380,10,350,100);
-	//draw_image("live.png",scr_h()-100,scr_w()-100,5,5);
-	//draw_image("live.png",scr_w()-100,scr_h()-100,5,5);
-	//draw_image("live.png",0,scr_h()-100,5,5);
-	draw_image("live.png",scr_h()-10,scr_w()-10,5,5);
-	//draw_image("live.png",scr_h()-100,0,5,5);
+	uint starty = scr_h()-100;
+	uint startx = 0;
+
+	uint endy = starty+350;
+	uint endx = startx+100;
 	
-	
-	
-	//draw_text(z2.str().c_str(),300,300,450,150);
-	
+	draw_text(z.str().c_str(),starty,startx,endy,endx);
+	for(int i=0; i<m_lifes; i++)
+		draw_image("live.png",endx/3,endy+i*50,5,5);
 	
 }
 
@@ -273,40 +274,50 @@ void LeGameState::rand_line(LeObj& o) {
 		o.m_x = o.m_old_x;
 }
 
+void LeGameState::set_player_vulnarable() {
+	m_is_player_vulnarable = true;
+}
+
 void LeGameState::check_intersection() {
 	//if (!m_is_gameover) 
 	//	return;
-	
-	for( auto it : m_enemies )
-		//if ( m_player.is_intersecting_with_other_obj(it) ) {
-		if ( has_intersetion(m_player.m_old_x,m_player.m_old_y,m_player.m_height,m_player.m_width,it.m_old_x,it.m_old_y,it.m_height,it.m_width) ) {	
-			m_current_trouble_obj = it;
-			m_is_gameover = true;
-			return;
-		}
+	if ( m_is_player_vulnarable )
+		for( auto it : m_enemies )
+			if ( has_intersetion(m_player.m_old_x,m_player.m_old_y,m_player.m_height,m_player.m_width,it.m_old_x,it.m_old_y,it.m_height,it.m_width) ) {	
+				if ( m_lifes == 0) {
+					m_current_trouble_obj = it;
+					//m_is_gameover = true;
+					return;
+				} else {
+					m_lifes--;
+					m_is_player_vulnarable = false;
+					m_timer.add_singleshot_checkpoint(std::bind(&LeGameState::set_player_vulnarable,this),2000);
+				}
+			}
 		
 	
-	//std::vector<const LeObj> delcoins;
-	//for(  auto it : m_coins ) 
-		//if ( m_player.is_intersecting(it) ) 
-			//delcoins.push_back(it),m_current_score++;
+	//check
+	std::vector<LeObj> delcoins;
+	for(  auto it : m_coins ) 
+		if (  has_intersetion(m_player.m_old_x,m_player.m_old_y,m_player.m_height,m_player.m_width,it.m_old_x,it.m_old_y,it.m_height,it.m_width) ) 
+			delcoins.push_back(it),m_current_score++;
+
+
+	//erase
+	for( int i=0; i<delcoins.size(); ++i )
+		m_coins.erase(std::find(m_coins.begin(), m_coins.end(), delcoins[i]));
+	
 
 	//std::vector<int> delcoins;
 	//for(  int i=0; i<m_coins.size(); ++i ) 
 		//if ( m_player.is_intersecting_with_other_obj(m_coins[i]) ) 
 			//delcoins.push_back(i),m_current_score++;
-
 	
-	//for( int i=0; i<delcoins.size(); ++i ) 
-		//m_coins.erase(remove(m_coins.begin(), m_coins.end(), m_coins[delcoins[i]]), m_coins.end());
-		//m_coins.erase(std::find(m_coins.begin(),m_coins.end(),delcoins[i]));
-	
+	//m_coins.erase(remove(m_coins.begin(), m_coins.end(), m_coins[delcoins[i]]), m_coins.end());
 	
 	//assert(0);	
 		//SDL_Log("11111\n");
 	//else
 		//LOG("22222\n");
 	//}
-
-	
 }

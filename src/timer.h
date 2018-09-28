@@ -11,6 +11,8 @@ class LeTimer {
 	public: 
 		LeTimer ();
 		void add_continuous_checkpoint(const actionFun& f, unsigned int t);
+		void add_singleshot_checkpoint(const actionFun& f, unsigned int t);
+		
 		void step(unsigned int current_time );
 	
 	private:
@@ -23,6 +25,8 @@ class LeTimer {
 		
 	private:
 		std::vector<LeHavaqakanStruktura> m_structure;  
+		std::vector<LeHavaqakanStruktura> m_structure2;  
+		uint m_fired;
 		
 };
 #endif

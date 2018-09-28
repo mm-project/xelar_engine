@@ -1,13 +1,20 @@
 #include "menuitem.h"
 #include "menu.h"
+#include "common.h"
 
 
 #include <iostream>
 
 LeMenuItem* LeMenu::add_item(const LeObj& o) {
-		LeMenuItem* item = new LeMenuItem(o);
-		m_items.push_back(item);
-		return item;
+	LeMenuItem* item = new LeMenuItem(o);
+	m_items.push_back(item);
+	return item;
+}
+
+LeMenuItem* LeMenu::add_action_item(const LeObj& o, const actionFun& f) {
+	LeMenuItem* item = new LeMenuItem(o,f);
+	m_items.push_back(item);
+	return item;
 }
 
 std::vector<LeMenuItem*>  LeMenu::get_items() const {

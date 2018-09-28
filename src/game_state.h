@@ -20,6 +20,8 @@ class LeGameState : public LeInterLayer
 		virtual void draw();
 		virtual void update(unsigned int t);
 		
+
+		
 	public:		
 		virtual void notify_mouse_pressed(unsigned int);
 		virtual void notify_key_pressed(unsigned int);
@@ -61,6 +63,7 @@ class LeGameState : public LeInterLayer
 	private:	
 		void rand_position(LeObj& o);
 		void rand_line(LeObj& o);
+		void set_player_vulnarable();
 	
 	
 	private:	
@@ -82,6 +85,8 @@ class LeGameState : public LeInterLayer
 		bool m_is_gameover;
 		unsigned int m_current_score;
 		unsigned int m_current_time;
+		unsigned int m_lifes;
+		bool m_is_player_vulnarable;
 
 };
 

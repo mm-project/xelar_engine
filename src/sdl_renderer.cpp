@@ -17,7 +17,9 @@ LeSdlRendererManager* LeSdlRendererManager::get() {
 
 LeSdlRendererManager::LeSdlRendererManager(){ //const char* title) {
 	m_init_success = true;
-	init("Game demo");
+	//FIXME what if init failed? exit?
+	if ( !init("Game demo") ) 
+		exit(1);
 }
 
 
@@ -56,7 +58,7 @@ bool LeSdlRendererManager::init_sdl_image() {
 	}
 #else
 	SDL_ShowSimpleMessageBox(0, "No SDL_image","Error",NULL);
-	return false;
+	return true;
 #endif
 }
 
