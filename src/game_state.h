@@ -87,6 +87,10 @@ class LeGameState : public LeInterLayer
 		unsigned int m_current_time;
 		unsigned int m_lifes;
 		bool m_is_player_vulnarable;
+		unsigned int last_hit_time;
+		bool m_player_hit;
+		bool m_need_draw_player;
+		unsigned int last_blink_time;
 
 };
 

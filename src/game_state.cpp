@@ -4,9 +4,11 @@
 
 #include <string>
 #include <sstream>
-#include <cmath>
+#include <iostream>
 #include <algorithm>
 
+#include <cassert>
+#include <cmath>
 LeGameState::LeGameState() {	
 	//m_resources = LeResourceManager::get();
 	
@@ -57,7 +59,11 @@ void LeGameState::init_player()
 {
 	m_player = LeObj(m_imgs[5],0,0,16,16);
 	m_lifes = 5;
+	last_hit_time = 0;
+	last_blink_time = 0;
+	m_player_hit = false;
 	m_is_player_vulnarable = true;
+	m_need_draw_player = true;
 }
 
 void LeGameState::init_world()
@@ -111,8 +117,14 @@ void LeGameState::draw_obj_in_movement2(LeObj& obj) {
 }
 
 void LeGameState::draw_player() {
-	//draw_image("player.png",m_y,m_x,15,15);
+	if( m_player_hit) 
+		if ( m_need_draw_player ) 
+			draw_obj_in_movement2(m_player);
+		else
+			return;
+		
 	draw_obj_in_movement2(m_player);
+	
 	if ( m_is_gameover ) {
 		set_drawing_color(255,255,0);
 		draw_rect(m_current_trouble_obj.m_old_x,m_current_trouble_obj.m_old_y,m_current_trouble_obj.m_height,m_current_trouble_obj.m_width);		
@@ -150,7 +162,7 @@ void LeGameState::draw_info() {
 	
 	draw_text(z.str().c_str(),starty,startx,endy,endx);
 	for(int i=0; i<m_lifes; i++)
-		draw_image("live.png",endx/3,endy+i*50,5,5);
+		draw_image("live.png",endy/3,endx+i*50,5,5);
 	
 }
 
@@ -159,7 +171,18 @@ void LeGameState::update(unsigned int t) {
 	if (! m_is_gameover ) {
 		m_timer.step(t);
 		m_current_time=+t;
+		if ( !m_is_player_vulnarable && t > last_hit_time + 3000 ) {
+			set_player_vulnarable();
+		}
+		
+		if ( t > last_blink_time + 100 ) {
+			LOG("m_need_draw_player %d \n",m_need_draw_player);	
+			std::cout << "aaaaaa" << m_need_draw_player << std::endl;
+			m_need_draw_player=!m_need_draw_player;
+			last_blink_time = t;
+		}
 	}
+	
 }
 
 void LeGameState::update_fast_enemies() {
@@ -174,10 +197,10 @@ void LeGameState::update_slow_enemies() {
 
 
 void LeGameState::set_timer_checkpoints() {
-	m_timer.add_continuous_checkpoint(std::bind(&LeGameState::update_player,this),3);
+	m_timer.add_continuous_checkpoint(std::bind(&LeGameState::update_player,this),10);
 	m_timer.add_continuous_checkpoint(std::bind(&LeGameState::update_fast_enemies,this),200);
 	m_timer.add_continuous_checkpoint(std::bind(&LeGameState::update_slow_enemies,this),3000);
-	m_timer.add_continuous_checkpoint(std::bind(&LeGameState::check_intersection,this),1);		
+	m_timer.add_continuous_checkpoint(std::bind(&LeGameState::check_intersection,this),10);		
 }
 
 #define PI 3.14159265
@@ -214,14 +237,13 @@ void LeGameState::notify_key_pressed(unsigned int) {
 }
 
 void LeGameState::notify_mouse_move(unsigned int x, unsigned int y) {
-		//SDL_Log("LeGameState: notify_mouse_moved");
-		m_x = x;
-		m_y = y;
-		
+	//SDL_Log("LeGameState: notify_mouse_moved");
+	m_x = x;
+	m_y = y;
+	
 }
 
 void LeGameState::update_player() {
-
 	update_automove_object(m_player,false);
 }
 
@@ -264,39 +286,45 @@ void LeGameState::update_object_position(LeObj& obj) {
 
 
 void LeGameState::rand_position(LeObj& o) {
-		o.m_x = rand()%900;
-		o.m_y = rand()%900;
+	o.m_x = rand()%900;
+	o.m_y = rand()%900;
 }
 
 void LeGameState::rand_line(LeObj& o) {
-		o.m_old_y = 1000;
-		o.m_y = 0;
-		o.m_x = o.m_old_x;
+	o.m_old_y = 1000;
+	o.m_y = 0;
+	o.m_x = o.m_old_x;
 }
 
 void LeGameState::set_player_vulnarable() {
 	m_is_player_vulnarable = true;
+	m_player_hit = false;
 }
+
 
 void LeGameState::check_intersection() {
 	//if (!m_is_gameover) 
 	//	return;
-	if ( m_is_player_vulnarable )
-		for( auto it : m_enemies )
+	if ( m_is_player_vulnarable ) {
+		for( auto it : m_enemies ) {
 			if ( has_intersetion(m_player.m_old_x,m_player.m_old_y,m_player.m_height,m_player.m_width,it.m_old_x,it.m_old_y,it.m_height,it.m_width) ) {	
 				if ( m_lifes == 0) {
 					m_current_trouble_obj = it;
-					//m_is_gameover = true;
+					m_is_gameover = true;
 					return;
 				} else {
 					m_lifes--;
+					m_player_hit = true;
 					m_is_player_vulnarable = false;
-					m_timer.add_singleshot_checkpoint(std::bind(&LeGameState::set_player_vulnarable,this),2000);
+					last_hit_time = m_current_time;
+					//m_timer.add_singleshot_checkpoint(std::bind(&LeGameState::set_player_vulnarable,this),2000);
 				}
 			}
+		}
+	}
 		
 	
-	//check
+	/*check
 	std::vector<LeObj> delcoins;
 	for(  auto it : m_coins ) 
 		if (  has_intersetion(m_player.m_old_x,m_player.m_old_y,m_player.m_height,m_player.m_width,it.m_old_x,it.m_old_y,it.m_height,it.m_width) ) 
@@ -306,18 +334,10 @@ void LeGameState::check_intersection() {
 	//erase
 	for( int i=0; i<delcoins.size(); ++i )
 		m_coins.erase(std::find(m_coins.begin(), m_coins.end(), delcoins[i]));
-	
+	*/
 
 	//std::vector<int> delcoins;
 	//for(  int i=0; i<m_coins.size(); ++i ) 
 		//if ( m_player.is_intersecting_with_other_obj(m_coins[i]) ) 
 			//delcoins.push_back(i),m_current_score++;
-	
-	//m_coins.erase(remove(m_coins.begin(), m_coins.end(), m_coins[delcoins[i]]), m_coins.end());
-	
-	//assert(0);	
-		//SDL_Log("11111\n");
-	//else
-		//LOG("22222\n");
-	//}
 }
