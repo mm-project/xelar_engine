@@ -15,7 +15,7 @@ else
 	#INCLS=-I ./deps/linux/SDL2/include -I ./deps/linux/SDL2_ttf
 	FLAGS+=-Wfatal-errors -g -DIMAGE_RENDER -DOS_LINUX 
 	#FLAGS=-DTEXT_RENDER
-	LIBS+=-L ./deps/linux/SDL2_image-2.0.3 -lSDL2_image ./deps/linux/SDL2/libSDL2.a  -ldl -lrt -pthread 
+	LIBS+= -lSDL2_image -lSDL2  -ldl -lrt -pthread 
 	INCLS+=$(INCS)-I ./deps/linux/SDL2/include -I ./deps/linux/SDL2_image-2.0.3/include 
 endif
 
