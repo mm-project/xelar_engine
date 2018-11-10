@@ -59,13 +59,16 @@ class LeSdlWrapper : public LeRenderBase , public LeEventControllerBase
 		void set_drawing_color(int r, int g, int b);
 		void set_background_image(const char* path);
 		void draw_text(const char* s, unsigned int y, unsigned int x, unsigned int sy, unsigned int sx);	
-		void draw_point(unsigned int y, unsigned int x, unsigned int radius);
+		
+        void draw_point(unsigned int y, unsigned int x, unsigned int radius);
 		void draw_line(unsigned int y1, unsigned int x1, unsigned int y2, unsigned int x2);
 		void draw_square(unsigned int y, unsigned int x, unsigned int delta);
 		void draw_rect(unsigned int y, unsigned int x, unsigned int delta2, unsigned int delta1 );
 		void draw_circle(unsigned int y, unsigned int x, int radius);
-		void draw_image(const char* ipath, unsigned int y, unsigned int x, unsigned int cropw, unsigned int croph);
+		
+        void draw_image(const char* ipath, unsigned int y, unsigned int x, unsigned int cropw, unsigned int croph);
 		void draw_image(const char* ipath, unsigned int y, unsigned int x, unsigned int cropw, unsigned int croph, double angle, bool needflip, unsigned int flipdir);	
+		void draw_background(const char* ipath, unsigned int delta);
 
 	public:
 		std::pair<std::string, std::pair<unsigned int,unsigned int> > register_image(const char* ipath);

@@ -43,7 +43,7 @@ bool  LeSdlRendererManager::init_sdl_ttf() {
 		//exit(1);
 	}
 #else
-	SDL_ShowSimpleMessageBox(0, "No SDL_ttf","Error",NULL);
+	//SDL_ShowSimpleMessageBox(0, "No SDL_ttf","Error",NULL);
 	return false;
 #endif
 }
@@ -158,8 +158,8 @@ void LeSdlRendererManager::set_background_image(const char* path) {
 }
 
 void LeSdlRendererManager::render_background_image() {
-	if ( m_bg_texture )
-		SDL_RenderCopy(m_render, m_bg_texture, NULL, NULL);
+	//if ( m_bg_texture )
+		//SDL_RenderCopy(m_render, m_bg_texture, NULL, NULL);
 }
 
 void LeSdlRendererManager::draw_text(const char* s, unsigned int y, unsigned int x, unsigned int sy, unsigned int sx)

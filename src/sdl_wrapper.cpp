@@ -49,7 +49,7 @@ void LeSdlWrapper::enter_event_loop() {
 			if(m_renderer_controller) {
 				//SDL_Log("?????\n");
 				m_render_manager->scene_clear();
-				m_render_manager->render_background_image();
+				//m_render_manager->render_background_image();
 				m_renderer_controller->update(currentTime);
 				m_renderer_controller->draw();
 				m_render_manager->scene_draw();
@@ -66,11 +66,40 @@ void LeSdlWrapper::draw_point(unsigned int y, unsigned int x, unsigned int radiu
 }
 
 void LeSdlWrapper::set_drawing_color(int r, int g, int b) {
-	SDL_SetRenderDrawColor(m_render,r,g,b,255);
+    SDL_SetRenderDrawColor(m_render,r,g,b,255);
 }
 
-void LeSdlWrapper::set_background_image(const char* path) {
-	m_render_manager->set_background_image(path);
+
+void LeSdlWrapper::draw_background(const char* ipath, unsigned int delta) {	
+    //m_render_manager->set_background_image(path);
+	//FIXME background texture constant and have set_background_image 
+    std::pair<SDL_Texture*,SDL_Rect> info = name2texture[ipath];
+	unsigned int texture_width = info.second.w;
+    unsigned int texture_height = info.second.h;
+    
+    SDL_Rect srect;
+	srect.x = delta;
+	srect.y = 0;
+	srect.w = delta;
+	srect.h = texture_height;
+    
+    
+    
+    //SDL_Rect drect;
+	//drect.x = 0;
+	//drect.y = 0;
+	//drect.w = 400;
+	//drect.h = 500;
+    //SDL_RenderCopy(renderer, background, &rectBackground, &displayRect);
+
+
+    if( delta>(1024-256) )
+    {
+        SDL_RenderCopy(m_render, name2texture[ipath].first, NULL, NULL);
+    } else {
+         SDL_RenderCopy(m_render, name2texture[ipath].first, &srect, NULL);       
+    }
+    
 }
 
 void LeSdlWrapper::draw_text(const char* s, unsigned int y, unsigned int x, unsigned int sy, unsigned int sx)

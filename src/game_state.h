@@ -41,7 +41,8 @@ class LeGameState : public LeInterLayer
 		void init_enemies();
 		
 	private:
-		void draw_boundaries();
+        void draw_background();
+        void draw_boundaries();
 		void draw_obj(LeObj& obj);
 		void draw_obj_in_movement(LeObj& obj);
 		void draw_obj_in_movement2(LeObj& obj);
@@ -92,6 +93,9 @@ class LeGameState : public LeInterLayer
 		bool m_need_draw_player;
 		unsigned int last_blink_time;
 
+        unsigned int m_last_background_update;
+        unsigned int m_background_delta;
+        bool m_need_backround_update;
 };
 
 #endif

@@ -31,6 +31,9 @@ LeGameState::LeGameState() {
 
 	m_x = 0;
 	m_y = 0;
+    m_pressed_x = 0;
+    m_pressed_y = 0;
+    
 
 }
 
@@ -57,25 +60,30 @@ void LeGameState::LeGameState::init() {
 
 void LeGameState::init_player()
 {
-	m_player = LeObj(m_imgs[5],0,0,16,16);
+	m_player = LeObj(m_imgs[5],100,100,16,16);
 	m_lifes = 5;
 	last_hit_time = 0;
 	last_blink_time = 0;
 	m_player_hit = false;
-	m_is_player_vulnarable = true;
+	m_is_player_vulnarable = false;
 	m_need_draw_player = true;
+
+    m_last_background_update = 0;
+    m_background_delta = 1;
+   
 }
 
 void LeGameState::init_world()
 {
-
+    m_need_backround_update = true;
 	m_is_gameover = false;
 	m_current_score = 0;
 	m_current_time = 0;
 	
 	m_coins.clear();
 	create_world();
-	set_background_image("sky_bg.jpg");
+	//set_background_image("sky_bg.jpg");
+    register_image("long_bg.png");
 }
 
 void LeGameState::init_enemies()
@@ -89,15 +97,27 @@ void LeGameState::init_enemies()
 
 
 
+
 void LeGameState::draw() {
 	//SDL_Log("LeGameState: draw");
-	draw_bonuses();
-	draw_enemies();
-	draw_boundaries();
-	draw_info();
+	draw_background();
+    //draw_bonuses();
+	//draw_enemies();
+	//draw_boundaries();
+	//draw_info();
 	draw_player();
-
+    //draw_line(m_y,m_x,m_player.m_y,m_player.m_x);
 }
+
+void LeGameState::draw_background() {
+    if ( m_need_backround_update ) {
+        m_need_backround_update = false;
+        m_background_delta = m_background_delta + 20;
+    }
+    
+    LeSdlWrapper::draw_background("long_bg.png",m_background_delta);
+}
+
 
 void LeGameState::draw_boundaries() {
 }
@@ -164,6 +184,8 @@ void LeGameState::draw_info() {
 	for(int i=0; i<m_lifes; i++)
 		draw_image("live.png",endy/3,endx+i*50,5,5);
 	
+
+   
 }
 
 void LeGameState::update(unsigned int t) {
@@ -171,16 +193,22 @@ void LeGameState::update(unsigned int t) {
 	if (! m_is_gameover ) {
 		m_timer.step(t);
 		m_current_time=+t;
-		if ( !m_is_player_vulnarable && t > last_hit_time + 3000 ) {
+		
+        if ( !m_is_player_vulnarable && t > last_hit_time + 3000 ) {
 			set_player_vulnarable();
 		}
 		
 		if ( t > last_blink_time + 100 ) {
-			LOG("m_need_draw_player %d \n",m_need_draw_player);	
-			std::cout << "aaaaaa" << m_need_draw_player << std::endl;
+			//LOG("m_need_draw_player %d \n",m_need_draw_player);	
+			//std::cout << "aaaaaa" << m_need_draw_player << std::endl;
 			m_need_draw_player=!m_need_draw_player;
 			last_blink_time = t;
 		}
+		
+		if ( t > m_last_background_update + 500 ) {
+            m_last_background_update = t;
+            m_need_backround_update = true;
+        }
 	}
 	
 }
@@ -215,9 +243,9 @@ void LeGameState::notify_mouse_pressed(unsigned int) {
 	m_pressed_y = m_y;
 	m_player.m_x = m_pressed_y;
 	m_player.m_y = m_pressed_x;
-
+    
 	
-	//*
+	/*
 	if ( m_player.m_x > m_player.m_old_x ) 
 	if ( m_player.m_x < m_player.m_old_x ) m_player.m_need_flip = false;
 	if ( m_player.m_x < m_player.m_old_x ) m_player.m_need_flip = false;
@@ -227,7 +255,7 @@ void LeGameState::notify_mouse_pressed(unsigned int) {
 	//m_player.m_x = m_pressed_y;
 	//m_player.m_y = m_pressed_x;
 	//m_player.m_angle = 0;
-	m_player.m_angle = atan2(m_player.m_x - m_player.m_old_x,m_player.m_y - m_player.m_old_y) * 180 / PI;
+	//m_player.m_angle = atan2(m_player.m_x - m_player.m_old_x,m_player.m_y - m_player.m_old_y) * 180 / PI;
 	
 }
 
@@ -304,7 +332,7 @@ void LeGameState::set_player_vulnarable() {
 
 void LeGameState::check_intersection() {
 	//if (!m_is_gameover) 
-	//	return;
+		return;
 	if ( m_is_player_vulnarable ) {
 		for( auto it : m_enemies ) {
 			if ( has_intersetion(m_player.m_old_x,m_player.m_old_y,m_player.m_height,m_player.m_width,it.m_old_x,it.m_old_y,it.m_height,it.m_width) ) {	
