@@ -30,11 +30,11 @@ class LeSdlWrapper : public LeRenderBase , public LeEventControllerBase
 	public:
 		virtual void enter_event_loop();
 		
-		unsigned int scr_w() {
+		inline unsigned int scr_w() {
 			return m_render_manager->get_screen_width();
 		}
 
-		unsigned int scr_h() {
+		inline unsigned int scr_h() {
 			return m_render_manager->get_screen_height();
 		}
 		
@@ -58,7 +58,8 @@ class LeSdlWrapper : public LeRenderBase , public LeEventControllerBase
 	public:
 		void set_drawing_color(int r, int g, int b);
 		void set_background_image(const char* path);
-		void draw_text(const char* s, unsigned int y, unsigned int x, unsigned int sy, unsigned int sx);	
+		
+        void draw_text(const char* s, unsigned int y, unsigned int x, unsigned int sy, unsigned int sx);	
 		
         void draw_point(unsigned int y, unsigned int x, unsigned int radius);
 		void draw_line(unsigned int y1, unsigned int x1, unsigned int y2, unsigned int x2);
@@ -68,7 +69,8 @@ class LeSdlWrapper : public LeRenderBase , public LeEventControllerBase
 		
         void draw_image(const char* ipath, unsigned int y, unsigned int x, unsigned int cropw, unsigned int croph);
 		void draw_image(const char* ipath, unsigned int y, unsigned int x, unsigned int cropw, unsigned int croph, double angle, bool needflip, unsigned int flipdir);	
-		void draw_background(const char* ipath, unsigned int delta);
+		bool draw_scroll_background(unsigned int delta);
+        //bool draw_static_background();
 
 	public:
 		std::pair<std::string, std::pair<unsigned int,unsigned int> > register_image(const char* ipath);
@@ -79,6 +81,11 @@ class LeSdlWrapper : public LeRenderBase , public LeEventControllerBase
 		//void register_font(const char* ipath);
 		
 		SDL_Renderer* m_render;
+        
+        SDL_Texture* m_bg_texture;
+        unsigned int m_bg_texture_width;
+        unsigned int m_bg_texture_height;
+        
 		LeSdlRendererManager* m_render_manager;
 		std::map<std::string,std::pair<SDL_Texture*,SDL_Rect> > name2texture;
 		#ifdef TEXT_RENDER

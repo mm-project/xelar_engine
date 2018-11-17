@@ -45,8 +45,9 @@ void LeGameState::create_enemies() {
 }
 
 void LeGameState::create_world() {
-	for(int i=0; i<30; i++ ) {
-		m_coins.push_back(LeObj(m_imgs[4],rand()%900,rand()%900,10,10));
+	for(int i=0; i<200; i++ ) {
+		m_coins.push_back(LeObj(m_imgs[4],rand()%(scr_w()-50),rand()%(scr_h()-50),13,13));
+		m_coins.push_back(LeObj(m_imgs[4],rand()%(scr_w()+50),rand()%(scr_h()+50),13,13));        
 	}	
 }
 
@@ -82,8 +83,8 @@ void LeGameState::init_world()
 	
 	m_coins.clear();
 	create_world();
-	//set_background_image("sky_bg.jpg");
-    register_image("long_bg.png");
+	set_background_image("sky_bg.jpg");
+    //register_image("long_bg.png");
 }
 
 void LeGameState::init_enemies()
@@ -101,7 +102,7 @@ void LeGameState::init_enemies()
 void LeGameState::draw() {
 	//SDL_Log("LeGameState: draw");
 	draw_background();
-    //draw_bonuses();
+    draw_bonuses();
 	//draw_enemies();
 	//draw_boundaries();
 	//draw_info();
@@ -112,10 +113,11 @@ void LeGameState::draw() {
 void LeGameState::draw_background() {
     if ( m_need_backround_update ) {
         m_need_backround_update = false;
-        m_background_delta = m_background_delta + 20;
+        m_background_delta = m_background_delta + 1;
     }
     
-    LeSdlWrapper::draw_background("long_bg.png",m_background_delta);
+    if ( LeSdlWrapper::draw_scroll_background(m_background_delta) )
+        m_background_delta = 0;
 }
 
 
@@ -161,7 +163,10 @@ void LeGameState::draw_enemies() {
 
 void LeGameState::draw_bonuses() {
 	//std::for_each(m_enemies.begin(),m_enemies.end(),draw_obj_in_movement);
-	for(int i=0;i<m_coins.size();i++) draw_obj(m_coins[i]);
+	for(int i=0;i<m_coins.size();i++) {
+        m_coins[i].m_y--;
+        draw_obj(m_coins[i]);
+    }
 }
 
 
@@ -205,7 +210,7 @@ void LeGameState::update(unsigned int t) {
 			last_blink_time = t;
 		}
 		
-		if ( t > m_last_background_update + 500 ) {
+		if ( t > m_last_background_update + 100 ) {
             m_last_background_update = t;
             m_need_backround_update = true;
         }
