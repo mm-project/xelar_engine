@@ -49,7 +49,7 @@ void LeSdlWrapper::enter_event_loop() {
 			if(m_renderer_controller) {
 				//SDL_Log("?????\n");
 				m_render_manager->scene_clear();
-				m_render_manager->render_background_image();
+				//m_render_manager->render_background_image();
 				m_renderer_controller->update(currentTime);
 				m_renderer_controller->draw();
 				m_render_manager->scene_draw();
@@ -66,11 +66,69 @@ void LeSdlWrapper::draw_point(unsigned int y, unsigned int x, unsigned int radiu
 }
 
 void LeSdlWrapper::set_drawing_color(int r, int g, int b) {
-	SDL_SetRenderDrawColor(m_render,r,g,b,255);
+    SDL_SetRenderDrawColor(m_render,r,g,b,255);
 }
 
-void LeSdlWrapper::set_background_image(const char* path) {
-	m_render_manager->set_background_image(path);
+
+void LeSdlWrapper::set_background_image(const char* ipath) {
+    register_image(ipath);
+    m_bg_texture = name2texture[ipath].first; 
+    m_bg_texture_width = name2texture[ipath].second.w;
+    m_bg_texture_height = name2texture[ipath].second.h;
+    
+}
+
+bool LeSdlWrapper::draw_scroll_background(unsigned int delta) {	
+    //m_render_manager->set_background_image(path);
+	//FIXME background texture constant and have set_background_image 
+    
+    //unsigned int height = scr_h();
+    if ( delta + scr_w() < m_bg_texture_width ) {
+        SDL_Rect srect;
+        srect.x = delta;
+        srect.y = 0;
+        srect.w = scr_w();
+        srect.h = scr_h();
+        SDL_RenderCopy(m_render, m_bg_texture, &srect, NULL);
+    } else {
+        unsigned int diff1 = m_bg_texture_width - delta;
+        //unsigned int diff2 = scr_w() - delta;
+       
+        SDL_Rect drect1;
+        drect1.x = 0;
+        drect1.y = 0;
+        drect1.w = diff1;
+        drect1.h = scr_h();
+        
+        
+        SDL_Rect srect1;
+        srect1.x = delta;
+        srect1.y = 0;
+        srect1.w = diff1;
+        srect1.h = scr_h();
+        
+
+        SDL_Rect drect2;
+        drect2.x = diff1;
+        drect2.y = 0;
+        drect2.w = scr_w();
+        drect2.h = scr_h();
+        
+        
+        SDL_Rect srect2;
+        srect2.x = 0;
+        srect2.y = 0;
+        srect2.w = diff1;
+        srect2.h = scr_h();
+
+        SDL_RenderCopy(m_render, m_bg_texture, &srect1, &drect1);
+        SDL_RenderCopy(m_render, m_bg_texture, NULL, &drect2);
+        if ( diff1 == 0 )
+            return true;
+    }
+
+    return false;
+    
 }
 
 void LeSdlWrapper::draw_text(const char* s, unsigned int y, unsigned int x, unsigned int sy, unsigned int sx)
