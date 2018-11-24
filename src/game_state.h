@@ -5,7 +5,7 @@
 #include "object.h"
 #include "image.h"
 #include "timer.h"
-
+#include "resource_manager.h"
 
 #include <vector>
 
@@ -30,6 +30,7 @@ class LeGameState : public LeInterLayer
 	
 	private:
 		void set_timer_checkpoints();
+        LeImg get_rsc(LeImageName name);
 
 	private:
 		void create_world();
@@ -54,6 +55,7 @@ class LeGameState : public LeInterLayer
 	private:
 		void update_player();
 		void update_enemies();
+        void update_coins();
 		void update_fast_enemies();
 		void update_slow_enemies();
 		void update_automove_object(LeObj& obj, bool rand);
@@ -68,6 +70,7 @@ class LeGameState : public LeInterLayer
 	
 	
 	private:	
+        LeResourceManager m_resources;
 		unsigned int m_pressed_x; 
 		unsigned int m_pressed_y;
 		

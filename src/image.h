@@ -7,6 +7,9 @@
 class LeImg 
 {
 	public:	
+        LeImg() {
+        }
+        
 		LeImg(const std::pair<std::string, std::pair<unsigned int ,unsigned int > > & p);
 
 	public:	

@@ -27,6 +27,26 @@ SDL_Renderer* LeSdlRendererManager::get_renderer() {
 	return m_render;
 }
 
+ImgInfo LeSdlRendererManager::register_image(const char* ipath) {
+#ifdef IMAGE_RENDER
+	SDL_Surface* sf  = IMG_Load(ipath);
+	SDL_Texture* itexture = SDL_CreateTextureFromSurface(m_render,sf);
+	delete sf;
+
+	auto w = 0;
+	auto h = 0;
+	SDL_QueryTexture(itexture, NULL, NULL, &w, &h);
+
+	SDL_Rect irect;
+	irect.w = w;
+	irect.h = h;
+	
+	m_name2texture[ipath] = std::make_pair(itexture,irect);
+	return std::make_pair(ipath,std::make_pair(w,h));
+#else
+	return std::make_pair("", std::make_pair(0, 0));
+#endif
+}
 
 bool  LeSdlRendererManager::init_sdl_ttf() {
 #ifdef TEXT_RENDER

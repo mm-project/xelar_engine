@@ -13,10 +13,12 @@
 	#include <SDL_image.h>
 #endif
 
-
+#include <map>
 
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
+
+typedef std::pair<std::string, std::pair<unsigned int,unsigned int> > ImgInfo;
 
 class LeSdlRendererManager 
 {
@@ -49,9 +51,9 @@ class LeSdlRendererManager
 		
 	public:
 		void render_background_image();
-	
 		void draw_text(const char* s, unsigned int y, unsigned int x, unsigned int sy, unsigned int sx);
-
+        ImgInfo register_image(const char* ipath);
+        
 	private:
 		bool init_sdl();
 		bool init_sdl_image();
@@ -59,7 +61,9 @@ class LeSdlRendererManager
 		bool create_window(const char* title);
 
 	private:
-	#ifdef TEXT_RENDER
+        std::map<std::string,std::pair<SDL_Texture*,SDL_Rect> > m_name2texture;
+
+    #ifdef TEXT_RENDER
 		TTF_Font* m_ttf_font;
 	#endif	
 		SDL_Texture* m_bg_texture;

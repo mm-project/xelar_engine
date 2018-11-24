@@ -2,6 +2,7 @@
 #define state_manager_h
 
 #include "interlayer.h"
+#include "resource_manager.h"
 
 #include <map>
 
@@ -18,11 +19,14 @@ class LeStateManager
 		void reg_state( LeStateType st, LeInterLayer* i );
 		void set_state( LeStateType st );
 		void set_start_state( LeStateType st );
-	
-	
+
+        LeResourceManager get_resource_manager();
+        
 	private:
 		std::map<LeStateType,LeInterLayer*> m_statename2state;
 		LeInterLayer* m_current_state;
+        LeResourceManager m_resource_manager;
+        
 
 	public:
 		static LeStateManager* m_instance;

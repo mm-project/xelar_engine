@@ -158,7 +158,6 @@ std::pair<std::string, std::pair<unsigned int,unsigned int> > LeSdlWrapper::regi
 	return std::make_pair("", std::make_pair(0, 0));
 
 #endif
-	//return std::make_pair("", std::make_pair(0, 0));
 }
 
 void LeSdlWrapper::draw_image(const char* ipath, unsigned int y, unsigned int x, unsigned int cropw, unsigned int croph) {
@@ -211,13 +210,14 @@ void LeSdlWrapper::draw_line(unsigned int y1, unsigned int x1, unsigned int y2, 
 
 void LeSdlWrapper::draw_circle(unsigned int y, unsigned int x, int radius)
 {
-for (int w = 0; w < radius * 2; w++)
-	for (int h = 0; h < radius * 2; h++) {
-		int dx = radius - w; // horizontal offset
-		int dy = radius - h; // vertical offset
-		if ((dx*dx + dy*dy) <= (radius * radius)) {
-			SDL_RenderDrawPoint(m_render, x + dx, y + dy);
-		}
-	}
+    for (int w = 0; w < radius * 2; w++) {
+        for (int h = 0; h < radius * 2; h++) {
+            int dx = radius - w; // horizontal offset
+            int dy = radius - h; // vertical offset
+            if ((dx*dx + dy*dy) <= (radius * radius)) {
+                SDL_RenderDrawPoint(m_render, x + dx, y + dy);
+            }
+        }
+    }
 }
 

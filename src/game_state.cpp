@@ -1,3 +1,4 @@
+#include "image.h"
 #include "game_state.h"
 #include "interlayer.h"
 #include "state_manager.h"
@@ -9,21 +10,11 @@
 
 #include <cassert>
 #include <cmath>
+
+
 LeGameState::LeGameState() {	
-	//m_resources = LeResourceManager::get();
-	
-	//m_imgs.push_back(m_resouces->get_image(IMG_ENEMY));
-	
-	m_imgs.push_back(register_image("debilik.png"));  //0
-	m_imgs.push_back(register_image("debilik2.png")); //1
-	m_imgs.push_back(register_image("debilik3.png")); //2
-	m_imgs.push_back(register_image("debilik4.png")); //3
-	
-	m_imgs.push_back(register_image("coin.png"));     //4
-	m_imgs.push_back(register_image("player.png"));   //5
-	m_imgs.push_back(register_image("live.png"));     //6
-	
-	
+    m_resources = LeStateManager::get()->get_resource_manager();
+
 	set_timer_checkpoints();
 	create_enemies();
 	create_world();
@@ -37,17 +28,21 @@ LeGameState::LeGameState() {
 
 }
 
+LeImg LeGameState::get_rsc(LeImageName name) {
+    return m_resources.get(name);
+}
+
 void LeGameState::create_enemies() {
-	m_enemies.push_back(LeObj(m_imgs[0],rand()%600,rand()%700,7,7));
-	//m_enemies.push_back(LeObj(m_imgs[1],rand()%600,rand()%700,5,5));
-	m_enemies.push_back(LeObj(m_imgs[2],rand()%600,rand()%700,6,6));
-	m_enemies.push_back(LeObj(m_imgs[3],rand()%600,rand()%700,4,4));
+	m_enemies.push_back(LeObj(get_rsc(IMG_ENEMY1),rand()%600,rand()%700,7,7));
+	//m_enemies.push_back(LeObj(get_rsc(1),rand()%600,rand()%700,5,5));
+	m_enemies.push_back(LeObj(get_rsc(IMG_ENEMY2),rand()%600,rand()%700,6,6));
+	m_enemies.push_back(LeObj(get_rsc(IMG_ENEMY3),rand()%600,rand()%700,4,4));
 }
 
 void LeGameState::create_world() {
-	for(int i=0; i<200; i++ ) {
-		m_coins.push_back(LeObj(m_imgs[4],rand()%(scr_w()-50),rand()%(scr_h()-50),13,13));
-		m_coins.push_back(LeObj(m_imgs[4],rand()%(scr_w()+50),rand()%(scr_h()+50),13,13));        
+	for(int i=0; i<30; i++ ) {
+		m_coins.push_back(LeObj(get_rsc(IMG_COIN),rand()%500,rand()%500,13,13));
+		//m_coins.push_back(LeObj(get_rsc(4),rand()%(scr_w()+50),rand()%(scr_h()+50),13,13));        
 	}	
 }
 
@@ -61,7 +56,7 @@ void LeGameState::LeGameState::init() {
 
 void LeGameState::init_player()
 {
-	m_player = LeObj(m_imgs[5],100,100,16,16);
+	m_player = LeObj(get_rsc(IMG_PLAYER),100,100,16,16);
 	m_lifes = 5;
 	last_hit_time = 0;
 	last_blink_time = 0;
@@ -164,7 +159,7 @@ void LeGameState::draw_enemies() {
 void LeGameState::draw_bonuses() {
 	//std::for_each(m_enemies.begin(),m_enemies.end(),draw_obj_in_movement);
 	for(int i=0;i<m_coins.size();i++) {
-        m_coins[i].m_y--;
+        //m_coins[i].m_y--;
         draw_obj(m_coins[i]);
     }
 }
@@ -211,11 +206,22 @@ void LeGameState::update(unsigned int t) {
 		}
 		
 		if ( t > m_last_background_update + 100 ) {
+            update_coins();
+            for(int i=0; i<10; i++ ) {
+                m_coins.push_back(LeObj(get_rsc(IMG_COIN),(scr_h()-100)+rand()%scr_h(),(scr_w()-50)+rand()%scr_w(),13,13));
+                //m_coins.push_back(LeObj(get_rsc(4),rand()%(scr_w()+50),rand()%(scr_h()+50),13,13));        
+            }	
             m_last_background_update = t;
             m_need_backround_update = true;
         }
 	}
 	
+}
+
+void LeGameState::update_coins() {
+	for(int i=0;i<m_coins.size();i++) {
+        m_coins[i].m_y--;
+    }
 }
 
 void LeGameState::update_fast_enemies() {
