@@ -27,6 +27,10 @@ SDL_Renderer* LeSdlRendererManager::get_renderer() {
 	return m_render;
 }
 
+std::pair<SDL_Texture*,SDL_Rect> LeSdlRendererManager::get_image_info(const char* ipath) {
+    return m_name2texture[ipath];
+}
+
 ImgInfo LeSdlRendererManager::register_image(const char* ipath) {
 #ifdef IMAGE_RENDER
 	SDL_Surface* sf  = IMG_Load(ipath);

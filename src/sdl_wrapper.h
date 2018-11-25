@@ -11,6 +11,7 @@
 
 #include <SDL.h>
 
+/*
 #ifdef TEXT_RENDER
 	#include <SDL_ttf.h>
 #endif
@@ -18,7 +19,7 @@
 #ifdef IMAGE_RENDER
 	#include <SDL_image.h>
 #endif
-
+*/
 
 class LeSdlWrapper : public LeRenderBase , public LeEventControllerBase
 {
@@ -74,7 +75,7 @@ class LeSdlWrapper : public LeRenderBase , public LeEventControllerBase
 
 	public:
 		std::pair<std::string, std::pair<unsigned int,unsigned int> > register_image(const char* ipath);
-
+       
 
 	private:
 		//todo more clever way?
@@ -87,10 +88,13 @@ class LeSdlWrapper : public LeRenderBase , public LeEventControllerBase
         unsigned int m_bg_texture_height;
         
 		LeSdlRendererManager* m_render_manager;
-		std::map<std::string,std::pair<SDL_Texture*,SDL_Rect> > name2texture;
+
+        /*
+        std::map<std::string,std::pair<SDL_Texture*,SDL_Rect> > name2texture;
 		#ifdef TEXT_RENDER
 			std::map<std::string,std::pair<TTF_Font*,SDL_Rect> > name2font;
 		#endif
+        */
 
 	public:
 		static LeSdlWrapper* m_renderer_controller;

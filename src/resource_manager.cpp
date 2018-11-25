@@ -4,7 +4,7 @@
 
 
 LeResourceManager::LeResourceManager() {	
-    //m_rendering_manager = LeSdlRendererManager::get();
+    m_rendering_manager = LeSdlRendererManager::get();
     m_img_path  = m_snd_path = m_mus_path = "./bin/";
     register_images();
     //register_sounds();

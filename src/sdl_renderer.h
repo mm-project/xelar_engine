@@ -6,7 +6,7 @@
 #include <SDL.h>
 
 #ifdef TEXT_RENDER
-	#include <SDL_ttf.h>
+	#include <SDL2/SDL_ttf.h>
 #endif
 
 #ifdef IMAGE_RENDER
@@ -53,6 +53,7 @@ class LeSdlRendererManager
 		void render_background_image();
 		void draw_text(const char* s, unsigned int y, unsigned int x, unsigned int sy, unsigned int sx);
         ImgInfo register_image(const char* ipath);
+        std::pair<SDL_Texture*,SDL_Rect> get_image_info(const char* ipath);
         
 	private:
 		bool init_sdl();

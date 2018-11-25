@@ -13,19 +13,12 @@ else
 	OUT=$(PROGNAME).bin
 	#LIBS=./deps/linux/SDL2/libSDL2.a ./deps/linux/SDL2_ttf/libSDL2_ttf.a -lfreetype -ldl -lrt
 	#INCLS=-I ./deps/linux/SDL2/include -I ./deps/linux/SDL2_ttf
-	FLAGS+=-Wfatal-errors -g -DIMAGE_RENDER -DOS_LINUX 
-	#FLAGS=-DTEXT_RENDER
-	LIBS+= -lSDL2_image -lSDL2  -ldl -lrt -pthread 
-	INCLS+=$(INCS)-I ./deps/linux/SDL2/include -I ./deps/linux/SDL2_image-2.0.3/include 
+	FLAGS+=-Wfatal-errors -g -DMUSIC_ENGINE -DIMAGE_RENDER -DOS_LINUX 
+	LIBS+=-lSDL2_ttf -lSDL2_mixer -lSDL2_image -lSDL2  -ldl -lrt -pthread 
+	INCLS+=$(INCS) -I ./deps/linux/SDL2/include -I ./deps/linux/SDL2_image-2.0.3/include 
 endif
 
 
-
-ifeq ($(USER),levons)
-	FLAGS=-Wfatal-errors -g -DIMAGE_RENDER -DOS_LINUX 
-	LIBS=-L ~/levi/downloads/SDL2-2.0.5/build/.libs -lSDL2 -lfreetype -ldl -lrt
-	INCLS=-I ~/levi/downloads/SDL2-2.0.5/include 
-endif
 
 default:
 	clear

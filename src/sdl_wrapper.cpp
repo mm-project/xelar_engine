@@ -72,9 +72,10 @@ void LeSdlWrapper::set_drawing_color(int r, int g, int b) {
 
 void LeSdlWrapper::set_background_image(const char* ipath) {
     register_image(ipath);
-    m_bg_texture = name2texture[ipath].first; 
-    m_bg_texture_width = name2texture[ipath].second.w;
-    m_bg_texture_height = name2texture[ipath].second.h;
+    auto info = m_render_manager->get_image_info(ipath);
+    m_bg_texture = info.first; 
+    m_bg_texture_width = info.second.w;
+    m_bg_texture_height = info.second.h;
     
 }
 
@@ -139,29 +140,12 @@ void LeSdlWrapper::draw_text(const char* s, unsigned int y, unsigned int x, unsi
 
 //todo more clever way?
 std::pair<std::string, std::pair<unsigned int,unsigned int> > LeSdlWrapper::register_image(const char* ipath) {
-#ifdef IMAGE_RENDER
-	SDL_Surface* sf  = IMG_Load(ipath);
-	SDL_Texture* itexture = SDL_CreateTextureFromSurface(m_render,sf);
-	delete sf;
-
-	auto w = 0;
-	auto h = 0;
-	SDL_QueryTexture(itexture, NULL, NULL, &w, &h);
-
-	SDL_Rect irect;
-	irect.w = w;
-	irect.h = h;
-	
-	name2texture[ipath] = std::make_pair(itexture,irect);
-	return std::make_pair(ipath,std::make_pair(w,h));
-#else
-	return std::make_pair("", std::make_pair(0, 0));
-
-#endif
+    return m_render_manager->register_image(ipath);
 }
 
 void LeSdlWrapper::draw_image(const char* ipath, unsigned int y, unsigned int x, unsigned int cropw, unsigned int croph) {
-	std::pair<SDL_Texture*,SDL_Rect> info = name2texture[ipath];
+	//return;
+    std::pair<SDL_Texture*,SDL_Rect> info = m_render_manager->get_image_info(ipath);
 	
 	SDL_Rect irect;
 	irect.x = x;
@@ -173,7 +157,8 @@ void LeSdlWrapper::draw_image(const char* ipath, unsigned int y, unsigned int x,
 }
 
 void LeSdlWrapper::draw_image(const char* ipath, unsigned int y, unsigned int x, unsigned int cropw, unsigned int croph, double angle, bool needflip, uint flipmode) {
-	std::pair<SDL_Texture*,SDL_Rect> info = name2texture[ipath];
+	//return;
+    std::pair<SDL_Texture*,SDL_Rect> info = m_render_manager->get_image_info(ipath);
 	
 	//fixme get rid of this temp. variables
 	SDL_Rect irect;
@@ -188,8 +173,7 @@ void LeSdlWrapper::draw_image(const char* ipath, unsigned int y, unsigned int x,
 		return;
 	}
 	
-	SDL_RenderCopyEx(m_render, info.first, NULL, &irect, angle, NULL, SDL_FLIP_NONE );
-	
+	SDL_RenderCopyEx(m_render, info.first, NULL, &irect, angle, NULL, SDL_FLIP_NONE );	
 }
 
 

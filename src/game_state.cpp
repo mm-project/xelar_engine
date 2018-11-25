@@ -2,7 +2,7 @@
 #include "game_state.h"
 #include "interlayer.h"
 #include "state_manager.h"
-
+#include "sound_manager.hpp"
 #include <string>
 #include <sstream>
 #include <iostream>
@@ -41,14 +41,15 @@ void LeGameState::create_enemies() {
 
 void LeGameState::create_world() {
 	for(int i=0; i<30; i++ ) {
-		m_coins.push_back(LeObj(get_rsc(IMG_COIN),rand()%500,rand()%500,13,13));
-		//m_coins.push_back(LeObj(get_rsc(4),rand()%(scr_w()+50),rand()%(scr_h()+50),13,13));        
+		//m_coins.push_back(LeObj(get_rsc(IMG_COIN),rand()%500,rand()%500,13,13));
+		m_coins.push_back(LeObj(get_rsc(IMG_COIN),rand()%(scr_h()),rand()%(scr_w()+300),13,13));        
 	}	
 }
 
 void LeGameState::LeGameState::init() {
 	SDL_Log("LeGameState: init");
-	
+
+    LeSoundManager::get()->play(MUS_GAME);
 	init_player();
 	init_enemies();
 	init_world();
@@ -75,11 +76,11 @@ void LeGameState::init_world()
 	m_is_gameover = false;
 	m_current_score = 0;
 	m_current_time = 0;
+    m_last_coin_created = 0;
 	
 	m_coins.clear();
 	create_world();
 	set_background_image("sky_bg.jpg");
-    //register_image("long_bg.png");
 }
 
 void LeGameState::init_enemies()
@@ -207,20 +208,23 @@ void LeGameState::update(unsigned int t) {
 		
 		if ( t > m_last_background_update + 100 ) {
             update_coins();
-            for(int i=0; i<10; i++ ) {
-                m_coins.push_back(LeObj(get_rsc(IMG_COIN),(scr_h()-100)+rand()%scr_h(),(scr_w()-50)+rand()%scr_w(),13,13));
-                //m_coins.push_back(LeObj(get_rsc(4),rand()%(scr_w()+50),rand()%(scr_h()+50),13,13));        
-            }	
             m_last_background_update = t;
             m_need_backround_update = true;
         }
+        
+		if ( t > m_last_coin_created + 300 ) {
+                if ( rand()%14 == 3 )
+                    m_coins.push_back(LeObj(get_rsc(IMG_COIN),rand()%scr_h(),scr_w()+rand()%scr_w(),13,13));
+            m_last_coin_created = t;
+        }
+        
 	}
 	
 }
 
 void LeGameState::update_coins() {
 	for(int i=0;i<m_coins.size();i++) {
-        m_coins[i].m_y--;
+        m_coins[i].m_y=m_coins[i].m_y-2;
     }
 }
 
@@ -298,7 +302,7 @@ void LeGameState::update_enemies() {
 	//std::for_each(m_enemies.begin(),m_enemies.end(),update_debilik_position);
 }
 
-void LeGameState:: update_automove_object(LeObj& obj, bool rand) {
+void LeGameState::update_automove_object(LeObj& obj, bool rand) {
 	update_object_position(obj);
 	if ( obj.m_old_x ==obj.m_x && obj.m_old_y ==obj.m_y ) {
 		//assert(0);
@@ -306,7 +310,7 @@ void LeGameState:: update_automove_object(LeObj& obj, bool rand) {
 	}		
 }
 
-void LeGameState:: update_automove_object2(LeObj& obj) {
+void LeGameState::update_automove_object2(LeObj& obj) {
 	update_object_position(obj);
 	if ( 0 == obj.m_old_y ) obj.m_old_x = rand()%600;
 	if ( obj.m_old_y ==obj.m_y  ) {

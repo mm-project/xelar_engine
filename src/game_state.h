@@ -99,6 +99,8 @@ class LeGameState : public LeInterLayer
         unsigned int m_last_background_update;
         unsigned int m_background_delta;
         bool m_need_backround_update;
+        unsigned int m_last_coin_created;
+    
 };
 
 #endif
