@@ -5,6 +5,8 @@
 #include "object.h"
 #include "image.h"
 #include "timer.h"
+#include "mover.h"
+#include "player.h"
 #include "resource_manager.h"
 
 #include <vector>
@@ -40,34 +42,14 @@ class LeGameState : public LeInterLayer
 		void init_player();
 		void init_world();
 		void init_enemies();
+        
 		
 	private:
         void draw_background();
-        void draw_boundaries();
-		void draw_obj(LeObj& obj);
-		void draw_obj_in_movement(LeObj& obj);
-		void draw_obj_in_movement2(LeObj& obj);
-		void draw_player();
-		void draw_enemies();
-		void draw_bonuses();
-		void draw_info();
 	
 	private:
-		void update_player();
-		void update_enemies();
-        void update_coins();
-		void update_fast_enemies();
-		void update_slow_enemies();
-		void update_automove_object(LeObj& obj, bool rand);
-		void update_automove_object2(LeObj& obj);
-		void update_object_position(LeObj& obj);
 		void check_intersection();
-	
-	private:	
-		void rand_position(LeObj& o);
-		void rand_line(LeObj& o);
-		void set_player_vulnarable();
-	
+		
 	
 	private:	
         LeResourceManager m_resources;
@@ -78,7 +60,8 @@ class LeGameState : public LeInterLayer
 		unsigned int m_y;
 		
 		
-		LeObj m_player;
+		LePlayer m_player;
+        //LeObj m_player;
 		LeObj m_current_trouble_obj;
 		std::vector<LeObj> m_coins;
 		std::vector<LeObj> m_enemies;
@@ -89,18 +72,16 @@ class LeGameState : public LeInterLayer
 		bool m_is_gameover;
 		unsigned int m_current_score;
 		unsigned int m_current_time;
-		unsigned int m_lifes;
-		bool m_is_player_vulnarable;
-		unsigned int last_hit_time;
-		bool m_player_hit;
-		bool m_need_draw_player;
-		unsigned int last_blink_time;
+	
+        unsigned int m_last_blink_time;
 
         unsigned int m_last_background_update;
         unsigned int m_background_delta;
         bool m_need_backround_update;
         unsigned int m_last_coin_created;
     
+        LeObjMover<MV_STRAIGHT> m_rand_mover;
+        
 };
 
 #endif

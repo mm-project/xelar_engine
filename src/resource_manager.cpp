@@ -24,8 +24,8 @@ void LeResourceManager::register_images()
     register_image(IMG_PLAYER,"player.png");
     register_image(IMG_COIN,"coin.png");
     register_image(IMG_ENEMY1,"debilik1.png");
-    register_image(IMG_ENEMY2,"debilik2.png");
-    register_image(IMG_ENEMY3,"debilik3.png");
+    register_image(IMG_ENEMY2,"debilik3.png");
+    register_image(IMG_ENEMY3,"debilik4.png");
     register_image(IMG_LIFE,"life.png");
 }
 
