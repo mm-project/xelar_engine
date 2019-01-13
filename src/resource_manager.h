@@ -3,6 +3,7 @@
 
 #include "image.h"
 #include "sdl_renderer.h"
+//#include "enumarations"
 
 #include <map>
 #include <string>

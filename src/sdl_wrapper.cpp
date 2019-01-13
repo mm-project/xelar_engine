@@ -83,6 +83,15 @@ void LeSdlWrapper::set_background_image(const char* ipath) {
     
 }
 
+void LeSdlWrapper::draw_static_background() {
+        SDL_Rect srect;
+        srect.x = 0;
+        srect.y = 0;
+        srect.w = scr_w();
+        srect.h = scr_h();
+        SDL_RenderCopy(m_render, m_bg_texture, &srect, NULL);
+}
+
 bool LeSdlWrapper::draw_scroll_background(unsigned int delta) {	
     //m_render_manager->set_background_image(path);
 	//FIXME background texture constant and have set_background_image 

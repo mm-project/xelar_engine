@@ -7,6 +7,7 @@
 #include "timer.h"
 #include "mover.h"
 #include "player.h"
+#include "background.h"
 #include "resource_manager.h"
 
 #include <vector>
@@ -59,35 +60,18 @@ class LeGameState : public LeInterLayer
 		
 	
 	private:	
-        LeResourceManager m_resources;
-		
-        unsigned int m_pressed_x; 
-		unsigned int m_pressed_y;
-		
-		unsigned int m_x; 
-		unsigned int m_y;
-		
-		
-		LePlayer m_player;
+		LeTimer m_timer; 
 
+        LePlayer m_player;
+        LeBackground m_background;
+        
         LeObj m_current_trouble_obj;
 		std::vector<LeObj> m_coins;
 		std::vector<LeObj> m_enemies;
-		std::vector<LeImg> m_imgs;
-		
-		LeTimer m_timer; 
-		
+
 		bool m_is_gameover;
 		unsigned int m_current_score;
 		unsigned int m_current_time;
-	
-        unsigned int m_last_background_update;
-        unsigned int m_background_delta;
-        bool m_need_backround_update;
-
-        unsigned int m_last_coin_created;
-    
-        
 };
 
 #endif

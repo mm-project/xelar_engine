@@ -28,6 +28,8 @@ SDL_Renderer* LeSdlRendererManager::get_renderer() {
 }
 
 std::pair<SDL_Texture*,SDL_Rect> LeSdlRendererManager::get_image_info(const char* ipath) {
+    //FIXME ASSERT THAT ENTRY EXISITS
+    
     return m_name2texture[ipath];
 }
 

@@ -4,71 +4,62 @@
 #include "mover.h"
 #include "sdl_wrapper.h"
 #include "resource_manager.h"
+#include "image_object.h"
 
-class LePlayer //: public LeImageObject 
+class LePlayer : public LeImageObject 
 {
     public:
         
-        LeImg get_rsc(LeImageName name) {
-                return LeResourceManager::get()->get(name);
-        }
-
-        LePlayer() {
-            m_obj = LeObj(get_rsc(IMG_PLAYER),100,100,16,16);
+        LePlayer():LeImageObject(IMG_PLAYER,100,100,16,16) {
             init_player();
-            
         }
 
-        //LePlayer(LeObjMoverBase& mover):mover(mover) {
-            //mover.move();
-        //}
-    
     public:
         void init_player()
         {
+            m_lifes = 5;
+            
+            m_is_vulnarable = true;
+            m_is_hit = false;
+            m_need_to_draw = true;
+            m_player_hit = false;
+
+            m_last_blink_time = 0;
+            m_last_hit_time = 0;
         }
 
-        void update() {
+        void update(unsigned int) {
             m_mover.move(m_obj);
         }
 
-        void damage() {
+        bool damage() {
             set_player_vulnarable();
-            m_lifes--;
-            //if ( m_lifes ) 
-                //notify_dead();
-            
+            if (--m_lifes);
+                return true;
+            return false;
         }
-        
-        
+
         void set_player_vulnarable() {
             m_is_vulnarable = true;
             m_is_hit = false;
         }
 
-        void set_destination(unsigned int x, unsigned int y) {
-            m_obj.m_x = x;
-            m_obj.m_y = y;
+        bool is_vulnarable() {
+            return m_is_vulnarable;
         }
 
         void draw() {
-            if( m_player_hit) 
+            if( m_player_hit ) 
                 //id damaged, draw me blinking
                 if ( m_need_to_draw ) 
-                    draw_obj_in_movement2(m_obj);
+                    draw_obj_in_movement2();
                 else
                     return;
-            draw_obj_in_movement2(m_obj);
+            draw_obj_in_movement2();
         }
 
-        void draw_obj_in_movement2(LeObj& obj) {
-            LeSdlWrapper::m_renderer_controller->draw_image(obj.m_img_path.c_str(),obj.m_old_x,obj.m_old_y,obj.m_c_x,obj.m_c_y,obj.m_angle,obj.m_need_flip,0);//obj.m_flip_mode);
-        }
 
     private:
-        //LeRenderer m_renderer;
-        //LeObjMoverBase mover;
-        
         unsigned int m_lifes;
 		
         bool m_is_vulnarable;
@@ -79,7 +70,6 @@ class LePlayer //: public LeImageObject
         unsigned int m_last_blink_time;
         unsigned int m_last_hit_time;
 
-        LeObj m_obj;
         LeObjMover<MV_STRAIGHT> m_mover;
 };
 

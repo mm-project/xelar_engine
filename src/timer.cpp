@@ -7,11 +7,11 @@ LeTimer::LeTimer () {
 	m_fired = 0;
 }
 
-void LeTimer::add_continuous_checkpoint(const actionFun& f, unsigned int t) {
+void LeTimer::add_continuous_checkpoint(const updateFun& f, unsigned int t) {
 	m_structure.push_back(LeHavaqakanStruktura(f, t));
 }
 
-void LeTimer::add_singleshot_checkpoint(const actionFun& f, unsigned int t) {
+void LeTimer::add_singleshot_checkpoint(const updateFun& f, unsigned int t) {
 	m_structure2.push_back(LeHavaqakanStruktura(f, t));
 	m_fired++;
 }
@@ -19,12 +19,12 @@ void LeTimer::add_singleshot_checkpoint(const actionFun& f, unsigned int t) {
 void LeTimer::step(unsigned int current_time ) {
 	for( auto it : m_structure ) {
 		if ( current_time > it.last_time + it.freq ) {
-			it.f();
+			it.f(current_time);
 			it.last_time = current_time;
 		}
 	}	
 	
-	
+	/*
 	for( auto it : m_structure2 ) {
 		if ( current_time > it.last_time + it.freq ) {
 			it.f();
@@ -35,6 +35,7 @@ void LeTimer::step(unsigned int current_time ) {
 	}
 	
 	if(m_fired == 0 && m_structure2.size() != 0 )
-		m_structure2.clear();	
+		m_structure2.clear();
+    */
 }
 	

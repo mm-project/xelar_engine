@@ -3,6 +3,7 @@
 
 #include <functional>
 
+typedef std::function<void(int)> updateFun;
 typedef std::function<void()> actionFun;
 typedef unsigned int uint;
 

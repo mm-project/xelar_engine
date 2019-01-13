@@ -71,7 +71,7 @@ class LeSdlWrapper : public LeRenderBase , public LeEventControllerBase
         void draw_image(const char* ipath, unsigned int y, unsigned int x, unsigned int cropw, unsigned int croph);
 		void draw_image(const char* ipath, unsigned int y, unsigned int x, unsigned int cropw, unsigned int croph, double angle, bool needflip, unsigned int flipdir);	
 		bool draw_scroll_background(unsigned int delta);
-        //bool draw_static_background();
+        void draw_static_background();
 
 	public:
 		std::pair<std::string, std::pair<unsigned int,unsigned int> > register_image(const char* ipath);
