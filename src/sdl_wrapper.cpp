@@ -10,6 +10,10 @@ void LeSdlWrapper::set_rendering_controller(LeSdlWrapper* controller){
 }
 
 
+//static vLeSdlWrapper* get_rendering_controller() {
+//    return m_renderer_controller; 
+//}
+
 LeSdlWrapper::LeSdlWrapper() { //const char* title) {
 	m_render_manager = LeSdlRendererManager::get();
 	m_render = m_render_manager->get_renderer();

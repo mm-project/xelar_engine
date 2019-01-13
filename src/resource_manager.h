@@ -15,7 +15,12 @@ enum LeMusicName { MUS_GAME,  MUS_MENU,  MUS_PAUSE };
 class LeResourceManager
 {
 	public:
-		LeResourceManager();
+		static LeResourceManager* get() {
+            if (!m_instance) m_instance = new LeResourceManager;
+            return m_instance;
+        }
+        
+        LeResourceManager();
 
 	public:
         LeImg get(LeImageName n);
@@ -34,6 +39,9 @@ class LeResourceManager
         std::string m_snd_path;
         std::string m_mus_path;
         LeSdlRendererManager* m_rendering_manager;
+    
+    public:
+        static LeResourceManager* m_instance;
         
 };
 
