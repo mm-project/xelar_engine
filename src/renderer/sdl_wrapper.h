@@ -1,7 +1,7 @@
 #ifndef sdl_wrapper_h
 #define sdl_wrapper_h
 
-#include "common.h"
+#include "../skeleton/common.h"
 #include "renderer_base.h"
 #include "sdl_renderer.h"
 

@@ -1,8 +1,9 @@
 #ifndef state_manager_h
 #define state_manager_h
 
-#include "interlayer.h"
 #include "resource_manager.h"
+
+#include "../renderer/interlayer.h"
 
 #include <map>
 

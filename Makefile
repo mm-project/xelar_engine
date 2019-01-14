@@ -1,5 +1,9 @@
 PROGNAME:=SimpleGame
-SRCS:=$(wildcard src/*.cpp)
+SKELETON_SRCS:=$(wildcard src/skeleton/*.cpp)
+RENDERER_SRCS:=$(wildcard src/renderer/*.cpp)
+GAME_SRCS:=$(wildcard src/game/*.cpp)
+SRCS:=src/main.cpp $(SKELETON_SRCS) $(RENDERER_SRCS) $(GAME_SRCS)
+
 INCS:=
 FLAGS:=-Wno-narrowing
 

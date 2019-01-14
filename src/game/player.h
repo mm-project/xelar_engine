@@ -1,10 +1,11 @@
 #ifndef player_h
 #define player_h
 
-#include "mover.h"
-#include "sdl_wrapper.h"
-#include "resource_manager.h"
-#include "image_object.h"
+#include "../skeleton/mover.h"
+#include "../skeleton/resource_manager.h"
+#include "../skeleton/image_object.h"
+
+#include "../renderer/sdl_wrapper.h"
 
 class LePlayer : public LeImageObject 
 {

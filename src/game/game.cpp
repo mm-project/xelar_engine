@@ -1,7 +1,8 @@
 #include "game.h"
-#include "state_manager.h"
 #include "game_state.h"
 #include "menu_state.h"
+
+#include "../skeleton/state_manager.h"
 
 
 LeGame::LeGame() {

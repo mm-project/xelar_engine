@@ -1,4 +1,4 @@
-#include "common.h"
+#include "../skeleton/common.h"
 #include "sdl_wrapper.h"
 #include "sdl_renderer.h"
 

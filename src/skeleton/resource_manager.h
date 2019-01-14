@@ -2,7 +2,7 @@
 #define resource_manager_h
 
 #include "image.h"
-#include "sdl_renderer.h"
+#include "../renderer/sdl_renderer.h"
 //#include "enumarations"
 
 #include <map>

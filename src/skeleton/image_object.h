@@ -1,8 +1,9 @@
 #ifndef image_object_h
 #define image_object_h
 
+#include "../renderer/sdl_wrapper.h"
+
 #include "mover.h"
-#include "sdl_wrapper.h"
 #include "resource_manager.h"
 
 class LeImageObject 

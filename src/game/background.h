@@ -1,8 +1,8 @@
 #ifndef image_background_h
 #define image_background_h
 
-#include "mover.h"
-#include "sdl_wrapper.h"
+#include "../skeleton/mover.h"
+#include "../renderer/sdl_wrapper.h"
 #include <iostream>
 
 class LeBackground

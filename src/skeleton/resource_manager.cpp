@@ -1,6 +1,8 @@
+
 #include "resource_manager.h"
-#include "sdl_renderer.h"
 #include "image.h"
+
+#include "../renderer/sdl_renderer.h"
 
 
 LeResourceManager* LeResourceManager::m_instance = 0;

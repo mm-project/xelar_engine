@@ -1,10 +1,13 @@
-#include "image.h"
 #include "game_state.h"
-#include "interlayer.h"
-#include "state_manager.h"
-#include "sound_manager.hpp"
-#include "mover.h"
 #include "player.h"
+
+#include "../skeleton/image.h"
+#include "../skeleton/state_manager.h"
+#include "../skeleton/sound_manager.hpp"
+#include "../skeleton/mover.h"
+
+#include "../renderer/interlayer.h"
+
 
 #include <string>
 #include <sstream>

@@ -1,6 +1,6 @@
 #include "menu_state.h"
-#include "state_manager.h"
-#include "common.h"
+#include "../skeleton/state_manager.h"
+#include "../skeleton/common.h"
 
 void LeMenuState::init() {
 	SDL_Log("LeMenuState: init");

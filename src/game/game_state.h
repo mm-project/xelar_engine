@@ -1,14 +1,15 @@
 #ifndef game_state_h
 #define game_state_h
 
-#include "state_manager.h"
-#include "object.h"
-#include "image.h"
-#include "timer.h"
-#include "mover.h"
 #include "player.h"
 #include "background.h"
-#include "resource_manager.h"
+
+#include "../skeleton/state_manager.h"
+#include "../skeleton/object.h"
+#include "../skeleton/image.h"
+#include "../skeleton/timer.h"
+#include "../skeleton/mover.h"
+#include "../skeleton/resource_manager.h"
 
 #include <vector>
 

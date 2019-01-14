@@ -1,7 +1,7 @@
 #ifndef game_h
 #define game_h
 
-#include "state_manager.h"
+#include "../skeleton/state_manager.h"
 
 
 class LeGame

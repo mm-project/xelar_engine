@@ -1,5 +1,5 @@
 #include "sdl_renderer.h"
-#include "common.h"
+#include "../skeleton/common.h"
 
 #include <string>
 #include <map>

@@ -2,7 +2,7 @@
 #define interlayer_h
 
 #include "sdl_wrapper.h"
-#include "object.h"
+//#include "object.h"
 
 class LeInterLayer : public LeSdlWrapper
 {
@@ -36,6 +36,7 @@ class LeInterLayer : public LeSdlWrapper
         //        return m_resources.get(name);
         //}
         
+    //FIXME
     //private:
         uint m_clicked_x; 
         uint m_clicked_y; 

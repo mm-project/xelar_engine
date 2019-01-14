@@ -1,8 +1,8 @@
 #ifndef menu_state_h
 #define menu_state_h
 
-#include "interlayer.h"
-#include "menu.h"
+#include "../renderer/interlayer.h"
+#include "../skeleton/menu.h"
 
 							 
 								 
