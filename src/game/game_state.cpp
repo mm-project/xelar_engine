@@ -18,18 +18,26 @@
 #include <cmath>
 
 LeGameState::LeGameState() {	
-	set_timer_checkpoints();
-	//create_enemies();
+	create_enemies();
 	//create_world();
     
+	set_timer_checkpoints();
+
     init();
 }
 
 void LeGameState::set_timer_checkpoints() {
+	m_timer.add_continuous_checkpoint(std::bind(&LeEnemy::update,&m_enemies[0],std::placeholders::_1),10);
 	m_timer.add_continuous_checkpoint(std::bind(&LePlayer::update,&m_player,std::placeholders::_1),10);
-	m_timer.add_continuous_checkpoint(std::bind(&LeBackground::update,&m_background,std::placeholders::_1),10);
+    m_timer.add_continuous_checkpoint(std::bind(&LeBackground::update,&m_background,std::placeholders::_1),10);
+    //m_timer.add_continuous_checkpoint(std::bind(&LeGameState::check_intersection,this,std::placeholders::_1),10);
+    
 }
 
+
+void LeGameState::create_enemies() {
+    m_enemies.push_back(m_enemy);
+}
 
 void LeGameState::init() {
 	SDL_Log("LeGameState: init");
@@ -52,6 +60,7 @@ void LeGameState::init_world()
 void LeGameState::draw() {
 	m_background.draw();
     m_player.draw();
+    m_enemies[0].draw();
 }
 
 
@@ -74,25 +83,14 @@ void LeGameState::notify_mouse_pressed(unsigned int b) {
     m_player.set_destination(m_cursor_x,m_cursor_y);
 }
 
-/*
-void LeGameState::check_intersection() {
-	//if (!m_is_gameover) 
-    //return;
+
+void LeGameState::check_intersection(unsigned int) {
 	if ( m_player.is_vulnarable() ) {
 		for( auto it : m_enemies ) {
-			if ( has_intersetion(m_player.m_old_x,m_player.m_old_y,m_player.m_height,m_player.m_width,it.m_old_x,it.m_old_y,it.m_height,it.m_width) ) {	
-				if ( m_player.damage() )
-					m_current_trouble_obj = it;
-					m_is_gameover = true;
-					return;
-				} else {
-					m_lifes--;
-					m_player_hit = true;
-					m_is_player_vulnarable = false;
-					last_hit_time = m_current_time;
-					//m_timer.add_singleshot_checkpoint(std::bind(&LeGameState::set_player_vulnarable,this),2000);
-				}
+			if ( has_intersetion(m_player.m_obj.m_old_x,m_player.m_obj.m_old_y,m_player.m_obj.m_height,m_player.m_obj.m_width,it.m_obj.m_old_x,it.m_obj.m_old_y,it.m_obj.m_height,it.m_obj.m_width) ) {	
+				m_player.damage();
 			}
 		}
 	}
-*/
+}
+

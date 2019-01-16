@@ -12,35 +12,58 @@ class LePlayer : public LeImageObject
     public:
         
         LePlayer():LeImageObject(IMG_PLAYER,100,100,16,16) {
-            init_player();
+            init();
         }
 
     public:
-        void init_player()
+        void init()
         {
             m_lifes = 5;
             
-            m_is_vulnarable = true;
-            m_is_hit = false;
+            set_nonvulnarable();
+            //m_is_vulnarable = true;
+            //m_is_hit = true;
+            
             m_need_to_draw = true;
-            m_player_hit = false;
-
+            m_draw_blink_speed = 10;
+            m_invulnarability_time = 3000;
             m_last_blink_time = 0;
             m_last_hit_time = 0;
         }
 
-        void update(unsigned int) {
+        void update(unsigned int t) {
+            m_current_time = t;
+            if ( t > m_last_blink_time + m_draw_blink_speed ) {
+                m_need_to_draw=!m_need_to_draw;
+                m_last_blink_time = t;
+            }
+            
+            if ( !m_is_vulnarable && t > m_last_hit_time + m_invulnarability_time ) {
+                set_vulnarable();
+            }
+		
             m_mover.move(m_obj);
         }
 
         bool damage() {
-            set_player_vulnarable();
-            if (--m_lifes);
+            if (!m_is_vulnarable)
+                return false;
+                
+            //killed if m_lifes is 0
+            if (--m_lifes)
                 return true;
-            return false;
+            else
+                m_last_hit_time = m_current_time;
+                set_nonvulnarable();            
+                return false;
         }
 
-        void set_player_vulnarable() {
+        void set_nonvulnarable() {
+            m_is_vulnarable = false;
+            m_is_hit = true;
+        }
+
+        void set_vulnarable() {
             m_is_vulnarable = true;
             m_is_hit = false;
         }
@@ -70,6 +93,9 @@ class LePlayer : public LeImageObject
 
         unsigned int m_last_blink_time;
         unsigned int m_last_hit_time;
+        unsigned m_invulnarability_time;
+        unsigned int m_draw_blink_speed;
+        unsigned int m_current_time;
 
         LeObjMover<MV_STRAIGHT> m_mover;
 };

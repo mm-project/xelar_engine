@@ -2,6 +2,7 @@
 #define game_state_h
 
 #include "player.h"
+#include "enemy.h"
 #include "background.h"
 
 #include "../skeleton/state_manager.h"
@@ -38,7 +39,7 @@ class LeGameState : public LeInterLayer
     //creates
     private:
 		//void create_world();
-		//void create_enemies();
+		void create_enemies();
 
 	//initid
     private:
@@ -57,18 +58,19 @@ class LeGameState : public LeInterLayer
 	
 
     private:
-		//void check_intersection();
+		void check_intersection(unsigned int);
 		
 	
 	private:	
 		LeTimer m_timer; 
 
         LePlayer m_player;
+        LeEnemy m_enemy;
         LeBackground m_background;
         
         LeObj m_current_trouble_obj;
-		std::vector<LeObj> m_coins;
-		std::vector<LeObj> m_enemies;
+		//std::vector<LeObj> m_coins;
+		std::vector<LeEnemy> m_enemies;
 
 		bool m_is_gameover;
 		unsigned int m_current_score;
