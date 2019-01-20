@@ -37,6 +37,8 @@ class LeResourceManager: public LeService<LeResourceManager>
         std::string m_img_path;
         std::string m_snd_path;
         std::string m_mus_path;
+        std::string m_common_path;
+        
         LeSdlRendererManager* m_rendering_manager;
         
 };

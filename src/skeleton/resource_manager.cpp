@@ -1,13 +1,20 @@
-
+#include "common.h"
 #include "resource_manager.h"
 #include "image.h"
 
 #include "../renderer/sdl_renderer.h"
 
 
+#ifdef OS_WINDOWS
+#define RESPATH "C:\\Users\\elen\\Desktop\\sdl_game\\ForLevonjanik\\Debug\\"
+#else
+#define RESPATH "./bin/"
+#endif
+
 LeResourceManager::LeResourceManager() {	
     m_rendering_manager = LeSdlRendererManager::get();
-    m_img_path  = m_snd_path = m_mus_path = "C:\\Users\\elen\\Desktop\\sdl_game\\ForLevonjanik\\Debug\\";
+    m_common_path = RESPATH;
+    m_img_path  = m_snd_path = m_mus_path = m_common_path;
     register_images();
     //register_sounds();
     //register_music();
