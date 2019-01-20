@@ -2,12 +2,13 @@
 #define sound_manager_h
 
 #include "resource_manager.h"
+#include "service.h"
 
 //#include <SDL2/SDL_mixer.h>
-class LeSoundManager 
+
+class LeSoundManager : public LeService<LeSoundManager>
 {
     public:  
-            static LeSoundManager* get();
     
     public:
             LeSoundManager();
@@ -22,8 +23,6 @@ class LeSoundManager
             //Mix_Chunk* wave;
             //Mix_Music *music;
     
-    private:
-            static LeSoundManager* m_instance;
     
 };
 

@@ -1,11 +1,6 @@
-#include "sound_manager.hpp"
+#include "sound_manager.h"
 #include "resource_manager.h"
 
-LeSoundManager* LeSoundManager::get() {
-    if ( !m_instance )
-        m_instance = new LeSoundManager;
-    return m_instance;
-}
 
 LeSoundManager::LeSoundManager() {
     init();
@@ -51,4 +46,3 @@ LeSoundManager::~LeSoundManager() {
     
 }*/
 
-LeSoundManager* LeSoundManager::m_instance = 0;

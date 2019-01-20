@@ -1,6 +1,8 @@
 #ifndef LE_PHYSICS_MANAGER
 #define LE_PHYSICS_MANAGER 
 
+#include "../skeleton/service.h"
+
 #include <Box2D/Box2D.h>
 
 class LeBody
@@ -19,20 +21,19 @@ private:
 	b2Body* m_body;
 };
 
-class LePhysicsManager
+class LePhysicsManager: LeService<LePhysicsManager>
 {
-public:
-	static LePhysicsManager* get();
 
+public:
+    static LePhysicsManager* get() { return LeService<LePhysicsManager>::get(); } 
+	LePhysicsManager();
+    
 public:
 	LeBody* create_body(LeBody::Type, float, float);
 
 	void update();
 
 private:
-	LePhysicsManager();
-
-	static LePhysicsManager* m_manager;
 	b2World* m_world;
 };
 

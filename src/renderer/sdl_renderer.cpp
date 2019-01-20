@@ -9,11 +9,6 @@
 #include <stdio.h>
 
 
-LeSdlRendererManager* LeSdlRendererManager::get() {
-	if ( ! m_instance ) m_instance = new LeSdlRendererManager();
-	return m_instance;
-}
-
 //TODO game title from outside
 
 LeSdlRendererManager::LeSdlRendererManager(){ //const char* title) {
