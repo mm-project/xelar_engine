@@ -43,21 +43,13 @@ float LeBody::get_current_y() const
 	return (WINDOW_WIDTH_PIXELS - vec.y * PIXELS_PER_UNIT);
 }
 
-LePhysicsManager* LePhysicsManager::m_manager = 0;
+
 
 LePhysicsManager::LePhysicsManager()
 {
 	//TODO add function call to manage :P
 	b2Vec2 gravity(0, -9.8);
 	m_world = new b2World(gravity);
-}
-
-LePhysicsManager* LePhysicsManager::get()
-{
-	if (m_manager == nullptr) {
-		m_manager = new LePhysicsManager();
-	}
-	return m_manager;
 }
 
 LeBody* LePhysicsManager::create_body(LeBody::Type type, float width, float height )
