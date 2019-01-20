@@ -3,7 +3,7 @@
 
 #include "../skeleton/image.h"
 #include "../skeleton/state_manager.h"
-#include "../skeleton/sound_manager.hpp"
+#include "../skeleton/sound_manager.h"
 #include "../skeleton/mover.h"
 
 #include "../renderer/interlayer.h"

@@ -1,6 +1,7 @@
 #ifndef resource_manager_h
 #define resource_manager_h
 
+#include "service.h"
 #include "image.h"
 #include "../renderer/sdl_renderer.h"
 //#include "enumarations"
@@ -13,15 +14,12 @@ enum LeSoundName { SND_COIN,  SND_SWIM,  SND_DAMAGE, SND_FUCK, SND_WIN };
 enum LeMusicName { MUS_GAME,  MUS_MENU,  MUS_PAUSE };
 
 
-class LeResourceManager
+class LeResourceManager: public LeService<LeResourceManager>
 {
 	public:
-		static LeResourceManager* get() {
-            if (!m_instance) m_instance = new LeResourceManager;
-            return m_instance;
-        }
-        
         LeResourceManager();
+        //FIXME compiler is not happy
+        static LeResourceManager* get() { return LeService<LeResourceManager>::get(); }
 
 	public:
         LeImg get(LeImageName n);
@@ -40,9 +38,6 @@ class LeResourceManager
         std::string m_snd_path;
         std::string m_mus_path;
         LeSdlRendererManager* m_rendering_manager;
-    
-    public:
-        static LeResourceManager* m_instance;
         
 };
 

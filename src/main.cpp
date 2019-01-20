@@ -1,9 +1,5 @@
 #include "game/game.h"
 
-//TODO move to each appropriate location
-LeStateManager* LeStateManager::m_instance = 0;
-LeSdlWrapper* LeSdlWrapper::m_renderer_controller = 0;
-LeSdlRendererManager* LeSdlRendererManager::m_instance = 0;
 
 int main( int argc, char* args[] )
 {

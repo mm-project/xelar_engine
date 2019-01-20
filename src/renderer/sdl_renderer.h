@@ -1,7 +1,9 @@
 #ifndef sdl_renderer_h
 #define sdl_renderer_h
 
+
 #include "renderer_base.h"
+#include "../skeleton/service.h"
 
 #include <SDL.h>
 
@@ -20,11 +22,8 @@ const int SCREEN_HEIGHT = 480;
 
 typedef std::pair<std::string, std::pair<unsigned int,unsigned int> > ImgInfo;
 
-class LeSdlRendererManager 
+class LeSdlRendererManager : public LeService<LeSdlRendererManager>
 {
-
-	public:
-		static LeSdlRendererManager* get();
 		
 	public:	
 		LeSdlRendererManager();

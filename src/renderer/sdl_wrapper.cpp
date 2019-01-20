@@ -2,6 +2,7 @@
 #include "sdl_wrapper.h"
 #include "sdl_renderer.h"
 
+LeSdlWrapper* LeSdlWrapper::m_renderer_controller = 0;
 
 void LeSdlWrapper::set_rendering_controller(LeSdlWrapper* controller){
 	//LOG("set_rendering_controller %p --> %p\n",(void*)this, (void*)controller);

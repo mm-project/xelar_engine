@@ -5,8 +5,6 @@
 #include "../renderer/sdl_renderer.h"
 
 
-LeResourceManager* LeResourceManager::m_instance = 0;
-
 LeResourceManager::LeResourceManager() {	
     m_rendering_manager = LeSdlRendererManager::get();
     m_img_path  = m_snd_path = m_mus_path = "./bin/";

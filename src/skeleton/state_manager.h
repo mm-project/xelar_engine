@@ -2,6 +2,7 @@
 #define state_manager_h
 
 #include "resource_manager.h"
+#include "service.h"
 
 #include "../renderer/interlayer.h"
 
@@ -10,11 +11,8 @@
 
 enum LeStateType {ST_MENU = 1, ST_GAME };
 
-class LeStateManager
+class LeStateManager : public LeService<LeStateManager>
 {
-	public:	
-		static LeStateManager* get();
-
 	public:	
 		LeStateManager();
 		void reg_state( LeStateType st, LeInterLayer* i );
@@ -28,11 +26,6 @@ class LeStateManager
 		LeInterLayer* m_current_state;
         LeResourceManager m_resource_manager;
         
-
-	public:
-		static LeStateManager* m_instance;
-
-			
 };
 
 #endif

@@ -5,6 +5,7 @@
 
 #include "mover.h"
 #include "resource_manager.h"
+#include "common.h"
 
 class LeImageObject 
 {
@@ -12,10 +13,6 @@ class LeImageObject
         
         LeImageObject(LeImageName image_name, unsigned int posx, unsigned int posy, unsigned int cropx, unsigned int cropy) {
             m_obj = LeObj(get_rsc(image_name),posx,posy,cropx,cropy);
-        }
-
-        LeImg get_rsc(LeImageName name) {
-                return LeResourceManager::get()->get(name);
         }
 
         void set_destination(unsigned int x, unsigned int y) {

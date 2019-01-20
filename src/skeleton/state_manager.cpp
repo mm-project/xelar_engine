@@ -2,10 +2,6 @@
 #include "state_manager.h"
 #include "../renderer/interlayer.h"
 
-LeStateManager* LeStateManager::get() {
-	if( ! m_instance ) m_instance = new LeStateManager;
-	return m_instance;
-}
 
 LeStateManager::LeStateManager() {
     
