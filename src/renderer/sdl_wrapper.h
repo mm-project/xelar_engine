@@ -40,7 +40,8 @@ class LeSdlWrapper : public LeRenderBase , public LeEventControllerBase
 		}
 		
 		
-		bool has_intersetion(uint y1, uint x1, uint h1, uint w1, uint y2, uint x2, uint h2, uint w2 ) {
+		bool has_intersetion(int y1, int x1, int h1, int w1, int y2, int x2, int h2, int w2 )
+		{
 			SDL_Rect* A = new SDL_Rect{x1,y1,w1,h1};
 			SDL_Rect* B = new SDL_Rect{x2,y2,w2,h2};
 			

@@ -7,12 +7,17 @@
 
 #include "../renderer/sdl_wrapper.h"
 
+#include "../physics/physics_manager.h"
+
 class LePlayer : public LeImageObject 
 {
     public:
         
         LePlayer():LeImageObject(IMG_PLAYER,100,100,16,16) {
             init();
+			m_m = LePhysicsManager::get();
+
+			b = m_m->create_body(LeBody::Type::DYNAMIC, m_obj.m_width, m_obj.m_height);
         }
 
     public:
@@ -42,7 +47,11 @@ class LePlayer : public LeImageObject
                 set_vulnarable();
             }
 		
-            m_mover.move(m_obj);
+            //m_mover.move(m_obj);
+			m_m->update();
+
+			m_obj.m_old_y = b->get_current_x();
+			m_obj.m_old_x = b->get_current_y();
         }
 
         bool damage() {
@@ -73,7 +82,7 @@ class LePlayer : public LeImageObject
         }
 
         void draw() {
-            if( m_player_hit ) 
+			if( m_player_hit ) 
                 //id damaged, draw me blinking
                 if ( m_need_to_draw ) 
                     draw_obj_in_movement2();
@@ -90,6 +99,9 @@ class LePlayer : public LeImageObject
 		bool m_is_hit;
 		bool m_need_to_draw;
         bool m_player_hit;
+		LeBody* b;
+		LePhysicsManager* m_m;
+
 
         unsigned int m_last_blink_time;
         unsigned int m_last_hit_time;

@@ -4,7 +4,7 @@
 #include "resource_manager.h"
 #include "service.h"
 
-#include <SDL2/SDL_mixer.h>
+//#include <SDL2/SDL_mixer.h>
 
 class LeSoundManager : public LeService<LeSoundManager>
 {
@@ -20,8 +20,8 @@ class LeSoundManager : public LeService<LeSoundManager>
             bool init();
             
     private:
-            Mix_Chunk* wave;
-            Mix_Music *music;
+            //Mix_Chunk* wave;
+            //Mix_Music *music;
     
     
 };

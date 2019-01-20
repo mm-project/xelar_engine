@@ -7,6 +7,7 @@
 #include "../skeleton/mover.h"
 
 #include "../renderer/interlayer.h"
+#include "../renderer/sdl_wrapper.h"
 
 
 #include <string>
@@ -51,8 +52,9 @@ void LeGameState::init_world()
 	m_is_gameover = false;
 	m_current_score = 0;
 	m_current_time = 0;
-    
-    set_background_image("./bin/sky_bg.jpg");
+   
+	//FIXME !!!
+	set_background_image(LeResourceManager::get()->get(IMG_SKY_BACKGROUND).get_path().c_str());
     m_background.init();
 }
 

@@ -7,7 +7,7 @@
 
 LeResourceManager::LeResourceManager() {	
     m_rendering_manager = LeSdlRendererManager::get();
-    m_img_path  = m_snd_path = m_mus_path = "./bin/";
+    m_img_path  = m_snd_path = m_mus_path = "C:\\Users\\elen\\Desktop\\sdl_game\\ForLevonjanik\\Debug\\";
     register_images();
     //register_sounds();
     //register_music();
@@ -23,7 +23,8 @@ void LeResourceManager::register_image(LeImageName name, std::string filename) {
 
 void LeResourceManager::register_images() 
 {
-    register_image(IMG_PLAYER,"player.png");
+	register_image(IMG_SKY_BACKGROUND, "sky_bg.jpg");
+	register_image(IMG_PLAYER,"player.png");
     register_image(IMG_COIN,"coin.png");
     register_image(IMG_ENEMY1,"debilik1.png");
     register_image(IMG_ENEMY2,"debilik3.png");

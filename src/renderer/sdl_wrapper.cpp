@@ -2,6 +2,7 @@
 #include "sdl_wrapper.h"
 #include "sdl_renderer.h"
 
+#include <SDL.h>
 LeSdlWrapper* LeSdlWrapper::m_renderer_controller = 0;
 
 void LeSdlWrapper::set_rendering_controller(LeSdlWrapper* controller){
@@ -33,7 +34,7 @@ void LeSdlWrapper::enter_event_loop() {
 		currentTime = SDL_GetTicks();
 		if (currentTime > lastTime + 10) {
 
-			while( SDL_PollEvent( &e ) != 0 ) {
+			while (SDL_PollEvent( &e )) {
 				if ( m_renderer_controller ) {
 					if ( e.type == SDL_QUIT ) quit = true;
 					else if ( e.type == SDL_MOUSEBUTTONDOWN && e.button.button == SDL_BUTTON_LEFT ) m_renderer_controller->notify_mouse_pressed(1);
