@@ -12,7 +12,7 @@ LeSoundManager::LeSoundManager() {
 }
 
 bool LeSoundManager::init() {
-	if( Mix_OpenAudio( 22050, MIX_DEFAULT_FORMAT, 2, 4096 ) == -1 ) 
+	/*if( Mix_OpenAudio( 22050, MIX_DEFAULT_FORMAT, 2, 4096 ) == -1 ) 
 		return false; 
     
 	wave = Mix_LoadWAV("./bin/cuckoo.wav");
@@ -23,19 +23,19 @@ bool LeSoundManager::init() {
 	music = Mix_LoadMUS("./bin/track1.mp3");
 	if (music == NULL)
 		return false;
-
+		*/
     return true;
     
 	//while ( Mix_PlayingMusic() ) ;
 }
 
 void LeSoundManager::play(LeSoundName name) {
-	if ( Mix_PlayChannel(-1, wave, 0) == -1 )
+	//if ( Mix_PlayChannel(-1, wave, 0) == -1 )
 		return;
 }
 
 void LeSoundManager::play(LeMusicName name) {
-	if ( Mix_PlayMusic( music, -1) == -1 )
+	//if ( Mix_PlayMusic( music, -1) == -1 )
 		return ;
 }
 

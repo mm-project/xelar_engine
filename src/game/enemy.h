@@ -7,6 +7,7 @@
 
 #include "../renderer/sdl_wrapper.h"
 
+#include "../physics/physics_manager.h"
 
 #include <iostream>
 
@@ -17,6 +18,8 @@ class LeEnemy : public LeImageObject
         LeEnemy():LeImageObject(IMG_ENEMY1,100,100,6,6) {
             //LeImageObject::set_mover(m_mover);
             init();
+			m_m = LePhysicsManager::get();
+			b = m_m->create_body(LeBody::Type::STATIC, m_obj.m_width, m_obj.m_height);
         }
 
     public:
@@ -26,9 +29,13 @@ class LeEnemy : public LeImageObject
         }
 
         void update(unsigned int t) {
-            m_mover.move(m_obj);
+            //m_mover.move(m_obj);
             //std::cout << this << std::endl;
 
+			//m_m->update();
+
+			//m_obj.m_old_y = b->get_current_x();
+			//m_obj.m_old_x = b->get_current_y();
         }
 
         void draw() {
@@ -38,6 +45,8 @@ class LeEnemy : public LeImageObject
 
     private:
         LeObjMover<MV_RAND> m_mover;
+		LeBody* b;
+		LePhysicsManager* m_m;
 };
 
 

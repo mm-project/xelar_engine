@@ -4,6 +4,7 @@
 #include <string>
 #include <map>
 #include <utility>
+#include <cassert>
 
 #include <stdio.h>
 
@@ -36,8 +37,13 @@ std::pair<SDL_Texture*,SDL_Rect> LeSdlRendererManager::get_image_info(const char
 ImgInfo LeSdlRendererManager::register_image(const char* ipath) {
 #ifdef IMAGE_RENDER
 	SDL_Surface* sf  = IMG_Load(ipath);
+	//printf("IMG_Load: %s\n", IMG_GetError());
+	//assert(0);
+	//FIXME need to check before registering.
+	//SDL_ShowSimpleMessageBox(0, "Reg image: %s\n", IMG_GetError(), NULL);
 	SDL_Texture* itexture = SDL_CreateTextureFromSurface(m_render,sf);
-	delete sf;
+	//FIXME on windows lead to crash
+	//	delete sf;
 
 	auto w = 0;
 	auto h = 0;
@@ -72,6 +78,7 @@ bool  LeSdlRendererManager::init_sdl_ttf() {
 	//SDL_ShowSimpleMessageBox(0, "No SDL_ttf","Error",NULL);
 	return false;
 #endif
+	return false;
 }
 
 bool LeSdlRendererManager::init_sdl_image() {
@@ -86,6 +93,7 @@ bool LeSdlRendererManager::init_sdl_image() {
 	SDL_ShowSimpleMessageBox(0, "No SDL_image","Error",NULL);
 	return true;
 #endif
+	return true;
 }
 
 bool LeSdlRendererManager::init_sdl() {

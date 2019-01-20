@@ -6,7 +6,7 @@
 #include <SDL.h>
 
 #ifdef TEXT_RENDER
-	#include <SDL2/SDL_ttf.h>
+	#include <SDL_ttf.h>
 #endif
 
 #ifdef IMAGE_RENDER

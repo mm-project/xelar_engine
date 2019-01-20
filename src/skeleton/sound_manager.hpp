@@ -3,7 +3,7 @@
 
 #include "resource_manager.h"
 
-#include <SDL2/SDL_mixer.h>
+//#include <SDL2/SDL_mixer.h>
 class LeSoundManager 
 {
     public:  
@@ -19,8 +19,8 @@ class LeSoundManager
             bool init();
             
     private:
-            Mix_Chunk* wave;
-            Mix_Music *music;
+            //Mix_Chunk* wave;
+            //Mix_Music *music;
     
     private:
             static LeSoundManager* m_instance;
