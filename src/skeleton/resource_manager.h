@@ -13,14 +13,17 @@ enum LeImageName {IMG_SKY_BACKGROUND, IMG_PLAYER,  IMG_COIN,  IMG_ENEMY1, IMG_EN
 enum LeSoundName { SND_COIN,  SND_SWIM,  SND_DAMAGE, SND_FUCK, SND_WIN };
 enum LeMusicName { MUS_GAME,  MUS_MENU,  MUS_PAUSE };
 
-
 class LeResourceManager: public LeService<LeResourceManager>
 {
 	public:
-        LeResourceManager();
-        //FIXME compiler is not happy
-        static LeResourceManager* get() { return LeService<LeResourceManager>::get(); }
+		friend class LeService<LeResourceManager>;
 
+private:
+        LeResourceManager();
+
+		LeResourceManager(const LeResourceManager&);
+		LeResourceManager& operator=(LeResourceManager&);
+       
 	public:
         LeImg get(LeImageName n);
         

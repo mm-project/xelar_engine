@@ -6,12 +6,13 @@ class LeService
 {
     public:
         //static T* get();
-        static T* get() {
+        static T* get() 
+		{
             if(!m_instance) m_instance = new T;
             return m_instance;
         }
 
-    public:
+    private:
         static T* m_instance;
 };
 

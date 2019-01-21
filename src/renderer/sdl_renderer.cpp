@@ -63,12 +63,12 @@ bool  LeSdlRendererManager::init_sdl_ttf() {
 		//exit(1);
 	}
 
-	m_ttf_font = TTF_OpenFont("FreeSans.ttf", 50); 
+	/*m_ttf_font = TTF_OpenFont("FreeSans.ttf", 50); 
 	if(!m_ttf_font) {  
 		SDL_ShowSimpleMessageBox(0, "TTF_OpenFont: %s\n", TTF_GetError(),NULL);
 		m_init_success = false;
 		//exit(1);
-	}
+	}*/
 #else
 	//SDL_ShowSimpleMessageBox(0, "No SDL_ttf","Error",NULL);
 	return false;

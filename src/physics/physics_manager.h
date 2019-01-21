@@ -21,13 +21,17 @@ private:
 	b2Body* m_body;
 };
 
-class LePhysicsManager: LeService<LePhysicsManager>
+class LePhysicsManager : public LeService<LePhysicsManager> 
 {
-
 public:
-    static LePhysicsManager* get() { return LeService<LePhysicsManager>::get(); } 
+	friend class LeService<LePhysicsManager>;
+	
+private:
 	LePhysicsManager();
-    
+	
+	LePhysicsManager(const LePhysicsManager&);
+	LePhysicsManager& operator=(const LePhysicsManager&);
+
 public:
 	LeBody* create_body(LeBody::Type, float, float);
 
