@@ -2,6 +2,7 @@
 #define postman_h
 
 #include "callback.h"
+#include "service.h"
 
 #include <map>
 #include <vector>
@@ -9,14 +10,16 @@
 #include <functional>
 
 
-class LePostman
+class LePostman : public LeService<LePostman>
 {
     public:
-        static LePostman* get() {
-            if (!m_instance) m_instance = new LePostman;
-            return m_instance;
-        };
-    
+		friend class LeService<LePostman>;
+
+private:
+	LePostman();
+	LePostman(const LePostman&);
+	LePostman operator=(const LePostman&);
+
     public:
         LeCallbackType add_callback_type(const std::string&);
         //LeCallbackType get_callback_type(const std::string&);

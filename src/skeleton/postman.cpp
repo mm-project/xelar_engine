@@ -5,8 +5,6 @@
 #include <cassert>
 #include <string>
 
-LePostman* LePostman::m_instance = 0;
-
 //LePostman::LePostman() {
 //    m_types_count = 0;
 //}

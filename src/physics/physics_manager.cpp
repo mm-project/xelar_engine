@@ -43,8 +43,6 @@ float LeBody::get_current_y() const
 	return (WINDOW_WIDTH_PIXELS - vec.y * PIXELS_PER_UNIT);
 }
 
-
-
 LePhysicsManager::LePhysicsManager()
 {
 	//TODO add function call to manage :P

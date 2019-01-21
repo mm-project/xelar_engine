@@ -25,8 +25,14 @@ typedef std::pair<std::string, std::pair<unsigned int,unsigned int> > ImgInfo;
 class LeSdlRendererManager : public LeService<LeSdlRendererManager>
 {
 		
-	public:	
+	public:
+		friend class LeService<LeSdlRendererManager>;
+
+private:
 		LeSdlRendererManager();
+
+		LeSdlRendererManager(const LeSdlRendererManager&);
+		LeSdlRendererManager& operator=(const LeSdlRendererManager&);
 
 
 	public:

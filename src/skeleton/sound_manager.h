@@ -8,10 +8,14 @@
 
 class LeSoundManager : public LeService<LeSoundManager>
 {
-    public:  
+    public: 
+		friend class LeService<LeSoundManager>;
     
-    public:
+    private:
             LeSoundManager();
+
+			LeSoundManager(const LeSoundManager&);
+			LeSoundManager& operator=(const LeSoundManager&);
     public:
             void play(LeSoundName name);
             void play(LeMusicName name);
