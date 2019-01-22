@@ -16,7 +16,7 @@ class LePostman : public LeService<LePostman>
 		friend class LeService<LePostman>;
 
 private:
-	LePostman();
+	LePostman() {}
 	LePostman(const LePostman&);
 	LePostman operator=(const LePostman&);
 
@@ -35,9 +35,6 @@ private:
         std::map<LeCallbackType,std::vector<LeCallback>> m_type2vecfun;
         std::map<int,LeCallbackType> m_index2type;
         int m_types_count;
-        
-    public:
-        static LePostman* m_instance;
 };
 
 

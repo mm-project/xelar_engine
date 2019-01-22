@@ -3,8 +3,9 @@
 #include "../renderer/interlayer.h"
 
 
-LeStateManager::LeStateManager() {
-    
+LeStateManager::LeStateManager()
+{
+	//m_resource_manager = *LeResourceManager::get();
 }
 
 void LeStateManager::reg_state( LeStateType st, LeInterLayer* i ) {
@@ -25,7 +26,7 @@ void LeStateManager::set_start_state( LeStateType st ) {
 }
 	
     
-LeResourceManager LeStateManager::get_resource_manager() {
+/*const LeResourceManager& LeStateManager::get_resource_manager() {
     return m_resource_manager;
-}
+}*/
 	
