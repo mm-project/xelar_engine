@@ -54,7 +54,7 @@ void LeGameState::init_world()
 	m_current_time = 0;
    
 	//FIXME !!!
-	set_background_image(LeResourceManager::get()->get(IMG_SKY_BACKGROUND).get_path().c_str());
+	set_background_image(get_rsc(IMG_SKY_BACKGROUND).get_path().c_str());
     m_background.init();
 }
 

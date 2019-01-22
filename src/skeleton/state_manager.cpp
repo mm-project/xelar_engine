@@ -3,8 +3,8 @@
 #include "../renderer/interlayer.h"
 
 
-LeStateManager::LeStateManager() {
-    
+LeStateManager::LeStateManager()
+{
 }
 
 void LeStateManager::reg_state( LeStateType st, LeInterLayer* i ) {
@@ -22,10 +22,5 @@ void LeStateManager::set_state( LeStateType st ) {
 void LeStateManager::set_start_state( LeStateType st ) {
 	set_state(ST_GAME);
 	m_current_state->enter_event_loop();
-}
-	
-    
-LeResourceManager LeStateManager::get_resource_manager() {
-    return m_resource_manager;
 }
 	

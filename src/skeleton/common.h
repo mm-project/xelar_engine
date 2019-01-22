@@ -14,7 +14,7 @@ typedef unsigned int uint;
 //FIXME move to common.cpp to avoid duplication in unnmammed namespace
 namespace {
     LeImg get_rsc(LeImageName name) {
-        return LeResourceManager::get()->get(name);
+        return LeResourceManager::get()->get_img(name);
     }
 }
 

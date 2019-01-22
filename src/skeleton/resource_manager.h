@@ -25,7 +25,7 @@ private:
 		LeResourceManager& operator=(LeResourceManager&);
        
 	public:
-        LeImg get(LeImageName n);
+        LeImg get_img(LeImageName n);
         
     private:
         void register_image(LeImageName name, std::string filename);

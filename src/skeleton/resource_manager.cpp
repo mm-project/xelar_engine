@@ -20,7 +20,7 @@ LeResourceManager::LeResourceManager() {
     //register_music();
 }
 
-LeImg LeResourceManager::get(LeImageName n) {
+LeImg LeResourceManager::get_img(LeImageName n) {
     return m_ienum2obj[n];
 }
 
