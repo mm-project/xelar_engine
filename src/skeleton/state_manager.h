@@ -27,12 +27,9 @@ public:
 		void set_state( LeStateType st );
 		void set_start_state( LeStateType st );
 
-        //const LeResourceManager& get_resource_manager();
-        
 	private:
 		std::map<LeStateType,LeInterLayer*> m_statename2state;
 		LeInterLayer* m_current_state;
-        //LeResourceManager m_resource_manager;
         
 };
 

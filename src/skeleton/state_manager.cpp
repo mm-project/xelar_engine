@@ -5,7 +5,6 @@
 
 LeStateManager::LeStateManager()
 {
-	//m_resource_manager = *LeResourceManager::get();
 }
 
 void LeStateManager::reg_state( LeStateType st, LeInterLayer* i ) {
@@ -24,9 +23,4 @@ void LeStateManager::set_start_state( LeStateType st ) {
 	set_state(ST_GAME);
 	m_current_state->enter_event_loop();
 }
-	
-    
-/*const LeResourceManager& LeStateManager::get_resource_manager() {
-    return m_resource_manager;
-}*/
 	
