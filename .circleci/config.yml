@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    machine:
+    machine: true
       # Use an image with kernel 4.8+, which supports the binfmt_misc `F`
       # flag required for cross-building docker images without adding qemu
       # to the image itself.
@@ -9,7 +9,7 @@ jobs:
 
       # Available images are listed here:
       # https://circleci.com/docs/2.0/configuration-reference/#machine
-      image: circleci/classic:201808-01
+      #image: circleci/classic:201808-01
 
     steps:
       - checkout
