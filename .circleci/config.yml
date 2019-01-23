@@ -15,5 +15,5 @@ jobs:
       - checkout
       - run:
           name: Compile
-          command: make
+          command: export TERM=xterm; make
    
