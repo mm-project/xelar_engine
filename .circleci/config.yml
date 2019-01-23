@@ -15,7 +15,7 @@ jobs:
       - checkout
       - run:
           name: intall deps
-          command:  sudo -u root apt-get install libbox2d-dev libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libsdl2-mixer-dev
+          command:  sudo -u root apt-get update && apt-get install libbox2d-dev libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libsdl2-mixer-dev
  
       - run:
           name: Compile
