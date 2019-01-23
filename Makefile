@@ -27,7 +27,7 @@ endif
 
 default:
 	clear
-	rm -f ./bin/$(OUT) 
+	rm -f ./bin/$(OUT)  
 	g++ -std=c++11 $(SRCS) $(FLAGS) $(INCLS) $(LIBS) -o ./bin/$(OUT)
 	cp ./deps/win/SDL2-2.0.8/lib/x86/SDL2.dll ./bin
 	cp ./deps/win/SDL2_ttf-2.0.14/lib/x86/* ./bin
