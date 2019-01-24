@@ -16,7 +16,7 @@ jobs:
       - checkout
       - run:
           name: intall deps
-          command:  sudo -u root apt-get update &&  sudo -u root apt-get install libbox2d-dev
+          command:  sudo -u root apt-get update &&  sudo -u root apt-get install -y libbox2d-dev
  
       - run:
           name: Compile
