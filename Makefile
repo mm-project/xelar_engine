@@ -19,7 +19,7 @@ else
 	#INCLS=-I ./deps/linux/SDL2/include -I ./deps/linux/SDL2_ttf
 	FLAGS+=-Wfatal-errors -g -DIMAGE_RENDER -DOS_LINUX 
 	#LIBS+=-lBox2D -lSDL2_ttf -lSDL2_mixer -lSDL2_image -lSDL2  -ldl -lrt -pthread 
-	LIBS+=-lBox2D -L ./deps/ci -lpng16 -lsndio -lwayland-egl -lwebp -lfreetype -ldl -lrt -pthread ./deps/linux64/SDL2/libSDL2.a ./deps/linux64/SDL2_image/libSDL2_image.a -L ./deps/ci -lpng16 -lsndio -lwayland-egl -lwebp -lfreetype -ldl -lrt -pthread  
+	LIBS+=-lBox2D -lasound -L ./deps/ci -lpng16 -lsndio -lwayland-egl -lwebp -lfreetype -ldl -lrt -pthread ./deps/linux64/SDL2/libSDL2.a ./deps/linux64/SDL2_image/libSDL2_image.a -L ./deps/ci -lpng16 -lsndio -lwayland-egl -lwebp -lfreetype -ldl -lrt -pthread -lasound
 	#LIBS+=-lBox2D  -L ./deps/linux64/SDL2 -lSDL2 -L ./deps/ci -lpng16 -lsndio -lwayland-egl -lwebp -L ./deps/linux64/SDL2_image -lSDL2_image -lfreetype -ldl -lrt  -pthread 
 	INCLS+=$(INCS) -I ./deps/linux/SDL2/include -I ./deps/linux/SDL2_image-2.0.3/include 
 endif
