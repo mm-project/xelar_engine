@@ -1,8 +1,8 @@
 version: 2
 jobs:
   build:
-     docker:
-      - image: ubuntu:18.04
+    docker:
+      - image: ubuntu:14.04
       # Use an image with kernel 4.8+, which supports the binfmt_misc `F`
       # flag required for cross-building docker images without adding qemu
       # to the image itself.
