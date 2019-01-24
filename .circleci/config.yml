@@ -16,7 +16,7 @@ jobs:
       - checkout
       - run:
           name: intall deps
-          command:  sudo -u root apt-get update &&  sudo -u root apt-get install -y build-essential  libfreetype6-dev libbox2d-dev libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libsdl2-libsdl2-mixer-dev
+          command:  sudo -u root apt-get update &&  sudo -u root apt-get install -y build-essential  libfreetype6-dev libbox2d-dev libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libsdl2-mixer-dev
  
       - run:
           name: Compile
