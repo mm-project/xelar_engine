@@ -1,7 +1,6 @@
 version: 2
 jobs:
   build:
-    #machine: true
      docker:
       - image: ubuntu:18.04
       # Use an image with kernel 4.8+, which supports the binfmt_misc `F`
