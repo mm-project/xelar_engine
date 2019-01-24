@@ -3,15 +3,13 @@ jobs:
   build:
     docker:
         - image: eoshep/build-essentials:bionic
-   
-   steps:
+        
+    steps:
       - checkout
       - run:
-          name: install deps
-          #command:  sudo -u root apt-get update &&  sudo -u root apt-get install -y build-essential  libfreetype6-dev libbox2d-dev libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libsdl2-mixer-dev
-          command:  sudo -u root apt-get update &&  sudo -u root apt-get install -y build-essential libasound2-dev  libfreetype6-dev libbox2d-dev libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libsdl2-mixer-de
- 
+          name: deps
+          command: sudo -u root apt-get update && sudo -u root apt-get install -y build-essential libasound2-dev libfreetype6-dev libbox2d-dev libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libsdl2-mixer-dev
+
       - run:
-          name: Compile
+          name: compile
           command: export TERM=xterm; make
-   
