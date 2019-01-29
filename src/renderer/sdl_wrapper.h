@@ -73,10 +73,26 @@ class LeSdlWrapper : public LeRenderBase , public LeEventControllerBase
 		void draw_image(const char* ipath, unsigned int y, unsigned int x, unsigned int cropw, unsigned int croph, double angle, bool needflip, unsigned int flipdir);	
 		bool draw_scroll_background(unsigned int delta);
         void draw_static_background();
+        
+        void zoom(float factor);
+        void zoomin(int factor);
+        void zoomout(int factor);
 
+        void pan_up(int step);
+        void pan_down(int step);
+        void pan_left(int step);
+        void pan_right(int step);
+        void pan_to_x_y(int x, int y);
+
+        
+        
 	public:
 		std::pair<std::string, std::pair<unsigned int,unsigned int> > register_image(const char* ipath);
-       
+
+    private:
+        int t_x(int x);
+        int t_y(int y);
+
 
 	private:
 		//todo more clever way?
@@ -89,7 +105,15 @@ class LeSdlWrapper : public LeRenderBase , public LeEventControllerBase
         unsigned int m_bg_texture_height;
         
 		LeSdlRendererManager* m_render_manager;
+        
 
+        unsigned int m_dx;
+        unsigned int m_dy;
+        
+        unsigned int m_kx;
+        unsigned int m_ky;
+        
+        
         /*
         std::map<std::string,std::pair<SDL_Texture*,SDL_Rect> > name2texture;
 		#ifdef TEXT_RENDER
