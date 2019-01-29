@@ -74,9 +74,14 @@ class LeSdlWrapper : public LeRenderBase , public LeEventControllerBase
 		bool draw_scroll_background(unsigned int delta);
         void draw_static_background();
         
-        void zoom(float factor);
+        //floats not supported
+        //void zoom(float factor);
+        
         void zoomin(int factor);
         void zoomout(int factor);
+        void fzoomin(int step);
+        void fzoomout(int step);
+        
 
         void pan_up(int step);
         void pan_down(int step);
@@ -90,8 +95,8 @@ class LeSdlWrapper : public LeRenderBase , public LeEventControllerBase
 		std::pair<std::string, std::pair<unsigned int,unsigned int> > register_image(const char* ipath);
 
     private:
-        int t_x(int x);
-        int t_y(int y);
+        inline int t_x(int x);
+        inline int t_y(int y);
 
 
 	private:

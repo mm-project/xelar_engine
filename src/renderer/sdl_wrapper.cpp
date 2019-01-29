@@ -2,6 +2,8 @@
 #include "sdl_wrapper.h"
 #include "sdl_renderer.h"
 
+#include <cassert>
+
 #include <SDL.h>
 LeSdlWrapper* LeSdlWrapper::m_renderer_controller = 0;
 
@@ -173,14 +175,15 @@ std::pair<std::string, std::pair<unsigned int,unsigned int> > LeSdlWrapper::regi
 }
 
 void LeSdlWrapper::draw_image(const char* ipath, unsigned int y, unsigned int x, unsigned int cropw, unsigned int croph) {
-	//return;
+	assert(0);
+    //return;
     std::pair<SDL_Texture*,SDL_Rect> info = m_render_manager->get_image_info(ipath);
 	
 	SDL_Rect irect;
-	irect.x = t_x(x);
-	irect.y = t_y(y);
-	irect.w = info.second.w/cropw;
-	irect.h = info.second.h/croph;
+	irect.x = x;//t_x(x);
+	irect.y = y;//t_y(y);
+	irect.w = (info.second.w/cropw)*m_kx;
+	irect.h = (info.second.h/croph)*m_ky;
 
 	SDL_RenderCopy(m_render, info.first, NULL, &irect);
 }
@@ -193,8 +196,8 @@ void LeSdlWrapper::draw_image(const char* ipath, unsigned int y, unsigned int x,
 	SDL_Rect irect;
 	irect.x = t_x(x);
 	irect.y = t_y(y);
-	irect.w = info.second.w/cropw;
-	irect.h = info.second.h/croph;
+	irect.w = m_kx*info.second.w/cropw;
+	irect.h = m_ky*info.second.h/croph;
 
 	if ( needflip ) {
 		SDL_RenderCopyEx(m_render, info.first, NULL, &irect, angle, NULL , SDL_FLIP_NONE );	
@@ -238,23 +241,38 @@ void LeSdlWrapper::pan_to_x_y(int x, int y)
 {
     m_dx = x;
     m_dy = y;
-    
 }
 
+/*
 void LeSdlWrapper::zoom(float factor) {
+     if ( m_kx > 1 ) {
+        m_kx *= factor;
+        m_ky *= factor;
+     }
+}
+*/
+
+void LeSdlWrapper::fzoomin(int factor) {
     m_kx *= factor;
     m_ky *= factor;
 }
 
-void LeSdlWrapper::zoomin(int factor) {
-    m_kx *= factor;
-    m_ky *= factor;
-}
-
-void LeSdlWrapper::zoomout(int factor) {
+void LeSdlWrapper::fzoomout(int factor) {
     if ( m_kx > 1 ) {
         m_kx /= factor;
         m_ky /= factor;
+    }
+}
+
+void LeSdlWrapper::zoomin(int step) {
+    m_kx += step;
+    m_ky += step;
+}
+
+void LeSdlWrapper::zoomout(int step) {
+    if ( m_kx > 1 ) {
+        m_kx -= step;
+        m_ky -= step;
     }
 }
 
