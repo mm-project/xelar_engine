@@ -2,7 +2,7 @@ PROGNAME:=SimpleGame
 SKELETON_SRCS:=$(wildcard src/skeleton/*.cpp)
 RENDERER_SRCS:=$(wildcard src/renderer/*.cpp)
 PHYSICS_SRCS:=$(wildcard src/physics/*.cpp)
-GAME_SRCS:=$(wildcard src/game/*.cpp)
+GAME_SRCS:=$(wildcard src/maze_generation/*.cpp)
 SRCS:=src/main.cpp $(SKELETON_SRCS) $(RENDERER_SRCS) $(GAME_SRCS) $(PHYSICS_SRCS)
 
 INCS:=
