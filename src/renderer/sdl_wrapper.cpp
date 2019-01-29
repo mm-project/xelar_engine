@@ -2,6 +2,8 @@
 #include "sdl_wrapper.h"
 #include "sdl_renderer.h"
 
+#include <cassert>
+
 #include <SDL.h>
 LeSdlWrapper* LeSdlWrapper::m_renderer_controller = 0;
 
@@ -19,9 +21,21 @@ void LeSdlWrapper::set_rendering_controller(LeSdlWrapper* controller){
 LeSdlWrapper::LeSdlWrapper() { //const char* title) {
 	m_render_manager = LeSdlRendererManager::get();
 	m_render = m_render_manager->get_renderer();
+    
+    m_dx = 0;
+    m_dy = 0;
+    m_kx = 1;
+    m_ky = 1;
 }
 
-	
+/*	
+LeKey LeSdlWrapper::sdlkey2mykey(e.key.keysym.sym)
+{
+    
+    
+}
+*/
+
 void LeSdlWrapper::enter_event_loop() {
 	//SDL_Log("hav");
 	unsigned int lastTime = 0, currentTime;
@@ -44,6 +58,8 @@ void LeSdlWrapper::enter_event_loop() {
 						last_y = e.motion.y;
 						m_renderer_controller->notify_mouse_move(last_x,last_y);
 					}
+					else if ( e.type == SDL_KEYDOWN ) { m_renderer_controller->notify_key_pressed(int(e.key.keysym.sym));
+                    }
 					//if ( e.type == SDL_MOUSEWHEEL)
 					//if ( e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_ESCAPE) 
 					//if ( e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_x) 
@@ -87,10 +103,10 @@ void LeSdlWrapper::set_background_image(const char* ipath) {
 
 void LeSdlWrapper::draw_static_background() {
         SDL_Rect srect;
-        srect.x = 0;
-        srect.y = 0;
-        srect.w = scr_w();
-        srect.h = scr_h();
+        srect.x = t_x(0);
+        srect.y = t_y(0);
+        srect.w = t_x(scr_w());
+        srect.h = t_y(scr_h());
         SDL_RenderCopy(m_render, m_bg_texture, &srect, NULL);
 }
 
@@ -159,14 +175,15 @@ std::pair<std::string, std::pair<unsigned int,unsigned int> > LeSdlWrapper::regi
 }
 
 void LeSdlWrapper::draw_image(const char* ipath, unsigned int y, unsigned int x, unsigned int cropw, unsigned int croph) {
-	//return;
+	assert(0);
+    //return;
     std::pair<SDL_Texture*,SDL_Rect> info = m_render_manager->get_image_info(ipath);
 	
 	SDL_Rect irect;
-	irect.x = x;
-	irect.y = y;
-	irect.w = info.second.w/cropw;
-	irect.h = info.second.h/croph;
+	irect.x = x;//t_x(x);
+	irect.y = y;//t_y(y);
+	irect.w = (info.second.w/cropw)*m_kx;
+	irect.h = (info.second.h/croph)*m_ky;
 
 	SDL_RenderCopy(m_render, info.first, NULL, &irect);
 }
@@ -177,10 +194,10 @@ void LeSdlWrapper::draw_image(const char* ipath, unsigned int y, unsigned int x,
 	
 	//fixme get rid of this temp. variables
 	SDL_Rect irect;
-	irect.x = x;
-	irect.y = y;
-	irect.w = info.second.w/cropw;
-	irect.h = info.second.h/croph;
+	irect.x = t_x(x);
+	irect.y = t_y(y);
+	irect.w = m_kx*info.second.w/cropw;
+	irect.h = m_ky*info.second.h/croph;
 
 	if ( needflip ) {
 		SDL_RenderCopyEx(m_render, info.first, NULL, &irect, angle, NULL , SDL_FLIP_NONE );	
@@ -197,13 +214,13 @@ void LeSdlWrapper::draw_square(unsigned int y, unsigned int x, unsigned int delt
 }  
 
 void LeSdlWrapper::draw_rect(unsigned int y, unsigned int x, unsigned int delta2, unsigned int delta1 ) {
-	SDL_Rect rectToDraw = {x,y,delta1,delta2};
+	SDL_Rect rectToDraw = {t_x(x),t_y(y),delta1,delta2};
 	SDL_RenderDrawRect(m_render,&rectToDraw);
 	SDL_RenderFillRect(m_render, &rectToDraw);
 }  
 
 void LeSdlWrapper::draw_line(unsigned int y1, unsigned int x1, unsigned int y2, unsigned int x2) {
-	SDL_RenderDrawLine(m_render,x1,y1,x2,y2);
+	SDL_RenderDrawLine(m_render,t_x(x1),t_y(y1),t_x(x2),t_y(y2));
 }
 
 
@@ -214,9 +231,75 @@ void LeSdlWrapper::draw_circle(unsigned int y, unsigned int x, int radius)
             int dx = radius - w; // horizontal offset
             int dy = radius - h; // vertical offset
             if ((dx*dx + dy*dy) <= (radius * radius)) {
-                SDL_RenderDrawPoint(m_render, x + dx, y + dy);
+                SDL_RenderDrawPoint(m_render, t_x(x + dx), t_y(y + dy));
             }
         }
     }
 }
+
+void LeSdlWrapper::pan_to_x_y(int x, int y) 
+{
+    m_dx = x;
+    m_dy = y;
+}
+
+/*
+void LeSdlWrapper::zoom(float factor) {
+     if ( m_kx > 1 ) {
+        m_kx *= factor;
+        m_ky *= factor;
+     }
+}
+*/
+
+void LeSdlWrapper::fzoomin(int factor) {
+    m_kx *= factor;
+    m_ky *= factor;
+}
+
+void LeSdlWrapper::fzoomout(int factor) {
+    if ( m_kx > 1 ) {
+        m_kx /= factor;
+        m_ky /= factor;
+    }
+}
+
+void LeSdlWrapper::zoomin(int step) {
+    m_kx += step;
+    m_ky += step;
+}
+
+void LeSdlWrapper::zoomout(int step) {
+    if ( m_kx > 1 ) {
+        m_kx -= step;
+        m_ky -= step;
+    }
+}
+
+void LeSdlWrapper::pan_up(int step) {
+     m_dy -= step;
+}
+
+void LeSdlWrapper::pan_down(int step) {
+    m_dy += step;
+}
+
+void LeSdlWrapper::pan_left(int step) {
+    m_dx -= step;
+}
+
+void LeSdlWrapper::pan_right(int step) {
+    m_dx += step;
+}
+
+int LeSdlWrapper::t_x(int x) {
+    return m_kx*x+m_dx;
+    
+}
+
+int LeSdlWrapper::t_y(int y) {
+    return m_ky*y+m_dy;
+}
+
+
 
