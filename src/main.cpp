@@ -1,9 +1,11 @@
-#include "maze_generation/game.h"
+#include "skeleton/game.h"
+#include "maze_generation/window.hpp"
 
 
 int main( int argc, char* args[] )
 {
 LeGame game;
+    game.register_entry_point(new window);
 	//TODO
     //game.parse_options(argc,argv);
 	game.start();    

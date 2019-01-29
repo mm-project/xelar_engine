@@ -6,6 +6,7 @@
 
 class maze_generator_interface;
 
+//LeInterLayer is scene controller ! :)
 class window : public LeInterLayer
 {
     public:
@@ -19,9 +20,9 @@ class window : public LeInterLayer
             
             
     public:         
-            //virtual void notify_mouse_pressed(unsigned int);
-            //virtual void notify_key_pressed(unsigned int);
-            //virtual void notify_mouse_move(unsigned int x, unsigned int y);
+            virtual void notify_mouse_pressed(unsigned int) {}
+            virtual void notify_key_pressed(unsigned int) {}
+            virtual void notify_mouse_move(unsigned int x, unsigned int y) {}
 
 private:
 	maze_generator_interface* m_maze;
