@@ -90,20 +90,21 @@ void Board::renderMaze()
 
 bool Board::check_in_bounding_box()
 {
-        /*
-        QPixmap a = QPixmap::grabWidget(this);
-        QImage img = a.toImage();
-        QRgb color = img.pixel(m_player->m_player.x(), m_player->m_player.y());
-        QColor c;
-        c.setRgb(color);
+        LeSdlWrapper::m_renderer_controller->getpixel(0,0);
+    /*
+        //QPixmap a = QPixmap::grabWidget(this);
+        //QImage img = a.toImage();
+        //QRgb color = img.pixel(m_player->m_player.x(), m_player->m_player.y());
+        //QColor c;
+        //c.setRgb(color);
         int i = m_player->bounding_rect.x() / m_level->get_delta_column();
         int j = m_player->bounding_rect.y() / m_level->get_delta_row();
         i = i * m_level->get_delta_column() + 5;
         j = j * m_level->get_delta_row() + 5;
         for (int i_ = i; i_ < i + m_level->get_delta_column(); ++i_) {
                 if (m_player->bounding_rect.contains(i_, j)) {
-                        color = img.pixel(i_, j);
-                        c.setRgb(color);
+                        //color = img.pixel(i_, j);
+                        //c.setRgb(color);
                         if (c.black() == 255) {
                                 return true;
                         }
@@ -112,8 +113,8 @@ bool Board::check_in_bounding_box()
         i = i + m_level->get_delta_column();
         for (int j_= j; j_ < j + m_level->get_delta_row(); ++j_) {
                 if (m_player->bounding_rect.contains(i, j_)) {
-                        color = img.pixel(i, j_);
-                        c.setRgb(color);
+                        //color = img.pixel(i, j_);
+                        //c.setRgb(color);
                         if (c.black() == 255) {
                                 return true;
                         }
@@ -122,8 +123,8 @@ bool Board::check_in_bounding_box()
         i -= m_level->get_delta_column();
         for (int j_= j; j_ < j + m_level->get_delta_row(); ++j_) {
                 if (m_player->bounding_rect.contains(i, j_)) {
-                        color = img.pixel(i, j_);
-                        c.setRgb(color);
+                        //color = img.pixel(i, j_);
+                        //c.setRgb(color);
                         if (c.black() == 255) {
                                 return true;
                         }
@@ -132,21 +133,29 @@ bool Board::check_in_bounding_box()
         j = j + m_level->get_delta_row();
         for (int i_ = i; i_ < i + m_level->get_delta_column(); ++i_) {
                 if (m_player->bounding_rect.contains(i_, j)) {
-                        color = img.pixel(i_, j);
-                        c.setRgb(color);
+                        //color = img.pixel(i_, j);
+                        //c.setRgb(color);
                         if (c.black() == 255) {
                                 return true;
                         }
                 }
         }
         return false;
-        */
-    return false;
+        /**/
+    //return true;
 }
 
 void Board::keyPressEvent(int keypress)
 {
         LeRect rect(910,400, 50, 50);
+        std::cout << keypress << std::endl;
+        if (keypress == 120) {
+            LeSdlWrapper::m_renderer_controller->fzoomin(2);
+        }
+
+        if (keypress == 122) {
+            LeSdlWrapper::m_renderer_controller->fzoomout(2);
+        }
 
         if (keypress == m_left) {
                 m_player->m_player_angle = 270;

@@ -48,6 +48,7 @@ ImgInfo LeSdlRendererManager::register_image(const char* ipath) {
 	irect.w = w;
 	irect.h = h;
 	
+    m_name2surface[ipath] = sf;
 	m_name2texture[ipath] = std::make_pair(itexture,irect);
 	return std::make_pair(ipath,std::make_pair(w,h));
 #else

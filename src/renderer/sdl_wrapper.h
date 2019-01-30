@@ -6,6 +6,7 @@
 #include "sdl_renderer.h"
 
 
+#include <iostream>
 #include <map>
 #include <string>
 
@@ -88,8 +89,32 @@ class LeSdlWrapper : public LeRenderBase , public LeEventControllerBase
         void pan_left(int step);
         void pan_right(int step);
         void pan_to_x_y(int x, int y);
+    
+        SDL_Surface* get() {
+            const Uint32 format = SDL_PIXELFORMAT_ARGB8888;
+            const int width = 640;
+            const int height = 400;
+            //auto renderer = sdl2Core->GetRenderer();
 
-        
+            SDL_Surface *surface = SDL_CreateRGBSurfaceWithFormat(0, width, height, 32, format);
+            SDL_RenderReadPixels(m_render, NULL, format, surface->pixels, surface->pitch);
+             SDL_SaveBMP(surface, "screenshot.bmp");
+            return surface;
+        }
+
+        void getpixel(int x, int y) {
+            
+            SDL_Surface* surface = get();
+            int bpp = surface->format->BytesPerPixel;
+            Uint8 *p = (Uint8 *)surface->pixels + y * surface->pitch + x * bpp;
+
+            Uint8 red, green, blue, alpha;
+
+            SDL_GetRGBA(*p, surface->format, &red, &green, &blue, &alpha);
+
+            std::cout << (int)red << " " << (int)green << " " << (int)blue << " " << (int)alpha  << std::endl;
+
+        }
         
 	public:
 		std::pair<std::string, std::pair<unsigned int,unsigned int> > register_image(const char* ipath);

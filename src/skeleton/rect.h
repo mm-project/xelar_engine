@@ -1,6 +1,8 @@
 #ifndef rect_h
 #define rect_h
 
+#include <cmath>
+
 class LeRect
 {
     public: 
@@ -12,9 +14,18 @@ class LeRect
             m_x2 = x2;
             m_y2 = y2;
         }
+        
         int x1() { return m_x1; }
         int y1() { return m_y1; }
-        bool contains(int x, int y) { return false;}
+        
+        bool contains(int x, int y) { 
+            int height = abs(m_x1-m_x2);
+            int width = abs(m_x2-m_x2);
+            return (x > m_x1 && x < m_x1 + height &&
+                    y > m_y1 && y < m_y1 + width);
+            
+            }
+
 
     private:
         int m_x1;

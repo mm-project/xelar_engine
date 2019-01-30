@@ -1,12 +1,21 @@
+<<<<<<< Updated upstream
+#include "game/game.h"
+
+
+=======
 #include "skeleton/game.h"
 //#include "maze_generation/window.hpp"
-#include "maze_game/game.hpp"
+#include "Qt_maze_game/game.hpp"
+>>>>>>> Stashed changes
 
 int main( int argc, char* args[] )
 {
 LeGame game;
+<<<<<<< Updated upstream
+=======
     //game.register_entry_point(new window);
     game.register_entry_point(new GameWindow);
+>>>>>>> Stashed changes
 	//TODO
     //game.parse_options(argc,argv);
 	game.start();    

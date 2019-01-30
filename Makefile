@@ -3,7 +3,7 @@ SKELETON_SRCS:=$(wildcard src/skeleton/*.cpp)
 RENDERER_SRCS:=$(wildcard src/renderer/*.cpp)
 PHYSICS_SRCS:=$(wildcard src/physics/*.cpp)
 #GAME_SRCS:=$(wildcard src/maze_generation/*.cpp)
-GAME_SRCS:=$(wildcard src/Qt_maze_game/*.cpp)
+GAME_SRCS:=$(wildcard src/maze_game/*.cpp)
 SRCS:=src/main.cpp $(SKELETON_SRCS) $(RENDERER_SRCS) $(GAME_SRCS) $(PHYSICS_SRCS)
 
 INCS:=
