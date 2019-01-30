@@ -177,7 +177,7 @@ std::pair<std::string, std::pair<unsigned int,unsigned int> > LeSdlWrapper::regi
 }
 
 void LeSdlWrapper::draw_image(const char* ipath, unsigned int y, unsigned int x, unsigned int cropw, unsigned int croph) {
-	assert(0);
+	//assert(0);
     //return;
     std::pair<SDL_Texture*,SDL_Rect> info = m_render_manager->get_image_info(ipath);
 	
