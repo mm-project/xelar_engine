@@ -32,7 +32,7 @@ std::pair<SDL_Texture*,SDL_Rect> LeSdlRendererManager::get_image_info(const char
 ImgInfo LeSdlRendererManager::register_image(const char* ipath) {
 #ifdef IMAGE_RENDER
 	SDL_Surface* sf  = IMG_Load(ipath);
-	//printf("IMG_Load: %s\n", IMG_GetError());
+	printf("IMG_Load: %s\n", IMG_GetError());
 	//assert(0);
 	//FIXME need to check before registering.
 	//SDL_ShowSimpleMessageBox(0, "Reg image: %s\n", IMG_GetError(), NULL);

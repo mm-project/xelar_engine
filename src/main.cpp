@@ -1,16 +1,16 @@
-#include "game/game.h"
-
-
+#include "skeleton/game.h"
+//#include "maze_generation/window.hpp"
+#include "Qt_maze_game/game.hpp"
 
 int main( int argc, char* args[] )
 {
 LeGame game;
+    //game.register_entry_point(new window);
+    game.register_entry_point(new GameWindow);
 	//TODO
     //game.parse_options(argc,argv);
 	game.start();    
 	//game.stop();
-	
-        
 return 0;
 }
 

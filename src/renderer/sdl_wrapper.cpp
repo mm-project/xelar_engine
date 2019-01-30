@@ -2,7 +2,7 @@
 #include "sdl_wrapper.h"
 #include "sdl_renderer.h"
 
-#include <cassert>
+#include <iostream>
 
 #include <SDL.h>
 LeSdlWrapper* LeSdlWrapper::m_renderer_controller = 0;
@@ -58,7 +58,9 @@ void LeSdlWrapper::enter_event_loop() {
 						last_y = e.motion.y;
 						m_renderer_controller->notify_mouse_move(last_x,last_y);
 					}
-					else if ( e.type == SDL_KEYDOWN ) { m_renderer_controller->notify_key_pressed(int(e.key.keysym.sym));
+					else if (  e.type == SDL_KEYDOWN  ) {
+                         m_renderer_controller->notify_key_pressed(int(e.key.keysym.sym));
+                         //std::cout << int(e.key.keysym.sym) << std::endl;
                     }
 					//if ( e.type == SDL_MOUSEWHEEL)
 					//if ( e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_ESCAPE) 
