@@ -2,7 +2,7 @@
 #define rect_h
 
 #include <cmath>
-
+#include <iostream>
 class LeRect
 {
     public: 
@@ -19,6 +19,8 @@ class LeRect
         int y1() { return m_y1; }
         
         bool contains(int x, int y) { 
+            
+            //std::cout << x << std::endl;
             int height = abs(m_x1-m_x2);
             int width = abs(m_x2-m_x2);
             return (x > m_x1 && x < m_x1 + height &&

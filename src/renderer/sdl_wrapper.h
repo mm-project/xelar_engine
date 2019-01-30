@@ -92,17 +92,17 @@ class LeSdlWrapper : public LeRenderBase , public LeEventControllerBase
     
         SDL_Surface* get() {
             const Uint32 format = SDL_PIXELFORMAT_ARGB8888;
-            const int width = 640;
-            const int height = 400;
+            const int width = scr_w();
+            const int height = scr_h();
             //auto renderer = sdl2Core->GetRenderer();
 
             SDL_Surface *surface = SDL_CreateRGBSurfaceWithFormat(0, width, height, 32, format);
             SDL_RenderReadPixels(m_render, NULL, format, surface->pixels, surface->pitch);
-             SDL_SaveBMP(surface, "screenshot.bmp");
+            //SDL_SaveBMP(surface, "screenshot.bmp");
             return surface;
         }
 
-        void getpixel(int x, int y) {
+        int getpixel(int y, int x) {
             
             SDL_Surface* surface = get();
             int bpp = surface->format->BytesPerPixel;
@@ -110,12 +110,16 @@ class LeSdlWrapper : public LeRenderBase , public LeEventControllerBase
 
             Uint8 red, green, blue, alpha;
 
-            SDL_GetRGBA(*p, surface->format, &red, &green, &blue, &alpha);
-
+            SDL_GetRGBA(*(Uint32*)p, surface->format, &red, &green, &blue, &alpha);
+            //SDL_GetRGBA(*p, surface->format, &red, &green, &blue, &alpha);
             std::cout << (int)red << " " << (int)green << " " << (int)blue << " " << (int)alpha  << std::endl;
-
+            return (int)red;
+            
         }
         
+        
+        
+
 	public:
 		std::pair<std::string, std::pair<unsigned int,unsigned int> > register_image(const char* ipath);
 
