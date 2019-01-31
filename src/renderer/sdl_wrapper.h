@@ -28,8 +28,7 @@ class LeSdlWrapper : public LeRenderBase , public LeEventControllerBase
 	public:
 		LeSdlWrapper();
 
-
-	public:
+        public:
 		virtual void enter_event_loop();
 		
 		inline unsigned int scr_w() {
@@ -64,7 +63,7 @@ class LeSdlWrapper : public LeRenderBase , public LeEventControllerBase
 		
         void draw_text(const char* s, unsigned int y, unsigned int x, unsigned int sy, unsigned int sx);	
 		
-        void draw_point(unsigned int y, unsigned int x, unsigned int radius);
+        void draw_point(unsigned int y, unsigned int x);
 		void draw_line(unsigned int y1, unsigned int x1, unsigned int y2, unsigned int x2);
 		void draw_square(unsigned int y, unsigned int x, unsigned int delta);
 		void draw_rect(unsigned int y, unsigned int x, unsigned int delta2, unsigned int delta1 );
@@ -90,7 +89,7 @@ class LeSdlWrapper : public LeRenderBase , public LeEventControllerBase
         void pan_right(int step);
         void pan_to_x_y(int x, int y);
     
-        SDL_Surface* get() {
+        SDL_Surface* get(bool d) {
             const Uint32 format = SDL_PIXELFORMAT_ARGB8888;
             const int width = scr_w();
             const int height = scr_h();
@@ -98,15 +97,15 @@ class LeSdlWrapper : public LeRenderBase , public LeEventControllerBase
 
             SDL_Surface *surface = SDL_CreateRGBSurfaceWithFormat(0, width, height, 32, format);
             SDL_RenderReadPixels(m_render, NULL, format, surface->pixels, surface->pitch);
-            //SDL_SaveBMP(surface, "screenshot.bmp");
+            //if(d) SDL_SaveBMP(surface, "screenshot.bmp");
             return surface;
         }
 
         int getpixel(int y, int x) {
             
-            SDL_Surface* surface = get();
+            SDL_Surface* surface = get(false);
             int bpp = surface->format->BytesPerPixel;
-            Uint8 *p = (Uint8 *)surface->pixels + y * surface->pitch + x * bpp;
+            Uint8 *p = (Uint8 *)surface->pixels + t_y(y) * surface->pitch + t_x(x) * bpp;
 
             Uint8 red, green, blue, alpha;
 
@@ -124,8 +123,8 @@ class LeSdlWrapper : public LeRenderBase , public LeEventControllerBase
 		std::pair<std::string, std::pair<unsigned int,unsigned int> > register_image(const char* ipath);
 
     private:
-        inline int t_x(int x);
-        inline int t_y(int y);
+         int t_x(int x);
+         int t_y(int y);
 
 
 	private:
@@ -154,7 +153,26 @@ class LeSdlWrapper : public LeRenderBase , public LeEventControllerBase
 			std::map<std::string,std::pair<TTF_Font*,SDL_Rect> > name2font;
 		#endif
         */
-
+public:
+        //TODO REMOVE
+        void draw_circle1(unsigned int y, unsigned int x, int radius)
+        {
+            
+            //SDL_RenderClear(  LeSdlRendererManager::get()->get_renderer() );
+            SDL_SetRenderDrawColor( LeSdlRendererManager::get()->get_renderer(), 255, 0, 0, 0xFF );
+            std::cout << "draw_circle1 " << this << std::endl;
+            for (int w = 0; w < radius * 2; w++) {
+                for (int h = 0; h < radius * 2; h++) {
+                    int dx = radius - w; // horizontal offset
+                    int dy = radius - h; // vertical offset
+                    if ((dx*dx + dy*dy) <= (radius * radius)) {
+                        SDL_RenderDrawPoint(LeSdlRendererManager::get()->get_renderer(), x+dx, y+dy);
+                    }
+                }
+            }
+            SDL_RenderPresent( LeSdlRendererManager::get()->get_renderer() );
+        }
+    
 	public:
 		static LeSdlWrapper* m_renderer_controller;
 

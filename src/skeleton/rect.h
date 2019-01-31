@@ -17,14 +17,16 @@ class LeRect
         
         int x1() { return m_x1; }
         int y1() { return m_y1; }
+
+        int x2() { return m_x2; }
+        int y2() { return m_y2; }
+
+        int w() { return abs(m_y2-m_y1); }
+        int h() { return abs(m_x2-m_x2); }
         
         bool contains(int x, int y) { 
-            
-            //std::cout << x << std::endl;
-            int height = abs(m_x1-m_x2);
-            int width = abs(m_x2-m_x2);
-            return (x > m_x1 && x < m_x1 + height &&
-                    y > m_y1 && y < m_y1 + width);
+            return (x > m_x1 && x < m_x1 + h() &&
+                    y > m_y1 && y < m_y1 + w());
             
             }
 

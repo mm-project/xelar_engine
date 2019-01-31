@@ -5,8 +5,11 @@
 
 
 #include "../renderer/sdl_wrapper.h"
+#include "../skeleton/drawing_rect.h"
 
 #include <iostream>
+
+#define RENDERER LeSdlWrapper::m_renderer_controller
 
 Board::Board()
         : m_maze(0)
@@ -53,27 +56,28 @@ void Board::generate()
 void Board::draw()
 {
         renderMaze();
+         RENDERER->getpixel(m_player->m_player.x(),m_player->m_player.y());
 }
 
 void Board::renderMaze()
 {
-        LeSdlWrapper::m_renderer_controller->set_drawing_color(255,0,0);
+        RENDERER->set_drawing_color(255,0,0);
         int r = 5, c = 5;
         for (int i = 0; i < m_level->get_column(); ++i ) {
               for (int j = 0; j < m_level->get_row(); ++j) {
                         const Cell& cell = m_maze->cell(i,j);
                         if (cell.topWall()) {
-                                LeSdlWrapper::m_renderer_controller->draw_line(r,c, r + m_level->get_delta_row(), c);
+                                RENDERER->draw_line(r,c, r + m_level->get_delta_row(), c);
                         }
                         if (cell.leftWall()) {
-                                LeSdlWrapper::m_renderer_controller->draw_line(r,c,r, c + m_level->get_delta_column());
+                                RENDERER->draw_line(r,c,r, c + m_level->get_delta_column());
                         }
                         if (j == m_level->get_row() -1 && cell.rightWall())
                         {
-                                LeSdlWrapper::m_renderer_controller->draw_line(r + m_level->get_delta_row(),c,r + m_level->get_delta_row() , c + m_level->get_delta_column());
+                                RENDERER->draw_line(r + m_level->get_delta_row(),c,r + m_level->get_delta_row() , c + m_level->get_delta_column());
                         }
                         if (i == m_level->get_column() - 1) {
-                               LeSdlWrapper::m_renderer_controller->draw_line(r,c + m_level->get_delta_column(),r+m_level->get_delta_row(),c + m_level->get_delta_column());
+                               RENDERER->draw_line(r,c + m_level->get_delta_column(),r+m_level->get_delta_row(),c + m_level->get_delta_column());
                         }
                         r+=m_level->get_delta_row();
               }
@@ -81,55 +85,62 @@ void Board::renderMaze()
               c += m_level->get_delta_column();
         }
 
-        LeSdlWrapper::m_renderer_controller->draw_image("./bin/cheese.png",50,50,2,2);
-        //LeSdlWrapper::m_renderer_controller->draw_image("./bin/mouse.png",80,80,1,1);
+        RENDERER->draw_image("./bin/cheese.png",50,50,2,2);
+        RENDERER->draw_image("./bin/mouse.png",m_player->m_player.y(),m_player->m_player.x(),1,1,m_player->m_player_angle,false,1);
+
+        //RENDERER->set_drawing_color(0,0,255);
+        //RENDERER->draw_rect(m_player->bounding_rect.y1(),m_player->bounding_rect.x1(),m_player->bounding_rect.h(),m_player->bounding_rect.w());
         
-        LeSdlWrapper::m_renderer_controller->draw_image("./bin/mouse.png",m_player->m_player.y(),m_player->m_player.x(),1,1,m_player->m_player_angle,false,1);
+        RENDERER->set_drawing_color(255,0,255);
+        RENDERER->draw_point(m_player->m_player.y(),m_player->m_player.x());//,10);
 
-        //LeSdlWrapper::m_renderer_controller->draw_circle(m_player->bounding_rect.y1(),m_player->bounding_rect.x1(),10);
-        //LeSdlWrapper::m_renderer_controller->draw_circle(m_player->m_player.y(),m_player->m_player.x(),20);
-
-    
 }
 
 bool Board::check_in_bounding_box()
 {
-        //LeSdlWrapper::m_renderer_controller->getpixel(m_player->bounding_rect.x1(),m_player->bounding_rect.y1());
+    /*    
+    //RENDERER->getpixel(m_player->bounding_rect.x1(),m_player->bounding_rect.y1());
         int i = m_player->bounding_rect.x1() / m_level->get_delta_column();
         int j = m_player->bounding_rect.y1() / m_level->get_delta_row();
         i = i * m_level->get_delta_column() + 5;
         j = j * m_level->get_delta_row() + 5;
         for (int i_ = i; i_ < i + m_level->get_delta_column(); ++i_) {
+                r.draw1(i_,j);
+                //tmp[0]=std::make_pair(i_,j);
                 if (m_player->bounding_rect.contains(i_, j)) {
-                        //pixel not red
-                        if (LeSdlWrapper::m_renderer_controller->getpixel(i_,j) != 255) {
+                        //pixel is not red
+                        if (RENDERER->getpixel(i_,j) != 255) {
                                 return true;
                         }
                 }
         }
         i = i + m_level->get_delta_column();
         for (int j_= j; j_ < j + m_level->get_delta_row(); ++j_) {
+                //tmp[1]=std::make_pair(i,j_);    
                 if (m_player->bounding_rect.contains(i, j_)) {
                         //color = img.pixel(i, j_);
-                        if (LeSdlWrapper::m_renderer_controller->getpixel(i,j_) != 255) {
+                        if (RENDERER->getpixel(i,j_) != 255) {
                                 return true;
                         }
                 }
         }
         i -= m_level->get_delta_column();
         for (int j_= j; j_ < j + m_level->get_delta_row(); ++j_) {
+                //tmp[2]=std::make_pair(i,j_);
                 if (m_player->bounding_rect.contains(i, j_)) {
                         //color = img.pixel(i, j_);
-                        if (LeSdlWrapper::m_renderer_controller->getpixel(i,j_) != 255) {
+                        if (RENDERER->getpixel(i,j_) != 255) {
                                 return true;
                         }
                 }
         }
         j = j + m_level->get_delta_row();
         for (int i_ = i; i_ < i + m_level->get_delta_column(); ++i_) {
+                //RENDERER->set_drawing_color(255,0,255);
+                //RENDERER->draw_circle(i_,j,5);
                 if (m_player->bounding_rect.contains(i_, j)) {
                         //color = img.pixel(i_, j);
-                        if (LeSdlWrapper::m_renderer_controller->getpixel(i_,j) != 255) {
+                        if (RENDERER->getpixel(i_,j) != 255) {
                                 return true;
                         }
                 }
@@ -140,16 +151,17 @@ bool Board::check_in_bounding_box()
 
 void Board::keyPressEvent(int keypress)
 {
-        //LeSdlWrapper::m_renderer_controller->getpixel(m_player->m_player.x(),m_player->m_player.y());
+        //RENDERER->set_drawing_color(0,0,255);
+        
         
         LeRect rect(910,400, 50, 50);
         //std::cout << keypress << std::endl;
         if (keypress == 120) {
-            LeSdlWrapper::m_renderer_controller->fzoomin(2);
+            RENDERER->fzoomin(2);
         }
 
         if (keypress == 122) {
-            LeSdlWrapper::m_renderer_controller->fzoomout(2);
+            RENDERER->fzoomout(2);
         }
 
         if (keypress == m_left) {
@@ -228,6 +240,8 @@ void Board::keyPressEvent(int keypress)
                 return;
         }
         //update();
+
+       
 }
 
 void Board::loadSettings()

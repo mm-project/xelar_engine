@@ -50,6 +50,8 @@ private:
 
     Level_interface* m_level;
     int level_count;
+    
+    //std::vector<std::pair<int,int>> tmp;
 };
 
 #endif

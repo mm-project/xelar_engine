@@ -9,7 +9,7 @@ LeSdlWrapper* LeSdlWrapper::m_renderer_controller = 0;
 
 void LeSdlWrapper::set_rendering_controller(LeSdlWrapper* controller){
 	//LOG("set_rendering_controller %p --> %p\n",(void*)this, (void*)controller);
-	LOG("set_rendering_controller %p \n",(void*)controller);       
+	//LOG("set_rendering_controller %p \n",(void*)controller);       
 	m_renderer_controller = controller;
 }
 
@@ -72,12 +72,15 @@ void LeSdlWrapper::enter_event_loop() {
 			//LOG("this %p m_renderer_controller %p \n",(void*)this,(void*)m_renderer_controller);
 			if(m_renderer_controller) {
 				//SDL_Log("?????\n");
-				m_render_manager->scene_clear();
 				//m_render_manager->render_background_image();
-				m_renderer_controller->update(currentTime);
+            	m_render_manager->scene_clear();
+                m_renderer_controller->update(currentTime);
 				m_renderer_controller->draw();
 				m_render_manager->scene_draw();
+			
+                //LOG("---->this %p m_renderer_controller %p \n",(void*)this,(void*)m_renderer_controller);
 			}
+            //}
 			lastTime = currentTime;  
 		}
 	}
@@ -85,8 +88,8 @@ void LeSdlWrapper::enter_event_loop() {
 
 
 
-void LeSdlWrapper::draw_point(unsigned int y, unsigned int x, unsigned int radius) { 
-	draw_circle(y,x,radius);
+void LeSdlWrapper::draw_point(unsigned int y, unsigned int x) { 
+	SDL_RenderDrawPoint(m_render, t_x(x), t_y(y));
 }
 
 void LeSdlWrapper::set_drawing_color(int r, int g, int b) {
@@ -294,12 +297,12 @@ void LeSdlWrapper::pan_right(int step) {
     m_dx += step;
 }
 
-int LeSdlWrapper::t_x(int x) {
+inline int LeSdlWrapper::t_x(int x) {
     return m_kx*x+m_dx;
     
 }
 
-int LeSdlWrapper::t_y(int y) {
+inline int LeSdlWrapper::t_y(int y) {
     return m_ky*y+m_dy;
 }
 
