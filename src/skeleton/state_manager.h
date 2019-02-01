@@ -10,7 +10,7 @@
 
 
 enum LeStateType {ST_MENU = 1, ST_GAME };
-// zharangac a u vochmi ban avel u asxatuma, ha
+
 class LeStateManager : public LeService<LeStateManager>
 {
 	public:	

@@ -24,15 +24,15 @@ bool LeSoundManager::init() {
 	//while ( Mix_PlayingMusic() ) ;
 }
 
-void LeSoundManager::play(LeSoundName name) {
+//void LeSoundManager::play(LeSoundName name) {
 	//if ( Mix_PlayChannel(-1, wave, 0) == -1 )
-		return;
-}
+//		return;
+//}
 
-void LeSoundManager::play(LeMusicName name) {
+//void LeSoundManager::play(LeMusicName name) {
 	//if ( Mix_PlayMusic( music, -1) == -1 )
-		return ;
-}
+//		return ;
+//}
 
 /*
 LeSoundManager::~LeSoundManager() {
