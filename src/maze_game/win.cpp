@@ -1,8 +1,9 @@
 #include "win.hpp"
-#include "game.hpp"
+#include "game_window.hpp"
 
 
 #include "../skeleton/state_manager.h"
+#include "../skeleton/common.h"
 
 void WinWindow::on_mouse_clicked()
 {
@@ -11,5 +12,6 @@ void WinWindow::on_mouse_clicked()
 
 void WinWindow::draw()
 {
-    draw_image("./bin/Win.png",0,0,5,5);
+//FIXME
+    
 }

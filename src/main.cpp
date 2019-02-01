@@ -1,4 +1,4 @@
-#include "game/game.h"
+#include "maze_game/maze_game.hpp"
 
 
 int main( int argc, char* args[] )

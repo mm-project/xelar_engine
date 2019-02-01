@@ -2,10 +2,11 @@
 #include "maze.hpp"
 #include "player.hpp"
 #include "level.hpp"
-
+#include "maze_game.hpp"
 
 #include "../renderer/sdl_wrapper.h"
 #include "../skeleton/drawing_rect.h"
+#include "../skeleton/common.h"
 
 #include <iostream>
 
@@ -85,8 +86,8 @@ void Board::renderMaze()
               c += m_level->get_delta_column();
         }
 
-        RENDERER->draw_image("./bin/cheese.png",50,50,2,2);
-        RENDERER->draw_image("./bin/mouse.png",m_player->m_player.y(),m_player->m_player.x(),1,1,m_player->m_player_angle,false,1);
+        RENDERER->draw_image(get_rsc(int(IMG_CHEESE)).get_path().c_str(),50,50,2,2);
+        RENDERER->draw_image(get_rsc(int(IMG_PLAYER)).get_path().c_str(),m_player->m_player.y(),m_player->m_player.x(),1,1,m_player->m_player_angle,false,1);
 
         //RENDERER->set_drawing_color(0,0,255);
         //RENDERER->draw_rect(m_player->bounding_rect.y1(),m_player->bounding_rect.x1(),m_player->bounding_rect.h(),m_player->bounding_rect.w());
