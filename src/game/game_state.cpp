@@ -24,7 +24,7 @@ LeGameState::LeGameState() {
     
 	set_timer_checkpoints();
 
-    init();
+    //init();
 }
 
 void LeGameState::set_timer_checkpoints() {

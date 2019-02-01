@@ -23,8 +23,9 @@ XGame::XGame() {
 
 
 void XGame::init() {
-    m_state_mgr->reg_state(ST_GAME,new LeGameState);
     register_images();
+
+    m_state_mgr->reg_state(ST_GAME,new LeGameState);
 }
 
 void XGame::start() {
