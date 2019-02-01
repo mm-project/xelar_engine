@@ -1,6 +1,8 @@
 #ifndef player_h
 #define player_h
 
+#include "x_game.h"
+
 #include "../skeleton/mover.h"
 #include "../skeleton/resource_manager.h"
 #include "../skeleton/image_object.h"
@@ -13,7 +15,7 @@ class LePlayer : public LeImageObject
 {
     public:
         
-        LePlayer():LeImageObject(IMG_PLAYER,100,100,16,16) {
+        LePlayer():LeImageObject(int(IMG_PLAYER),100,100,16,16) {
             init();
 			m_m = LePhysicsManager::get();
 

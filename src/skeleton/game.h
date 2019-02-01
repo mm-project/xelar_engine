@@ -7,14 +7,12 @@
 class LeGame
 {
 	public:
-		LeGame();
+		//LeGame();
 
-		void start();
-		void stop();
+		virtual void init() = 0;
+        virtual void start() = 0;
+		virtual void stop() = 0;
 
-	private:
-		LeStateManager* m_state_mgr;
-			
 	
 };
 

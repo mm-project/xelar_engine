@@ -9,9 +9,7 @@
 #include <map>
 #include <string>
 
-enum LeImageName {IMG_SKY_BACKGROUND, IMG_PLAYER,  IMG_COIN,  IMG_ENEMY1, IMG_ENEMY2, IMG_ENEMY3, IMG_LIFE };
-enum LeSoundName { SND_COIN,  SND_SWIM,  SND_DAMAGE, SND_FUCK, SND_WIN };
-enum LeMusicName { MUS_GAME,  MUS_MENU,  MUS_PAUSE };
+
 
 class LeResourceManager: public LeService<LeResourceManager>
 {
@@ -25,22 +23,27 @@ private:
 		LeResourceManager& operator=(LeResourceManager&);
        
 	public:
-        LeImg get_img(LeImageName n);
+        LeImg get_img(int n);
         
-    private:
-        void register_image(LeImageName name, std::string filename);
+    public:
+        void register_image(int, std::string filename);
+        
+        void set_mus_path(const std::string& p);
+        void set_img_path(const std::string& p);
+        void set_snd_path(const std::string& p);
+        
 
     private:
-        void register_images();
+        //void register_images();
         //id register_sounds();
         //id register_music();
 
     private:
-        std::map<LeImageName,LeImg> m_ienum2obj;
+        std::map<int,LeImg> m_ienum2obj;
         std::string m_img_path;
         std::string m_snd_path;
         std::string m_mus_path;
-        std::string m_common_path;
+        //std::string m_common_path;
         
         LeSdlRendererManager* m_rendering_manager;
         

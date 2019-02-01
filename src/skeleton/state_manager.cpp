@@ -12,10 +12,10 @@ void LeStateManager::reg_state( LeStateType st, LeInterLayer* i ) {
 }
 
 void LeStateManager::set_state( LeStateType st ) {
-	LOG("STATEMANAGER: set_state %i\n",(int)st);
+	//LOG("STATEMANAGER: set_state %i\n",(int)st);
 	m_current_state = m_statename2state[st];
 	m_current_state->init();
-	LOG("STATEMANAGER: m_current_state %p\n",(void*)m_current_state );
+	//LOG("STATEMANAGER: m_current_state %p\n",(void*)m_current_state );
 	LeInterLayer::set_rendering_controller(m_current_state);
 }
 

@@ -1,15 +1,15 @@
-#include "game/game.h"
-
+#include "game/x_game.h"
 
 
 int main( int argc, char* args[] )
 {
-LeGame game;
+XGame game;
 	//TODO
     //game.parse_options(argc,argv);
-	game.start();    
+    game.init();    
+    game.start();    
 	//game.stop();
-	
+	//TODO add try catch and handling
         
 return 0;
 }

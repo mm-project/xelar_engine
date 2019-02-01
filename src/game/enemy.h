@@ -1,6 +1,8 @@
 #ifndef enemy_h
 #define enemy_h
 
+#include "x_game.h"
+
 #include "../skeleton/mover.h"
 #include "../skeleton/resource_manager.h"
 #include "../skeleton/image_object.h"
@@ -15,7 +17,7 @@ class LeEnemy : public LeImageObject
 {
     public:
         
-        LeEnemy():LeImageObject(IMG_ENEMY1,100,100,6,6) {
+        LeEnemy():LeImageObject(int(IMG_ENEMY1),100,100,6,6) {
             //LeImageObject::set_mover(m_mover);
             init();
 			m_m = LePhysicsManager::get();

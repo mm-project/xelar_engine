@@ -17,8 +17,8 @@ class LeSoundManager : public LeService<LeSoundManager>
 			LeSoundManager(const LeSoundManager&);
 			LeSoundManager& operator=(const LeSoundManager&);
     public:
-            void play(LeSoundName name);
-            void play(LeMusicName name);
+            //void play(LeSoundName name);
+            //void play(LeMusicName name);
 
     private: 
             bool init();
