@@ -56,7 +56,7 @@ void Board::generate()
 void Board::draw()
 {
         renderMaze();
-         RENDERER->getpixel(m_player->m_player.x(),m_player->m_player.y());
+        RENDERER->getpixel(m_player->m_player.x(),m_player->m_player.y());
 }
 
 void Board::renderMaze()

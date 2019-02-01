@@ -28,11 +28,11 @@ public:
 
 public:
         void init() {
-                    register_image("./bin/cheese.png");
-                    register_image("./bin/mouse.png");
+            register_image("./bin/cheese.png");
+            register_image("./bin/mouse.png");
         } 
         
-        void update(unsigned int) { }  
+        void update(unsigned int) { }
         void draw() { m_board->draw(); }
         void notify_mouse_pressed(unsigned int) {  }
         void notify_key_pressed(unsigned int x) { m_board->keyPressEvent(x);  }
