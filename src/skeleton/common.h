@@ -13,18 +13,10 @@ typedef unsigned int uint;
 
 //FIXME move to common.cpp to avoid duplication in unnmammed namespace
 namespace {
-    LeImg get_rsc(LeImageName name) {
-        return LeResourceManager::get()->get_img(name);
+    LeImg get_rsc(int id) {
+        return LeResourceManager::get()->get_img(id);
     }
 }
-
-#ifdef OS_WINDOWS
-	#define RES_PATH_PREFIX 
-#endif
-
-#ifdef OS_LINUX
-	#define RES_PATH_PREFIX ./bin
-#endif
 
 #ifdef OS_ANDROID
 	#define RES_PATH_PREFIX

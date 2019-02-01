@@ -1,16 +1,16 @@
-#include "skeleton/game.h"
-//#include "maze_generation/window.hpp"
-#include "maze_game/game.hpp"
+#include "game/game.h"
+
 
 int main( int argc, char* args[] )
 {
-LeGame game;
-    //game.register_entry_point(new window);
-    game.register_entry_point(new GameWindow);
+XGame game;
 	//TODO
     //game.parse_options(argc,argv);
-	game.start();    
+    game.init();    
+    game.start();    
 	//game.stop();
+	//TODO add try catch and handling
+        
 return 0;
 }
 

@@ -8,18 +8,12 @@
 class LeGame
 {
 	public:
-		LeGame();
+		//LeGame();
 
-		void start();
-		void stop();
+		virtual void init() = 0;
+        virtual void start() = 0;
+		virtual void stop() = 0;
 
-        void  register_entry_point(LeInterLayer* s) {
-            m_state_mgr->reg_state(ST_GAME,s);
-        }
-
-	private:
-		LeStateManager* m_state_mgr;
-			
 	
 };
 
