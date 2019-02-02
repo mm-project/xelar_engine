@@ -20,7 +20,7 @@ void LeStateManager::set_state( LeStateType st ) {
 }
 
 void LeStateManager::set_start_state( LeStateType st ) {
-	set_state(ST_GAME);
+	set_state(st);
 	m_current_state->enter_event_loop();
 }
 	

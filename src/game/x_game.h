@@ -6,9 +6,6 @@
 #include "../skeleton/resource_manager.h"
 #include "../skeleton/state_manager.h"
 
-enum LeImageName { IMG_SKY_BACKGROUND,   IMG_PLAYER,  IMG_COIN,  IMG_ENEMY1, IMG_ENEMY2, IMG_ENEMY3, IMG_LIFE };
-enum LeSoundName { SND_COIN,  SND_SWIM,  SND_DAMAGE, SND_FUCK, SND_WIN };
-enum LeMusicName { MUS_GAME,  MUS_MENU,  MUS_PAUSE };
 
 
 class XGame: public LeGame
