@@ -51,6 +51,7 @@ private:
     Level_interface* m_level;
     int level_count;
     
+	bool first;
     //std::vector<std::pair<int,int>> tmp;
 };
 

@@ -22,6 +22,7 @@ Board::Board()
         //connect(qApp, SIGNAL(focusChanged(QWidget*, QWidget*)), this, SLOT(repaint()));
         newGame();
         loadSettings();
+		first = false;
 
 }
 
@@ -57,7 +58,10 @@ void Board::generate()
 void Board::draw()
 {
         renderMaze();
-        RENDERER->getpixel(m_player->m_player.x(),m_player->m_player.y());
+		if ( ! first ) 
+			 RENDERER->get(true);
+		 
+		RENDERER->getpixel(m_player->m_player.x(),m_player->m_player.y());
 }
 
 void Board::renderMaze()
@@ -99,28 +103,30 @@ void Board::renderMaze()
 
 bool Board::check_in_bounding_box()
 {
-    /*    
+    
+   //return false;
+        int color = 255;
     //RENDERER->getpixel(m_player->bounding_rect.x1(),m_player->bounding_rect.y1());
         int i = m_player->bounding_rect.x1() / m_level->get_delta_column();
         int j = m_player->bounding_rect.y1() / m_level->get_delta_row();
         i = i * m_level->get_delta_column() + 5;
         j = j * m_level->get_delta_row() + 5;
         for (int i_ = i; i_ < i + m_level->get_delta_column(); ++i_) {
-                r.draw1(i_,j);
                 //tmp[0]=std::make_pair(i_,j);
                 if (m_player->bounding_rect.contains(i_, j)) {
-                        //pixel is not red
-                        if (RENDERER->getpixel(i_,j) != 255) {
+                        std::cout << RENDERER->getpixel(i_,j) <<  std::endl;
+                        if (RENDERER->getpixel(i_,j) == color) {
                                 return true;
                         }
                 }
         }
         i = i + m_level->get_delta_column();
         for (int j_= j; j_ < j + m_level->get_delta_row(); ++j_) {
-                //tmp[1]=std::make_pair(i,j_);    
+                //tmp[1]=std::make_pair(i,j_);
                 if (m_player->bounding_rect.contains(i, j_)) {
+                        std::cout << RENDERER->getpixel(i, j_) << std::endl;
                         //color = img.pixel(i, j_);
-                        if (RENDERER->getpixel(i,j_) != 255) {
+                        if (RENDERER->getpixel(i,j_) == color) {
                                 return true;
                         }
                 }
@@ -129,24 +135,24 @@ bool Board::check_in_bounding_box()
         for (int j_= j; j_ < j + m_level->get_delta_row(); ++j_) {
                 //tmp[2]=std::make_pair(i,j_);
                 if (m_player->bounding_rect.contains(i, j_)) {
+                        std::cout << RENDERER->getpixel(i, j_) << std::endl;
                         //color = img.pixel(i, j_);
-                        if (RENDERER->getpixel(i,j_) != 255) {
+                        if (RENDERER->getpixel(i,j_) == color) {
                                 return true;
                         }
                 }
         }
         j = j + m_level->get_delta_row();
         for (int i_ = i; i_ < i + m_level->get_delta_column(); ++i_) {
-                //RENDERER->set_drawing_color(255,0,255);
-                //RENDERER->draw_circle(i_,j,5);
                 if (m_player->bounding_rect.contains(i_, j)) {
+                        std::cout << RENDERER->getpixel(i_, j) << std::endl;
                         //color = img.pixel(i_, j);
-                        if (RENDERER->getpixel(i_,j) != 255) {
+                        if (RENDERER->getpixel(i_,j) == color) {
                                 return true;
                         }
                 }
         }
-     /**/
+
      return false;
 }
 

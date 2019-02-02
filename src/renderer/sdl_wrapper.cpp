@@ -21,11 +21,14 @@ void LeSdlWrapper::set_rendering_controller(LeSdlWrapper* controller){
 LeSdlWrapper::LeSdlWrapper() { //const char* title) {
 	m_render_manager = LeSdlRendererManager::get();
 	m_render = m_render_manager->get_renderer();
+	morqur_surface = nullptr;
     
     m_dx = 0;
     m_dy = 0;
     m_kx = 1;
     m_ky = 1;
+	
+	//get(true);
 }
 
 /*	

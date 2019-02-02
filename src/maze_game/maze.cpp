@@ -5,6 +5,8 @@
 #include <stack>
 #include <vector>
 
+#include <ctime>
+
 namespace {
 
 LePoint randomNeighbor(std::vector< std::vector<bool> >& visited, const LePoint& cell)

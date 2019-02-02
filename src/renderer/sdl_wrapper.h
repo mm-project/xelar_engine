@@ -12,6 +12,8 @@
 
 #include <SDL.h>
 
+#include <cassert>
+
 /*
 #ifdef TEXT_RENDER
 	#include <SDL_ttf.h>
@@ -94,26 +96,25 @@ class LeSdlWrapper : public LeRenderBase , public LeEventControllerBase
             const int width = scr_w();
             const int height = scr_h();
             //auto renderer = sdl2Core->GetRenderer();
-
-            SDL_Surface *surface = SDL_CreateRGBSurfaceWithFormat(0, width, height, 32, format);
-            SDL_RenderReadPixels(m_render, NULL, format, surface->pixels, surface->pitch);
-            //if(d) SDL_SaveBMP(surface, "screenshot.bmp");
-            return surface;
+			if (!morqur_surface)
+				morqur_surface = SDL_CreateRGBSurfaceWithFormat(0, width, height, 32, format);
+            //assert(surface);
+            if (morqur_surface == nullptr) return 0;
+            SDL_RenderReadPixels(m_render, NULL, format, morqur_surface->pixels, morqur_surface->pitch);
+            if(d) SDL_SaveBMP(morqur_surface, "screenshot.bmp");
+            return morqur_surface;
         }
 
         int getpixel(int y, int x) {
-            
-            SDL_Surface* surface = get(false);
+            SDL_Surface* surface = morqur_surface; //get(false);
+            if (surface == nullptr) return -1;
             int bpp = surface->format->BytesPerPixel;
             Uint8 *p = (Uint8 *)surface->pixels + t_y(y) * surface->pitch + t_x(x) * bpp;
-
             Uint8 red, green, blue, alpha;
-
             SDL_GetRGBA(*(Uint32*)p, surface->format, &red, &green, &blue, &alpha);
-            //SDL_GetRGBA(*p, surface->format, &red, &green, &blue, &alpha);
             std::cout << (int)red << " " << (int)green << " " << (int)blue << " " << (int)alpha  << std::endl;
+            //SDL_GetRGBA(*p, surface->format, &red, &green, &blue, &alpha);
             return (int)red;
-            
         }
         
         
@@ -132,6 +133,7 @@ class LeSdlWrapper : public LeRenderBase , public LeEventControllerBase
 		//void register_font(const char* ipath);
 		
 		SDL_Renderer* m_render;
+		SDL_Surface* morqur_surface;
         
         SDL_Texture* m_bg_texture;
         unsigned int m_bg_texture_width;
@@ -160,7 +162,6 @@ public:
             
             //SDL_RenderClear(  LeSdlRendererManager::get()->get_renderer() );
             SDL_SetRenderDrawColor( LeSdlRendererManager::get()->get_renderer(), 255, 0, 0, 0xFF );
-            std::cout << "draw_circle1 " << this << std::endl;
             for (int w = 0; w < radius * 2; w++) {
                 for (int h = 0; h < radius * 2; h++) {
                     int dx = radius - w; // horizontal offset
