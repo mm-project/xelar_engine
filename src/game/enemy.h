@@ -1,7 +1,7 @@
 #ifndef enemy_h
 #define enemy_h
 
-#include "x_game.h"
+#include "resources.h"
 
 #include "../skeleton/mover.h"
 #include "../skeleton/resource_manager.h"
