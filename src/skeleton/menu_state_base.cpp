@@ -1,6 +1,16 @@
 #include "menu_state_base.h"
+#include "menuitem_drawer_base.h"
 #include "../skeleton/state_manager.h"
 #include "../skeleton/common.h"
+
+
+LeMenuStateBase::LeMenuStateBase(LeMenuItemDrawerBase* d):m_current_item(0),m_item_drawer(d) {
+}
+
+LeMenuStateBase::LeMenuStateBase():m_current_item(0),m_item_drawer(new LeMenuItemDrawerBase) {
+
+    
+}
 
 void LeMenuStateBase::set_current_menu(const LeMenu& m) {
     m_current_menu = m;
@@ -44,14 +54,9 @@ void LeMenuStateBase::notify_mouse_move(unsigned int x, unsigned int y) {
 void LeMenuStateBase::draw_menu(const LeMenu& menu) {
 	std::vector<LeMenuItem*> vec = menu.get_items();
 	for(int i = 0; i<vec.size(); ++i) {
-		draw_menu_item(vec[i]);
+		m_item_drawer->draw_menu_item(vec[i]);
 	}
 }
 
-void LeMenuStateBase::draw_menu_item(LeMenuItem* i) {
-	if(!i) return;
-	LeObj obj = i->get_object();
-	draw_image(obj.m_img_path.c_str(),obj.m_x,obj.m_y,obj.m_c_x,obj.m_c_y);
-}
 
 	

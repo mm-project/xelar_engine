@@ -3,12 +3,17 @@
 
 #include "../renderer/interlayer.h"
 #include "menu.h"
+#include "menuitem_drawer_base.h"
 								 
 class LeMenuStateBase : public LeInterLayer
 {
 
     public:
-		virtual void draw();
+        LeMenuStateBase(LeMenuItemDrawerBase* d);
+        LeMenuStateBase();
+    
+    public:
+        virtual void draw();
 		virtual void update(unsigned int currentTime);
 
 	public:
@@ -28,6 +33,7 @@ class LeMenuStateBase : public LeInterLayer
     private:
 		LeMenu m_current_menu;
 		LeMenuItem* m_current_item;
+        LeMenuItemDrawerBase* m_item_drawer;
 	
 };
 

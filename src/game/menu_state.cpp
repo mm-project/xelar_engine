@@ -10,11 +10,13 @@ void LeMenuState::init() {
 	
 	/**/
 
-    m_top_menu.add_item(LeObj(get_rsc(IMG_MENU_PLAY),100,210,3,3),std::bind(&LeMenuState::action_play, this));
-    m_top_menu.add_item(LeObj(get_rsc(IMG_MENU_PLAY),190,210,3,3))->add_submenu(&m_settings_menu);
-    m_top_menu.add_item(LeObj(get_rsc(IMG_MENU_PLAY),280,210,3,3));
-    m_top_menu.add_item(LeObj(get_rsc(IMG_MENU_PLAY),360,210,3,3));
-    m_settings_menu.add_item(LeObj(get_rsc(IMG_MENU_PLAY),190,210,3,3))->add_submenu(&m_top_menu);
+    m_top_menu.add_item(LeObj(get_rsc(IMG_MENU_PLAY),90,150,1,1));//,std::bind(&LeMenuState::action_play, this));
+    m_top_menu.add_item(LeObj(get_rsc(IMG_MENU_RESUME),190,150,1,1));
+    m_top_menu.add_item(LeObj(get_rsc(IMG_MENU_SETTINGS),270,150,1,1))->add_submenu(&m_settings_menu);
+    m_top_menu.add_item(LeObj(get_rsc(IMG_MENU_QUIT),360,150,1,1));
+     
+    
+    m_settings_menu.add_item(LeObj(get_rsc(IMG_MENU_QUIT),90,150,1,1));
 				
     /**/
 		
@@ -27,7 +29,7 @@ void LeMenuState::action_play() {
 
 void LeMenuState::draw() {
 	draw_highlights();
-	LeMenuStateBase::draw();
+    LeMenuStateBase::draw();
 }
 
 void LeMenuState::draw_highlights() {
@@ -39,6 +41,6 @@ void LeMenuState::draw_highlights() {
 void LeMenuState::highligt_menu_item(LeMenuItem* i) {
 	LeObj obj = i->get_object();
 	set_drawing_color(255,255,0);
-	draw_rect(obj.m_x,obj.m_y,obj.m_height,obj.m_width);
+	draw_rect(obj.m_x-10,obj.m_y-10,obj.m_height+10,obj.m_width+10);
 }
 	

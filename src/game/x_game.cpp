@@ -31,7 +31,7 @@ void XGame::init() {
 
 void XGame::start() {
 	//todo check for some conditions
-	m_state_mgr->set_start_state(ST_MENU);
+	m_state_mgr->set_start_state(ST_GAME);
 }
 
 void XGame::stop() {

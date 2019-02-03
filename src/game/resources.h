@@ -5,7 +5,7 @@
 #include "../skeleton/resource_manager.h"
 
 
-enum LeImageName { IMG_SKY_BACKGROUND,   IMG_PLAYER,  IMG_COIN,  IMG_ENEMY1, IMG_ENEMY2, IMG_ENEMY3, IMG_LIFE, IMG_MENU_PLAY };
+enum LeImageName { IMG_SKY_BACKGROUND,   IMG_PLAYER,  IMG_COIN,  IMG_ENEMY1, IMG_ENEMY2, IMG_ENEMY3, IMG_LIFE, IMG_MENU_PLAY, IMG_MENU_RESUME, IMG_MENU_SETTINGS,  IMG_MENU_QUIT};
 enum LeSoundName { SND_COIN,  SND_SWIM,  SND_DAMAGE, SND_FUCK, SND_WIN };
 enum LeMusicName { MUS_GAME,  MUS_MENU,  MUS_PAUSE };
 
@@ -19,7 +19,10 @@ namespace {
         m_resources->register_image(int(IMG_ENEMY2),"debilik3.png");
         m_resources->register_image(int(IMG_ENEMY3),"debilik4.png");
         m_resources->register_image(int(IMG_LIFE),"life.png");
-        m_resources->register_image(int(IMG_MENU_PLAY),"play.png");
+        m_resources->register_image(int(IMG_MENU_PLAY),"start.jpg");
+        m_resources->register_image(int(IMG_MENU_RESUME),"resume.jpg");
+        m_resources->register_image(int(IMG_MENU_SETTINGS),"settings.jpg");
+        m_resources->register_image(int(IMG_MENU_QUIT),"quit.jpg");
     }
 }
 
