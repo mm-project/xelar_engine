@@ -17,7 +17,7 @@ class LeQtRenderer : public LeRenderingControllerImplBase , public LeService<LeQ
     QWindow* window; 
     
     public:
-        bool init() {
+        void enter_event_loop() {
             int c=0;
             char* v[1];
             std::string qa("asd");
@@ -46,7 +46,7 @@ class LeQtRenderer : public LeRenderingControllerImplBase , public LeService<LeQ
         }
         
         LeQtRenderer() {
-            init();
+            
         }
     
     public:

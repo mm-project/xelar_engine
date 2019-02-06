@@ -54,7 +54,7 @@ void LeGameState::init_world()
    
 	//FIXME !!!
     assert(get_renderer());
-	get_renderer()->set_background_image("./bin/sky_bg.jpg");//get_rsc(int(IMG_SKY_BACKGROUND)).get_path().c_str());
+	get_renderer()->set_background_image(get_rsc(int(IMG_SKY_BACKGROUND)).get_path().c_str());
     m_background.init();
 }
 

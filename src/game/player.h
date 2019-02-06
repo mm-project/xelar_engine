@@ -8,10 +8,12 @@
 #include "../skeleton/image_object.h"
 
 #include "../renderer/scene_controller.h"
+//#include "../renderer/interlayer.h"
+
 
 #include "../physics/physics_manager.h"
 
-class LePlayer : public LeImageObject 
+class LePlayer : public LeImageObject //, public LeInterLayer
 {
     public:
         

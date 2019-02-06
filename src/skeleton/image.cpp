@@ -5,7 +5,7 @@
 
 LeImg::LeImg(const std::pair<std::string, std::pair<unsigned int ,unsigned int > > & p) {
 	std::cout << "construct " << p.first << std::endl;
-    assert(0);
+    //assert(0);
     m_path = p.first;
 	m_w = p.second.first;
 	m_h = p.second.second;

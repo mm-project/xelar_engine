@@ -5,6 +5,7 @@
 #include "../skeleton/common.h"
 
 #include <iostream>
+#include <list>
 
 class LeSceneController 
 {
@@ -27,6 +28,7 @@ class LeSceneController
     public:
 		static LeSceneController* m_renderer_controller;
         static LeRenderingControllerImplBase* m_impl;
+        //static std::list<LeSceneController*> m_controllers; 
 
 
 };
