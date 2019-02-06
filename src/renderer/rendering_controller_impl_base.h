@@ -7,6 +7,8 @@
 #include <string>
 #include <map>
 
+
+//FIXME
 class LeRenderingControllerImplBase// : public LeService<LeRenderingControllerImplBase>
 {
     public:
