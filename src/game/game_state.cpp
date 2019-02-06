@@ -6,8 +6,7 @@
 #include "../skeleton/sound_manager.h"
 #include "../skeleton/mover.h"
 
-#include "../renderer/interlayer.h"
-#include "../renderer/sdl_wrapper.h"
+#include "../renderer/scene_controller.h"
 
 
 #include <string>
@@ -54,7 +53,8 @@ void LeGameState::init_world()
 	m_current_time = 0;
    
 	//FIXME !!!
-	set_background_image(get_rsc(int(IMG_SKY_BACKGROUND)).get_path().c_str());
+    assert(get_renderer());
+	get_renderer()->set_background_image(get_rsc(int(IMG_SKY_BACKGROUND)).get_path().c_str());
     m_background.init();
 }
 
@@ -89,7 +89,7 @@ void LeGameState::notify_mouse_pressed(unsigned int b) {
 void LeGameState::check_intersection(unsigned int) {
 	if ( m_player.is_vulnarable() ) {
 		for( auto it : m_enemies ) {
-			if ( has_intersetion(m_player.m_obj.m_old_x,m_player.m_obj.m_old_y,m_player.m_obj.m_height,m_player.m_obj.m_width,it.m_obj.m_old_x,it.m_obj.m_old_y,it.m_obj.m_height,it.m_obj.m_width) ) {	
+			if ( get_renderer()->has_intersetion(m_player.m_obj.m_old_x,m_player.m_obj.m_old_y,m_player.m_obj.m_height,m_player.m_obj.m_width,it.m_obj.m_old_x,it.m_obj.m_old_y,it.m_obj.m_height,it.m_obj.m_width) ) {	
 				m_player.damage();
 			}
 		}

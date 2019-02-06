@@ -23,6 +23,8 @@ namespace {
         m_resources->register_image(int(IMG_MENU_RESUME),"resume.jpg");
         m_resources->register_image(int(IMG_MENU_SETTINGS),"settings.jpg");
         m_resources->register_image(int(IMG_MENU_QUIT),"quit.jpg");
+    /**/
+        
     }
 }
 

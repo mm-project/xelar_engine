@@ -7,7 +7,7 @@
 #include "../skeleton/resource_manager.h"
 #include "../skeleton/image_object.h"
 
-#include "../renderer/sdl_wrapper.h"
+#include "../renderer/scene_controller.h"
 
 #include "../physics/physics_manager.h"
 
@@ -20,8 +20,8 @@ class LeEnemy : public LeImageObject
         LeEnemy():LeImageObject(int(IMG_ENEMY1),100,100,6,6) {
             //LeImageObject::set_mover(m_mover);
             init();
-			m_m = LePhysicsManager::get();
-			b = m_m->create_body(LeBody::Type::STATIC, m_obj.m_width, m_obj.m_height);
+			//m_m = LePhysicsManager::get();
+			//b = m_m->create_body(LeBody::Type::STATIC, m_obj.m_width, m_obj.m_height);
         }
 
     public:
@@ -47,8 +47,8 @@ class LeEnemy : public LeImageObject
 
     private:
         LeObjMover<MV_RAND> m_mover;
-		LeBody* b;
-		LePhysicsManager* m_m;
+		//LeBody* b;
+		//LePhysicsManager* m_m;
 };
 
 

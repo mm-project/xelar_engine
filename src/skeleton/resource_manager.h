@@ -45,7 +45,7 @@ private:
         std::string m_mus_path;
         //std::string m_common_path;
         
-        LeSdlRendererManager* m_rendering_manager;
+        LeRenderingControllerImplBase* m_rendering_manager;
         
 };
 
