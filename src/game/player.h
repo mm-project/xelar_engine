@@ -7,7 +7,7 @@
 #include "../skeleton/resource_manager.h"
 #include "../skeleton/image_object.h"
 
-#include "../renderer/sdl_wrapper.h"
+#include "../renderer/scene_controller.h"
 
 #include "../physics/physics_manager.h"
 
@@ -17,9 +17,9 @@ class LePlayer : public LeImageObject
         
         LePlayer():LeImageObject(int(IMG_PLAYER),100,100,16,16) {
             init();
-			m_m = LePhysicsManager::get();
+			//m_m = LePhysicsManager::get();
 
-			b = m_m->create_body(LeBody::Type::DYNAMIC, m_obj.m_width, m_obj.m_height);
+			//b = m_m->create_body(LeBody::Type::DYNAMIC, m_obj.m_width, m_obj.m_height);
         }
 
     public:
@@ -50,10 +50,10 @@ class LePlayer : public LeImageObject
             }
 		
             //m_mover.move(m_obj);
-			m_m->update();
+			//m_m->update();
 
-			m_obj.m_old_y = b->get_current_x();
-			m_obj.m_old_x = b->get_current_y();
+			//m_obj.m_old_y = b->get_current_x();
+			//m_obj.m_old_x = b->get_current_y();
         }
 
         bool damage() {
@@ -101,8 +101,8 @@ class LePlayer : public LeImageObject
 		bool m_is_hit;
 		bool m_need_to_draw;
         bool m_player_hit;
-		LeBody* b;
-		LePhysicsManager* m_m;
+		//LeBody* b;
+		//LePhysicsManager* m_m;
 
 
         unsigned int m_last_blink_time;

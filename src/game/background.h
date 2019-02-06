@@ -2,7 +2,7 @@
 #define image_background_h
 
 #include "../skeleton/mover.h"
-#include "../renderer/sdl_wrapper.h"
+#include "../renderer/scene_controller.h"
 #include <iostream>
 
 class LeBackground
@@ -32,7 +32,7 @@ public:
             m_delta = m_delta + 1;
         }
         
-        if ( LeSdlWrapper::m_renderer_controller->draw_scroll_background(m_delta) )
+        if ( get_renderer()->draw_scroll_background(m_delta) )
             m_delta = 0;
     }
     

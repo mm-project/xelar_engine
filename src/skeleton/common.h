@@ -6,6 +6,7 @@
 #include "resource_manager.h"
 
 #include <functional>
+#include <cassert>
 
 typedef std::function<void(int)> updateFun;
 typedef std::function<void()> actionFun;

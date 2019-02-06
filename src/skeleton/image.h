@@ -7,7 +7,7 @@
 class LeImg 
 {
 	public:	
-        LeImg() {
+        LeImg():is_init(false) {
         }
         
 		LeImg(const std::pair<std::string, std::pair<unsigned int ,unsigned int > > & p);
@@ -22,6 +22,7 @@ class LeImg
 		unsigned int m_w;
 		unsigned int m_h;
 		std::string m_path;
+        bool is_init;
 };
 
 

@@ -12,7 +12,7 @@ enum LeMusicName { MUS_GAME,  MUS_MENU,  MUS_PAUSE };
 namespace {
     void register_resources() {
         LeResourceManager* m_resources = LeResourceManager::get();
-        m_resources->register_image(int(IMG_SKY_BACKGROUND), "sky_bg.jpg");
+        /*m_resources->register_image(int(IMG_SKY_BACKGROUND), "sky_bg.jpg");
         m_resources->register_image(int(IMG_PLAYER),"player.png");
         m_resources->register_image(int(IMG_COIN),"coin.png");
         m_resources->register_image(int(IMG_ENEMY1),"debilik1.png");
@@ -23,6 +23,8 @@ namespace {
         m_resources->register_image(int(IMG_MENU_RESUME),"resume.jpg");
         m_resources->register_image(int(IMG_MENU_SETTINGS),"settings.jpg");
         m_resources->register_image(int(IMG_MENU_QUIT),"quit.jpg");
+    */
+        
     }
 }
 

@@ -40,7 +40,7 @@ void LeMenuState::draw_highlights() {
 
 void LeMenuState::highligt_menu_item(LeMenuItem* i) {
 	LeObj obj = i->get_object();
-	set_drawing_color(255,255,0);
-	draw_rect(obj.m_x-10,obj.m_y-10,obj.m_height+10,obj.m_width+10);
+	get_renderer()->set_drawing_color(255,255,0);
+	get_renderer()->draw_rect(obj.m_x-10,obj.m_y-10,obj.m_height+10,obj.m_width+10);
 }
 	

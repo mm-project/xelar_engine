@@ -1,20 +1,21 @@
 #include "resource_manager.h"
 #include "image.h"
 
-#include "../renderer/sdl_renderer.h"
+#include "../renderer/scene_controller.h"
 #include <iostream>
 
 LeResourceManager::LeResourceManager() {	
-    m_rendering_manager = LeSdlRendererManager::get();
+    m_rendering_manager = get_renderer();
 }
 
 LeImg LeResourceManager::get_img(int n) {
-    //std::cout << "-->geeting:" << n << std::endl;
+    //std::cout << "-->geting imgmnnum: " << n << std::endl;
     return m_ienum2obj[n];
+    //return LeImg();
 }
 
 void LeResourceManager::register_image(int name, std::string filename) {
-    //std::cout << "register inng " << filename << " as number " << name << std::endl;
+    //std::cout << "registering " << filename << " as number " << name << std::endl;
     m_ienum2obj[name]=LeImg(m_rendering_manager->register_image((m_img_path+filename).c_str()));
 }
 
