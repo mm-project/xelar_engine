@@ -18,8 +18,8 @@ else
 	OUT=$(PROGNAME).bin
 	#INCLS=-I ./deps/linux/SDL2/include -I ./deps/linux/SDL2_ttf
 	FLAGS+=-Wfatal-errors -g -DIMAGE_RENDER -DOS_LINUX 
-	LIBS+=-L /home/levon/test/cpp/qt_test/no_driven_from_main -lQt5Gui -lQt5Core -lQt5Widgets -I /home/levon/test/cpp/qt_test/no_driven_from_main/qt59/include -I /home/levon/test/cpp/qt_test/no_driven_from_main/qt59/include/QtCore/ -I /home/levon/test/cpp/qt_test/no_driven_from_main/qt59/include/QtGui/ -I /home/levon/test/cpp/qt_test/no_driven_from_main/qt59/include/QtWidgets -fPIC -lBox2D -lSDL2_ttf -lSDL2_mixer -lSDL2_image -lSDL2  -ldl -lrt -pthread -lfreetype -lpng16
-	#LIBS+=-lBox2D -lSDL2_ttf -lSDL2_mixer -lSDL2_image -lSDL2  -ldl -lrt -pthread -lfreetype -lpng16
+	#LIBS+=-L /home/levon/test/cpp/qt_test/no_driven_from_main -lQt5Gui -lQt5Core -lQt5Widgets -I /home/levon/test/cpp/qt_test/no_driven_from_main/qt59/include -I /home/levon/test/cpp/qt_test/no_driven_from_main/qt59/include/QtCore/ -I /home/levon/test/cpp/qt_test/no_driven_from_main/qt59/include/QtGui/ -I /home/levon/test/cpp/qt_test/no_driven_from_main/qt59/include/QtWidgets -fPIC -lBox2D -lSDL2_ttf -lSDL2_mixer -lSDL2_image -lSDL2  -ldl -lrt -pthread -lfreetype -lpng16
+	LIBS+=-lBox2D -lSDL2_ttf -lSDL2_mixer -lSDL2_image -lSDL2  -ldl -lrt -pthread -lfreetype -lpng16
 	#LIBS+=-lBox2D -lasound -L ./deps/ci -lpng16 -lsndio -lwayland-egl -lwebp -lfreetype -ldl -lrt -pthread ./deps/linux64/SDL2/libSDL2.a ./deps/linux64/SDL2_image/libSDL2_image.a -L ./deps/ci -lpng16 -lsndio -lwayland-egl -lwebp -lfreetype -ldl -lrt -pthread -lasound
 	#LIBS+=-lBox2D  -L ./deps/linux64/SDL2 -lSDL2 -L ./deps/ci -lpng16 -lsndio -lwayland-egl -lwebp -L ./deps/linux64/SDL2_image -lSDL2_image -lfreetype -ldl -lrt  -pthread 
 	INCLS+=$(INCS) -I ./deps/linux/SDL2/include -I ./deps/linux/SDL2_image-2.0.3/include 

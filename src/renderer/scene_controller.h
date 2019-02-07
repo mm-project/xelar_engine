@@ -21,12 +21,12 @@ class LeSceneController
         virtual void notify_mouse_move(unsigned int x, unsigned int y) = 0;
         virtual void notify_key_pressed(unsigned int k) = 0;
         virtual void draw() = 0;
-		virtual void init() = 0;
-		virtual void update(unsigned int) = 0;	
+        virtual void init() = 0;
+        virtual void update(unsigned int) = 0;	
 
     
     public:
-		static LeSceneController* m_renderer_controller;
+        static LeSceneController* m_renderer_controller;
         static LeRenderingControllerImplBase* m_impl;
         //static std::list<LeSceneController*> m_controllers; 
 
