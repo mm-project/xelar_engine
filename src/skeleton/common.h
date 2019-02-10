@@ -6,6 +6,8 @@
 #include "resource_manager.h"
 
 #include <functional>
+#include <cassert>
+#include <iostream>
 
 typedef std::function<void(int)> updateFun;
 typedef std::function<void()> actionFun;
@@ -16,10 +18,13 @@ namespace {
     LeImg get_rsc(int id) {
         return LeResourceManager::get()->get_img(id);
     }
+    
+    std::string get_path(int id) {
+        return get_rsc(id).get_path();
+    }
 }
 
 #ifdef OS_ANDROID
-	#define RES_PATH_PREFIX
 	#define LOG SDL_Log
 #else
 	#define LOG printf

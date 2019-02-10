@@ -3,8 +3,10 @@
 #include "player.hpp"
 #include "level.hpp"
 #include "maze_game.hpp"
+#include "resources.hpp"
 
-#include "../renderer/sdl_wrapper.h"
+#include "../renderer/scene_controller.h"
+
 #include "../skeleton/drawing_rect.h"
 #include "../skeleton/common.h"
 
@@ -22,14 +24,19 @@ Board::Board()
         //connect(qApp, SIGNAL(focusChanged(QWidget*, QWidget*)), this, SLOT(repaint()));
         newGame();
         loadSettings();
-		first = false;
-
+		first = true;
+ 
 }
 
 Board::~Board()
 {
         delete m_maze;
         delete m_player;
+}
+
+void Board::init() {
+        cheesepic = get_path(int(IMG_CHEESE));
+        mousepic = get_path(int(IMG_PLAYER));
 }
 
 void Board::newGame()
@@ -58,31 +65,29 @@ void Board::generate()
 void Board::draw()
 {
         renderMaze();
-		if ( ! first ) 
-			 RENDERER->get(true);
 		 
-		RENDERER->getpixel(m_player->m_player.x(),m_player->m_player.y());
+		//get_renderer()->getpixel(m_player->m_player.x(),m_player->m_player.y());
 }
 
 void Board::renderMaze()
 {
-        RENDERER->set_drawing_color(255,0,0);
+        get_renderer()->set_drawing_color(255,0,0);
         int r = 5, c = 5;
         for (int i = 0; i < m_level->get_column(); ++i ) {
               for (int j = 0; j < m_level->get_row(); ++j) {
                         const Cell& cell = m_maze->cell(i,j);
                         if (cell.topWall()) {
-                                RENDERER->draw_line(r,c, r + m_level->get_delta_row(), c);
+                                get_renderer()->draw_line(r,c, r + m_level->get_delta_row(), c);
                         }
                         if (cell.leftWall()) {
-                                RENDERER->draw_line(r,c,r, c + m_level->get_delta_column());
+                                get_renderer()->draw_line(r,c,r, c + m_level->get_delta_column());
                         }
                         if (j == m_level->get_row() -1 && cell.rightWall())
                         {
-                                RENDERER->draw_line(r + m_level->get_delta_row(),c,r + m_level->get_delta_row() , c + m_level->get_delta_column());
+                                get_renderer()->draw_line(r + m_level->get_delta_row(),c,r + m_level->get_delta_row() , c + m_level->get_delta_column());
                         }
                         if (i == m_level->get_column() - 1) {
-                               RENDERER->draw_line(r,c + m_level->get_delta_column(),r+m_level->get_delta_row(),c + m_level->get_delta_column());
+                               get_renderer()->draw_line(r,c + m_level->get_delta_column(),r+m_level->get_delta_row(),c + m_level->get_delta_column());
                         }
                         r+=m_level->get_delta_row();
               }
@@ -90,23 +95,32 @@ void Board::renderMaze()
               c += m_level->get_delta_column();
         }
 
-        RENDERER->draw_image(get_rsc(int(IMG_CHEESE)).get_path().c_str(),50,50,2,2);
-        RENDERER->draw_image(get_rsc(int(IMG_PLAYER)).get_path().c_str(),m_player->m_player.y(),m_player->m_player.x(),1,1,m_player->m_player_angle,false,1);
-
-        //RENDERER->set_drawing_color(0,0,255);
-        //RENDERER->draw_rect(m_player->bounding_rect.y1(),m_player->bounding_rect.x1(),m_player->bounding_rect.h(),m_player->bounding_rect.w());
         
-        RENDERER->set_drawing_color(255,0,255);
-        RENDERER->draw_point(m_player->m_player.y(),m_player->m_player.x());//,10);
+        get_renderer()->draw_image(cheesepic.c_str(),50,50,2,2);
+
+        if ( first ) {
+            get_renderer()->take_snapshot(true);
+            first = false;
+        }
+        
+        get_renderer()->draw_image(mousepic.c_str(),m_player->m_player.y(),m_player->m_player.x(),1,1,m_player->m_player_angle,false,1);
+
+        //get_renderer()->set_drawing_color(0,0,255);
+        //get_renderer()->draw_rect(m_player->bounding_rect.y1(),m_player->bounding_rect.x1(),m_player->bounding_rect.h(),m_player->bounding_rect.w());
+        
+        get_renderer()->set_drawing_color(255,0,255);
+        
+        get_renderer()->draw_point(m_player->m_player.y(),m_player->m_player.x());//,10);
 
 }
 
 bool Board::check_in_bounding_box()
 {
     
-   //return false;
+   //
+    //return false;
         int color = 255;
-    //RENDERER->getpixel(m_player->bounding_rect.x1(),m_player->bounding_rect.y1());
+    //get_renderer()->getpixel(m_player->bounding_rect.x1(),m_player->bounding_rect.y1());
         int i = m_player->bounding_rect.x1() / m_level->get_delta_column();
         int j = m_player->bounding_rect.y1() / m_level->get_delta_row();
         i = i * m_level->get_delta_column() + 5;
@@ -114,8 +128,8 @@ bool Board::check_in_bounding_box()
         for (int i_ = i; i_ < i + m_level->get_delta_column(); ++i_) {
                 //tmp[0]=std::make_pair(i_,j);
                 if (m_player->bounding_rect.contains(i_, j)) {
-                        std::cout << RENDERER->getpixel(i_,j) <<  std::endl;
-                        if (RENDERER->getpixel(i_,j) == color) {
+                        //std::cout << get_renderer()->getpixel(i_,j) <<  std::endl;
+                        if (get_renderer()->getpixel(i_,j) == color) {
                                 return true;
                         }
                 }
@@ -124,9 +138,9 @@ bool Board::check_in_bounding_box()
         for (int j_= j; j_ < j + m_level->get_delta_row(); ++j_) {
                 //tmp[1]=std::make_pair(i,j_);
                 if (m_player->bounding_rect.contains(i, j_)) {
-                        std::cout << RENDERER->getpixel(i, j_) << std::endl;
+                        //std::cout << get_renderer()->getpixel(i, j_) << std::endl;
                         //color = img.pixel(i, j_);
-                        if (RENDERER->getpixel(i,j_) == color) {
+                        if (get_renderer()->getpixel(i,j_) == color) {
                                 return true;
                         }
                 }
@@ -135,9 +149,9 @@ bool Board::check_in_bounding_box()
         for (int j_= j; j_ < j + m_level->get_delta_row(); ++j_) {
                 //tmp[2]=std::make_pair(i,j_);
                 if (m_player->bounding_rect.contains(i, j_)) {
-                        std::cout << RENDERER->getpixel(i, j_) << std::endl;
+                        //std::cout << get_renderer()->getpixel(i, j_) << std::endl;
                         //color = img.pixel(i, j_);
-                        if (RENDERER->getpixel(i,j_) == color) {
+                        if (get_renderer()->getpixel(i,j_) == color) {
                                 return true;
                         }
                 }
@@ -145,9 +159,9 @@ bool Board::check_in_bounding_box()
         j = j + m_level->get_delta_row();
         for (int i_ = i; i_ < i + m_level->get_delta_column(); ++i_) {
                 if (m_player->bounding_rect.contains(i_, j)) {
-                        std::cout << RENDERER->getpixel(i_, j) << std::endl;
+                        //std::cout << get_renderer()->getpixel(i_, j) << std::endl;
                         //color = img.pixel(i_, j);
-                        if (RENDERER->getpixel(i_,j) == color) {
+                        if (get_renderer()->getpixel(i_,j) == color) {
                                 return true;
                         }
                 }
@@ -158,17 +172,17 @@ bool Board::check_in_bounding_box()
 
 void Board::keyPressEvent(int keypress)
 {
-        //RENDERER->set_drawing_color(0,0,255);
+        //get_renderer()->set_drawing_color(0,0,255);
         
         
         LeRect rect(910,400, 50, 50);
         //std::cout << keypress << std::endl;
         if (keypress == 120) {
-            RENDERER->fzoomin(2);
+            get_renderer()->fzoomin(2);
         }
 
         if (keypress == 122) {
-            RENDERER->fzoomout(2);
+            get_renderer()->fzoomout(2);
         }
 
         if (keypress == m_left) {
@@ -247,6 +261,7 @@ void Board::keyPressEvent(int keypress)
                 return;
         }
         //update();
+        get_renderer()->getpixel(m_player->m_player.x(), m_player->m_player.y());
 
        
 }

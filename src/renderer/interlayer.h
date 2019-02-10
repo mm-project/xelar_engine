@@ -1,20 +1,26 @@
 #ifndef interlayer_h
 #define interlayer_h
 
-#include "sdl_wrapper.h"
+#include "scene_controller.h"
 //#include "object.h"
 
-class LeInterLayer : public LeSdlWrapper
+class LeInterLayer : public LeSceneController
 {
 	public:
-		///rendering interlayer
-		//virtual void scene_prepare() { draw(); } ;
-		
+		void enter_event_loop() {
+            //LeSceneController* scene = LeSceneController::get_current_controller();
+            //if (scene)
+                //scene->enter_event_loop();
+            std::cout << "entering event loop on renderer_controller:" << get_renderer() << std::endl; 
+            get_renderer()->enter_event_loop();
+        }
+        
 		//controlls interlayer
 		virtual void notify_mouse_pressed(unsigned int) {  
             m_clicked_x = m_cursor_x;
             m_clicked_y = m_cursor_y;
         }
+		
 		virtual void notify_key_pressed(unsigned int) { }
 		
 		virtual void notify_mouse_move(unsigned int x, unsigned int y) { 
@@ -22,9 +28,11 @@ class LeInterLayer : public LeSdlWrapper
             m_cursor_y = y;
         }
 		
-		virtual void draw() = 0;
-		virtual void init() = 0;
-		virtual void update(unsigned int) = 0;	
+        virtual void draw()  { } 
+		
+		virtual void init() { }
+		
+		virtual void update(unsigned int) {}	
 
     public:
         /*void draw_obj_in_movement2(LeObj& obj) {

@@ -28,8 +28,7 @@ public:
 
 public:
         void init() {
-            register_image("./bin/cheese.png");
-            register_image("./bin/mouse.png");
+            m_board->init();
         } 
         
         void update(unsigned int) { }

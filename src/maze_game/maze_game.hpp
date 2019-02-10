@@ -6,7 +6,6 @@
 #include "../skeleton/resource_manager.h"
 #include "../skeleton/state_manager.h"
 
-enum LeImageName { IMG_PLAYER,  IMG_CHEESE };
 
 class XGame: public LeGame
 {

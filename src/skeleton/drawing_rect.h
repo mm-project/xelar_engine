@@ -1,6 +1,6 @@
 #ifndef drawing_rect_h
 #define drawing_rect_h
-
+/*
 #include "../renderer/interlayer.h"
 
 class LeDrawingRect : public LeInterLayer
@@ -40,5 +40,5 @@ public:
         int m_x;
         int m_y;
 };
-
+*/
 #endif

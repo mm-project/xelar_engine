@@ -1,16 +1,7 @@
+#include "resources.hpp"
 #include "maze_game.hpp"
 #include "game_window.hpp"
 #include "../skeleton/state_manager.h"
-
-
-
-#ifdef OS_WINDOWS
-    #define RESPATH "C:\\Users\\elen\\Desktop\\sdl_game\\ForLevonjanik\\Debug\\"
-#elif OS_ANDROID
-    #define RESPATH ""
-#else
-    #define RESPATH "./bin/"
-#endif
 
 
 XGame::XGame() {
@@ -24,9 +15,9 @@ XGame::XGame() {
 
 
 void XGame::init() {
-    register_images();
-
     m_state_mgr->reg_state(ST_GAME,new GameWindow);
+    
+    register_images();   
 }
 
 void XGame::start() {
@@ -35,12 +26,11 @@ void XGame::start() {
 }
 
 void XGame::stop() {
-	//save as 
+	//save as ?
 }
 
 void XGame::register_images() {
-    m_resources->register_image(int(IMG_PLAYER),"mouse.png");
-    m_resources->register_image(int(IMG_CHEESE),"cheese.png");
+     register_resources();
 }
 
 

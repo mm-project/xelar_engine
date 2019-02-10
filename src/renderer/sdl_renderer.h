@@ -2,8 +2,9 @@
 #define sdl_renderer_h
 
 
-#include "renderer_base.h"
+#include "rendering_controller_impl_base.h"
 #include "../skeleton/service.h"
+#include "../skeleton/common.h"
 
 #include <SDL.h>
 
@@ -16,52 +17,127 @@
 #endif
 
 #include <map>
+#include <iostream>
 
 const int SCREEN_WIDTH = 700;
 const int SCREEN_HEIGHT = 700;
 
 typedef std::pair<std::string, std::pair<unsigned int,unsigned int> > ImgInfo;
 
-class LeSdlRendererManager : public LeService<LeSdlRendererManager>
+class LeSdlRenderer : public LeRenderingControllerImplBase , public LeService<LeSdlRenderer>
 {
+    
+    public:
+        friend class LeService<LeSdlRenderer>;
+
+
+    //private:
+		LeSdlRenderer();
+
+
+    public:
+		void enter_event_loop();
 		
+		
+        inline unsigned int scr_w() {
+            return get_screen_width();
+        }
+
+        inline unsigned int scr_h() {
+            return get_screen_height();
+        }
+
+        unsigned int get_screen_width() {
+            return SCREEN_WIDTH;
+        }
+
+        unsigned int get_screen_height() {
+            return SCREEN_HEIGHT;
+        }
+        
 	public:
-		friend class LeService<LeSdlRendererManager>;
-
-private:
-		LeSdlRendererManager();
-
-		LeSdlRendererManager(const LeSdlRendererManager&);
-		LeSdlRendererManager& operator=(const LeSdlRendererManager&);
-
-
-	public:
-		SDL_Renderer* get_renderer();
-	
-
-	public:
-		bool init(const char*);
-		void close();
-		void scene_clear();
-		void scene_draw();
+		//set/various
+        void set_drawing_color(int r, int g, int b);
 		void set_background_image(const char* path);
+        bool has_intersetion(int y1, int x1, int h1, int w1, int y2, int x2, int h2, int w2 );
 		
-		unsigned int get_screen_width() {
-			return SCREEN_WIDTH;
-		}
+        void take_snapshot(bool d) {
+            get(d);
+        }
+        
+        SDL_Surface* get(bool d) {
+            const Uint32 format = SDL_PIXELFORMAT_ARGB8888;
+            const int width = scr_w();
+            const int height = scr_h();
+            //auto renderer = sdl2Core->GetRenderer();
+			if (!morqur_surface)
+				morqur_surface = SDL_CreateRGBSurfaceWithFormat(0, width, height, 32, format);
+            //assert(surface);
+            //if (morqur_surface == nullptr) return 0;
+            SDL_RenderReadPixels(m_render, NULL, format, morqur_surface->pixels, morqur_surface->pitch);
+            if(d) SDL_SaveBMP(morqur_surface, "screenshot.bmp");
+            return morqur_surface;
+        }
+
+        int getpixel(int y, int x) {
+            SDL_Surface* surface = morqur_surface; //get(false);
+            if (surface == nullptr) return -1;
+            int bpp = surface->format->BytesPerPixel;
+            Uint8 *p = (Uint8 *)surface->pixels + t_x(x) * surface->pitch + t_y(y) * bpp;
+            Uint8 red, green, blue, alpha;
+            SDL_GetRGBA(*(Uint32*)p, surface->format, &red, &green, &blue, &alpha);
+            //std::cout << (int)red << " " << (int)green << " " << (int)blue << " " << (int)alpha  << std::endl;
+            //SDL_GetRGBA(*p, surface->format, &red, &green, &blue, &alpha);
+            return (int)red;
+        }
+        
+        
+        //text
+        void draw_text(const char* s, unsigned int y, unsigned int x, unsigned int sy, unsigned int sx);	
+    
+        //shape
+        void draw_point(unsigned int y, unsigned int x);
+		void draw_line(unsigned int y1, unsigned int x1, unsigned int y2, unsigned int x2);
+		void draw_square(unsigned int y, unsigned int x, unsigned int delta);
+		void draw_rect(unsigned int y, unsigned int x, unsigned int delta2, unsigned int delta1 );
+		void draw_circle(unsigned int y, unsigned int x, int radius);
 		
-		unsigned int get_screen_height() {
-			return SCREEN_HEIGHT;
-		}
-		
+        //image
+        void draw_image(const char* ipath, unsigned int y, unsigned int x, unsigned int cropw, unsigned int croph);
+		void draw_image(const char* ipath, unsigned int y, unsigned int x, unsigned int cropw, unsigned int croph, double angle, bool needflip, unsigned int flipdir);	
+	
+        //background
+        void draw_static_background();
+        bool draw_scroll_background(unsigned int delta);
+        
+        //zoom
+        void zoomin(int factor);
+        void zoomout(int factor);
+        void fzoomin(int step);
+        void fzoomout(int step);
+        
+        //pan
+        void pan_up(int step);
+        void pan_down(int step);
+        void pan_left(int step);
+        void pan_right(int step);
+        void pan_to_x_y(int x, int y);
+        
+        int t_x(int x);
+        int t_y(int y);
+
 	public:
 		void render_background_image();
-		void draw_text(const char* s, unsigned int y, unsigned int x, unsigned int sy, unsigned int sx);
         ImgInfo register_image(const char* ipath);
         std::pair<SDL_Texture*,SDL_Rect> get_image_info(const char* ipath);
         
 	private:
-		bool init_sdl();
+		bool init(const char*);
+		void close();
+		void scene_clear();
+		void scene_draw();
+
+        bool init_sdl();
 		bool init_sdl_image();
 		bool init_sdl_ttf();
 		bool create_window(const char* title);
@@ -78,14 +154,25 @@ private:
 		SDL_Renderer* m_render;
 		
 		bool m_init_success;
+        
+        unsigned int m_bg_texture_width;
+        unsigned int m_bg_texture_height;
 
-	public:	
-		static LeSdlRendererManager* m_instance;
+        unsigned int m_dx;
+        unsigned int m_dy;
+        
+        unsigned int m_kx;
+        unsigned int m_ky;
+        
+        
+        SDL_Surface* morqur_surface;
+        /*
+		#ifdef TEXT_RENDER
+			std::map<std::string,std::pair<TTF_Font*,SDL_Rect> > name2font;
+		#endif
+        */
+
 };
-
-
-
-
 
 
 

@@ -3,6 +3,8 @@
 
 #include "../skeleton/point.h"
 
+#include <string>
+
 class Maze;
 class Player;
 class Level_interface;
@@ -28,6 +30,7 @@ public:
 
 	void keyPressEvent(int);
 	void draw();
+    void init();
     
 
 private:
@@ -53,6 +56,9 @@ private:
     
 	bool first;
     //std::vector<std::pair<int,int>> tmp;
+    
+    std::string cheesepic;
+    std::string mousepic;
 };
 
 #endif
