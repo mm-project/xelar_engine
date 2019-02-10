@@ -33,6 +33,17 @@ class LeSdlWrapper : public LeRenderBase , public LeEventControllerBase
         public:
 		virtual void enter_event_loop();
 		
+        
+        int t_x(int x) {
+            return m_kx*x+m_dx;
+            
+        }
+
+        int t_y(int y) {
+            return m_ky*y+m_dy;
+        }
+
+
 		inline unsigned int scr_w() {
 			return m_render_manager->get_screen_width();
 		}
@@ -123,9 +134,9 @@ class LeSdlWrapper : public LeRenderBase , public LeEventControllerBase
 	public:
 		std::pair<std::string, std::pair<unsigned int,unsigned int> > register_image(const char* ipath);
 
-    private:
-         int t_x(int x);
-         int t_y(int y);
+    //private:
+    //    int t_x(int x);
+    //     int t_y(int y);
 
 
 	private:

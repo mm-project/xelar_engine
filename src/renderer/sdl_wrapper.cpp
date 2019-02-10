@@ -300,6 +300,7 @@ void LeSdlWrapper::pan_right(int step) {
     m_dx += step;
 }
 
+/*
 inline int LeSdlWrapper::t_x(int x) {
     return m_kx*x+m_dx;
     
@@ -308,6 +309,6 @@ inline int LeSdlWrapper::t_x(int x) {
 inline int LeSdlWrapper::t_y(int y) {
     return m_ky*y+m_dy;
 }
-
+*/
 
 

@@ -6,6 +6,8 @@
 
 #ifdef OS_WINDOWS
     #define RESPATH "C:\\Users\\elen\\Desktop\\sdl_game\\ForLevonjanik\\Debug\\"
+#elif OS_ANDROID
+    #define RESPATH ""
 #else
     #define RESPATH "./bin/"
 #endif

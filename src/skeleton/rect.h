@@ -21,8 +21,8 @@ class LeRect
         int x2() { return m_x2; }
         int y2() { return m_y2; }
 
-        int w() { return abs(m_y2-m_y1); }
-        int h() { return abs(m_x2-m_x1); }
+        int w() { return std::abs(m_y2-m_y1); }
+        int h() { return std::abs(m_x2-m_x1); }
         
         bool contains(int x, int y) { 
                 //std::cout << "X: << " << x << " Y: "<< y <<  " m_x1: " << m_x1 << " m_x2: "<< m_x2 <<  " m_y1 : " << m_y1 << " m_y2: " << m_y2 << std::endl;
