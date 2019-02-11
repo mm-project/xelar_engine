@@ -14,10 +14,10 @@
 
 #define RENDERER LeSdlWrapper::m_renderer_controller
 
-Board::Board()
-        : m_maze(0)
-        , level_count(1)
+Board::Board():rect(300, 300, 350, 350)
 {
+        level_count = 1;
+        m_maze = 0;
         m_player = new Player();
         m_level = new Level1();
         
@@ -96,10 +96,10 @@ void Board::renderMaze()
         }
 
         
-        get_renderer()->draw_image(cheesepic.c_str(),50,50,2,2);
+        get_renderer()->draw_image(cheesepic.c_str(),rect.y1(),rect.x1(),2,2);
 
         if ( first ) {
-            get_renderer()->take_snapshot(true);
+            get_renderer()->take_snapshot(false);
             first = false;
         }
         
@@ -109,9 +109,13 @@ void Board::renderMaze()
         //get_renderer()->draw_rect(m_player->bounding_rect.y1(),m_player->bounding_rect.x1(),m_player->bounding_rect.h(),m_player->bounding_rect.w());
         
         get_renderer()->set_drawing_color(255,0,255);
-        
-        get_renderer()->draw_point(m_player->m_player.y(),m_player->m_player.x());//,10);
+        get_renderer()->draw_point(m_player->m_player.y(),m_player->m_player.x());
+ 
+        //get_renderer()->set_drawing_color(0,0,255);
+        //get_renderer()->draw_rect(rect.y1(),rect.x1(),rect.w(),rect.h());
+        //draw_rect(unsigned int y, unsigned int x, unsigned int delta2, unsigned int delta1 
 
+ 
 }
 
 bool Board::check_in_bounding_box()
@@ -175,10 +179,11 @@ void Board::keyPressEvent(int keypress)
         //get_renderer()->set_drawing_color(0,0,255);
         
         
-        LeRect rect(910,400, 50, 50);
+        //LeRect rect(910,400, 50, 50);
         //std::cout << keypress << std::endl;
         if (keypress == 120) {
             get_renderer()->fzoomin(2);
+            //go_to_next_level();
         }
 
         if (keypress == 122) {
@@ -261,7 +266,7 @@ void Board::keyPressEvent(int keypress)
                 return;
         }
         //update();
-        get_renderer()->getpixel(m_player->m_player.x(), m_player->m_player.y());
+        //get_renderer()->getpixel(m_player->m_player.x(), m_player->m_player.y());
 
        
 }
@@ -277,11 +282,11 @@ void Board::loadSettings()
 
 void Board::go_to_next_level()
 {
-        /*
+        
         m_player->m_player.rx() = 0;
         m_player->m_player.ry() = 0;
         m_level->changeState(this);
-
+/*
         if (level_count == 3) {
                 LePostman::notify("win");
         } else {

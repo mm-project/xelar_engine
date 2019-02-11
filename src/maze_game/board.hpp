@@ -2,6 +2,8 @@
 #define _board_hpp_
 
 #include "../skeleton/point.h"
+#include "../skeleton/rect.h"
+
 
 #include <string>
 
@@ -59,6 +61,7 @@ private:
     
     std::string cheesepic;
     std::string mousepic;
+    LeRect rect;
 };
 
 #endif
