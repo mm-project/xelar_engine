@@ -450,7 +450,8 @@ void LeSdlRenderer::enter_event_loop() {
 			while (SDL_PollEvent( &e )) {
 				if ( m_renderer_controller ) {
 					if ( e.type == SDL_QUIT ) quit = true;
-					else if ( e.type == SDL_MOUSEBUTTONDOWN && e.button.button == SDL_BUTTON_LEFT ) m_renderer_controller->notify_mouse_pressed(1);
+
+                    else if ( e.type == SDL_MOUSEBUTTONDOWN && e.button.button == SDL_BUTTON_LEFT ) m_renderer_controller->notify_mouse_pressed(1);
 					else if ( e.type == SDL_MOUSEBUTTONDOWN && e.button.button == SDL_BUTTON_RIGHT )m_renderer_controller->notify_mouse_pressed(0);
 					else if ( e.type == SDL_MOUSEMOTION  ) {
 						last_x = e.motion.x;

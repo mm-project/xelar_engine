@@ -3,7 +3,7 @@
 
 #include "../skeleton/point.h"
 #include "../skeleton/rect.h"
-
+#include "../skeleton/image_object.h"
 
 #include <string>
 
@@ -29,13 +29,27 @@ public:
     void newGame();
 
 
-
+    void mouseMoveEvent(unsigned x, unsigned y);
 	void keyPressEvent(int);
 	void draw();
     void init();
+    void update(unsigned int);
     
 
 private:
+    LeImageObject up_btn;
+    LeImageObject down_btn;
+    LeImageObject left_btn;
+    LeImageObject right_btn;
+    
+private:
+    void move_player_left();
+    void move_player_right();
+    void move_player_up();
+    void move_player_down();
+    void player_move();
+
+
     void loadSettings();
     void generate();
     void renderMaze();
@@ -62,6 +76,16 @@ private:
     std::string cheesepic;
     std::string mousepic;
     LeRect rect;
+    
+    bool m_need_update;
+    unsigned int m_last_upd_time;
+    int m_update_freq;
+    
+   
+    int m_move_where;
+
+    
+    
 };
 
 #endif

@@ -18,15 +18,25 @@ class LeImageObject
             m_obj.m_x = x;
             m_obj.m_y = y;
         }
+        
+        void set_image(int image_id) {
+            m_obj.change_img(get_rsc(image_id));
+        }
 
     public:
-        void draw_obj_static() {
+        void draw_static() {
             get_renderer()->draw_image(m_obj.m_img_path.c_str(),m_obj.m_x,m_obj.m_y,m_obj.m_c_x,m_obj.m_c_y,m_obj.m_angle,m_obj.m_need_flip,0);//obj.m_flip_mode);
             
         }
         
         void draw_obj_in_movement2() {
             get_renderer()->draw_image(m_obj.m_img_path.c_str(),m_obj.m_old_x,m_obj.m_old_y,m_obj.m_c_x,m_obj.m_c_y,m_obj.m_angle,m_obj.m_need_flip,0);//obj.m_flip_mode);
+        }
+        
+        bool contains(unsigned int x, unsigned int y) {
+            //return true;
+            //assert(m_obj.is_cord_in_my_bbox(y,x));
+            return m_obj.is_cord_in_my_bbox(x,y);
         }
 
         //void set_mover(LeObjMoverBase& m) {

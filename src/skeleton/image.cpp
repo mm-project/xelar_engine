@@ -13,7 +13,7 @@ LeImg::LeImg(const std::pair<std::string, std::pair<unsigned int ,unsigned int >
 }
 
 std::string LeImg::get_path() const {
-    assert(is_init);
+    //assert(is_init);
     std::cout << "--->>>>>" << m_path  << std::endl;
     return m_path;
 }

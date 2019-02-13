@@ -28,16 +28,24 @@ LeObj::LeObj(const  LeImg& img, unsigned int x, unsigned int y, unsigned int cro
 	m_visible = true;
 	m_movable = true;;
 
+    
 }
 
 void LeObj::change_img(const  LeImg& img) {
-	
+	//std::cout << "change img " << std::endl;
+    m_img_path = img.get_path();
+	m_width = img.get_width()/m_c_y;
+	m_height = img.get_height()/m_c_x;
 }
 
 bool LeObj::is_cord_in_my_bbox(unsigned x, unsigned y) 
 {
-	
-	return (x > m_x && x < m_x + m_height &&
+   //std::cout << "size:: x:" << m_x << " - " << m_x + m_height << " ---- Y: " << m_y << "-" << m_y + m_width << std::endl;
+   //std::cout << "\n";
+
+    
+	//std::cout << "Checking: x" << x << "   y: " << y << std::endl;
+    return (x > m_x && x < m_x + m_height &&
 			y > m_y && y < m_y + m_width);
 		
 }

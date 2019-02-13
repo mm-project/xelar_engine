@@ -12,9 +12,8 @@
 
 #include <iostream>
 
-#define RENDERER LeSdlWrapper::m_renderer_controller
 
-Board::Board():rect(300, 300, 350, 350)
+Board::Board():rect(300, 300, 350, 350),up_btn(int(IMG_ARROW_UP),100,400,12,12),down_btn(int(IMG_ARROW_DOWN),170,400,12,12),left_btn(int(IMG_ARROW_LEFT),150,330,12,12),right_btn(int(IMG_ARROW_RIGHT),150,466,12,12)
 {
         level_count = 1;
         m_maze = 0;
@@ -25,7 +24,11 @@ Board::Board():rect(300, 300, 350, 350)
         newGame();
         loadSettings();
 		first = true;
- 
+        m_need_update = true;
+        m_last_upd_time = 0;
+        m_update_freq = 100;
+        m_move_where = 0;
+     
 }
 
 Board::~Board()
@@ -37,6 +40,11 @@ Board::~Board()
 void Board::init() {
         cheesepic = get_path(int(IMG_CHEESE));
         mousepic = get_path(int(IMG_PLAYER));
+
+        up_btn.set_image(int(IMG_ARROW_UP));
+        down_btn.set_image(int(IMG_ARROW_DOWN));
+        left_btn.set_image(int(IMG_ARROW_LEFT));
+        right_btn.set_image(int(IMG_ARROW_RIGHT));
 }
 
 void Board::newGame()
@@ -118,7 +126,12 @@ void Board::renderMaze()
         //get_renderer()->draw_rect(rect.y1(),rect.x1(),rect.w(),rect.h());
         //draw_rect(unsigned int y, unsigned int x, unsigned int delta2, unsigned int delta1 
 
- 
+        //get_renderer()->draw_image(mousepic.c_str(),m_player->m_player.y(),m_player->m_player.x(),1,1,m_player->m_player_angle,false,1);
+        up_btn.draw_static();
+        down_btn.draw_static();
+        left_btn.draw_static();
+        right_btn.draw_static();
+        
 }
 
 bool Board::check_in_bounding_box()
@@ -177,16 +190,126 @@ bool Board::check_in_bounding_box()
      return false;
 }
 
+
+void Board::move_player_left() {
+    m_player->m_player_angle = 270;
+    int i = 0;
+    while (i < 7) {
+            if (check_in_bounding_box()) {
+            break;
+            }
+            ++i;
+            --m_player->m_player.rx();
+    }
+    if (rect.contains(m_player->m_player.x() + 46, m_player->m_player.y() + 26)) {
+            go_to_next_level();
+    }
+    m_player->setRect(270);
+    if (i != 7) {
+            return;
+    }
+    m_player->m_player_angle = 270;
+}
+
+void Board::move_player_right() {
+    m_player->m_player_angle = 90;
+    int i = 0;
+    while (i < 7) {
+            if (check_in_bounding_box()) {
+            break;
+            }
+            ++i;
+            ++m_player->m_player.rx();
+    }
+    if (rect.contains(m_player->m_player.x() + 46, m_player->m_player.y() + 26)) {
+            go_to_next_level();
+    }
+    m_player->setRect(90);
+    if (i != 7) {
+            return;
+    }
+    m_player->m_player_angle = 90;
+}
+
+void Board::move_player_up() {
+    m_player->m_player_angle = 360;
+    int i = 0;
+    while (i < 7) {
+            if (check_in_bounding_box()) {
+            break;
+            }
+            ++i;
+            --m_player->m_player.ry();
+    }
+    if (rect.contains(m_player->m_player.x() + 46, m_player->m_player.y() + 26)) {
+            go_to_next_level();
+    }
+    m_player->setRect(360);
+    if (i != 7) {
+            return;
+    }
+    m_player->m_player_angle = 360;
+}
+
+void Board::move_player_down() {
+    m_player->m_player_angle = 180;
+    int i = 0;
+    while (i < 7) {
+            if (check_in_bounding_box()) {
+            break;
+            }
+            ++i;
+            ++m_player->m_player.ry();
+    }
+    if (rect.contains(m_player->m_player.x() + 46, m_player->m_player.y() + 26)) {
+            go_to_next_level();
+    }
+    m_player->setRect(180);
+    if (i != 7) {
+            return;
+    }
+    m_player->m_player_angle = 180;
+}
+
+
+void Board::update(unsigned int t) {
+    m_need_update = false;
+    if ( t > m_last_upd_time + m_update_freq ) {
+        m_need_update = true;
+        m_last_upd_time = t;
+        player_move();
+    }
+}
+
+void Board::player_move() {
+    if(m_move_where==1)
+        move_player_up();
+    else if(m_move_where==2)
+        move_player_down();
+    else if(m_move_where==3)
+        move_player_right();
+    else if(m_move_where==4)
+        move_player_left();
+}
+
+
+void Board::mouseMoveEvent(unsigned x, unsigned y) {
+
+    if(up_btn.contains(y,x))
+        m_move_where=1;
+    else if(down_btn.contains(y,x))
+        m_move_where=2;
+    else if(right_btn.contains(y,x))
+        m_move_where=3;
+    else if(left_btn.contains(y,x))
+        m_move_where=4;
+}
+
 void Board::keyPressEvent(int keypress)
 {
-        //get_renderer()->set_drawing_color(0,0,255);
-        
-        
-        //LeRect rect(910,400, 50, 50);
-        //std::cout << keypress << std::endl;
+#ifndef OS_ANDROID
         if (keypress == 120) {
             get_renderer()->fzoomin(2);
-            //go_to_next_level();
         }
 
         if (keypress == 122) {
@@ -194,85 +317,25 @@ void Board::keyPressEvent(int keypress)
         }
 
         if (keypress == m_left) {
-                m_player->m_player_angle = 270;
-                int i = 0;
-                while (i < 7) {
-                        if (check_in_bounding_box()) {
-                        break;
-                        }
-                        ++i;
-                        --m_player->m_player.rx();
-                }
-                if (rect.contains(m_player->m_player.x() + 46, m_player->m_player.y() + 26)) {
-                        go_to_next_level();
-                }
-                m_player->setRect(270);
-                if (i != 7) {
-                        return;
-                }
-                m_player->m_player_angle = 270;
+            move_player_left();
         } else if (keypress == m_right) {
-                m_player->m_player_angle = 90;
-                int i = 0;
-                while (i < 7) {
-                        if (check_in_bounding_box()) {
-                        break;
-                        }
-                        ++i;
-                        ++m_player->m_player.rx();
-                }
-                if (rect.contains(m_player->m_player.x() + 46, m_player->m_player.y() + 26)) {
-                        go_to_next_level();
-                }
-                m_player->setRect(90);
-                if (i != 7) {
-                        return;
-                }
-                m_player->m_player_angle = 90;
+            move_player_right();
         } else if (keypress == m_up) {
-                m_player->m_player_angle = 360;
-                int i = 0;
-                while (i < 7) {
-                        if (check_in_bounding_box()) {
-                        break;
-                        }
-                        ++i;
-                        --m_player->m_player.ry();
-                }
-                if (rect.contains(m_player->m_player.x() + 46, m_player->m_player.y() + 26)) {
-                        go_to_next_level();
-                }
-                m_player->setRect(360);
-                if (i != 7) {
-                        return;
-                }
-                m_player->m_player_angle = 360;
+            move_player_up();
         } else if (keypress == m_down) {
-                m_player->m_player_angle = 180;
-                int i = 0;
-                while (i < 7) {
-                        if (check_in_bounding_box()) {
-                        break;
-                        }
-                        ++i;
-                        ++m_player->m_player.ry();
-                }
-                if (rect.contains(m_player->m_player.x() + 46, m_player->m_player.y() + 26)) {
-                        go_to_next_level();
-                }
-                m_player->setRect(180);
-                if (i != 7) {
-                        return;
-                }
-                m_player->m_player_angle = 180;
+            move_player_down();
         } else {
                 return;
         }
         //update();
         //get_renderer()->getpixel(m_player->m_player.x(), m_player->m_player.y());
-
-       
+#else
+    return
+#endif
 }
+
+
+
 
 void Board::loadSettings()
 {

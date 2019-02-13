@@ -31,11 +31,11 @@ public:
             m_board->init();
         } 
         
-        void update(unsigned int) { }
+        void update(unsigned int t) { m_board->update(t);}
         void draw() { m_board->draw(); }
         void notify_mouse_pressed(unsigned int) {  }
         void notify_key_pressed(unsigned int x) { m_board->keyPressEvent(x);  }
-        void notify_mouse_move(unsigned int x, unsigned int y) { }
+        void notify_mouse_move(unsigned int x, unsigned int y) { m_board->mouseMoveEvent(x,y);  }
 
 
 private:
