@@ -450,19 +450,25 @@ void LeSdlRenderer::enter_event_loop() {
 			while (SDL_PollEvent( &e )) {
 				if ( m_renderer_controller ) {
 					if ( e.type == SDL_QUIT ) quit = true;
-
-                    else if ( e.type == SDL_MOUSEBUTTONDOWN && e.button.button == SDL_BUTTON_LEFT ) m_renderer_controller->notify_mouse_pressed(1);
-					else if ( e.type == SDL_MOUSEBUTTONDOWN && e.button.button == SDL_BUTTON_RIGHT )m_renderer_controller->notify_mouse_pressed(0);
+#ifndef OS_ANDROID					
+                    else if ( e.type == SDL_MOUSEBUTTONDOWN && e.button.button == SDL_BUTTON_LEFT )  m_renderer_controller->notify_mouse_pressed(1);
+					else if ( e.type == SDL_MOUSEBUTTONDOWN && e.button.button == SDL_BUTTON_RIGHT ) m_renderer_controller->notify_mouse_pressed(0);
 					else if ( e.type == SDL_MOUSEMOTION  ) {
 						last_x = e.motion.x;
 						last_y = e.motion.y;
 						m_renderer_controller->notify_mouse_move(last_x,last_y);
 					}
 					else if ( e.type == SDL_KEYDOWN ) { m_renderer_controller->notify_key_pressed(int(e.key.keysym.sym)); }
-					//if ( e.type == SDL_MOUSEWHEEL)
-					//if ( e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_ESCAPE) 
-					//if ( e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_x) 
-				}
+#endif					
+
+					else if ( e.type == SDL_FINGERMOTION  ) 	{
+                        //touchLocation.x = e.tfinger.x * SCREEN_WIDTH;
+                        //touchLocation.y = e.tfinger.y * SCREEN_HEIGHT;
+                        //last_x = touchLocation.x;
+                        //last_y = touchLocation.y;
+                        m_renderer_controller->notify_mouse_move(e.tfinger.x * SCREEN_WIDTH,e.tfinger.y * SCREEN_HEIGHT);
+                    }
+                }
 			}
 			//SDL_Log("hatuk");
 			//get_active_rnderer(
