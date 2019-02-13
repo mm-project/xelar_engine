@@ -6,6 +6,10 @@
 #include <cassert>
 #include <iostream>
 
+#include <stdio.h>      /* printf, scanf, puts, NULL */
+#include <stdlib.h>     /* srand, rand */
+#include <time.h>       /* time */
+
 enum LeMoverType { MV_STRAIGHT, MV_RAND, MV_RAND_ORTHO, MV_LINE };
 
 class LeObjMoverBase

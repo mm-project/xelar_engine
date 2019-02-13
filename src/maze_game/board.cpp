@@ -330,7 +330,7 @@ void Board::keyPressEvent(int keypress)
         //update();
         //get_renderer()->getpixel(m_player->m_player.x(), m_player->m_player.y());
 #else
-    return
+    return;
 #endif
 }
 
