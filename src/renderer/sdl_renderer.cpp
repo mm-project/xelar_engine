@@ -10,7 +10,7 @@
 
 #include <stdio.h>
 
-
+LeSdlRenderer* LeSdlRenderer::m_instance=0;
 //TODO game title from outside
 
 LeSdlRenderer::LeSdlRenderer(){ //const char* title) {
@@ -98,7 +98,7 @@ bool LeSdlRenderer::init_sdl_image() {
 }
 
 bool LeSdlRenderer::init_sdl() {
-	if( SDL_Init( SDL_INIT_VIDEO ) < 0 ) {
+	if( SDL_Init( SDL_INIT_EVERYTHING ) != 0 ) {
 		SDL_ShowSimpleMessageBox( 0, "SDL could not initialize! SDL Error: %s\n", SDL_GetError(), NULL );
 		m_init_success = false;
 	}

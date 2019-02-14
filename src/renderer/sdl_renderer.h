@@ -24,12 +24,16 @@ const int SCREEN_HEIGHT = 700;
 
 typedef std::pair<std::string, std::pair<unsigned int,unsigned int> > ImgInfo;
 
-class LeSdlRenderer : public LeRenderingControllerImplBase , public LeService<LeSdlRenderer>
+class LeSdlRenderer : public LeService<LeSdlRenderer> , public LeRenderingControllerImplBase
 {
     
     public:
         friend class LeService<LeSdlRenderer>;
-
+        static LeSdlRenderer* m_instance;
+        static  LeSdlRenderer* get() {
+            if ( ! m_instance ) m_instance = new LeSdlRenderer;
+            return m_instance;
+        }
 
     //private:
 		LeSdlRenderer();

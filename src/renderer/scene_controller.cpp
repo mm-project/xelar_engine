@@ -5,7 +5,7 @@
 
 
 LeSceneController* LeSceneController::m_renderer_controller = 0;
-LeRenderingControllerImplBase* LeSceneController::m_impl = new LeSdlRenderer;
+LeRenderingControllerImplBase* LeSceneController::m_impl = 0;
 
 void LeSceneController::set_rendering_controller(LeSceneController* controller){
 	LOG("set_rendering_controller %p \n",(void*)controller);       
@@ -17,8 +17,8 @@ LeSceneController* LeSceneController::get_current_controller() {
 }
 
 LeRenderingControllerImplBase* LeSceneController::get_renderer() {
-    return m_impl;
-    //return LeSdlRenderer::get();
+    //return ;
+    return LeSdlRenderer::get();
 }
 
 //const char* title) { //fixme no title 
