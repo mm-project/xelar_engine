@@ -1,7 +1,7 @@
 # xelar engine
 
 #### background 
-This is fun project originated from attempts to generalize some infratcure code after long struggling with some silly game that has been on my shelf long time ago. I've come up with idea to build sort of "engine" that will act as an intemediate layer instead of binding game to certain engine/framework ( sdl, qt..)
+This is fun project originated from attempts to generalize some infratcure code after long struggling with some silly game that has been on my shelf long time ago. We've come up with idea to build sort of "engine" that will act as an intemediate layer instead of binding game to certain engine/framework ( sdl, qt..)
 
 What that means is that each concrete component (rendering, sound engine, networking,etc..) can be connnected to any of existing framework/libararies by inheriting base interfaces and implementing the stuff. The advantage of such system is that there will be no code change ( ideally ) on client code when tranfering game to one framework/platform to another.
 
