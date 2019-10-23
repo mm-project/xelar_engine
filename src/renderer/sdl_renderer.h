@@ -4,7 +4,7 @@
 #ifdef OS_ANDROID
     #include "SDL_internal.h"
     //#include "SDL_android.h"
-    #include "../../../SDL2/src/core/android/SDL_android.h"
+    #include "/home/levon/test/sdl2-android-example/SDL2/src/core/android/SDL_android.h"
 #endif
 
 #include "rendering_controller_impl_base.h"
@@ -24,18 +24,20 @@
 #include <map>
 #include <iostream>
 
-const int SCREEN_WIDTH = 700;
-const int SCREEN_HEIGHT = 700;
 
 #ifdef OS_ANDROID
-    const int SCREEN_RES_W = 1080;
-    const int SCREEN_RES_H = 2160;
+    const int SCREEN_RES_W = 540;//1080;
+    const int SCREEN_RES_H = 960; // 2160;
+    const int SCREEN_WIDTH = SCREEN_RES_W;
+    const int SCREEN_HEIGHT = SCREEN_RES_H;
 #else
+    const int SCREEN_WIDTH = 700;
+    const int SCREEN_HEIGHT = 700;
     const int SCREEN_RES_W = SCREEN_WIDTH;
     const int SCREEN_RES_H = SCREEN_HEIGHT;
 #endif
 
-
+#include <iostream>
     
 typedef std::pair<std::string, std::pair<unsigned int,unsigned int> > ImgInfo;
 
@@ -96,7 +98,7 @@ class LeSdlRenderer : public LeService<LeSdlRenderer> , public LeRenderingContro
         bool has_intersetion(int y1, int x1, int h1, int w1, int y2, int x2, int h2, int w2 );
 		
         void take_snapshot(bool d) {
-            //get(d);
+            get(d);
         }
         
         SDL_Surface* get(bool d) {
@@ -107,7 +109,11 @@ class LeSdlRenderer : public LeService<LeSdlRenderer> , public LeRenderingContro
 			if (!morqur_surface)
 				morqur_surface = SDL_CreateRGBSurfaceWithFormat(0, width, height, 32, format);
             //assert(surface);
-            //if (morqur_surface == nullptr) return 0;
+            if (morqur_surface == nullptr) {
+                SDL_ShowSimpleMessageBox( 0, "SDL Error: %s\n", SDL_GetError(), NULL );
+                return nullptr;
+            }
+
             SDL_RenderReadPixels(m_render, NULL, format, morqur_surface->pixels, morqur_surface->pitch);
             if(d) SDL_SaveBMP(morqur_surface, "screenshot.bmp");
             return morqur_surface;
@@ -115,12 +121,15 @@ class LeSdlRenderer : public LeService<LeSdlRenderer> , public LeRenderingContro
 
         int getpixel(int y, int x) {
             SDL_Surface* surface = morqur_surface; //get(false);
-            if (surface == nullptr) return -1;
+            if (surface == nullptr) {
+                SDL_ShowSimpleMessageBox( 0, "SDL Error: %s\n", SDL_GetError(), NULL );
+                return -1;
+            }
             int bpp = surface->format->BytesPerPixel;
             Uint8 *p = (Uint8 *)surface->pixels + t_x(x) * surface->pitch + t_y(y) * bpp;
             Uint8 red, green, blue, alpha;
             SDL_GetRGBA(*(Uint32*)p, surface->format, &red, &green, &blue, &alpha);
-            //std::cout << (int)red << " " << (int)green << " " << (int)blue << " " << (int)alpha  << std::endl;
+            std::cout << (int)red << " " << (int)green << " " << (int)blue << " " << (int)alpha  << std::endl;
             //SDL_GetRGBA(*p, surface->format, &red, &green, &blue, &alpha);
             return (int)red;
         }

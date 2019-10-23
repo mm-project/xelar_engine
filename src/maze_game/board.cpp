@@ -112,13 +112,13 @@ void Board::renderMaze()
         }
 
         
-        get_renderer()->draw_image(cheesepic.c_str(),rect.y1(),rect.x1(),2,2);
-
+        //dump screen first time so we can gitpixel on that
         if ( first ) {
             get_renderer()->take_snapshot(true);
             first = false;
         }
         
+        get_renderer()->draw_image(cheesepic.c_str(),rect.y1(),rect.x1(),2,2);      
         get_renderer()->draw_image(mousepic.c_str(),m_player->m_player.y(),m_player->m_player.x(),1,1,m_player->m_player_angle,false,1);
 
         //get_renderer()->set_drawing_color(0,0,255);
@@ -293,7 +293,7 @@ void Board::update(unsigned int t) {
 
 void Board::player_move() {
     
-#ifndef OS_ANDROID    
+#ifndef OS_ANDROID
     if(m_move_where == 5)
         return;
     
@@ -308,15 +308,16 @@ void Board::player_move() {
 #else
     float* f = get_renderer()->get_accel_vals();
     
-    if (f[0]>1)
+    if (f[0]>0.2)
         move_player_right();
-    else if (f[0]<-1)
+    else if (f[0]<-0.2)
         move_player_left();
-    
-    if (f[3]>1)
-        move_player_up();
-    else if (f[3]<-1)
-        move_player_down();
+    else {
+        if (f[2] > 0.1)
+            move_player_up();
+        else if (f[2] < -0.1)
+            move_player_down();
+    }
 #endif
 }
 

@@ -28,6 +28,7 @@ LeSdlRenderer::LeSdlRenderer(){ //const char* title) {
     m_dy = 0;
     m_kx = 1;
     m_ky = 1;
+    morqur_surface = 0;
     //assert(0);
 }
 
