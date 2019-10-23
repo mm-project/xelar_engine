@@ -12,8 +12,14 @@
 
 #include <iostream>
 
+#define AR_BTN_H 12
+#define AR_BTN_W 12
 
-Board::Board():rect(300, 300, 350, 350),up_btn(int(IMG_ARROW_UP),100,400,12,12),down_btn(int(IMG_ARROW_DOWN),170,400,12,12),left_btn(int(IMG_ARROW_LEFT),150,330,12,12),right_btn(int(IMG_ARROW_RIGHT),150,466,12,12)
+#define AR_GRP_X 150
+#define AR_GRP_Y 400
+
+
+Board::Board():rect(300, 300, 350, 350),up_btn(int(IMG_ARROW_UP),100,400,AR_BTN_H,AR_BTN_W),down_btn(int(IMG_ARROW_DOWN),170,400,AR_BTN_H,AR_BTN_W),left_btn(int(IMG_ARROW_LEFT),150,330,AR_BTN_H,AR_BTN_W),right_btn(int(IMG_ARROW_RIGHT),150,466,AR_BTN_H,AR_BTN_W)
 {
         level_count = 1;
         m_maze = 0;
@@ -28,6 +34,8 @@ Board::Board():rect(300, 300, 350, 350),up_btn(int(IMG_ARROW_UP),100,400,12,12),
         m_last_upd_time = 0;
         m_update_freq = 100;
         m_move_where = 0;
+        m_last_x = 0;
+        m_last_y = 0;
      
 }
 
@@ -73,7 +81,7 @@ void Board::generate()
 void Board::draw()
 {
         renderMaze();
-		 
+        //get_renderer()->take_snapshot(); 
 		//get_renderer()->getpixel(m_player->m_player.x(),m_player->m_player.y());
 }
 
@@ -107,7 +115,7 @@ void Board::renderMaze()
         get_renderer()->draw_image(cheesepic.c_str(),rect.y1(),rect.x1(),2,2);
 
         if ( first ) {
-            get_renderer()->take_snapshot(false);
+            get_renderer()->take_snapshot(true);
             first = false;
         }
         
@@ -131,6 +139,7 @@ void Board::renderMaze()
         down_btn.draw_static();
         left_btn.draw_static();
         right_btn.draw_static();
+        get_renderer()->draw_circle(m_last_x,m_last_y,40);
         
 }
 
@@ -281,7 +290,13 @@ void Board::update(unsigned int t) {
     }
 }
 
+
 void Board::player_move() {
+    
+#ifndef OS_ANDROID    
+    if(m_move_where == 5)
+        return;
+    
     if(m_move_where==1)
         move_player_up();
     else if(m_move_where==2)
@@ -290,10 +305,26 @@ void Board::player_move() {
         move_player_right();
     else if(m_move_where==4)
         move_player_left();
+#else
+    float* f = get_renderer()->get_accel_vals();
+    
+    if (f[0]>1)
+        move_player_right();
+    else if (f[0]<-1)
+        move_player_left();
+    
+    if (f[3]>1)
+        move_player_up();
+    else if (f[3]<-1)
+        move_player_down();
+#endif
 }
 
 
 void Board::mouseMoveEvent(unsigned x, unsigned y) {
+
+    m_last_x = y;
+    m_last_y = x;
 
     if(up_btn.contains(y,x))
         m_move_where=1;
@@ -303,6 +334,8 @@ void Board::mouseMoveEvent(unsigned x, unsigned y) {
         m_move_where=3;
     else if(left_btn.contains(y,x))
         m_move_where=4;
+    else
+        m_move_where=5;
 }
 
 void Board::keyPressEvent(int keypress)

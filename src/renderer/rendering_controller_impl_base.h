@@ -68,6 +68,8 @@ class LeRenderingControllerImplBase// : public LeService<LeRenderingControllerIm
 
         virtual int t_x(int x){ }
         virtual int t_y(int y){ }
+
+        virtual float* get_accel_vals() {}
 };
 
 #endif

@@ -10,6 +10,10 @@
 
 #include <stdio.h>
 
+//#include "../../../SDL2/src/core/android/SDL_android.h"
+
+#include "SDL.h"
+
 LeSdlRenderer* LeSdlRenderer::m_instance=0;
 //TODO game title from outside
 
@@ -89,7 +93,9 @@ bool LeSdlRenderer::init_sdl_image() {
 	{
 		SDL_ShowSimpleMessageBox(0, "SDL_image could not initialize! SDL_image Error:", IMG_GetError(), NULL);
 		m_init_success = false;
+		return false;
 	}
+	return true;
 #else
 	SDL_ShowSimpleMessageBox(0, "No SDL_image","Error",NULL);
 	return true;
@@ -447,6 +453,7 @@ void LeSdlRenderer::enter_event_loop() {
 		currentTime = SDL_GetTicks();
 		if (currentTime > lastTime + 10) {
             LeSceneController* m_renderer_controller = get_controller();
+			gyro_upd();
 			while (SDL_PollEvent( &e )) {
 				if ( m_renderer_controller ) {
 					if ( e.type == SDL_QUIT ) quit = true;
@@ -466,7 +473,7 @@ void LeSdlRenderer::enter_event_loop() {
                         //touchLocation.y = e.tfinger.y * SCREEN_HEIGHT;
                         //last_x = touchLocation.x;
                         //last_y = touchLocation.y;
-                        m_renderer_controller->notify_mouse_move(e.tfinger.x * SCREEN_WIDTH,e.tfinger.y * SCREEN_HEIGHT);
+                        m_renderer_controller->notify_mouse_move(e.tfinger.x * SCREEN_RES_W,e.tfinger.y * SCREEN_RES_H);
                     }
                 }
 			}

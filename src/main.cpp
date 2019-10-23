@@ -1,7 +1,11 @@
 #include "maze_game/maze_game.hpp"
 
-int main( int argc, char* args[] )
-{
+#ifdef OS_ANDROID
+    #include "SDL.h"
+    int SDL_main(int argc, char* argv[]) {
+#else
+    int main(int argc, char* argv[]) {
+#endif
 XGame game;
 	//TODO
     //game.parse_options(argc,argv);
@@ -20,3 +24,5 @@ int WinMain( int argc, char* argv[] )
 	main(argc,argv);
 }
 #endif
+
+

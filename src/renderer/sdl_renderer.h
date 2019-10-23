@@ -1,6 +1,11 @@
 #ifndef sdl_renderer_h
 #define sdl_renderer_h
 
+#ifdef OS_ANDROID
+    #include "SDL_internal.h"
+    //#include "SDL_android.h"
+    #include "../../../SDL2/src/core/android/SDL_android.h"
+#endif
 
 #include "rendering_controller_impl_base.h"
 #include "../skeleton/service.h"
@@ -22,7 +27,19 @@
 const int SCREEN_WIDTH = 700;
 const int SCREEN_HEIGHT = 700;
 
+#ifdef OS_ANDROID
+    const int SCREEN_RES_W = 1080;
+    const int SCREEN_RES_H = 2160;
+#else
+    const int SCREEN_RES_W = SCREEN_WIDTH;
+    const int SCREEN_RES_H = SCREEN_HEIGHT;
+#endif
+
+
+    
 typedef std::pair<std::string, std::pair<unsigned int,unsigned int> > ImgInfo;
+
+extern SDL_bool Android_JNI_GetAccelerometerValues(float values[3]);
 
 class LeSdlRenderer : public LeService<LeSdlRenderer> , public LeRenderingControllerImplBase
 {
@@ -58,7 +75,20 @@ class LeSdlRenderer : public LeService<LeSdlRenderer> , public LeRenderingContro
         unsigned int get_screen_height() {
             return SCREEN_HEIGHT;
         }
-        
+
+        float m_accel_vals[3];
+        void gyro_upd()
+        {
+        #ifdef OS_ANDROID
+            Android_JNI_GetAccelerometerValues(m_accel_vals);
+            SDL_Log("\nDesplazamiento x: %f desplazamiento y: %f  Desplazamiento z: %f.\n",m_accel_vals[0],m_accel_vals[1],m_accel_vals[2]);
+        #endif
+        }
+
+        virtual float* get_accel_vals() {
+            return m_accel_vals;
+        }
+    
 	public:
 		//set/various
         void set_drawing_color(int r, int g, int b);
@@ -66,7 +96,7 @@ class LeSdlRenderer : public LeService<LeSdlRenderer> , public LeRenderingContro
         bool has_intersetion(int y1, int x1, int h1, int w1, int y2, int x2, int h2, int w2 );
 		
         void take_snapshot(bool d) {
-            get(d);
+            //get(d);
         }
         
         SDL_Surface* get(bool d) {

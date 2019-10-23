@@ -41,7 +41,11 @@ private:
     LeImageObject down_btn;
     LeImageObject left_btn;
     LeImageObject right_btn;
-    
+
+    unsigned int m_last_x;
+	unsigned int m_last_y;
+
+
 private:
     void move_player_left();
     void move_player_right();
